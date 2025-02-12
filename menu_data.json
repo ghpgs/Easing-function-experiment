@@ -1,0 +1,225 @@
+{
+  "categories": [
+    {
+      "name": "家電",
+      "subcategories": [
+        {
+          "name": "テレビ・映像機器",
+          "subcategories": [
+            {
+              "name": "液晶テレビ",
+              "subcategories": [{ "name": "32インチモデル" }, { "name": "43インチモデル" }, { "name": "50インチモデル" }, { "name": "60インチモデル" }]
+            },
+            {
+              "name": "プロジェクター",
+              "subcategories": [{ "name": "家庭用" }, { "name": "ビジネス用" }, { "name": "4K対応" }]
+            },
+            {
+              "name": "Blu-rayプレーヤー",
+              "subcategories": [{ "name": "ポータブル型" }, { "name": "据え置き型" }]
+            }
+          ]
+        },
+        {
+          "name": "オーディオ機器",
+          "subcategories": [
+            {
+              "name": "スピーカー",
+              "subcategories": [{ "name": "Bluetoothスピーカー" }, { "name": "サウンドバー" }]
+            },
+            {
+              "name": "ヘッドホン",
+              "subcategories": [{ "name": "有線ヘッドホン" }, { "name": "ワイヤレスヘッドホン" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "パソコン",
+      "subcategories": [
+        {
+          "name": "ノートPC",
+          "subcategories": [
+            {
+              "name": "Windowsノート",
+              "subcategories": [{ "name": "ゲーミングノート" }, { "name": "ビジネスノート" }]
+            },
+            {
+              "name": "MacBook",
+              "subcategories": [{ "name": "MacBook Air" }, { "name": "MacBook Pro" }]
+            }
+          ]
+        },
+        {
+          "name": "デスクトップPC",
+          "subcategories": [
+            {
+              "name": "オールインワンPC",
+              "subcategories": [{ "name": "省スペース型" }, { "name": "大画面型" }]
+            },
+            {
+              "name": "自作PC",
+              "subcategories": [{ "name": "ベアボーンキット" }, { "name": "カスタムパーツ" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "スマートフォン",
+      "subcategories": [
+        {
+          "name": "Android端末",
+          "subcategories": [
+            {
+              "name": "Galaxyシリーズ",
+              "subcategories": [{ "name": "Sシリーズ" }, { "name": "Aシリーズ" }]
+            },
+            {
+              "name": "Xperiaシリーズ",
+              "subcategories": [{ "name": "Xperia 1" }, { "name": "Xperia 5" }]
+            }
+          ]
+        },
+        {
+          "name": "iOS端末",
+          "subcategories": [
+            {
+              "name": "iPhone",
+              "subcategories": [{ "name": "iPhone 13" }, { "name": "iPhone 14" }]
+            },
+            {
+              "name": "iPad",
+              "subcategories": [{ "name": "iPad Air" }, { "name": "iPad Pro" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "健康・美容",
+      "subcategories": [
+        {
+          "name": "フィットネス機器",
+          "subcategories": [
+            {
+              "name": "ルームランナー",
+              "subcategories": [{ "name": "折りたたみ型" }, { "name": "据え置き型" }]
+            },
+            {
+              "name": "エアロバイク",
+              "subcategories": [{ "name": "アップライト型" }, { "name": "リカンベント型" }]
+            }
+          ]
+        },
+        {
+          "name": "美容家電",
+          "subcategories": [
+            {
+              "name": "ヘアドライヤー",
+              "subcategories": [{ "name": "大風量" }, { "name": "マイナスイオン" }]
+            },
+            {
+              "name": "フェイススチーマー",
+              "subcategories": [{ "name": "スチーム単機能" }, { "name": "スチーム＆冷却" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "カメラ",
+      "subcategories": [
+        {
+          "name": "デジタルカメラ",
+          "subcategories": [
+            {
+              "name": "ミラーレス一眼",
+              "subcategories": [{ "name": "APS-Cセンサー" }, { "name": "フルサイズセンサー" }]
+            },
+            {
+              "name": "コンパクトカメラ",
+              "subcategories": [{ "name": "高倍率ズーム" }, { "name": "防水耐衝撃" }]
+            }
+          ]
+        },
+        {
+          "name": "交換レンズ",
+          "subcategories": [
+            {
+              "name": "単焦点レンズ",
+              "subcategories": [{ "name": "広角レンズ" }, { "name": "標準レンズ" }]
+            },
+            {
+              "name": "ズームレンズ",
+              "subcategories": [{ "name": "望遠ズーム" }, { "name": "広角ズーム" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "食品・飲料",
+      "subcategories": [
+        {
+          "name": "飲料",
+          "subcategories": [
+            {
+              "name": "コーヒー",
+              "subcategories": [{ "name": "豆" }, { "name": "インスタント" }]
+            },
+            {
+              "name": "紅茶",
+              "subcategories": [{ "name": "リーフ" }, { "name": "ティーバッグ" }]
+            }
+          ]
+        },
+        {
+          "name": "食品",
+          "subcategories": [
+            {
+              "name": "冷凍食品",
+              "subcategories": [{ "name": "お弁当用" }, { "name": "大容量パック" }]
+            },
+            {
+              "name": "レトルト食品",
+              "subcategories": [{ "name": "カレー" }, { "name": "パスタソース" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "スポーツ・アウトドア",
+      "subcategories": [
+        {
+          "name": "キャンプ用品",
+          "subcategories": [
+            {
+              "name": "テント",
+              "subcategories": [{ "name": "ワンタッチテント" }, { "name": "大型テント" }]
+            },
+            {
+              "name": "寝袋",
+              "subcategories": [{ "name": "封筒型" }, { "name": "マミー型" }]
+            }
+          ]
+        },
+        {
+          "name": "スポーツ用品",
+          "subcategories": [
+            {
+              "name": "ランニング",
+              "subcategories": [{ "name": "シューズ" }, { "name": "ウェア" }]
+            },
+            {
+              "name": "サイクリング",
+              "subcategories": [{ "name": "ロードバイク" }, { "name": "クロスバイク" }]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

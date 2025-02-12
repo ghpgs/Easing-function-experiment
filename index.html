@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>イージング関数実験</title>
+    <link rel="stylesheet" href="easing_function.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>イージング関数における効果測定実験</h1>
+    <main>
+      <!-- イージング関数を選択するUI -->
+      <div class="config-area">
+        <label for="easingSelect">イージング関数選択：</label>
+        <select id="easingSelect">
+          <option value="var(--easeInOutSine)">easeInOutSine</option>
+          <option value="var(--easeInOutQuad)">easeInOutQuad</option>
+          <option value="var(--easeInOutCubic)">easeInOutCubic</option>
+          <option value="var(--easeInOutQuint)">easeInOutQuint</option>
+          <option value="var(--easeInOutExpo)">easeInOutExpo</option>
+        </select>
+
+        <button id="taskStartBtn">タスク開始</button>
+        <button id="startTutorialBtn">チュートリアル開始</button>
+        <button id="nextTaskBtn" style="display: none">次のタスクへ進む</button>
+      </div>
+
+      <!-- フィードバック & メインコンテンツ -->
+      <div class="content-wrapper">
+        <div class="main-content">
+          <div id="taskInfo" class="task-info"></div>
+          <div id="feedback" class="feedback"></div>
+          <div id="menu-placeholder" class="menu-container"></div>
+        </div>
+      </div>
+
+      <!-- ▼▼▼ 1. 同意画面オーバーレイ ▼▼▼ -->
+      <div id="consentOverlay" class="overlay">
+        <div class="overlay-content">
+          <h2>実験へのご協力に関する同意</h2>
+          <p>
+            本実験では操作ログ等を記録します。データは匿名化され、研究以外に利用しません。<br />
+            同意いただけない場合は実験に参加できません。
+          </p>
+          <button id="agreeBtn">同意する</button>
+          <button id="disagreeBtn">同意しない</button>
+        </div>
+      </div>
+
+      <!-- ▼▼▼ 2. タスク終了オーバーレイ（最初は非表示） ▼▼▼ -->
+      <div id="taskEndOverlay" class="overlay hidden">
+        <div class="overlay-content">
+          <p>タスクが終了しました</p>
+          <button id="continueTaskBtn">次のタスクへ</button>
+        </div>
+      </div>
+      <!-- 結果一覧 -->
+      <section id="resultsPage" style="display: none">
+        <h2>結果一覧</h2>
+        <table id="resultsTable">
+          <thead>
+            <tr>
+              <th>タスク番号</th>
+              <th>正解項目</th>
+              <th>所要時間 (s)</th>
+              <th>エラー回数</th>
+              <th>タイムアウト</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <div class="center-area">
+          <button id="downloadAllLogsBtn" style="display: none">結果をダウンロード</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- 実装した最終jsを読み込む -->
+    <script src="script.js"></script>
+  </body>
+</html>
