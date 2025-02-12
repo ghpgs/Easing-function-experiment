@@ -2,9 +2,9 @@
    ① 定数＆グローバル変数
 ========================== */
 const MAX_TASKS = 2; // タスク回数
-const TIME_LIMIT_MS = 2000; // タスク制限時間(ms)
+const TIME_LIMIT_MS = 20000; // タスク制限時間(ms)
 
-// ---- ラテン方格 (5×5) 用の定義 ----
+// ラテン方格 (5×5) 用の定義
 const EASING_FUNCS = ["easeInOutSine", "easeInOutQuad", "easeInOutCubic", "easeInOutQuint", "easeInOutExpo"];
 const LATIN_SQUARE = [
   [0, 1, 2, 3, 4],
@@ -14,7 +14,7 @@ const LATIN_SQUARE = [
   [4, 0, 1, 2, 3],
 ];
 
-// 実験制御用
+// ===== 実験制御用 =====
 let currentTaskIndex = 0;
 let startTime = 0; // タスク開始時刻
 let errorCount = 0;
@@ -54,6 +54,11 @@ let isTutorialActive = false; // trueの間は「チュートリアル中」
 let tutorialTargetItem = "ビジネスノート"; // チュートリアルでクリックしてほしいアイテム
 let tutorialOverlay = null; // チュートリアル完了用オーバーレイ
 
+// ===== ボタン要素を格納するグローバル変数 =====
+let startTutorialBtn = null;
+let startTaskBtn = null;
+let nextTaskBtn = null;
+
 /* ==========================
    ② 参加者IDの生成＆URL付与
 ========================== */
@@ -68,6 +73,29 @@ function setNewParticipantId() {
 }
 const participantId = setNewParticipantId();
 console.log("参加者ID:", participantId);
+
+/* ==========================
+   ★ 全部リセットする関数
+========================== */
+function resetAllInfo() {
+  // グローバル変数のリセット
+  currentTaskIndex = 0;
+  startTime = 0;
+  errorCount = 0;
+  clearTimeout(timeoutId);
+  timeoutId = null;
+  allLogs = [];
+  firstClickTime = null;
+  clicksThisTask = [];
+  menuTravelDistance = 0;
+  lastClickTime = 0;
+  lastClickDepth = 0;
+  isTutorialActive = false;
+
+  // --- ボタンを有効化/無効化する処理は入れない ---
+  // ここではあくまで、実験パラメータだけを初期化するイメージ
+  // ボタンを押せるように戻したいなら、その「実際のイベント」内でやる！
+}
 
 /* ==========================
    ③ DOM読み込み時の処理
@@ -89,20 +117,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const taskEndOverlay = document.getElementById("taskEndOverlay");
   const continueTaskBtn = document.getElementById("continueTaskBtn");
   continueTaskBtn.addEventListener("click", () => {
+    if (!confirm("次のタスクに進みますか？")) {
+      console.log("ユーザーはキャンセルしました（次のタスクへ進むオーバーレイ）");
+      return; // キャンセルされたらここで処理を中断
+    }
+    console.log("ユーザーはOKを押しました（次のタスクへ進むオーバーレイ）");
     taskEndOverlay.classList.add("hidden");
     startNextTask();
   });
 
-  // ---------- HTML要素取得 (メインUI) ----------
+  // ---------- メインUI要素の取得 ----------
   const menuPlaceholder = document.getElementById("menu-placeholder");
   const easingSelect = document.getElementById("easingSelect");
 
-  // ▼ チュートリアル開始ボタン
-  const startTutorialBtn = document.getElementById("startTutorialBtn");
-  // ▼ 本番タスク開始ボタン (もとの taskStartBtn)
-  const startTaskBtn = document.getElementById("taskStartBtn");
+  // ▼ グローバル変数に、ボタン要素を代入する
+  startTutorialBtn = document.getElementById("startTutorialBtn");
+  startTaskBtn = document.getElementById("taskStartBtn");
+  nextTaskBtn = document.getElementById("nextTaskBtn");
 
-  const nextTaskBtn = document.getElementById("nextTaskBtn");
   const downloadAllLogsBtn = document.getElementById("downloadAllLogsBtn");
 
   // JSON読み込み＆メニュー生成
@@ -124,17 +156,33 @@ document.addEventListener("DOMContentLoaded", () => {
   tutorialOverlay = createTutorialOverlay();
   document.body.appendChild(tutorialOverlay);
 
+  // ====== イベントリスナーの設定 ======
+
   // 「チュートリアル開始」ボタン
   startTutorialBtn.addEventListener("click", () => {
+    console.log("startTutorialBtn clicked!");
+    if (!confirm("チュートリアルを開始しますか？")) {
+      console.log("ユーザーはキャンセルしました（チュートリアル開始）");
+      return;
+    }
+    console.log("ユーザーはOKを押しました（チュートリアル開始）");
     startTutorial();
-    startTutorialBtn.disabled = true; // 多重クリック防止
+    // チュートリアル開始後、両方のボタンを無効化
+    startTutorialBtn.disabled = true;
+    startTaskBtn.disabled = true;
   });
 
   // 「本番タスク開始」ボタン
   startTaskBtn.addEventListener("click", () => {
-    // チュートリアルをやらなくても、本番に進める設計
+    if (!confirm("タスクを開始しますか？")) {
+      console.log("ユーザーはキャンセルしました（タスク開始）");
+      return; // キャンセルされたら処理を中断する
+    }
+    console.log("ユーザーはOKを押しました（タスク開始）");
     startTask();
-    startTaskBtn.disabled = true; // 多重クリック防止
+    // タスク開始後、両方のボタンを無効化
+    startTaskBtn.disabled = true;
+    startTutorialBtn.disabled = true;
   });
 
   // 「次のタスクへ進む」ボタン
@@ -277,6 +325,7 @@ function checkTutorialAnswer(clickedText) {
   feedbackElem.classList.add("correct");
 
   closeAllSubmenus();
+  // → チュートリアル完了オーバーレイ表示
   tutorialOverlay.classList.remove("hidden");
 }
 
@@ -289,7 +338,7 @@ function startTask() {
   currentTaskIndex = 0;
 
   document.getElementById("resultsPage").style.display = "none";
-  document.getElementById("nextTaskBtn").style.display = "none";
+  nextTaskBtn.style.display = "none";
 
   const feedbackElem = document.getElementById("feedback");
   feedbackElem.textContent = "";
@@ -309,7 +358,7 @@ function startNextTask() {
   }
 
   if (currentTaskIndex === MAX_TASKS) {
-    document.getElementById("nextTaskBtn").style.display = "none";
+    nextTaskBtn.style.display = "none";
   }
 
   resetTaskVars();
@@ -320,7 +369,7 @@ function startNextTask() {
   feedbackElem.textContent = "";
   feedbackElem.className = "";
 
-  document.getElementById("nextTaskBtn").style.display = "none";
+  nextTaskBtn.style.display = "none";
 
   // ラテン方格でイージング割り当て
   const rowIndex = participantId % 5;
@@ -343,7 +392,7 @@ function startNextTask() {
   const targetItemName = leafNames[Math.floor(Math.random() * leafNames.length)];
 
   const taskInfo = document.getElementById("taskInfo");
-  taskInfo.textContent = `タスク ${currentTaskIndex}/${MAX_TASKS}： 「${targetItemName}」をクリックしてください！`;
+  taskInfo.textContent = `タスク ${currentTaskIndex}/${MAX_TASKS}： 「${targetItemName}」をクリックしてください。`;
 
   startTime = performance.now();
 
@@ -382,7 +431,7 @@ function checkAnswer(clickedText) {
   }
 
   // 正解
-  feedbackElem.textContent = `正解です！\n時間:${totalTimeSec}s\nエラー:${errorCount}`;
+  feedbackElem.textContent = "正解です！";
   feedbackElem.className = "correct";
 
   const firstClickTimeSec = firstClickTime !== null ? parseFloat(firstClickTime.toFixed(2)) : "N/A";
@@ -409,7 +458,7 @@ function checkAnswer(clickedText) {
   }
   taskEndOverlay.classList.remove("hidden");
 
-  const nextTaskBtn = document.getElementById("nextTaskBtn");
+  // 次のタスクへ進むボタンを表示
   if (currentTaskIndex === MAX_TASKS) {
     nextTaskBtn.style.display = "none";
   } else {
@@ -454,7 +503,7 @@ function handleTimeout(targetItemName) {
    ⑩ 次のタスクへ
 ========================== */
 function handleNextTask() {
-  document.getElementById("nextTaskBtn").style.display = "none";
+  nextTaskBtn.style.display = "none";
   startNextTask();
 }
 
@@ -465,7 +514,7 @@ function showResultsPage() {
   const feedbackElem = document.getElementById("feedback");
   feedbackElem.textContent = "";
   feedbackElem.className = "";
-  document.getElementById("nextTaskBtn").style.display = "none";
+  nextTaskBtn.style.display = "none";
 
   const resultsPage = document.getElementById("resultsPage");
   const resultsTableBody = document.querySelector("#resultsTable tbody");
@@ -675,6 +724,7 @@ function resetTaskVars() {
 function createTutorialOverlay() {
   const overlay = document.createElement("div");
   overlay.classList.add("overlay", "hidden");
+
   overlay.innerHTML = `
     <div class="overlay-content">
       <h2>チュートリアル完了</h2>
@@ -682,9 +732,46 @@ function createTutorialOverlay() {
       <button id="closeTutorialBtn">閉じる</button>
     </div>
   `;
-  // チュートリアルを閉じる(本番タスク開始は別ボタンに任せる)
-  overlay.querySelector("#closeTutorialBtn").addEventListener("click", () => {
-    overlay.classList.add("hidden");
-  });
+
+  const closeTutorialBtn = overlay.querySelector("#closeTutorialBtn");
+  if (closeTutorialBtn) {
+    closeTutorialBtn.addEventListener("click", () => {
+      console.log("閉じるボタンがクリックされました");
+
+      // 1. オーバーレイを隠す
+      overlay.classList.add("hidden");
+
+      // 2. フィードバックとタスク情報の表示をクリアする
+      const feedbackElem = document.getElementById("feedback");
+      if (feedbackElem) {
+        feedbackElem.textContent = "";
+        feedbackElem.className = "";
+      }
+      const taskInfo = document.getElementById("taskInfo");
+      if (taskInfo) {
+        taskInfo.textContent = "";
+      }
+
+      // 3. 「チュートリアル開始」ボタンと「タスク開始」ボタンを有効化
+      if (startTutorialBtn) {
+        startTutorialBtn.disabled = false;
+      }
+      if (startTaskBtn) {
+        startTaskBtn.disabled = false;
+      }
+
+      // 4. サブメニューをすべて閉じる
+      closeAllSubmenus();
+
+      // 5. 内部情報のリセット
+      resetAllInfo();
+
+      console.log("startTutorialBtn.disabled:", startTutorialBtn ? startTutorialBtn.disabled : "not found");
+      console.log("startTaskBtn.disabled:", startTaskBtn ? startTaskBtn.disabled : "not found");
+    });
+  } else {
+    console.error("閉じるボタンが見つかりませんでした");
+  }
+
   return overlay;
 }

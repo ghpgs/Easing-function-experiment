@@ -3,23 +3,18 @@
 ================================ */
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 /* ================================
    カスタム変数
 ================================ */
 :root {
-  /* 初期イージングの例。必要に応じて変更してください */
   --submenu-easing: var(--easeInOutSine);
   --submenu-animation-duration: 0.9s;
 }
 
 body {
   font-family: "Hiragino Kaku Gothic Pro", "Helvetica Neue", Arial, "Hiragino Sans", Meiryo, sans-serif;
-  margin: 0;
-  padding: 30px;
 }
 
 h1 {
@@ -91,39 +86,12 @@ select {
 ================================ */
 .task-info {
   margin-bottom: 20px;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 24px;
   text-decoration: underline;
+  font-weight: bold;
   min-height: 30px;
-  display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* ================================
-   フィードバック
-================================ */
-.feedback {
-  top: 50%;
-  width: 220px;
-  min-height: 48px;
-  font-size: 16px;
-  white-space: pre-line;
-  background: #868686;
-  padding: 8px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
-  transform: translateY(-50%);
-}
-
-.feedback.correct {
-  color: green;
-}
-.feedback.incorrect {
-  color: red;
-}
-.feedback.timeout {
-  color: orange;
 }
 
 /* ================================
@@ -136,24 +104,58 @@ select {
   align-items: flex-start;
   position: relative;
 }
+/* ================================
+    タスク文
+================================ */
 .main-content {
   display: flex;
+  margin-top: -5px; /* 上の余白を追加 */
+  margin-bottom: -5px; /* 下の余白を追加 */
   flex-direction: column;
+  align-items: center; /* ← 横方向の中央寄せ */
+  height: 100vh; /* ← 画面いっぱいに広げる */
 }
 
 /* ================================
    メニューコンテナ
 ================================ */
 .menu-container {
-  position: fixed;
+  position: fixed; /* 画面に対して固定 */
   width: 280px;
-  background: linear-gradient(to bottom, #f5f5f5, #f5f5f5);
   padding: 10px;
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.4);
-  position: relative;
   border-radius: 4px;
-  margin: auto;
-  margin-top: 10px;
+  top: 240px; /* 上から100pxの位置に固定 */
+  left: 50%; /* 画面の50%の位置（中央） */
+  transform: translateX(-50%); /* X軸方向に -50% ずらして完全中央寄せ */
+}
+
+/* feedback 基本スタイル */
+#feedback {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: -10px;
+  padding: 7px 9px; /* 内側に余白を付ける */
+  background: #f7f7f7; /* 明るい背景色 */
+  border: 2px solid #0077cc; /* 青い枠線 デバッグ用*/
+  border-radius: 8px; /* 角丸に */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 軽い影を付ける */
+  min-height: 50px; /* 空でも表示されるように高さを確保 */
+}
+
+/* 成功時（正解）のフィードバック */
+#feedback.correct {
+  background: #d4edda; /* 薄い緑 */
+  border-color: #28a745; /* 緑の枠線 */
+  color: #155724;
+}
+
+/* エラー時（不正解）のフィードバック */
+#feedback.incorrect {
+  background: #f8d7da; /* 薄い赤 */
+  border-color: #dc3545; /* 赤の枠線 */
+  color: #721c24;
 }
 
 /* ================================
