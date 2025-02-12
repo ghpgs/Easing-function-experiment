@@ -15,6 +15,8 @@
 
 body {
   font-family: "Hiragino Kaku Gothic Pro", "Helvetica Neue", Arial, "Hiragino Sans", Meiryo, sans-serif;
+  align-items: center; /* 横方向の中央寄せ */
+  justify-content: center; /* 縦方向の中央寄せ */
 }
 
 h1 {
@@ -120,14 +122,12 @@ select {
    メニューコンテナ
 ================================ */
 .menu-container {
-  position: fixed; /* 画面に対して固定 */
   width: 280px;
+  /* 上下マージン 20px、左右は自動調整で中央寄せ */
+  margin: 20px auto;
   padding: 10px;
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.4);
   border-radius: 4px;
-  top: 240px; /* 上から100pxの位置に固定 */
-  left: 50%; /* 画面の50%の位置（中央） */
-  transform: translateX(-50%); /* X軸方向に -50% ずらして完全中央寄せ */
 }
 
 /* feedback 基本スタイル */
