@@ -115,7 +115,6 @@ select {
   margin-bottom: -5px; /* 下の余白を追加 */
   flex-direction: column;
   align-items: center; /* ← 横方向の中央寄せ */
-  height: 100vh; /* ← 画面いっぱいに広げる */
 }
 
 /* ================================
@@ -240,13 +239,14 @@ select {
 /* ================================
    オーバーレイ（全画面ブロック）
 ================================ */
+
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.2); /* 透明度を変更 デバッグ用 */
+  background: rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;

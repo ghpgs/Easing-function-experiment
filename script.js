@@ -2,9 +2,9 @@
    ① 定数＆グローバル変数
 ========================== */
 const MAX_TASKS = 2; // タスク回数
-const TIME_LIMIT_MS = 20000; // タスク制限時間(ms)
+const TIME_LIMIT_MS = 2000; // タスク制限時間(ms)
 
-// ラテン方格 (5×5) 用の定義
+// ---- ラテン方格 (5×5) 用の定義 ----
 const EASING_FUNCS = ["easeInOutSine", "easeInOutQuad", "easeInOutCubic", "easeInOutQuint", "easeInOutExpo"];
 const LATIN_SQUARE = [
   [0, 1, 2, 3, 4],
@@ -14,7 +14,7 @@ const LATIN_SQUARE = [
   [4, 0, 1, 2, 3],
 ];
 
-// ===== 実験制御用 =====
+// 実験制御用
 let currentTaskIndex = 0;
 let startTime = 0; // タスク開始時刻
 let errorCount = 0;
@@ -54,14 +54,7 @@ let isTutorialActive = false; // trueの間は「チュートリアル中」
 let tutorialTargetItem = "ビジネスノート"; // チュートリアルでクリックしてほしいアイテム
 let tutorialOverlay = null; // チュートリアル完了用オーバーレイ
 
-// ===== ボタン要素を格納するグローバル変数 =====
-let startTutorialBtn = null;
-let startTaskBtn = null;
-let nextTaskBtn = null;
-
-/* ==========================
-   ② 参加者IDの生成＆URL付与
-========================== */
+// ★ 参加者ID
 function generateRandomParticipantId() {
   return Math.floor(Math.random() * 1000);
 }
@@ -75,10 +68,15 @@ const participantId = setNewParticipantId();
 console.log("参加者ID:", participantId);
 
 /* ==========================
+   グローバル変数（ボタン）
+========================== */
+let startTutorialBtn = null;
+let startTaskBtn = null;
+
+/* ==========================
    ★ 全部リセットする関数
 ========================== */
 function resetAllInfo() {
-  // グローバル変数のリセット
   currentTaskIndex = 0;
   startTime = 0;
   errorCount = 0;
@@ -91,10 +89,6 @@ function resetAllInfo() {
   lastClickTime = 0;
   lastClickDepth = 0;
   isTutorialActive = false;
-
-  // --- ボタンを有効化/無効化する処理は入れない ---
-  // ここではあくまで、実験パラメータだけを初期化するイメージ
-  // ボタンを押せるように戻したいなら、その「実際のイベント」内でやる！
 }
 
 /* ==========================
@@ -116,25 +110,37 @@ document.addEventListener("DOMContentLoaded", () => {
   // ---------- タスク終了オーバーレイ ----------
   const taskEndOverlay = document.getElementById("taskEndOverlay");
   const continueTaskBtn = document.getElementById("continueTaskBtn");
+
+  // ★ ここが今回のポイント
   continueTaskBtn.addEventListener("click", () => {
-    if (!confirm("次のタスクに進みますか？")) {
-      console.log("ユーザーはキャンセルしました（次のタスクへ進むオーバーレイ）");
-      return; // キャンセルされたらここで処理を中断
+    // ボタンのテキストを取得し、両端の空白を除去
+    const btnText = continueTaskBtn.textContent.trim();
+    console.log("【DEBUG】ボタンのテキスト:", JSON.stringify(btnText));
+
+    if (btnText === "結果へ進む") {
+      // 確認なしで結果表示へ
+      console.log("結果へ進む - confirmなしで結果へ");
+      taskEndOverlay.classList.add("hidden");
+      showResultsPage();
+    } else {
+      // 「次のタスクへ」などの場合は confirm を表示
+      console.log("次のタスクへ - confirm表示");
+      if (!confirm("次のタスクに進みますか？")) {
+        console.log("ユーザーはキャンセルしました");
+        return;
+      }
+      console.log("ユーザーはOKを押しました");
+      taskEndOverlay.classList.add("hidden");
+      startNextTask();
     }
-    console.log("ユーザーはOKを押しました（次のタスクへ進むオーバーレイ）");
-    taskEndOverlay.classList.add("hidden");
-    startNextTask();
   });
 
-  // ---------- メインUI要素の取得 ----------
-  const menuPlaceholder = document.getElementById("menu-placeholder");
-  const easingSelect = document.getElementById("easingSelect");
-
-  // ▼ グローバル変数に、ボタン要素を代入する
+  // ---------- メインUI取得 ----------
   startTutorialBtn = document.getElementById("startTutorialBtn");
   startTaskBtn = document.getElementById("taskStartBtn");
-  nextTaskBtn = document.getElementById("nextTaskBtn");
 
+  const menuPlaceholder = document.getElementById("menu-placeholder");
+  const easingSelect = document.getElementById("easingSelect");
   const downloadAllLogsBtn = document.getElementById("downloadAllLogsBtn");
 
   // JSON読み込み＆メニュー生成
@@ -152,22 +158,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // イージングセレクト
   easingSelect.addEventListener("change", updateEasingFunction);
 
-  // ★ チュートリアル完了オーバーレイを生成
+  // ★ チュートリアル完了オーバーレイ
   tutorialOverlay = createTutorialOverlay();
   document.body.appendChild(tutorialOverlay);
 
-  // ====== イベントリスナーの設定 ======
-
   // 「チュートリアル開始」ボタン
   startTutorialBtn.addEventListener("click", () => {
-    console.log("startTutorialBtn clicked!");
     if (!confirm("チュートリアルを開始しますか？")) {
-      console.log("ユーザーはキャンセルしました（チュートリアル開始）");
+      console.log("キャンセルされました（チュートリアル開始）");
       return;
     }
-    console.log("ユーザーはOKを押しました（チュートリアル開始）");
     startTutorial();
-    // チュートリアル開始後、両方のボタンを無効化
     startTutorialBtn.disabled = true;
     startTaskBtn.disabled = true;
   });
@@ -175,25 +176,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // 「本番タスク開始」ボタン
   startTaskBtn.addEventListener("click", () => {
     if (!confirm("タスクを開始しますか？")) {
-      console.log("ユーザーはキャンセルしました（タスク開始）");
-      return; // キャンセルされたら処理を中断する
+      console.log("キャンセルされました（タスク開始）");
+      return;
     }
-    console.log("ユーザーはOKを押しました（タスク開始）");
     startTask();
-    // タスク開始後、両方のボタンを無効化
     startTaskBtn.disabled = true;
     startTutorialBtn.disabled = true;
   });
-
-  // 「次のタスクへ進む」ボタン
-  nextTaskBtn.addEventListener("click", handleNextTask);
 
   // ログ一括ダウンロード
   downloadAllLogsBtn.addEventListener("click", handleDownloadAllLogs);
 });
 
 /* ==========================
-   ④ メニュー生成 (再帰)
+   メニュー生成 (再帰)
 ========================== */
 function createMenuRecursive(categoryArray, parentUL) {
   categoryArray.forEach((cat) => {
@@ -248,7 +244,7 @@ function createMenuRecursive(categoryArray, parentUL) {
 }
 
 /* ==========================
-   ⑤ クリック記録用関数
+   クリック記録用関数
 ========================== */
 function recordClick(categoryName) {
   const currentClickTime = performance.now();
@@ -306,7 +302,6 @@ function startTutorial() {
 
 function checkTutorialAnswer(clickedText) {
   const feedbackElem = document.getElementById("feedback");
-
   if (clickedText !== tutorialTargetItem) {
     feedbackElem.textContent = "チュートリアル：違う項目です。";
     feedbackElem.classList.remove("correct", "timeout");
@@ -325,7 +320,7 @@ function checkTutorialAnswer(clickedText) {
   feedbackElem.classList.add("correct");
 
   closeAllSubmenus();
-  // → チュートリアル完了オーバーレイ表示
+  // チュートリアル完了オーバーレイを表示
   tutorialOverlay.classList.remove("hidden");
 }
 
@@ -338,7 +333,6 @@ function startTask() {
   currentTaskIndex = 0;
 
   document.getElementById("resultsPage").style.display = "none";
-  nextTaskBtn.style.display = "none";
 
   const feedbackElem = document.getElementById("feedback");
   feedbackElem.textContent = "";
@@ -348,17 +342,13 @@ function startTask() {
 }
 
 /* ==========================
-   ⑥ 本番タスク開始
+   本番タスク開始
 ========================== */
 function startNextTask() {
   currentTaskIndex++;
   if (currentTaskIndex > MAX_TASKS) {
     showResultsPage();
     return;
-  }
-
-  if (currentTaskIndex === MAX_TASKS) {
-    nextTaskBtn.style.display = "none";
   }
 
   resetTaskVars();
@@ -368,8 +358,6 @@ function startNextTask() {
   const feedbackElem = document.getElementById("feedback");
   feedbackElem.textContent = "";
   feedbackElem.className = "";
-
-  nextTaskBtn.style.display = "none";
 
   // ラテン方格でイージング割り当て
   const rowIndex = participantId % 5;
@@ -406,7 +394,7 @@ function startNextTask() {
 }
 
 /* ==========================
-   ⑦ 正解チェック
+   正解チェック
 ========================== */
 function checkAnswer(clickedText) {
   const endTime = performance.now();
@@ -448,7 +436,7 @@ function checkAnswer(clickedText) {
     clicks: clicksThisTask,
   });
 
-  // タスク終了オーバーレイ
+  // タスク終了オーバーレイ（次のタスク、または結果へ）
   const taskEndOverlay = document.getElementById("taskEndOverlay");
   const continueTaskBtn = document.getElementById("continueTaskBtn");
   if (currentTaskIndex === MAX_TASKS) {
@@ -457,17 +445,10 @@ function checkAnswer(clickedText) {
     continueTaskBtn.textContent = "次のタスクへ";
   }
   taskEndOverlay.classList.remove("hidden");
-
-  // 次のタスクへ進むボタンを表示
-  if (currentTaskIndex === MAX_TASKS) {
-    nextTaskBtn.style.display = "none";
-  } else {
-    nextTaskBtn.style.display = "block";
-  }
 }
 
 /* ==========================
-   ⑨ タイムアウト
+   タイムアウト
 ========================== */
 function handleTimeout(targetItemName) {
   clearTimeout(timeoutId);
@@ -492,7 +473,7 @@ function handleTimeout(targetItemName) {
   const taskEndOverlay = document.getElementById("taskEndOverlay");
   const continueTaskBtn = document.getElementById("continueTaskBtn");
   if (currentTaskIndex === MAX_TASKS) {
-    continueTaskBtn.textContent = "結果に進む";
+    continueTaskBtn.textContent = "結果へ進む";
   } else {
     continueTaskBtn.textContent = "次のタスクへ";
   }
@@ -500,21 +481,12 @@ function handleTimeout(targetItemName) {
 }
 
 /* ==========================
-   ⑩ 次のタスクへ
-========================== */
-function handleNextTask() {
-  nextTaskBtn.style.display = "none";
-  startNextTask();
-}
-
-/* ==========================
-   ⑪ 全タスク終了
+   全タスク終了
 ========================== */
 function showResultsPage() {
   const feedbackElem = document.getElementById("feedback");
   feedbackElem.textContent = "";
   feedbackElem.className = "";
-  nextTaskBtn.style.display = "none";
 
   const resultsPage = document.getElementById("resultsPage");
   const resultsTableBody = document.querySelector("#resultsTable tbody");
@@ -540,11 +512,15 @@ function showResultsPage() {
     const tdTimeout = document.createElement("td");
     tdTimeout.textContent = log.timedOut ? "Yes" : "No";
 
+    const tdEasing = document.createElement("td");
+    tdEasing.textContent = log.usedEasing;
+
     tr.appendChild(tdTask);
     tr.appendChild(tdCorrect);
     tr.appendChild(tdTime);
     tr.appendChild(tdError);
     tr.appendChild(tdTimeout);
+    tr.appendChild(tdEasing);
 
     resultsTableBody.appendChild(tr);
   });
@@ -554,7 +530,7 @@ function showResultsPage() {
 }
 
 /* ==========================
-   ⑫ ログ一括ダウンロード
+   ログ一括ダウンロード
 ========================== */
 function handleDownloadAllLogs() {
   const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(allLogs, null, 2));
@@ -566,7 +542,7 @@ function handleDownloadAllLogs() {
 }
 
 /* ==========================
-   ⑬ イージング関数更新
+   イージング関数更新
 ========================== */
 function updateEasingFunction() {
   const easingSelect = document.getElementById("easingSelect");
@@ -575,7 +551,7 @@ function updateEasingFunction() {
 }
 
 /* ==========================
-   ⑭ メニュー開閉アニメ (多層)
+   メニュー開閉アニメ (多層)
 ========================== */
 function animateSubmenu(targetSubmenu) {
   if (!targetSubmenu) return;
@@ -644,7 +620,7 @@ function getMenuLevel(submenu) {
 }
 
 /* ==========================
-   ⑮ 葉ノードのname全取得
+   葉ノードのname全取得
 ========================== */
 function getAllLeafNames(categories) {
   let result = [];
@@ -659,7 +635,7 @@ function getAllLeafNames(categories) {
 }
 
 /* ==========================
-   ⑯ name → depth
+   name → depth
 ========================== */
 function getCategoryDepthByName(categories, targetName, depth = 0) {
   for (const cat of categories) {
@@ -675,7 +651,7 @@ function getCategoryDepthByName(categories, targetName, depth = 0) {
 }
 
 /* ==========================
-   ⑰ ターゲットアイテムまでのパス (DFS)
+   ターゲットアイテムまでのパス (DFS)
 ========================== */
 function findPathToLeaf(categories, targetName, currentPath = []) {
   for (const cat of categories) {
@@ -694,7 +670,7 @@ function findPathToLeaf(categories, targetName, currentPath = []) {
 }
 
 /* ==========================
-   ⑱ アニメを飛ばして即開
+   アニメを飛ばして即開
 ========================== */
 function openMenuImmediately(submenu) {
   submenu.style.transition = "none";
@@ -738,10 +714,10 @@ function createTutorialOverlay() {
     closeTutorialBtn.addEventListener("click", () => {
       console.log("閉じるボタンがクリックされました");
 
-      // 1. オーバーレイを隠す
+      // 1. オーバーレイを非表示
       overlay.classList.add("hidden");
 
-      // 2. フィードバックとタスク情報の表示をクリアする
+      // 2. フィードバックとタスク情報の表示をクリア
       const feedbackElem = document.getElementById("feedback");
       if (feedbackElem) {
         feedbackElem.textContent = "";
@@ -752,7 +728,7 @@ function createTutorialOverlay() {
         taskInfo.textContent = "";
       }
 
-      // 3. 「チュートリアル開始」ボタンと「タスク開始」ボタンを有効化
+      // 3. startTutorialBtn / startTaskBtn を有効化
       if (startTutorialBtn) {
         startTutorialBtn.disabled = false;
       }
@@ -760,10 +736,10 @@ function createTutorialOverlay() {
         startTaskBtn.disabled = false;
       }
 
-      // 4. サブメニューをすべて閉じる
+      // 4. サブメニューを閉じる
       closeAllSubmenus();
 
-      // 5. 内部情報のリセット
+      // 5. 内部情報リセット
       resetAllInfo();
 
       console.log("startTutorialBtn.disabled:", startTutorialBtn ? startTutorialBtn.disabled : "not found");
