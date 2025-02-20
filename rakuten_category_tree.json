@@ -1,0 +1,2379 @@
+{
+  "categories": [
+    {
+      "name": "レディースファッション",
+      "subcategories": [
+        {
+          "name": "トップス",
+          "subcategories": []
+        },
+        {
+          "name": "ボトムス",
+          "subcategories": []
+        },
+        {
+          "name": "コート・ジャケット",
+          "subcategories": []
+        },
+        {
+          "name": "ワンピース",
+          "subcategories": []
+        },
+        {
+          "name": "シャツワンピース",
+          "subcategories": []
+        },
+        {
+          "name": "ジャンパースカート",
+          "subcategories": []
+        },
+        {
+          "name": "チュニック",
+          "subcategories": []
+        },
+        {
+          "name": "ドレス",
+          "subcategories": []
+        },
+        {
+          "name": "パンツドレス",
+          "subcategories": []
+        },
+        {
+          "name": "スーツ・セットアップ",
+          "subcategories": []
+        },
+        {
+          "name": "オールインワン・サロペット",
+          "subcategories": []
+        },
+        {
+          "name": "レインウェア",
+          "subcategories": []
+        },
+        {
+          "name": "水着",
+          "subcategories": []
+        },
+        {
+          "name": "和服",
+          "subcategories": []
+        },
+        {
+          "name": "事務服",
+          "subcategories": []
+        },
+        {
+          "name": "学生服",
+          "subcategories": []
+        },
+        {
+          "name": "ウェディングドレス",
+          "subcategories": []
+        },
+        {
+          "name": "オーダーメイド",
+          "subcategories": []
+        },
+        {
+          "name": "福袋",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "メンズファッション",
+      "subcategories": [
+        {
+          "name": "トップス",
+          "subcategories": []
+        },
+        {
+          "name": "ズボン・パンツ",
+          "subcategories": []
+        },
+        {
+          "name": "コート・ジャケット",
+          "subcategories": []
+        },
+        {
+          "name": "オーバーオール",
+          "subcategories": []
+        },
+        {
+          "name": "スーツ・セットアップ",
+          "subcategories": []
+        },
+        {
+          "name": "レインウェア",
+          "subcategories": []
+        },
+        {
+          "name": "和服",
+          "subcategories": []
+        },
+        {
+          "name": "学生服",
+          "subcategories": []
+        },
+        {
+          "name": "水着",
+          "subcategories": []
+        },
+        {
+          "name": "福袋",
+          "subcategories": []
+        },
+        {
+          "name": "オーダーメイド",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "インナー・下着・ナイトウェア",
+      "subcategories": [
+        {
+          "name": "レディース",
+          "subcategories": []
+        },
+        {
+          "name": "メンズ",
+          "subcategories": []
+        },
+        {
+          "name": "ユニセックス",
+          "subcategories": []
+        },
+        {
+          "name": "ペアルック",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "バッグ・小物・ブランド雑貨",
+      "subcategories": [
+        {
+          "name": "バッグ",
+          "subcategories": []
+        },
+        {
+          "name": "財布・ケース",
+          "subcategories": []
+        },
+        {
+          "name": "帽子",
+          "subcategories": []
+        },
+        {
+          "name": "目出し帽",
+          "subcategories": []
+        },
+        {
+          "name": "眼鏡・サングラス",
+          "subcategories": []
+        },
+        {
+          "name": "傘",
+          "subcategories": []
+        },
+        {
+          "name": "スーツ用ファッション小物",
+          "subcategories": []
+        },
+        {
+          "name": "マフラー・スカーフ",
+          "subcategories": []
+        },
+        {
+          "name": "ハンカチ・ハンドタオル",
+          "subcategories": []
+        },
+        {
+          "name": "ウィッグ・かつら・つけ毛",
+          "subcategories": []
+        },
+        {
+          "name": "手袋・アームカバー",
+          "subcategories": []
+        },
+        {
+          "name": "耳あて",
+          "subcategories": []
+        },
+        {
+          "name": "ネックストラップ",
+          "subcategories": []
+        },
+        {
+          "name": "付け襟",
+          "subcategories": []
+        },
+        {
+          "name": "リストバンド",
+          "subcategories": []
+        },
+        {
+          "name": "ベルト・サスペンダー",
+          "subcategories": []
+        },
+        {
+          "name": "手鏡・コンパクトミラー",
+          "subcategories": []
+        },
+        {
+          "name": "革・レザーケア用品",
+          "subcategories": []
+        },
+        {
+          "name": "ウェディング小物",
+          "subcategories": []
+        },
+        {
+          "name": "セット",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "靴",
+      "subcategories": [
+        {
+          "name": "レディース靴",
+          "subcategories": []
+        },
+        {
+          "name": "メンズ靴",
+          "subcategories": []
+        },
+        {
+          "name": "靴ケア用品・アクセサリー",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "腕時計",
+      "subcategories": [
+        {
+          "name": "メンズ腕時計",
+          "subcategories": []
+        },
+        {
+          "name": "レディース腕時計",
+          "subcategories": []
+        },
+        {
+          "name": "男女兼用腕時計",
+          "subcategories": []
+        },
+        {
+          "name": "ペアウォッチ",
+          "subcategories": []
+        },
+        {
+          "name": "キッズ用腕時計",
+          "subcategories": []
+        },
+        {
+          "name": "懐中時計",
+          "subcategories": []
+        },
+        {
+          "name": "腕時計用アクセサリー",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "ジュエリー・アクセサリー",
+      "subcategories": [
+        {
+          "name": "レディースジュエリー・アクセサリー",
+          "subcategories": []
+        },
+        {
+          "name": "メンズジュエリー・アクセサリー",
+          "subcategories": []
+        },
+        {
+          "name": "ペアアクセサリー",
+          "subcategories": []
+        },
+        {
+          "name": "男女兼用アクセサリー",
+          "subcategories": []
+        },
+        {
+          "name": "ブライダルジュエリー・アクセサリー",
+          "subcategories": []
+        },
+        {
+          "name": "ボディピアス",
+          "subcategories": []
+        },
+        {
+          "name": "タトゥーシール",
+          "subcategories": []
+        },
+        {
+          "name": "ジュエリー・アクセサリー用品",
+          "subcategories": []
+        },
+        {
+          "name": "ルースストーン",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "キッズ・ベビー・マタニティ",
+      "subcategories": [
+        {
+          "name": "キッズファッション",
+          "subcategories": []
+        },
+        {
+          "name": "ベビーファッション",
+          "subcategories": []
+        },
+        {
+          "name": "チャイルドシート",
+          "subcategories": []
+        },
+        {
+          "name": "ベビーカー",
+          "subcategories": []
+        },
+        {
+          "name": "抱っこひも・ベビースリング",
+          "subcategories": []
+        },
+        {
+          "name": "ベビー用寝具・ベッド",
+          "subcategories": []
+        },
+        {
+          "name": "ベビー用インテリア・収納用品",
+          "subcategories": []
+        },
+        {
+          "name": "おふろ・バス用品",
+          "subcategories": []
+        },
+        {
+          "name": "おむつ・トイレ用品",
+          "subcategories": []
+        },
+        {
+          "name": "ヘルスケア・衛生用品",
+          "subcategories": []
+        },
+        {
+          "name": "授乳用品・ベビー用食事用品",
+          "subcategories": []
+        },
+        {
+          "name": "キッズ用セーフティグッズ",
+          "subcategories": []
+        },
+        {
+          "name": "ベビー用セーフティグッズ",
+          "subcategories": []
+        },
+        {
+          "name": "キッズ用教材・お道具箱",
+          "subcategories": []
+        },
+        {
+          "name": "ベビー用教材",
+          "subcategories": []
+        },
+        {
+          "name": "キッズコスメ",
+          "subcategories": []
+        },
+        {
+          "name": "名前シール・スタンプ",
+          "subcategories": []
+        },
+        {
+          "name": "マタニティ・ママ用品",
+          "subcategories": []
+        },
+        {
+          "name": "出産祝い・ギフト",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "おもちゃ",
+      "subcategories": [
+        {
+          "name": "ファミリートイ・ゲーム",
+          "subcategories": []
+        },
+        {
+          "name": "ぬいぐるみ・人形",
+          "subcategories": []
+        },
+        {
+          "name": "乗り物のおもちゃ",
+          "subcategories": []
+        },
+        {
+          "name": "ロボットのおもちゃ",
+          "subcategories": []
+        },
+        {
+          "name": "ブロック",
+          "subcategories": []
+        },
+        {
+          "name": "ベビー向けおもちゃ",
+          "subcategories": []
+        },
+        {
+          "name": "知育玩具・学習玩具",
+          "subcategories": []
+        },
+        {
+          "name": "視覚玩具・万華鏡",
+          "subcategories": []
+        },
+        {
+          "name": "楽器玩具",
+          "subcategories": []
+        },
+        {
+          "name": "ままごと・ごっこ遊びトイ",
+          "subcategories": []
+        },
+        {
+          "name": "スポーツトイ・アクショントイ",
+          "subcategories": []
+        },
+        {
+          "name": "砂あそび",
+          "subcategories": []
+        },
+        {
+          "name": "プール・水遊び",
+          "subcategories": []
+        },
+        {
+          "name": "花火",
+          "subcategories": []
+        },
+        {
+          "name": "乗用玩具・三輪車",
+          "subcategories": []
+        },
+        {
+          "name": "なりきりアイテム・変身ベルト",
+          "subcategories": []
+        },
+        {
+          "name": "クッキングトイ",
+          "subcategories": []
+        },
+        {
+          "name": "メイキングトイ",
+          "subcategories": []
+        },
+        {
+          "name": "電子玩具・キッズ家電",
+          "subcategories": []
+        },
+        {
+          "name": "日本人形・フランス人形",
+          "subcategories": []
+        },
+        {
+          "name": "雛祭り・端午の節句",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "スポーツ・アウトドア",
+      "subcategories": [
+        {
+          "name": "スポーツウェア・アクセサリー",
+          "subcategories": []
+        },
+        {
+          "name": "自転車・サイクリング",
+          "subcategories": []
+        },
+        {
+          "name": "トライアスロン",
+          "subcategories": []
+        },
+        {
+          "name": "アウトドア",
+          "subcategories": []
+        },
+        {
+          "name": "登山・クライミング",
+          "subcategories": []
+        },
+        {
+          "name": "フィッシング",
+          "subcategories": []
+        },
+        {
+          "name": "マリンスポーツ",
+          "subcategories": []
+        },
+        {
+          "name": "ウインタースポーツ",
+          "subcategories": []
+        },
+        {
+          "name": "フィットネス・トレーニング",
+          "subcategories": []
+        },
+        {
+          "name": "ランニング・マラソン",
+          "subcategories": []
+        },
+        {
+          "name": "陸上・トラック競技",
+          "subcategories": []
+        },
+        {
+          "name": "ヨガ・ピラティス",
+          "subcategories": []
+        },
+        {
+          "name": "体操・ダンス",
+          "subcategories": []
+        },
+        {
+          "name": "水泳",
+          "subcategories": []
+        },
+        {
+          "name": "ゴルフ",
+          "subcategories": []
+        },
+        {
+          "name": "野球・ソフトボール",
+          "subcategories": []
+        },
+        {
+          "name": "サッカー・フットサル",
+          "subcategories": []
+        },
+        {
+          "name": "テニス",
+          "subcategories": []
+        },
+        {
+          "name": "バスケットボール",
+          "subcategories": []
+        },
+        {
+          "name": "バレーボール",
+          "subcategories": []
+        },
+        {
+          "name": "ハンドボール",
+          "subcategories": []
+        },
+        {
+          "name": "卓球",
+          "subcategories": []
+        },
+        {
+          "name": "バドミントン",
+          "subcategories": []
+        },
+        {
+          "name": "スカッシュ",
+          "subcategories": []
+        },
+        {
+          "name": "ラクロス",
+          "subcategories": []
+        },
+        {
+          "name": "ラグビー",
+          "subcategories": []
+        },
+        {
+          "name": "アメリカンフットボール",
+          "subcategories": []
+        },
+        {
+          "name": "スケートボード・インラインスケート",
+          "subcategories": []
+        },
+        {
+          "name": "フィールドホッケー・インラインホッケー",
+          "subcategories": []
+        },
+        {
+          "name": "格闘技・武術",
+          "subcategories": []
+        },
+        {
+          "name": "アーチェリー",
+          "subcategories": []
+        },
+        {
+          "name": "レクリエーションスポーツ",
+          "subcategories": []
+        },
+        {
+          "name": "乗馬",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "家電",
+      "subcategories": [
+        {
+          "name": "生活家電",
+          "subcategories": []
+        },
+        {
+          "name": "住宅設備家電",
+          "subcategories": []
+        },
+        {
+          "name": "キッチン家電",
+          "subcategories": []
+        },
+        {
+          "name": "美容・健康家電",
+          "subcategories": []
+        },
+        {
+          "name": "季節・空調家電",
+          "subcategories": []
+        },
+        {
+          "name": "電話機・FAX",
+          "subcategories": []
+        },
+        {
+          "name": "電卓・デジタル文具",
+          "subcategories": []
+        },
+        {
+          "name": "電池",
+          "subcategories": []
+        },
+        {
+          "name": "家電セット",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "TV・オーディオ・カメラ",
+      "subcategories": [
+        {
+          "name": "カメラ・ビデオカメラ・光学機器",
+          "subcategories": []
+        },
+        {
+          "name": "オーディオ",
+          "subcategories": []
+        },
+        {
+          "name": "テレビ",
+          "subcategories": []
+        },
+        {
+          "name": "光ディスクレコーダー・プレーヤー",
+          "subcategories": []
+        },
+        {
+          "name": "ポータブルテレビ",
+          "subcategories": []
+        },
+        {
+          "name": "スマートスピーカー・AIスピーカー",
+          "subcategories": []
+        },
+        {
+          "name": "ホームシアターシステム",
+          "subcategories": []
+        },
+        {
+          "name": "ホームプロジェクター",
+          "subcategories": []
+        },
+        {
+          "name": "ポータブルプロジェクター",
+          "subcategories": []
+        },
+        {
+          "name": "無線・トランシーバー",
+          "subcategories": []
+        },
+        {
+          "name": "録画・録音用メディア",
+          "subcategories": []
+        },
+        {
+          "name": "ICレコーダー",
+          "subcategories": []
+        },
+        {
+          "name": "メモリーカード",
+          "subcategories": []
+        },
+        {
+          "name": "アクセサリー・部品",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "パソコン・周辺機器",
+      "subcategories": [
+        {
+          "name": "パソコン",
+          "subcategories": []
+        },
+        {
+          "name": "外付けドライブ・ストレージ",
+          "subcategories": []
+        },
+        {
+          "name": "ICカードリーダー・ライター",
+          "subcategories": []
+        },
+        {
+          "name": "PCパーツ",
+          "subcategories": []
+        },
+        {
+          "name": "PCアクセサリー",
+          "subcategories": []
+        },
+        {
+          "name": "PCソフト",
+          "subcategories": []
+        },
+        {
+          "name": "PCサプライ・消耗品",
+          "subcategories": []
+        },
+        {
+          "name": "ディスプレイ",
+          "subcategories": []
+        },
+        {
+          "name": "プリンタ",
+          "subcategories": []
+        },
+        {
+          "name": "ネットワーク機器",
+          "subcategories": []
+        },
+        {
+          "name": "ワイヤレスディスプレイアダプタ",
+          "subcategories": []
+        },
+        {
+          "name": "マウス・キーボード・入力機器",
+          "subcategories": []
+        },
+        {
+          "name": "オフィス機器",
+          "subcategories": []
+        },
+        {
+          "name": "オフィス機器用アクセサリー・部品",
+          "subcategories": []
+        },
+        {
+          "name": "ゲーム用機器",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "スマートフォン・タブレット",
+      "subcategories": [
+        {
+          "name": "スマートフォン本体",
+          "subcategories": []
+        },
+        {
+          "name": "携帯電話本体",
+          "subcategories": []
+        },
+        {
+          "name": "スマートフォン・携帯電話アクセサリー",
+          "subcategories": []
+        },
+        {
+          "name": "スマートフォン・タブレット用ケーブル・変換アダプター",
+          "subcategories": []
+        },
+        {
+          "name": "タブレットPC本体",
+          "subcategories": []
+        },
+        {
+          "name": "タブレットPCアクセサリー",
+          "subcategories": []
+        },
+        {
+          "name": "スマートウォッチ本体",
+          "subcategories": []
+        },
+        {
+          "name": "スマートウォッチアクセサリー",
+          "subcategories": []
+        },
+        {
+          "name": "VRゴーグル",
+          "subcategories": []
+        },
+        {
+          "name": "メディアストリーミング端末",
+          "subcategories": []
+        },
+        {
+          "name": "バッテリー・充電器",
+          "subcategories": []
+        },
+        {
+          "name": "ヘッドセット・イヤホンマイク",
+          "subcategories": []
+        },
+        {
+          "name": "電子書籍リーダー本体",
+          "subcategories": []
+        },
+        {
+          "name": "電子書籍リーダーアクセサリー",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "光回線・モバイル通信",
+      "subcategories": [
+        {
+          "name": "SIMカード",
+          "subcategories": []
+        },
+        {
+          "name": "SIMカード・端末セット",
+          "subcategories": []
+        },
+        {
+          "name": "モバイルルーター",
+          "subcategories": []
+        },
+        {
+          "name": "モバイルルーター用アクセサリー",
+          "subcategories": []
+        },
+        {
+          "name": "光回線",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "食品",
+      "subcategories": [
+        {
+          "name": "米・雑穀",
+          "subcategories": []
+        },
+        {
+          "name": "魚介類・水産加工品",
+          "subcategories": []
+        },
+        {
+          "name": "精肉・肉加工品",
+          "subcategories": []
+        },
+        {
+          "name": "野菜・きのこ",
+          "subcategories": []
+        },
+        {
+          "name": "フルーツ・果物",
+          "subcategories": []
+        },
+        {
+          "name": "卵",
+          "subcategories": []
+        },
+        {
+          "name": "惣菜",
+          "subcategories": []
+        },
+        {
+          "name": "麺類",
+          "subcategories": []
+        },
+        {
+          "name": "パン・ジャム・シリアル",
+          "subcategories": []
+        },
+        {
+          "name": "チーズ・乳製品",
+          "subcategories": []
+        },
+        {
+          "name": "豆腐・納豆・こんにゃく",
+          "subcategories": []
+        },
+        {
+          "name": "漬物・梅干し・キムチ",
+          "subcategories": []
+        },
+        {
+          "name": "練り物",
+          "subcategories": []
+        },
+        {
+          "name": "調味料",
+          "subcategories": []
+        },
+        {
+          "name": "粉類",
+          "subcategories": []
+        },
+        {
+          "name": "乾物",
+          "subcategories": []
+        },
+        {
+          "name": "缶詰",
+          "subcategories": []
+        },
+        {
+          "name": "瓶詰",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "スイーツ・お菓子",
+      "subcategories": [
+        {
+          "name": "洋菓子",
+          "subcategories": []
+        },
+        {
+          "name": "クッキー・焼き菓子",
+          "subcategories": []
+        },
+        {
+          "name": "チョコレート",
+          "subcategories": []
+        },
+        {
+          "name": "ケーキ",
+          "subcategories": []
+        },
+        {
+          "name": "アイスクリーム・シャーベット",
+          "subcategories": []
+        },
+        {
+          "name": "製菓・製パン材料",
+          "subcategories": []
+        },
+        {
+          "name": "和菓子",
+          "subcategories": []
+        },
+        {
+          "name": "せんべい・米菓",
+          "subcategories": []
+        },
+        {
+          "name": "スナック菓子",
+          "subcategories": []
+        },
+        {
+          "name": "駄菓子",
+          "subcategories": []
+        },
+        {
+          "name": "中華菓子",
+          "subcategories": []
+        },
+        {
+          "name": "あめ・ミント・ガム",
+          "subcategories": []
+        },
+        {
+          "name": "ナッツ",
+          "subcategories": []
+        },
+        {
+          "name": "ドライフルーツ",
+          "subcategories": []
+        },
+        {
+          "name": "栄養補助スナック",
+          "subcategories": []
+        },
+        {
+          "name": "各種スイーツ・お菓子セット",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "水・ソフトドリンク",
+      "subcategories": [
+        {
+          "name": "水・炭酸水",
+          "subcategories": []
+        },
+        {
+          "name": "炭酸飲料",
+          "subcategories": []
+        },
+        {
+          "name": "スポーツドリンク",
+          "subcategories": []
+        },
+        {
+          "name": "野菜・果実飲料",
+          "subcategories": []
+        },
+        {
+          "name": "スムージー",
+          "subcategories": []
+        },
+        {
+          "name": "お酢飲料",
+          "subcategories": []
+        },
+        {
+          "name": "コーヒー",
+          "subcategories": []
+        },
+        {
+          "name": "ココア・チョコレートドリンク",
+          "subcategories": []
+        },
+        {
+          "name": "牛乳",
+          "subcategories": []
+        },
+        {
+          "name": "植物性ミルク",
+          "subcategories": []
+        },
+        {
+          "name": "フルーツ入り乳飲料",
+          "subcategories": []
+        },
+        {
+          "name": "乳酸菌飲料",
+          "subcategories": []
+        },
+        {
+          "name": "お茶・紅茶",
+          "subcategories": []
+        },
+        {
+          "name": "柚子茶",
+          "subcategories": []
+        },
+        {
+          "name": "生姜湯",
+          "subcategories": []
+        },
+        {
+          "name": "甘酒",
+          "subcategories": []
+        },
+        {
+          "name": "ゼリー飲料",
+          "subcategories": []
+        },
+        {
+          "name": "希釈用ドリンク",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "ビール・洋酒",
+      "subcategories": [
+        {
+          "name": "ビール・発泡酒",
+          "subcategories": []
+        },
+        {
+          "name": "チューハイ・ハイボール・カクテル",
+          "subcategories": []
+        },
+        {
+          "name": "ワイン",
+          "subcategories": []
+        },
+        {
+          "name": "ウイスキー",
+          "subcategories": []
+        },
+        {
+          "name": "ブランデー",
+          "subcategories": []
+        },
+        {
+          "name": "ジン",
+          "subcategories": []
+        },
+        {
+          "name": "ラム",
+          "subcategories": []
+        },
+        {
+          "name": "ウォッカ",
+          "subcategories": []
+        },
+        {
+          "name": "テキーラ",
+          "subcategories": []
+        },
+        {
+          "name": "シュナップス",
+          "subcategories": []
+        },
+        {
+          "name": "アクアビット",
+          "subcategories": []
+        },
+        {
+          "name": "コルン",
+          "subcategories": []
+        },
+        {
+          "name": "リキュール",
+          "subcategories": []
+        },
+        {
+          "name": "中国酒",
+          "subcategories": []
+        },
+        {
+          "name": "マッコリ",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "日本酒・焼酎",
+      "subcategories": [
+        {
+          "name": "日本酒",
+          "subcategories": []
+        },
+        {
+          "name": "焼酎",
+          "subcategories": []
+        },
+        {
+          "name": "梅酒",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "インテリア・寝具・収納",
+      "subcategories": [
+        {
+          "name": "寝具",
+          "subcategories": []
+        },
+        {
+          "name": "ベッド",
+          "subcategories": []
+        },
+        {
+          "name": "収納家具",
+          "subcategories": []
+        },
+        {
+          "name": "ライト・照明器具",
+          "subcategories": []
+        },
+        {
+          "name": "テーブル",
+          "subcategories": []
+        },
+        {
+          "name": "デスク",
+          "subcategories": []
+        },
+        {
+          "name": "イス・チェア",
+          "subcategories": []
+        },
+        {
+          "name": "ソファ・ソファベッド",
+          "subcategories": []
+        },
+        {
+          "name": "ビーズクッション",
+          "subcategories": []
+        },
+        {
+          "name": "ダイニングセット",
+          "subcategories": []
+        },
+        {
+          "name": "オフィス家具",
+          "subcategories": []
+        },
+        {
+          "name": "子供部屋用インテリア・寝具・収納",
+          "subcategories": []
+        },
+        {
+          "name": "カーテン・ブラインド",
+          "subcategories": []
+        },
+        {
+          "name": "カーペット・マット・畳",
+          "subcategories": []
+        },
+        {
+          "name": "ソファカバー・イスカバー",
+          "subcategories": []
+        },
+        {
+          "name": "クッション・座布団",
+          "subcategories": []
+        },
+        {
+          "name": "こたつ用布団・カバー",
+          "subcategories": []
+        },
+        {
+          "name": "壁紙・装飾フィルム",
+          "subcategories": []
+        },
+        {
+          "name": "鏡",
+          "subcategories": []
+        },
+        {
+          "name": "インテリア小物・置物",
+          "subcategories": []
+        },
+        {
+          "name": "ゴミ箱",
+          "subcategories": []
+        },
+        {
+          "name": "ボックスティッシュケース",
+          "subcategories": []
+        },
+        {
+          "name": "置き時計・掛け時計",
+          "subcategories": []
+        },
+        {
+          "name": "温度計・湿度計",
+          "subcategories": []
+        },
+        {
+          "name": "ドアストッパー",
+          "subcategories": []
+        },
+        {
+          "name": "間仕切り",
+          "subcategories": []
+        },
+        {
+          "name": "火鉢",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "日用品雑貨・文房具・手芸",
+      "subcategories": [
+        {
+          "name": "日用消耗品",
+          "subcategories": []
+        },
+        {
+          "name": "生活雑貨",
+          "subcategories": []
+        },
+        {
+          "name": "文房具・事務用品",
+          "subcategories": []
+        },
+        {
+          "name": "印鑑・ハンコ",
+          "subcategories": []
+        },
+        {
+          "name": "手芸・クラフト・生地",
+          "subcategories": []
+        },
+        {
+          "name": "タオル",
+          "subcategories": []
+        },
+        {
+          "name": "バス用品",
+          "subcategories": []
+        },
+        {
+          "name": "洗濯用品",
+          "subcategories": []
+        },
+        {
+          "name": "掃除用品",
+          "subcategories": []
+        },
+        {
+          "name": "洋服ブラシ・毛玉取り",
+          "subcategories": []
+        },
+        {
+          "name": "トイレ用品",
+          "subcategories": []
+        },
+        {
+          "name": "旅行用品",
+          "subcategories": []
+        },
+        {
+          "name": "防災関連グッズ",
+          "subcategories": []
+        },
+        {
+          "name": "防犯関連グッズ",
+          "subcategories": []
+        },
+        {
+          "name": "仏壇・仏具・神具",
+          "subcategories": []
+        },
+        {
+          "name": "冠婚葬祭",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "キッチン用品・食器・調理器具",
+      "subcategories": [
+        {
+          "name": "食器・カトラリー・グラス",
+          "subcategories": []
+        },
+        {
+          "name": "鍋・フライパン",
+          "subcategories": []
+        },
+        {
+          "name": "調理器具・製菓器具",
+          "subcategories": []
+        },
+        {
+          "name": "弁当箱・水筒",
+          "subcategories": []
+        },
+        {
+          "name": "配膳用品・キッチンファブリック",
+          "subcategories": []
+        },
+        {
+          "name": "料理用飾り花・葉",
+          "subcategories": []
+        },
+        {
+          "name": "業務用厨房機器・用品",
+          "subcategories": []
+        },
+        {
+          "name": "保存容器・調味料入れ",
+          "subcategories": []
+        },
+        {
+          "name": "コーヒー・お茶用品",
+          "subcategories": []
+        },
+        {
+          "name": "ワイン・バー・酒用品",
+          "subcategories": []
+        },
+        {
+          "name": "水まわり用品",
+          "subcategories": []
+        },
+        {
+          "name": "キッチン整理用品",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "本・雑誌・コミック",
+      "subcategories": [
+        {
+          "name": "小説・エッセイ",
+          "subcategories": []
+        },
+        {
+          "name": "資格・検定",
+          "subcategories": []
+        },
+        {
+          "name": "ライフスタイル",
+          "subcategories": []
+        },
+        {
+          "name": "ホビー・スポーツ・美術",
+          "subcategories": []
+        },
+        {
+          "name": "絵本・児童書・図鑑",
+          "subcategories": []
+        },
+        {
+          "name": "語学・辞典・年鑑",
+          "subcategories": []
+        },
+        {
+          "name": "学習参考書・問題集",
+          "subcategories": []
+        },
+        {
+          "name": "旅行・留学",
+          "subcategories": []
+        },
+        {
+          "name": "人文・地歴・社会",
+          "subcategories": []
+        },
+        {
+          "name": "ビジネス・経済・就職",
+          "subcategories": []
+        },
+        {
+          "name": "PC・システム開発",
+          "subcategories": []
+        },
+        {
+          "name": "科学・医学・技術",
+          "subcategories": []
+        },
+        {
+          "name": "コミック",
+          "subcategories": []
+        },
+        {
+          "name": "ライトノベル",
+          "subcategories": []
+        },
+        {
+          "name": "ボーイズラブ",
+          "subcategories": []
+        },
+        {
+          "name": "ティーンズラブ",
+          "subcategories": []
+        },
+        {
+          "name": "エンターテインメント",
+          "subcategories": []
+        },
+        {
+          "name": "写真集",
+          "subcategories": []
+        },
+        {
+          "name": "古書・希少本",
+          "subcategories": []
+        },
+        {
+          "name": "楽譜",
+          "subcategories": []
+        },
+        {
+          "name": "雑誌",
+          "subcategories": []
+        },
+        {
+          "name": "新聞",
+          "subcategories": []
+        },
+        {
+          "name": "洋書",
+          "subcategories": []
+        },
+        {
+          "name": "カレンダー",
+          "subcategories": []
+        },
+        {
+          "name": "ポスター",
+          "subcategories": []
+        },
+        {
+          "name": "パンフレット",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "CD・DVD",
+      "subcategories": [
+        {
+          "name": "CD",
+          "subcategories": []
+        },
+        {
+          "name": "DVD",
+          "subcategories": []
+        },
+        {
+          "name": "Blu-ray",
+          "subcategories": []
+        },
+        {
+          "name": "レコード",
+          "subcategories": []
+        },
+        {
+          "name": "ビデオ",
+          "subcategories": []
+        },
+        {
+          "name": "カセット",
+          "subcategories": []
+        },
+        {
+          "name": "LD",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "テレビゲーム",
+      "subcategories": [
+        {
+          "name": "プレイステーション5",
+          "subcategories": []
+        },
+        {
+          "name": "Xbox Series X/S",
+          "subcategories": []
+        },
+        {
+          "name": "Nintendo Switch",
+          "subcategories": []
+        },
+        {
+          "name": "WiiU",
+          "subcategories": []
+        },
+        {
+          "name": "プレイステーション4",
+          "subcategories": []
+        },
+        {
+          "name": "XboxOne",
+          "subcategories": []
+        },
+        {
+          "name": "プレイステーション・ヴィータ",
+          "subcategories": []
+        },
+        {
+          "name": "プレイステーション3",
+          "subcategories": []
+        },
+        {
+          "name": "プレイステーション・ポータブル",
+          "subcategories": []
+        },
+        {
+          "name": "Xbox360",
+          "subcategories": []
+        },
+        {
+          "name": "Nintendo 3DS・2DS",
+          "subcategories": []
+        },
+        {
+          "name": "Nintendo DS",
+          "subcategories": []
+        },
+        {
+          "name": "Wii",
+          "subcategories": []
+        },
+        {
+          "name": "プレイステーション2",
+          "subcategories": []
+        },
+        {
+          "name": "プレイステーション",
+          "subcategories": []
+        },
+        {
+          "name": "ゲームキューブ",
+          "subcategories": []
+        },
+        {
+          "name": "ゲームボーイアドバンス",
+          "subcategories": []
+        },
+        {
+          "name": "スーパーファミコン",
+          "subcategories": []
+        },
+        {
+          "name": "ファミコン",
+          "subcategories": []
+        },
+        {
+          "name": "NINTENDO 64",
+          "subcategories": []
+        },
+        {
+          "name": "ゲームボーイ",
+          "subcategories": []
+        },
+        {
+          "name": "Xbox",
+          "subcategories": []
+        },
+        {
+          "name": "ドリームキャスト",
+          "subcategories": []
+        },
+        {
+          "name": "セガサターン",
+          "subcategories": []
+        },
+        {
+          "name": "アーケードゲーム",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "ホビー",
+      "subcategories": [
+        {
+          "name": "パーティー・イベント用品",
+          "subcategories": []
+        },
+        {
+          "name": "コスプレ・変装・仮装",
+          "subcategories": []
+        },
+        {
+          "name": "コレクション",
+          "subcategories": []
+        },
+        {
+          "name": "アート・美術品・骨董品・民芸品",
+          "subcategories": []
+        },
+        {
+          "name": "占い・開運・風水・パワーストーン",
+          "subcategories": []
+        },
+        {
+          "name": "サバイバルゲーム・トイガン",
+          "subcategories": []
+        },
+        {
+          "name": "ラジコン・ドローン",
+          "subcategories": []
+        },
+        {
+          "name": "鉄道模型",
+          "subcategories": []
+        },
+        {
+          "name": "プラモデル・模型",
+          "subcategories": []
+        },
+        {
+          "name": "ホビー工具・材料",
+          "subcategories": []
+        },
+        {
+          "name": "パズル",
+          "subcategories": []
+        },
+        {
+          "name": "手品・マジック",
+          "subcategories": []
+        },
+        {
+          "name": "電子工作・実験",
+          "subcategories": []
+        },
+        {
+          "name": "標本・化石",
+          "subcategories": []
+        },
+        {
+          "name": "ダーツ・ビリヤード・遊技機",
+          "subcategories": []
+        },
+        {
+          "name": "喫煙具",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "楽器・音響機器",
+      "subcategories": [
+        {
+          "name": "ギター・ベース",
+          "subcategories": []
+        },
+        {
+          "name": "弦楽器",
+          "subcategories": []
+        },
+        {
+          "name": "ピアノ・キーボード",
+          "subcategories": []
+        },
+        {
+          "name": "ドラム",
+          "subcategories": []
+        },
+        {
+          "name": "パーカッション・打楽器",
+          "subcategories": []
+        },
+        {
+          "name": "管楽器・吹奏楽器",
+          "subcategories": []
+        },
+        {
+          "name": "和楽器",
+          "subcategories": []
+        },
+        {
+          "name": "アクセサリー",
+          "subcategories": []
+        },
+        {
+          "name": "DJ機器",
+          "subcategories": []
+        },
+        {
+          "name": "DAW・DTM・レコーダー",
+          "subcategories": []
+        },
+        {
+          "name": "カラオケ機器",
+          "subcategories": []
+        },
+        {
+          "name": "PA機器",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "車・バイク",
+      "subcategories": [
+        {
+          "name": "自動車車体（新車・中古車）",
+          "subcategories": []
+        },
+        {
+          "name": "バイク車体（新車・中古車）",
+          "subcategories": []
+        },
+        {
+          "name": "ATV・トライク・スノーモービル",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "車用品・バイク用品",
+      "subcategories": [
+        {
+          "name": "車用品",
+          "subcategories": []
+        },
+        {
+          "name": "バイク用品",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "美容・コスメ・香水",
+      "subcategories": [
+        {
+          "name": "スキンケア",
+          "subcategories": []
+        },
+        {
+          "name": "ベースメイク・メイクアップ",
+          "subcategories": []
+        },
+        {
+          "name": "日焼け止め・UVケア",
+          "subcategories": []
+        },
+        {
+          "name": "メイク道具・ケアグッズ",
+          "subcategories": []
+        },
+        {
+          "name": "ヘアケア・スタイリング",
+          "subcategories": []
+        },
+        {
+          "name": "香水・フレグランス",
+          "subcategories": []
+        },
+        {
+          "name": "アロマ・お香",
+          "subcategories": []
+        },
+        {
+          "name": "ボディケア",
+          "subcategories": []
+        },
+        {
+          "name": "ネイル",
+          "subcategories": []
+        },
+        {
+          "name": "シェービング・脱毛・脱色",
+          "subcategories": []
+        },
+        {
+          "name": "美顔器・スチーマー",
+          "subcategories": []
+        },
+        {
+          "name": "韓国コスメ",
+          "subcategories": []
+        },
+        {
+          "name": "化粧品原料",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "ダイエット・健康",
+      "subcategories": [
+        {
+          "name": "ダイエット",
+          "subcategories": []
+        },
+        {
+          "name": "サプリメント",
+          "subcategories": []
+        },
+        {
+          "name": "健康食品",
+          "subcategories": []
+        },
+        {
+          "name": "リラックス・マッサージ用品",
+          "subcategories": []
+        },
+        {
+          "name": "健康グッズ",
+          "subcategories": []
+        },
+        {
+          "name": "健康アクセサリー",
+          "subcategories": []
+        },
+        {
+          "name": "デンタルケア",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "医薬品・コンタクト・介護",
+      "subcategories": [
+        {
+          "name": "コンタクトレンズ・ケア用品",
+          "subcategories": []
+        },
+        {
+          "name": "医薬品・医薬部外品",
+          "subcategories": []
+        },
+        {
+          "name": "服薬管理・補助",
+          "subcategories": []
+        },
+        {
+          "name": "介護用品",
+          "subcategories": []
+        },
+        {
+          "name": "救急・救助用品",
+          "subcategories": []
+        },
+        {
+          "name": "衛生日用品・衛生医療品",
+          "subcategories": []
+        },
+        {
+          "name": "ひ鍼",
+          "subcategories": []
+        },
+        {
+          "name": "灸",
+          "subcategories": []
+        },
+        {
+          "name": "治療機器",
+          "subcategories": []
+        },
+        {
+          "name": "身体測定器・医療計測器",
+          "subcategories": []
+        },
+        {
+          "name": "避妊具",
+          "subcategories": []
+        },
+        {
+          "name": "検査キット",
+          "subcategories": []
+        },
+        {
+          "name": "軽度失禁用品",
+          "subcategories": []
+        },
+        {
+          "name": "保育士エプロン",
+          "subcategories": []
+        },
+        {
+          "name": "白衣・医療用衣料",
+          "subcategories": []
+        },
+        {
+          "name": "病院用・医療用カーテン",
+          "subcategories": []
+        },
+        {
+          "name": "医療用帽子",
+          "subcategories": []
+        },
+        {
+          "name": "医療用ストッキング",
+          "subcategories": []
+        },
+        {
+          "name": "人体模型",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "ペット・ペットグッズ",
+      "subcategories": [
+        {
+          "name": "犬用品",
+          "subcategories": []
+        },
+        {
+          "name": "猫用品",
+          "subcategories": []
+        },
+        {
+          "name": "熱帯魚・アクアリウム",
+          "subcategories": []
+        },
+        {
+          "name": "爬虫類・両生類",
+          "subcategories": []
+        },
+        {
+          "name": "昆虫",
+          "subcategories": []
+        },
+        {
+          "name": "小動物用品",
+          "subcategories": []
+        },
+        {
+          "name": "鳥用品",
+          "subcategories": []
+        },
+        {
+          "name": "ペット用お手入れ用品",
+          "subcategories": []
+        },
+        {
+          "name": "ペット用食器・給水器・給餌器",
+          "subcategories": []
+        },
+        {
+          "name": "室内ペット用家電",
+          "subcategories": []
+        },
+        {
+          "name": "ペット用仏具",
+          "subcategories": []
+        },
+        {
+          "name": "ペット用応急手当",
+          "subcategories": []
+        },
+        {
+          "name": "動物用医療機器",
+          "subcategories": []
+        },
+        {
+          "name": "動物用医薬品",
+          "subcategories": []
+        },
+        {
+          "name": "動物用検査キット",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "花・ガーデン・DIY",
+      "subcategories": [
+        {
+          "name": "花・観葉植物",
+          "subcategories": []
+        },
+        {
+          "name": "ガーデニング・農業",
+          "subcategories": []
+        },
+        {
+          "name": "DIY・工具",
+          "subcategories": []
+        },
+        {
+          "name": "エクステリア・ガーデンファニチャー",
+          "subcategories": []
+        },
+        {
+          "name": "木材・建築資材・設備",
+          "subcategories": []
+        },
+        {
+          "name": "研究・実験用品",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "サービス・リフォーム",
+      "subcategories": [
+        {
+          "name": "家電・パソコン関連サービス",
+          "subcategories": []
+        },
+        {
+          "name": "車・バイク関連サービス",
+          "subcategories": []
+        },
+        {
+          "name": "冠婚葬祭サービス",
+          "subcategories": []
+        },
+        {
+          "name": "代行サービス",
+          "subcategories": []
+        },
+        {
+          "name": "リフォーム",
+          "subcategories": []
+        },
+        {
+          "name": "時計修理",
+          "subcategories": []
+        },
+        {
+          "name": "ジュエリー・アクセサリーの修理・リフォーム",
+          "subcategories": []
+        },
+        {
+          "name": "眼鏡修理",
+          "subcategories": []
+        },
+        {
+          "name": "通信講座・通学講座・教材",
+          "subcategories": []
+        },
+        {
+          "name": "業務用品・店舗用品",
+          "subcategories": []
+        },
+        {
+          "name": "衣類関連サービス",
+          "subcategories": []
+        },
+        {
+          "name": "家具関連サービス",
+          "subcategories": []
+        },
+        {
+          "name": "寝具関連サービス",
+          "subcategories": []
+        },
+        {
+          "name": "印刷",
+          "subcategories": []
+        },
+        {
+          "name": "金融・保険",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "住宅・不動産",
+      "subcategories": [
+        {
+          "name": "一戸建て",
+          "subcategories": []
+        },
+        {
+          "name": "区分マンション",
+          "subcategories": []
+        },
+        {
+          "name": "一棟マンション",
+          "subcategories": []
+        },
+        {
+          "name": "土地",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "カタログギフト・チケット",
+      "subcategories": [
+        {
+          "name": "カタログギフト",
+          "subcategories": []
+        },
+        {
+          "name": "楽券",
+          "subcategories": []
+        },
+        {
+          "name": "金券",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "百貨店・総合通販・ギフト",
+      "subcategories": [
+        {
+          "name": "百貨店",
+          "subcategories": []
+        },
+        {
+          "name": "スーパー",
+          "subcategories": []
+        },
+        {
+          "name": "総合通販・ディスカウント",
+          "subcategories": []
+        },
+        {
+          "name": "贈答品・ギフト",
+          "subcategories": []
+        },
+        {
+          "name": "輸入雑貨",
+          "subcategories": []
+        },
+        {
+          "name": "その他",
+          "subcategories": []
+        }
+      ]
+    }
+  ]
+}

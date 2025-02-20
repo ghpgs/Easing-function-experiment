@@ -1,0 +1,68 @@
+[
+  {
+    "taskIndex": 1,
+    "correctItem": "大型テント",
+    "totalTime": "2.00",
+    "errorCount": 2,
+    "timedOut": true,
+    "usedEasing": "easeInOutCubic",
+    "firstClickTime": 0.56,
+    "menuTravelDistance": 2,
+    "clicks": [
+      {
+        "name": "家電",
+        "depth": 0,
+        "duringAnimation": false,
+        "stayTime": 0
+      },
+      {
+        "name": "テレビ・映像機器",
+        "depth": 1,
+        "duringAnimation": true,
+        "stayTime": 0.39
+      },
+      {
+        "name": "液晶テレビ",
+        "depth": 2,
+        "duringAnimation": true,
+        "stayTime": 0.47
+      }
+    ]
+  },
+  {
+    "taskIndex": 2,
+    "correctItem": "カレー",
+    "totalTime": "2.00",
+    "errorCount": 3,
+    "timedOut": true,
+    "usedEasing": "easeInOutQuint",
+    "firstClickTime": 0.39,
+    "menuTravelDistance": 3,
+    "clicks": [
+      {
+        "name": "スマートフォン",
+        "depth": 0,
+        "duringAnimation": true,
+        "stayTime": 0
+      },
+      {
+        "name": "Android端末",
+        "depth": 1,
+        "duringAnimation": true,
+        "stayTime": 0.46
+      },
+      {
+        "name": "Galaxyシリーズ",
+        "depth": 2,
+        "duringAnimation": true,
+        "stayTime": 0.51
+      },
+      {
+        "name": "Sシリーズ",
+        "depth": 3,
+        "duringAnimation": true,
+        "stayTime": 0.5
+      }
+    ]
+  }
+]
