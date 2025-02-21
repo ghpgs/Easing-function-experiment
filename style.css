@@ -171,7 +171,7 @@ select {
 }
 
 .menu-item {
-  background: linear-gradient(to right, #1277cf, #0088f8);
+  background: linear-gradient(to right, #1277cf, #1277cf);
   color: white;
   padding: 14px;
   width: 100%;
@@ -179,12 +179,15 @@ select {
   cursor: pointer;
   font-size: 16px;
   display: block;
-  border-radius: 4px;
-  margin-bottom: 4px;
+  border-radius: 2px;
+  margin-bottom: 2px;
+  white-space: nowrap; /* 折り返し無効 */
+  overflow: hidden; /* はみ出したテキストを隠す */
+  text-overflow: ellipsis; /* はみ出した部分を「...」で表示 */
 }
 
 .menu-item:hover {
-  background: linear-gradient(to right, #1065b0, #0078e0);
+  background: linear-gradient(to right, #0b5291, #1065b0);
 }
 
 /* ================================
