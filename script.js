@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const downloadAllLogsBtn = document.getElementById("downloadAllLogsBtn");
 
   // JSON読み込み＆メニュー生成
-  fetch("menu_data_3.json")
+  fetch("rakuten_category_tree1.json")
     .then((res) => res.json())
     .then((data) => {
       categoriesData = data.categories;
