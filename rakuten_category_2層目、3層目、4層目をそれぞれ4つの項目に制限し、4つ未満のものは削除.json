@@ -1,0 +1,2531 @@
+{
+  "categories": [
+    {
+      "name": "スポーツ・アウトドア",
+      "subcategories": [
+        {
+          "name": "スポーツウェア・アクセサリー",
+          "subcategories": [
+            {
+              "name": "ジャージ",
+              "subcategories": [
+                {
+                  "name": "メンズジャージ",
+                  "subcategories": []
+                },
+                {
+                  "name": "レディースジャージ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ボーイズジャージ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ガールズジャージ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ウインドブレーカー",
+              "subcategories": [
+                {
+                  "name": "メンズウインドブレーカー",
+                  "subcategories": []
+                },
+                {
+                  "name": "レディースウインドブレーカー",
+                  "subcategories": []
+                },
+                {
+                  "name": "ガールズウインドブレーカー",
+                  "subcategories": []
+                },
+                {
+                  "name": "ボーイズウインドブレーカー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ベンチコート",
+              "subcategories": [
+                {
+                  "name": "メンズベンチコート",
+                  "subcategories": []
+                },
+                {
+                  "name": "レディースベンチコート",
+                  "subcategories": []
+                },
+                {
+                  "name": "ガールズベンチコート",
+                  "subcategories": []
+                },
+                {
+                  "name": "ボーイズベンチコート",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "スポーツバッグ",
+              "subcategories": [
+                {
+                  "name": "バックパック・リュック",
+                  "subcategories": []
+                },
+                {
+                  "name": "ショルダーバッグ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ボストンバッグ・ダッフルバッグ",
+                  "subcategories": []
+                },
+                {
+                  "name": "トートバッグ",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "アウトドア",
+          "subcategories": [
+            {
+              "name": "ウェア",
+              "subcategories": [
+                {
+                  "name": "メンズウェア",
+                  "subcategories": []
+                },
+                {
+                  "name": "レディースウェア",
+                  "subcategories": []
+                },
+                {
+                  "name": "キッズ・ジュニア用ウェア",
+                  "subcategories": []
+                },
+                {
+                  "name": "レインウェア",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "バッグ",
+              "subcategories": [
+                {
+                  "name": "バックパック・リュック",
+                  "subcategories": []
+                },
+                {
+                  "name": "ショルダーバッグ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ボストンバッグ・ダッフルバッグ",
+                  "subcategories": []
+                },
+                {
+                  "name": "トートバッグ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "アウトドア用寝具",
+              "subcategories": [
+                {
+                  "name": "寝袋・シュラフ",
+                  "subcategories": []
+                },
+                {
+                  "name": "シュラフカバー",
+                  "subcategories": []
+                },
+                {
+                  "name": "インナーシーツ",
+                  "subcategories": []
+                },
+                {
+                  "name": "マット",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "チェア・テーブル・レジャーシート",
+              "subcategories": [
+                {
+                  "name": "チェア",
+                  "subcategories": []
+                },
+                {
+                  "name": "テーブル",
+                  "subcategories": []
+                },
+                {
+                  "name": "レジャーシート",
+                  "subcategories": []
+                },
+                {
+                  "name": "ハンモック",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "フィッシング",
+          "subcategories": [
+            {
+              "name": "ウェア",
+              "subcategories": [
+                {
+                  "name": "ウェーダー・胴付長靴",
+                  "subcategories": []
+                },
+                {
+                  "name": "フィッシングジャケット",
+                  "subcategories": []
+                },
+                {
+                  "name": "フィッシングベスト",
+                  "subcategories": []
+                },
+                {
+                  "name": "帽子・バイザー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ルアー・フライ",
+              "subcategories": [
+                {
+                  "name": "ハードルアー",
+                  "subcategories": []
+                },
+                {
+                  "name": "ソフトルアー",
+                  "subcategories": []
+                },
+                {
+                  "name": "完成フライ",
+                  "subcategories": []
+                },
+                {
+                  "name": "フライマテリアル",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "仕掛け",
+              "subcategories": [
+                {
+                  "name": "完成仕掛け",
+                  "subcategories": []
+                },
+                {
+                  "name": "テンヤ",
+                  "subcategories": []
+                },
+                {
+                  "name": "スイベル・スナップ",
+                  "subcategories": []
+                },
+                {
+                  "name": "コマセカゴ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ネット・ギャフ",
+              "subcategories": [
+                {
+                  "name": "ランディングネット",
+                  "subcategories": []
+                },
+                {
+                  "name": "玉網",
+                  "subcategories": []
+                },
+                {
+                  "name": "ギャフ",
+                  "subcategories": []
+                },
+                {
+                  "name": "その他",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "マリンスポーツ",
+          "subcategories": [
+            {
+              "name": "サーフィン・ボディボード",
+              "subcategories": [
+                {
+                  "name": "サーフボード",
+                  "subcategories": []
+                },
+                {
+                  "name": "ボディボード",
+                  "subcategories": []
+                },
+                {
+                  "name": "スキムボード",
+                  "subcategories": []
+                },
+                {
+                  "name": "スタンドアップパドルボード",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ウインドサーフィン",
+              "subcategories": [
+                {
+                  "name": "ボード",
+                  "subcategories": []
+                },
+                {
+                  "name": "セイル",
+                  "subcategories": []
+                },
+                {
+                  "name": "マスト",
+                  "subcategories": []
+                },
+                {
+                  "name": "ブーム",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ウェイクボード",
+              "subcategories": [
+                {
+                  "name": "ボード",
+                  "subcategories": []
+                },
+                {
+                  "name": "ビンディング",
+                  "subcategories": []
+                },
+                {
+                  "name": "ハンドル・ライン",
+                  "subcategories": []
+                },
+                {
+                  "name": "ボードケース",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ダイビング・シュノーケリング",
+              "subcategories": [
+                {
+                  "name": "シュノーケル",
+                  "subcategories": []
+                },
+                {
+                  "name": "フィン",
+                  "subcategories": []
+                },
+                {
+                  "name": "マスク",
+                  "subcategories": []
+                },
+                {
+                  "name": "マスクストラップカバー",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "家電",
+      "subcategories": [
+        {
+          "name": "生活家電",
+          "subcategories": [
+            {
+              "name": "掃除機・クリーナー",
+              "subcategories": [
+                {
+                  "name": "掃除機",
+                  "subcategories": []
+                },
+                {
+                  "name": "ロボット掃除機",
+                  "subcategories": []
+                },
+                {
+                  "name": "布団クリーナー",
+                  "subcategories": []
+                },
+                {
+                  "name": "スチームクリーナー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ミシン",
+              "subcategories": [
+                {
+                  "name": "電動ミシン",
+                  "subcategories": []
+                },
+                {
+                  "name": "電子ミシン",
+                  "subcategories": []
+                },
+                {
+                  "name": "コンピューターミシン",
+                  "subcategories": []
+                },
+                {
+                  "name": "ロックミシン",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "生活家電用アクセサリー・部品",
+              "subcategories": [
+                {
+                  "name": "掃除機・クリーナー用アクセサリー",
+                  "subcategories": []
+                },
+                {
+                  "name": "業務用掃除機用アクセサリー",
+                  "subcategories": []
+                },
+                {
+                  "name": "ミシン用アクセサリー",
+                  "subcategories": []
+                },
+                {
+                  "name": "アイロン関連用品",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "業務用掃除機・クリーナー",
+              "subcategories": [
+                {
+                  "name": "業務用掃除機",
+                  "subcategories": []
+                },
+                {
+                  "name": "床洗浄機・フロアポリッシャー",
+                  "subcategories": []
+                },
+                {
+                  "name": "業務用スイーパー",
+                  "subcategories": []
+                },
+                {
+                  "name": "その他",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "キッチン家電",
+          "subcategories": [
+            {
+              "name": "冷蔵庫・冷凍庫",
+              "subcategories": [
+                {
+                  "name": "冷蔵庫",
+                  "subcategories": []
+                },
+                {
+                  "name": "冷凍庫",
+                  "subcategories": []
+                },
+                {
+                  "name": "業務用冷蔵庫",
+                  "subcategories": []
+                },
+                {
+                  "name": "業務用冷凍庫",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "電子レンジ・オーブンレンジ",
+              "subcategories": [
+                {
+                  "name": "電子レンジ",
+                  "subcategories": []
+                },
+                {
+                  "name": "オーブンレンジ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ビルトインオーブンレンジ",
+                  "subcategories": []
+                },
+                {
+                  "name": "コンベクションオーブン",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ホットプレート・グリル・フライヤー",
+              "subcategories": [
+                {
+                  "name": "ホットプレート",
+                  "subcategories": []
+                },
+                {
+                  "name": "たこ焼き器",
+                  "subcategories": []
+                },
+                {
+                  "name": "グリル鍋",
+                  "subcategories": []
+                },
+                {
+                  "name": "フィッシュロースター",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "IH クッキングヒーター・電気コンロ",
+              "subcategories": [
+                {
+                  "name": "卓上IHクッキングヒーター",
+                  "subcategories": []
+                },
+                {
+                  "name": "据置型IHクッキングヒーター",
+                  "subcategories": []
+                },
+                {
+                  "name": "ビルトインIHクッキングヒーター",
+                  "subcategories": []
+                },
+                {
+                  "name": "電気コンロ",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "美容・健康家電",
+          "subcategories": [
+            {
+              "name": "ドライヤー・ヘアアイロン",
+              "subcategories": [
+                {
+                  "name": "ヘアドライヤー",
+                  "subcategories": []
+                },
+                {
+                  "name": "カールドライヤー",
+                  "subcategories": []
+                },
+                {
+                  "name": "ストレートアイロン",
+                  "subcategories": []
+                },
+                {
+                  "name": "カールアイロン",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "デンタルケア",
+              "subcategories": [
+                {
+                  "name": "電動歯ブラシ",
+                  "subcategories": []
+                },
+                {
+                  "name": "口腔洗浄器",
+                  "subcategories": []
+                },
+                {
+                  "name": "ステインクリーナー",
+                  "subcategories": []
+                },
+                {
+                  "name": "歯ブラシ除菌器",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "シェーバー・バリカン",
+              "subcategories": [
+                {
+                  "name": "メンズシェーバー",
+                  "subcategories": []
+                },
+                {
+                  "name": "レディースシェーバー",
+                  "subcategories": []
+                },
+                {
+                  "name": "脱毛器",
+                  "subcategories": []
+                },
+                {
+                  "name": "バリカン・ヘアカッター",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "マッサージ機器",
+              "subcategories": [
+                {
+                  "name": "マッサージチェア",
+                  "subcategories": []
+                },
+                {
+                  "name": "座椅子マッサージャー",
+                  "subcategories": []
+                },
+                {
+                  "name": "クッションマッサージャー",
+                  "subcategories": []
+                },
+                {
+                  "name": "シートマッサージャー",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "季節・空調家電",
+          "subcategories": [
+            {
+              "name": "エアコン",
+              "subcategories": [
+                {
+                  "name": "ルームエアコン",
+                  "subcategories": []
+                },
+                {
+                  "name": "ビルトイン・マルチエアコン",
+                  "subcategories": []
+                },
+                {
+                  "name": "スポットエアコン",
+                  "subcategories": []
+                },
+                {
+                  "name": "エアコン室外機",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "扇風機・サーキュレーター",
+              "subcategories": [
+                {
+                  "name": "扇風機",
+                  "subcategories": []
+                },
+                {
+                  "name": "サーキュレーター",
+                  "subcategories": []
+                },
+                {
+                  "name": "冷風扇",
+                  "subcategories": []
+                },
+                {
+                  "name": "その他",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ストーブ・ヒーター",
+              "subcategories": [
+                {
+                  "name": "ハロゲンヒーター",
+                  "subcategories": []
+                },
+                {
+                  "name": "カーボンヒーター・グラファイトヒーター",
+                  "subcategories": []
+                },
+                {
+                  "name": "セラミックヒーター・電気ファンヒーター",
+                  "subcategories": []
+                },
+                {
+                  "name": "シーズヒーター",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "電気あんか・カイロ",
+              "subcategories": [
+                {
+                  "name": "電気あんか",
+                  "subcategories": []
+                },
+                {
+                  "name": "電気カイロ・充電式カイロ",
+                  "subcategories": []
+                },
+                {
+                  "name": "電気湯たんぽ",
+                  "subcategories": []
+                },
+                {
+                  "name": "その他",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "食品",
+      "subcategories": [
+        {
+          "name": "魚介類・水産加工品",
+          "subcategories": [
+            {
+              "name": "マグロ",
+              "subcategories": [
+                {
+                  "name": "赤身",
+                  "subcategories": []
+                },
+                {
+                  "name": "トロ",
+                  "subcategories": []
+                },
+                {
+                  "name": "大トロ",
+                  "subcategories": []
+                },
+                {
+                  "name": "カマ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "貝類",
+              "subcategories": [
+                {
+                  "name": "赤貝",
+                  "subcategories": []
+                },
+                {
+                  "name": "アサリ",
+                  "subcategories": []
+                },
+                {
+                  "name": "アワビ",
+                  "subcategories": []
+                },
+                {
+                  "name": "エスカルゴ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "海藻類",
+              "subcategories": [
+                {
+                  "name": "昆布",
+                  "subcategories": []
+                },
+                {
+                  "name": "わかめ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ひじき",
+                  "subcategories": []
+                },
+                {
+                  "name": "もずく",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "魚卵",
+              "subcategories": [
+                {
+                  "name": "イクラ・筋子",
+                  "subcategories": []
+                },
+                {
+                  "name": "たらこ",
+                  "subcategories": []
+                },
+                {
+                  "name": "明太子",
+                  "subcategories": []
+                },
+                {
+                  "name": "数の子",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "精肉・肉加工品",
+          "subcategories": [
+            {
+              "name": "牛肉",
+              "subcategories": [
+                {
+                  "name": "サーロイン",
+                  "subcategories": []
+                },
+                {
+                  "name": "スネ",
+                  "subcategories": []
+                },
+                {
+                  "name": "タン",
+                  "subcategories": []
+                },
+                {
+                  "name": "テール",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "豚肉",
+              "subcategories": [
+                {
+                  "name": "カシラ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ガツ",
+                  "subcategories": []
+                },
+                {
+                  "name": "コブクロ",
+                  "subcategories": []
+                },
+                {
+                  "name": "タン",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "鶏肉",
+              "subcategories": [
+                {
+                  "name": "カワ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ささみ",
+                  "subcategories": []
+                },
+                {
+                  "name": "砂肝・筋胃",
+                  "subcategories": []
+                },
+                {
+                  "name": "手羽",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "羊肉",
+              "subcategories": [
+                {
+                  "name": "マトン",
+                  "subcategories": []
+                },
+                {
+                  "name": "ラム",
+                  "subcategories": []
+                },
+                {
+                  "name": "セット・詰め合わせ",
+                  "subcategories": []
+                },
+                {
+                  "name": "その他",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "惣菜",
+          "subcategories": [
+            {
+              "name": "和風惣菜",
+              "subcategories": [
+                {
+                  "name": "刺身・たたき",
+                  "subcategories": []
+                },
+                {
+                  "name": "焼き魚",
+                  "subcategories": []
+                },
+                {
+                  "name": "蒲焼き",
+                  "subcategories": []
+                },
+                {
+                  "name": "白焼き",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "洋風惣菜",
+              "subcategories": [
+                {
+                  "name": "グラタン",
+                  "subcategories": []
+                },
+                {
+                  "name": "コロッケ",
+                  "subcategories": []
+                },
+                {
+                  "name": "サラダ",
+                  "subcategories": []
+                },
+                {
+                  "name": "シチュー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "中華惣菜・点心",
+              "subcategories": [
+                {
+                  "name": "エビチリ",
+                  "subcategories": []
+                },
+                {
+                  "name": "スープ",
+                  "subcategories": []
+                },
+                {
+                  "name": "酢豚",
+                  "subcategories": []
+                },
+                {
+                  "name": "中華ポテト",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "韓国惣菜",
+              "subcategories": [
+                {
+                  "name": "参鶏湯",
+                  "subcategories": []
+                },
+                {
+                  "name": "スープ",
+                  "subcategories": []
+                },
+                {
+                  "name": "チヂミ",
+                  "subcategories": []
+                },
+                {
+                  "name": "トッポギ",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "調味料",
+          "subcategories": [
+            {
+              "name": "砂糖・甘味料",
+              "subcategories": [
+                {
+                  "name": "上白糖",
+                  "subcategories": []
+                },
+                {
+                  "name": "黒砂糖",
+                  "subcategories": []
+                },
+                {
+                  "name": "グラニュー糖",
+                  "subcategories": []
+                },
+                {
+                  "name": "ざら糖",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "しお",
+              "subcategories": [
+                {
+                  "name": "岩塩",
+                  "subcategories": []
+                },
+                {
+                  "name": "クリスタルソルト",
+                  "subcategories": []
+                },
+                {
+                  "name": "ハーブソルト",
+                  "subcategories": []
+                },
+                {
+                  "name": "セット・詰め合わせ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "酢",
+              "subcategories": [
+                {
+                  "name": "果実酢",
+                  "subcategories": []
+                },
+                {
+                  "name": "玄米酢",
+                  "subcategories": []
+                },
+                {
+                  "name": "穀物酢",
+                  "subcategories": []
+                },
+                {
+                  "name": "米酢",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "しょうゆ",
+              "subcategories": [
+                {
+                  "name": "濃口しょうゆ",
+                  "subcategories": []
+                },
+                {
+                  "name": "薄口しょうゆ",
+                  "subcategories": []
+                },
+                {
+                  "name": "減塩しょうゆ",
+                  "subcategories": []
+                },
+                {
+                  "name": "たまりじょうゆ",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "本・雑誌・コミック",
+      "subcategories": [
+        {
+          "name": "資格・検定",
+          "subcategories": [
+            {
+              "name": "看護・医療関係資格",
+              "subcategories": [
+                {
+                  "name": "医師",
+                  "subcategories": []
+                },
+                {
+                  "name": "看護師",
+                  "subcategories": []
+                },
+                {
+                  "name": "理学・作業療法士",
+                  "subcategories": []
+                },
+                {
+                  "name": "その他",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "法律関係資格",
+              "subcategories": [
+                {
+                  "name": "司法試験",
+                  "subcategories": []
+                },
+                {
+                  "name": "司法書士",
+                  "subcategories": []
+                },
+                {
+                  "name": "行政書士",
+                  "subcategories": []
+                },
+                {
+                  "name": "その他",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ビジネス関係資格",
+              "subcategories": [
+                {
+                  "name": "MBA",
+                  "subcategories": []
+                },
+                {
+                  "name": "CPA（米国公認会計士）",
+                  "subcategories": []
+                },
+                {
+                  "name": "証券アナリスト",
+                  "subcategories": []
+                },
+                {
+                  "name": "税理士・公認会計士・ファイナンシャルプランナー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "食品・調理関係資格",
+              "subcategories": [
+                {
+                  "name": "調理師",
+                  "subcategories": []
+                },
+                {
+                  "name": "栄養士",
+                  "subcategories": []
+                },
+                {
+                  "name": "衛生管理者",
+                  "subcategories": []
+                },
+                {
+                  "name": "その他",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ライフスタイル",
+          "subcategories": [
+            {
+              "name": "恋愛・結婚",
+              "subcategories": [
+                {
+                  "name": "恋愛",
+                  "subcategories": []
+                },
+                {
+                  "name": "結婚",
+                  "subcategories": []
+                },
+                {
+                  "name": "性",
+                  "subcategories": []
+                },
+                {
+                  "name": "その他",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ファッション・美容",
+              "subcategories": [
+                {
+                  "name": "美容",
+                  "subcategories": []
+                },
+                {
+                  "name": "ダイエット",
+                  "subcategories": []
+                },
+                {
+                  "name": "ヘアスタイル",
+                  "subcategories": []
+                },
+                {
+                  "name": "ネイル",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "妊娠・出産・子育て",
+              "subcategories": [
+                {
+                  "name": "不妊",
+                  "subcategories": []
+                },
+                {
+                  "name": "妊娠・出産",
+                  "subcategories": []
+                },
+                {
+                  "name": "名づけ・姓名判断",
+                  "subcategories": []
+                },
+                {
+                  "name": "子育て",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ペット",
+              "subcategories": [
+                {
+                  "name": "犬",
+                  "subcategories": []
+                },
+                {
+                  "name": "猫",
+                  "subcategories": []
+                },
+                {
+                  "name": "魚",
+                  "subcategories": []
+                },
+                {
+                  "name": "その他",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ホビー・スポーツ・美術",
+          "subcategories": [
+            {
+              "name": "カメラ・写真",
+              "subcategories": [
+                {
+                  "name": "フィルムカメラ",
+                  "subcategories": []
+                },
+                {
+                  "name": "デジタルカメラ",
+                  "subcategories": []
+                },
+                {
+                  "name": "写真技術",
+                  "subcategories": []
+                },
+                {
+                  "name": "その他",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "囲碁・将棋・クイズ",
+              "subcategories": [
+                {
+                  "name": "囲碁",
+                  "subcategories": []
+                },
+                {
+                  "name": "将棋",
+                  "subcategories": []
+                },
+                {
+                  "name": "トランプ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ビリヤード",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ギャンブル",
+              "subcategories": [
+                {
+                  "name": "競馬",
+                  "subcategories": []
+                },
+                {
+                  "name": "競輪・競艇",
+                  "subcategories": []
+                },
+                {
+                  "name": "麻雀",
+                  "subcategories": []
+                },
+                {
+                  "name": "パチンコ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "手芸・工作",
+              "subcategories": [
+                {
+                  "name": "手芸",
+                  "subcategories": []
+                },
+                {
+                  "name": "洋裁",
+                  "subcategories": []
+                },
+                {
+                  "name": "和裁",
+                  "subcategories": []
+                },
+                {
+                  "name": "ビーズ",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ビジネス・経済・就職",
+          "subcategories": [
+            {
+              "name": "マーケティング・セールス",
+              "subcategories": [
+                {
+                  "name": "広告・宣伝",
+                  "subcategories": []
+                },
+                {
+                  "name": "セールス・営業",
+                  "subcategories": []
+                },
+                {
+                  "name": "商品開発",
+                  "subcategories": []
+                },
+                {
+                  "name": "マーケティング",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "経理",
+              "subcategories": [
+                {
+                  "name": "会計学",
+                  "subcategories": []
+                },
+                {
+                  "name": "財務管理・キャッシュフロー",
+                  "subcategories": []
+                },
+                {
+                  "name": "税務",
+                  "subcategories": []
+                },
+                {
+                  "name": "簿記",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "実用スキル",
+              "subcategories": [
+                {
+                  "name": "企画書・プレゼン",
+                  "subcategories": []
+                },
+                {
+                  "name": "クレーム対応",
+                  "subcategories": []
+                },
+                {
+                  "name": "情報管理・手帳",
+                  "subcategories": []
+                },
+                {
+                  "name": "記憶術",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "経済・財政",
+              "subcategories": [
+                {
+                  "name": "日本経済",
+                  "subcategories": []
+                },
+                {
+                  "name": "国際経済",
+                  "subcategories": []
+                },
+                {
+                  "name": "経済学",
+                  "subcategories": []
+                },
+                {
+                  "name": "財政",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CD・DVD",
+      "subcategories": [
+        {
+          "name": "CD",
+          "subcategories": [
+            {
+              "name": "邦楽",
+              "subcategories": [
+                {
+                  "name": "ロック・ポップス",
+                  "subcategories": []
+                },
+                {
+                  "name": "ヘビーメタル・ハードロック",
+                  "subcategories": []
+                },
+                {
+                  "name": "インディーズ",
+                  "subcategories": []
+                },
+                {
+                  "name": "R&B・ディスコ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "洋楽",
+              "subcategories": [
+                {
+                  "name": "ロック・ポップス",
+                  "subcategories": []
+                },
+                {
+                  "name": "ヘビーメタル・ハードロック",
+                  "subcategories": []
+                },
+                {
+                  "name": "オルタナティブ・パンク",
+                  "subcategories": []
+                },
+                {
+                  "name": "インディーズ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ジャズ",
+              "subcategories": [
+                {
+                  "name": "スイング・ビッグバンド",
+                  "subcategories": []
+                },
+                {
+                  "name": "モダン",
+                  "subcategories": []
+                },
+                {
+                  "name": "フリージャズ",
+                  "subcategories": []
+                },
+                {
+                  "name": "フュージョン",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "クラシック",
+              "subcategories": [
+                {
+                  "name": "器楽曲",
+                  "subcategories": []
+                },
+                {
+                  "name": "室内楽",
+                  "subcategories": []
+                },
+                {
+                  "name": "交響曲",
+                  "subcategories": []
+                },
+                {
+                  "name": "管弦楽",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "DVD",
+          "subcategories": [
+            {
+              "name": "洋画",
+              "subcategories": [
+                {
+                  "name": "アクション",
+                  "subcategories": []
+                },
+                {
+                  "name": "ヒューマン",
+                  "subcategories": []
+                },
+                {
+                  "name": "ロマンス・ラブストーリー",
+                  "subcategories": []
+                },
+                {
+                  "name": "サスペンス・ミステリー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "邦画",
+              "subcategories": [
+                {
+                  "name": "アクション",
+                  "subcategories": []
+                },
+                {
+                  "name": "ヒューマン",
+                  "subcategories": []
+                },
+                {
+                  "name": "ロマンス・ラブストーリー",
+                  "subcategories": []
+                },
+                {
+                  "name": "サスペンス・ミステリー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "アジア・韓国",
+              "subcategories": [
+                {
+                  "name": "韓国",
+                  "subcategories": []
+                },
+                {
+                  "name": "アクション",
+                  "subcategories": []
+                },
+                {
+                  "name": "ヒューマン",
+                  "subcategories": []
+                },
+                {
+                  "name": "ロマンス・ラブストーリー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "TVドラマ",
+              "subcategories": [
+                {
+                  "name": "日本",
+                  "subcategories": []
+                },
+                {
+                  "name": "海外",
+                  "subcategories": []
+                },
+                {
+                  "name": "アジア・韓国",
+                  "subcategories": []
+                },
+                {
+                  "name": "その他",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Blu-ray",
+          "subcategories": [
+            {
+              "name": "洋画",
+              "subcategories": [
+                {
+                  "name": "アクション",
+                  "subcategories": []
+                },
+                {
+                  "name": "ヒューマン",
+                  "subcategories": []
+                },
+                {
+                  "name": "ロマンス・ラブストーリー",
+                  "subcategories": []
+                },
+                {
+                  "name": "サスペンス・ミステリー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "邦画",
+              "subcategories": [
+                {
+                  "name": "アクション",
+                  "subcategories": []
+                },
+                {
+                  "name": "ヒューマン",
+                  "subcategories": []
+                },
+                {
+                  "name": "ロマンス・ラブストーリー",
+                  "subcategories": []
+                },
+                {
+                  "name": "サスペンス・ミステリー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "アジア・韓国",
+              "subcategories": [
+                {
+                  "name": "韓国",
+                  "subcategories": []
+                },
+                {
+                  "name": "アクション",
+                  "subcategories": []
+                },
+                {
+                  "name": "ヒューマン",
+                  "subcategories": []
+                },
+                {
+                  "name": "ロマンス・ラブストーリー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "TVドラマ",
+              "subcategories": [
+                {
+                  "name": "日本",
+                  "subcategories": []
+                },
+                {
+                  "name": "海外",
+                  "subcategories": []
+                },
+                {
+                  "name": "韓国",
+                  "subcategories": []
+                },
+                {
+                  "name": "アジア",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ビデオ",
+          "subcategories": [
+            {
+              "name": "洋画",
+              "subcategories": [
+                {
+                  "name": "アクション",
+                  "subcategories": []
+                },
+                {
+                  "name": "ヒューマン",
+                  "subcategories": []
+                },
+                {
+                  "name": "ロマンス・ラブストーリー",
+                  "subcategories": []
+                },
+                {
+                  "name": "サスペンス・ミステリー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "邦画",
+              "subcategories": [
+                {
+                  "name": "アクション",
+                  "subcategories": []
+                },
+                {
+                  "name": "ヒューマン",
+                  "subcategories": []
+                },
+                {
+                  "name": "ロマンス・ラブストーリー",
+                  "subcategories": []
+                },
+                {
+                  "name": "サスペンス・ミステリー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "スポーツ",
+              "subcategories": [
+                {
+                  "name": "カー・バイク・レース",
+                  "subcategories": []
+                },
+                {
+                  "name": "格闘技",
+                  "subcategories": []
+                },
+                {
+                  "name": "ゴルフ",
+                  "subcategories": []
+                },
+                {
+                  "name": "野球",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "アニメ",
+              "subcategories": [
+                {
+                  "name": "オリジナルアニメ",
+                  "subcategories": []
+                },
+                {
+                  "name": "キッズアニメ",
+                  "subcategories": []
+                },
+                {
+                  "name": "劇場版",
+                  "subcategories": []
+                },
+                {
+                  "name": "その他",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ダイエット・健康",
+      "subcategories": [
+        {
+          "name": "ダイエット",
+          "subcategories": [
+            {
+              "name": "ダイエットドリンク",
+              "subcategories": [
+                {
+                  "name": "ダイエットティー",
+                  "subcategories": []
+                },
+                {
+                  "name": "ダイエットコーヒー",
+                  "subcategories": []
+                },
+                {
+                  "name": "ダイエットシェイク",
+                  "subcategories": []
+                },
+                {
+                  "name": "ダイエットココア",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ダイエットスイーツ",
+              "subcategories": [
+                {
+                  "name": "ウエハース",
+                  "subcategories": []
+                },
+                {
+                  "name": "キャンディ",
+                  "subcategories": []
+                },
+                {
+                  "name": "グミ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ガム",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ダイエットフード",
+              "subcategories": [
+                {
+                  "name": "もどきご飯・こんにゃくご飯",
+                  "subcategories": []
+                },
+                {
+                  "name": "粥・リゾット",
+                  "subcategories": []
+                },
+                {
+                  "name": "麺類",
+                  "subcategories": []
+                },
+                {
+                  "name": "スープ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ダイエット器具",
+              "subcategories": [
+                {
+                  "name": "EMS",
+                  "subcategories": []
+                },
+                {
+                  "name": "ダイエットクッション",
+                  "subcategories": []
+                },
+                {
+                  "name": "ダイエットスリッパ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ダイエットサンダル",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "サプリメント",
+          "subcategories": [
+            {
+              "name": "ビタミン",
+              "subcategories": [
+                {
+                  "name": "マルチビタミン",
+                  "subcategories": []
+                },
+                {
+                  "name": "ビタミンA",
+                  "subcategories": []
+                },
+                {
+                  "name": "ビタミンB群",
+                  "subcategories": []
+                },
+                {
+                  "name": "ビタミンB1",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ミネラル",
+              "subcategories": [
+                {
+                  "name": "マルチミネラル",
+                  "subcategories": []
+                },
+                {
+                  "name": "亜鉛",
+                  "subcategories": []
+                },
+                {
+                  "name": "カリウム",
+                  "subcategories": []
+                },
+                {
+                  "name": "カルシウム",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "プロテイン",
+              "subcategories": [
+                {
+                  "name": "マルチプロテイン",
+                  "subcategories": []
+                },
+                {
+                  "name": "ソイプロテイン",
+                  "subcategories": []
+                },
+                {
+                  "name": "ホエイプロテイン",
+                  "subcategories": []
+                },
+                {
+                  "name": "カゼインプロテイン",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "アミノ酸",
+              "subcategories": [
+                {
+                  "name": "マルチアミノ酸",
+                  "subcategories": []
+                },
+                {
+                  "name": "BCAA",
+                  "subcategories": []
+                },
+                {
+                  "name": "カルニチン",
+                  "subcategories": []
+                },
+                {
+                  "name": "ギャバ",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "健康食品",
+          "subcategories": [
+            {
+              "name": "栄養・健康ドリンク",
+              "subcategories": [
+                {
+                  "name": "青汁",
+                  "subcategories": []
+                },
+                {
+                  "name": "アロエジュース",
+                  "subcategories": []
+                },
+                {
+                  "name": "栄養ドリンク剤",
+                  "subcategories": []
+                },
+                {
+                  "name": "寒天ドリンク",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "特定保健用食品",
+              "subcategories": [
+                {
+                  "name": "血圧",
+                  "subcategories": []
+                },
+                {
+                  "name": "血糖値",
+                  "subcategories": []
+                },
+                {
+                  "name": "中性脂肪",
+                  "subcategories": []
+                },
+                {
+                  "name": "体脂肪",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "栄養調整食品",
+              "subcategories": [
+                {
+                  "name": "アスタキサンチン",
+                  "subcategories": []
+                },
+                {
+                  "name": "アマランサス配合",
+                  "subcategories": []
+                },
+                {
+                  "name": "キダチアロエエキス",
+                  "subcategories": []
+                },
+                {
+                  "name": "きな粉配合",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "スープ",
+              "subcategories": [
+                {
+                  "name": "カプサイシンスープ",
+                  "subcategories": []
+                },
+                {
+                  "name": "玄米スープ",
+                  "subcategories": []
+                },
+                {
+                  "name": "五穀スープ",
+                  "subcategories": []
+                },
+                {
+                  "name": "薬膳スープ",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "健康アクセサリー",
+          "subcategories": [
+            {
+              "name": "磁気アクセサリー",
+              "subcategories": [
+                {
+                  "name": "磁気ブレスレット",
+                  "subcategories": []
+                },
+                {
+                  "name": "磁気ネックレス",
+                  "subcategories": []
+                },
+                {
+                  "name": "磁気リング",
+                  "subcategories": []
+                },
+                {
+                  "name": "その他",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "トルマリンアクセサリー",
+              "subcategories": [
+                {
+                  "name": "トルマリンブレスレット",
+                  "subcategories": []
+                },
+                {
+                  "name": "トルマリンネックレス",
+                  "subcategories": []
+                },
+                {
+                  "name": "トルマリンリング",
+                  "subcategories": []
+                },
+                {
+                  "name": "その他",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "チタンアクセサリー",
+              "subcategories": [
+                {
+                  "name": "チタンブレスレット",
+                  "subcategories": []
+                },
+                {
+                  "name": "チタンネックレス",
+                  "subcategories": []
+                },
+                {
+                  "name": "チタンリング",
+                  "subcategories": []
+                },
+                {
+                  "name": "その他",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ゲルマニウムアクセサリー",
+              "subcategories": [
+                {
+                  "name": "ゲルマニウムブレスレット",
+                  "subcategories": []
+                },
+                {
+                  "name": "ゲルマニウムネックレス",
+                  "subcategories": []
+                },
+                {
+                  "name": "ゲルマニウムリング",
+                  "subcategories": []
+                },
+                {
+                  "name": "ゲルマニウムシール",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "花・ガーデン・DIY",
+      "subcategories": [
+        {
+          "name": "ガーデニング・農業",
+          "subcategories": [
+            {
+              "name": "種子",
+              "subcategories": [
+                {
+                  "name": "野菜の種子",
+                  "subcategories": []
+                },
+                {
+                  "name": "花の種子",
+                  "subcategories": []
+                },
+                {
+                  "name": "ハーブの種子",
+                  "subcategories": []
+                },
+                {
+                  "name": "芝生の種子",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "苗物",
+              "subcategories": [
+                {
+                  "name": "野菜の苗物",
+                  "subcategories": []
+                },
+                {
+                  "name": "果物の苗物",
+                  "subcategories": []
+                },
+                {
+                  "name": "花の苗物",
+                  "subcategories": []
+                },
+                {
+                  "name": "ハーブの苗物",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "植木鉢・プランター",
+              "subcategories": [
+                {
+                  "name": "植木鉢",
+                  "subcategories": []
+                },
+                {
+                  "name": "プランター",
+                  "subcategories": []
+                },
+                {
+                  "name": "鉢皿",
+                  "subcategories": []
+                },
+                {
+                  "name": "植木鉢・プランターカバー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "用土・肥料",
+              "subcategories": [
+                {
+                  "name": "基本用土",
+                  "subcategories": []
+                },
+                {
+                  "name": "培養土",
+                  "subcategories": []
+                },
+                {
+                  "name": "肥料",
+                  "subcategories": []
+                },
+                {
+                  "name": "ミズゴケ",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "DIY・工具",
+          "subcategories": [
+            {
+              "name": "手動工具",
+              "subcategories": [
+                {
+                  "name": "締付工具",
+                  "subcategories": []
+                },
+                {
+                  "name": "切断工具",
+                  "subcategories": []
+                },
+                {
+                  "name": "切削工具",
+                  "subcategories": []
+                },
+                {
+                  "name": "研磨工具",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "電動工具本体",
+              "subcategories": [
+                {
+                  "name": "穴あけ・締付工具",
+                  "subcategories": []
+                },
+                {
+                  "name": "切断工具",
+                  "subcategories": []
+                },
+                {
+                  "name": "切削・研削工具",
+                  "subcategories": []
+                },
+                {
+                  "name": "研磨工具",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "エア工具本体",
+              "subcategories": [
+                {
+                  "name": "穴あけ・締付工具",
+                  "subcategories": []
+                },
+                {
+                  "name": "切断工具",
+                  "subcategories": []
+                },
+                {
+                  "name": "研削工具",
+                  "subcategories": []
+                },
+                {
+                  "name": "研磨工具",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "電動・エア工具用アクセサリー",
+              "subcategories": [
+                {
+                  "name": "締付工具用アクセサリー",
+                  "subcategories": []
+                },
+                {
+                  "name": "穴あけ工具用アクセサリー",
+                  "subcategories": []
+                },
+                {
+                  "name": "切断工具用アクセサリー",
+                  "subcategories": []
+                },
+                {
+                  "name": "切削・研削工具用アクセサリー",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "エクステリア・ガーデンファニチャー",
+          "subcategories": [
+            {
+              "name": "ガーデンファニチャー",
+              "subcategories": [
+                {
+                  "name": "ガーデンファニチャーセット",
+                  "subcategories": []
+                },
+                {
+                  "name": "テーブル",
+                  "subcategories": []
+                },
+                {
+                  "name": "チェア",
+                  "subcategories": []
+                },
+                {
+                  "name": "ベンチ・縁台",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ライト・イルミネーション",
+              "subcategories": [
+                {
+                  "name": "ガーデンライト ・灯篭",
+                  "subcategories": []
+                },
+                {
+                  "name": "門灯",
+                  "subcategories": []
+                },
+                {
+                  "name": "玄関灯",
+                  "subcategories": []
+                },
+                {
+                  "name": "イルミネーションライト",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "玄関・門用エクステリア",
+              "subcategories": [
+                {
+                  "name": "表札",
+                  "subcategories": []
+                },
+                {
+                  "name": "ポスト",
+                  "subcategories": []
+                },
+                {
+                  "name": "宅配ボックス",
+                  "subcategories": []
+                },
+                {
+                  "name": "門柱",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ガレージ",
+              "subcategories": [
+                {
+                  "name": "自動車用ガレージ",
+                  "subcategories": []
+                },
+                {
+                  "name": "バイク・自転車用ガレージ",
+                  "subcategories": []
+                },
+                {
+                  "name": "段差プレート",
+                  "subcategories": []
+                },
+                {
+                  "name": "カーゲート",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "木材・建築資材・設備",
+          "subcategories": [
+            {
+              "name": "建具",
+              "subcategories": [
+                {
+                  "name": "ドア",
+                  "subcategories": []
+                },
+                {
+                  "name": "窓",
+                  "subcategories": []
+                },
+                {
+                  "name": "網戸",
+                  "subcategories": []
+                },
+                {
+                  "name": "障子・ふすま",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "建具金物",
+              "subcategories": [
+                {
+                  "name": "ハンドル・取手",
+                  "subcategories": []
+                },
+                {
+                  "name": "引手",
+                  "subcategories": []
+                },
+                {
+                  "name": "つまみ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ドアノブ・レバー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "キッチン用設備",
+              "subcategories": [
+                {
+                  "name": "システムキッチン",
+                  "subcategories": []
+                },
+                {
+                  "name": "キッチンシンク",
+                  "subcategories": []
+                },
+                {
+                  "name": "ビルトインキッチン家電",
+                  "subcategories": []
+                },
+                {
+                  "name": "キッチン用水栓金具",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "浴室用設備",
+              "subcategories": [
+                {
+                  "name": "ユニットバス",
+                  "subcategories": []
+                },
+                {
+                  "name": "浴槽・バスタブ",
+                  "subcategories": []
+                },
+                {
+                  "name": "浴室換気乾燥暖房",
+                  "subcategories": []
+                },
+                {
+                  "name": "バス用水栓金具",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -10,7 +10,7 @@
 ================================ */
 :root {
   --submenu-easing: var(--easeInOutSine);
-  --submenu-animation-duration: 0.9s;
+  --submenu-animation-duration: 0.1s;
 }
 
 body {
@@ -106,15 +106,16 @@ select {
   align-items: flex-start;
   position: relative;
 }
+
 /* ================================
     タスク文
 ================================ */
 .main-content {
   display: flex;
-  margin-top: -5px; /* 上の余白を追加 */
-  margin-bottom: -5px; /* 下の余白を追加 */
+  margin-top: -5px;
+  margin-bottom: -5px;
   flex-direction: column;
-  align-items: center; /* ← 横方向の中央寄せ */
+  align-items: center;
 }
 
 /* ================================
@@ -122,38 +123,37 @@ select {
 ================================ */
 .menu-container {
   width: 280px;
-  /* 上下マージン 20px、左右は自動調整で中央寄せ */
   margin: 20px auto;
   padding: 10px;
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.4);
   border-radius: 4px;
 }
 
-/* feedback 基本スタイル */
+/* ================================
+   フィードバック
+================================ */
 #feedback {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
   margin-top: -10px;
-  padding: 7px 9px; /* 内側に余白を付ける */
-  background: #f7f7f7; /* 明るい背景色 */
-  border: 2px solid #0077cc; /* 青い枠線 デバッグ用*/
-  border-radius: 8px; /* 角丸に */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 軽い影を付ける */
-  min-height: 50px; /* 空でも表示されるように高さを確保 */
+  padding: 7px 9px;
+  background: #f7f7f7;
+  border: 2px solid #0077cc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-height: 50px;
 }
 
-/* 成功時（正解）のフィードバック */
 #feedback.correct {
-  background: #d4edda; /* 薄い緑 */
-  border-color: #28a745; /* 緑の枠線 */
+  background: #d4edda;
+  border-color: #28a745;
   color: #155724;
 }
 
-/* エラー時（不正解）のフィードバック */
 #feedback.incorrect {
-  background: #f8d7da; /* 薄い赤 */
-  border-color: #dc3545; /* 赤の枠線 */
+  background: #f8d7da;
+  border-color: #dc3545;
   color: #721c24;
 }
 
@@ -181,9 +181,9 @@ select {
   display: block;
   border-radius: 2px;
   margin-bottom: 2px;
-  white-space: nowrap; /* 折り返し無効 */
-  overflow: hidden; /* はみ出したテキストを隠す */
-  text-overflow: ellipsis; /* はみ出した部分を「...」で表示 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .menu-item:hover {
@@ -208,6 +208,7 @@ select {
   transform: translateY(10px);
   transition: opacity var(--submenu-animation-duration) var(--submenu-easing), transform var(--submenu-animation-duration) var(--submenu-easing);
 }
+
 .submenu.open {
   opacity: 1;
   pointer-events: auto;
@@ -221,19 +222,23 @@ select {
   margin-top: 40px;
   text-align: center;
 }
+
 #resultsTable {
   margin: 10px auto;
   border-collapse: collapse;
   min-width: 400px;
 }
+
 #resultsTable th,
 #resultsTable td {
   border: 1px solid #ccc;
   padding: 8px 12px;
 }
+
 #resultsTable th {
   background: #eee;
 }
+
 .center-area {
   text-align: center;
   margin-top: 20px;
@@ -242,7 +247,6 @@ select {
 /* ================================
    オーバーレイ（全画面ブロック）
 ================================ */
-
 .overlay {
   position: fixed;
   top: 0;
@@ -255,9 +259,11 @@ select {
   align-items: center;
   z-index: 2000;
 }
+
 .overlay.hidden {
   display: none !important;
 }
+
 .overlay-content {
   background: white;
   padding: 20px;
@@ -266,6 +272,7 @@ select {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 6);
   max-width: 400px;
 }
+
 .overlay-content button {
   margin-top: 10px;
   padding: 10px 20px;
@@ -276,16 +283,54 @@ select {
   color: #fff;
   cursor: pointer;
 }
+
 .overlay-content button:hover {
   background: #0070d0;
 }
 
 #startTutorialBtn {
-  display: block; /* ブロック要素にして中央揃えしやすく */
-
+  display: block;
   background: linear-gradient(to right, #4caf50, #45a049);
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+}
+
+/* ================================
+   アンケート用スタイル
+================================ */
+.survey-section {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.survey-question {
+  margin-bottom: 15px;
+}
+
+.rating-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.rating-container label {
+  display: inline-flex;
+  align-items: center;
+  margin: 5px;
+}
+
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+#surveyResultsTable {
+  margin-top: 30px;
 }

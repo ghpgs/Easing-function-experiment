@@ -1,0 +1,3914 @@
+{
+  "categories": [
+    {
+      "name": "スポーツ・アウトドア",
+      "subcategories": [
+        {
+          "name": "アウトドア",
+          "subcategories": [
+            {
+              "name": "テント・タープ",
+              "subcategories": [
+                {
+                  "name": "ファミリー用ドームテント",
+                  "subcategories": []
+                },
+                {
+                  "name": "ソロキャンプ用ワンタッチテント",
+                  "subcategories": []
+                },
+                {
+                  "name": "軽量アルミポールテント",
+                  "subcategories": []
+                },
+                {
+                  "name": "タープ付キャンプテント",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "バーベキュー用品",
+              "subcategories": [
+                {
+                  "name": "炭火グリル",
+                  "subcategories": []
+                },
+                {
+                  "name": "コンパクトバーベキューコンロ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ポータブルバーベキューセット",
+                  "subcategories": []
+                },
+                {
+                  "name": "アルミ製バーベキュー網",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "アウトドア照明",
+              "subcategories": [
+                {
+                  "name": "LEDランタン",
+                  "subcategories": []
+                },
+                {
+                  "name": "防水ハンディライト",
+                  "subcategories": []
+                },
+                {
+                  "name": "ソーラー充電ライト",
+                  "subcategories": []
+                },
+                {
+                  "name": "USB充電式キャンプライト",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "寝具",
+              "subcategories": [
+                {
+                  "name": "保温性高い寝袋",
+                  "subcategories": []
+                },
+                {
+                  "name": "エアーマットレス",
+                  "subcategories": []
+                },
+                {
+                  "name": "折りたたみキャンプマット",
+                  "subcategories": []
+                },
+                {
+                  "name": "防水ピローパッド",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ゴルフ",
+          "subcategories": [
+            {
+              "name": "クラブ",
+              "subcategories": [
+                {
+                  "name": "最新型ドライバー",
+                  "subcategories": []
+                },
+                {
+                  "name": "軽量フェアウェイウッド",
+                  "subcategories": []
+                },
+                {
+                  "name": "カーボン製アイアンセット",
+                  "subcategories": []
+                },
+                {
+                  "name": "高精度パター",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ボール",
+              "subcategories": [
+                {
+                  "name": "スピンコントロールボール",
+                  "subcategories": []
+                },
+                {
+                  "name": "ディスタンス向上ボール",
+                  "subcategories": []
+                },
+                {
+                  "name": "高耐久ボール",
+                  "subcategories": []
+                },
+                {
+                  "name": "カスタムカラーボール",
+                  "subcategories": []
+                },
+                {
+                  "name": "FIFA認定サッカーボール",
+                  "subcategories": []
+                },
+                {
+                  "name": "トレーニング用ミニボール",
+                  "subcategories": []
+                },
+                {
+                  "name": "耐久性高い合成ボール",
+                  "subcategories": []
+                },
+                {
+                  "name": "公式試合用ボール",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "シューズ",
+              "subcategories": [
+                {
+                  "name": "プロ仕様ゴルフシューズ",
+                  "subcategories": []
+                },
+                {
+                  "name": "快適ウォーキングゴルフシューズ",
+                  "subcategories": []
+                },
+                {
+                  "name": "防水ゴルフスパイク",
+                  "subcategories": []
+                },
+                {
+                  "name": "軽量スパイクレスシューズ",
+                  "subcategories": []
+                },
+                {
+                  "name": "トラクショングリップスパイク",
+                  "subcategories": []
+                },
+                {
+                  "name": "軽量防滑シューズ",
+                  "subcategories": []
+                },
+                {
+                  "name": "屋内用トレーニングシューズ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ソフトソールシューズ",
+                  "subcategories": []
+                },
+                {
+                  "name": "軽量スパイクシューズ",
+                  "subcategories": []
+                },
+                {
+                  "name": "人工芝対応シューズ",
+                  "subcategories": []
+                },
+                {
+                  "name": "屋内用フットサルシューズ",
+                  "subcategories": []
+                },
+                {
+                  "name": "アンクルサポートシューズ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ウェア",
+              "subcategories": [
+                {
+                  "name": "吸汗速乾ポロシャツ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ストレッチパンツ",
+                  "subcategories": []
+                },
+                {
+                  "name": "UVカットキャップ",
+                  "subcategories": []
+                },
+                {
+                  "name": "通気性アウター",
+                  "subcategories": []
+                },
+                {
+                  "name": "メジャーリーグレプリカシャツ",
+                  "subcategories": []
+                },
+                {
+                  "name": "通気性キャップ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ユニフォームパンツ",
+                  "subcategories": []
+                },
+                {
+                  "name": "汗拭きバンダナ",
+                  "subcategories": []
+                },
+                {
+                  "name": "吸汗速乾サッカージャージ",
+                  "subcategories": []
+                },
+                {
+                  "name": "軽量トレーニングショーツ",
+                  "subcategories": []
+                },
+                {
+                  "name": "コンプレッションソックス",
+                  "subcategories": []
+                },
+                {
+                  "name": "公式レプリカユニフォーム",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "野球",
+          "subcategories": [
+            {
+              "name": "グローブ",
+              "subcategories": [
+                {
+                  "name": "プロ仕様ソフトボールグローブ",
+                  "subcategories": []
+                },
+                {
+                  "name": "硬式用レザーグローブ",
+                  "subcategories": []
+                },
+                {
+                  "name": "小型ジュニアグローブ",
+                  "subcategories": []
+                },
+                {
+                  "name": "左右対応グローブ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "バット",
+              "subcategories": [
+                {
+                  "name": "木製クラシックバット",
+                  "subcategories": []
+                },
+                {
+                  "name": "アルミ製軽量バット",
+                  "subcategories": []
+                },
+                {
+                  "name": "パフォーマンス向上バット",
+                  "subcategories": []
+                },
+                {
+                  "name": "ジュニア用バット",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "サッカー",
+          "subcategories": [
+            {
+              "name": "アクセサリー",
+              "subcategories": [
+                {
+                  "name": "サッカー用レッグガード",
+                  "subcategories": []
+                },
+                {
+                  "name": "トレーニング用ボールポンプ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ドリブル練習用アジリティラダー",
+                  "subcategories": []
+                },
+                {
+                  "name": "フットサル用ゴールネット",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ダイエット・健康",
+      "subcategories": [
+        {
+          "name": "ダイエットサプリ",
+          "subcategories": [
+            {
+              "name": "カルニチン系",
+              "subcategories": [
+                {
+                  "name": "L-カルニチンサプリメント",
+                  "subcategories": []
+                },
+                {
+                  "name": "アセチルL-カルニチン錠",
+                  "subcategories": []
+                },
+                {
+                  "name": "カルニチン＋CLA",
+                  "subcategories": []
+                },
+                {
+                  "name": "高吸収型カルニチンカプセル",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "酵素系",
+              "subcategories": [
+                {
+                  "name": "野菜酵素ドリンク",
+                  "subcategories": []
+                },
+                {
+                  "name": "果実酵素サプリ",
+                  "subcategories": []
+                },
+                {
+                  "name": "植物発酵酵素タブレット",
+                  "subcategories": []
+                },
+                {
+                  "name": "酵素ブレンドパウダー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "プロテイン系",
+              "subcategories": [
+                {
+                  "name": "ホエイプロテインアイソレート",
+                  "subcategories": []
+                },
+                {
+                  "name": "ソイプロテインパウダー",
+                  "subcategories": []
+                },
+                {
+                  "name": "カゼインプロテインミックス",
+                  "subcategories": []
+                },
+                {
+                  "name": "プロテインバー(低糖質)",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ビタミン・ミネラル",
+              "subcategories": [
+                {
+                  "name": "マルチビタミンサプリ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ビタミンB群サプリ",
+                  "subcategories": []
+                },
+                {
+                  "name": "高濃度ビタミンC錠",
+                  "subcategories": []
+                },
+                {
+                  "name": "カルシウム＋マグネシウムサプリ",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ダイエット食品",
+          "subcategories": [
+            {
+              "name": "低糖質食品",
+              "subcategories": [
+                {
+                  "name": "低糖質パン",
+                  "subcategories": []
+                },
+                {
+                  "name": "低糖質パスタ",
+                  "subcategories": []
+                },
+                {
+                  "name": "低糖質ライス",
+                  "subcategories": []
+                },
+                {
+                  "name": "低糖質スイーツ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "置き換え食品",
+              "subcategories": [
+                {
+                  "name": "ダイエットシェイク",
+                  "subcategories": []
+                },
+                {
+                  "name": "ダイエットスムージー",
+                  "subcategories": []
+                },
+                {
+                  "name": "プロテインダイエットスープ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ダイエットゼリー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ダイエットスープ",
+              "subcategories": [
+                {
+                  "name": "トマトベースダイエットスープ",
+                  "subcategories": []
+                },
+                {
+                  "name": "野菜ブロスダイエットスープ",
+                  "subcategories": []
+                },
+                {
+                  "name": "鶏だしダイエットスープ",
+                  "subcategories": []
+                },
+                {
+                  "name": "味噌ベースダイエットスープ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ダイエットおやつ",
+              "subcategories": [
+                {
+                  "name": "プロテインクッキー",
+                  "subcategories": []
+                },
+                {
+                  "name": "オートミールバー",
+                  "subcategories": []
+                },
+                {
+                  "name": "グルテンフリースナック",
+                  "subcategories": []
+                },
+                {
+                  "name": "低カロリーケーキ",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "健康サプリ",
+          "subcategories": [
+            {
+              "name": "マルチビタミン",
+              "subcategories": [
+                {
+                  "name": "全方位マルチビタミン錠",
+                  "subcategories": []
+                },
+                {
+                  "name": "鉄・葉酸配合サプリ",
+                  "subcategories": []
+                },
+                {
+                  "name": "亜鉛プラスマルチ",
+                  "subcategories": []
+                },
+                {
+                  "name": "高吸収マルチビタミン",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "コラーゲン",
+              "subcategories": [
+                {
+                  "name": "低分子コラーゲンドリンク",
+                  "subcategories": []
+                },
+                {
+                  "name": "魚由来コラーゲンペプチド",
+                  "subcategories": []
+                },
+                {
+                  "name": "コラーゲン＋ヒアルロン酸",
+                  "subcategories": []
+                },
+                {
+                  "name": "美容コラーゲンサプリ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "DHA・EPA",
+              "subcategories": [
+                {
+                  "name": "青魚由来DHAサプリ",
+                  "subcategories": []
+                },
+                {
+                  "name": "EPA＋オメガ3サプリ",
+                  "subcategories": []
+                },
+                {
+                  "name": "高濃度DHA・EPAカプセル",
+                  "subcategories": []
+                },
+                {
+                  "name": "クリルオイルサプリ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "乳酸菌",
+              "subcategories": [
+                {
+                  "name": "乳酸菌シロタ株サプリ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ビフィズス菌配合サプリ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ラクトフェリン乳酸菌",
+                  "subcategories": []
+                },
+                {
+                  "name": "オリゴ糖配合乳酸菌",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "健康グッズ",
+          "subcategories": [
+            {
+              "name": "マッサージ器",
+              "subcategories": [
+                {
+                  "name": "ハンディマッサージャー",
+                  "subcategories": []
+                },
+                {
+                  "name": "フットマッサージャー",
+                  "subcategories": []
+                },
+                {
+                  "name": "ネックマッサージピロー",
+                  "subcategories": []
+                },
+                {
+                  "name": "マッサージガン",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "体組成計",
+              "subcategories": [
+                {
+                  "name": "スマホ連動体組成計",
+                  "subcategories": []
+                },
+                {
+                  "name": "高精度体重体組成計",
+                  "subcategories": []
+                },
+                {
+                  "name": "BMI測定体組成計",
+                  "subcategories": []
+                },
+                {
+                  "name": "Bluetooth体組成計",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "睡眠グッズ",
+              "subcategories": [
+                {
+                  "name": "快眠ピロー",
+                  "subcategories": []
+                },
+                {
+                  "name": "低反発マットレス",
+                  "subcategories": []
+                },
+                {
+                  "name": "アイマスク",
+                  "subcategories": []
+                },
+                {
+                  "name": "耳栓付きスリープキット",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "姿勢サポート",
+              "subcategories": [
+                {
+                  "name": "姿勢矯正ベルト",
+                  "subcategories": []
+                },
+                {
+                  "name": "骨盤サポートクッション",
+                  "subcategories": []
+                },
+                {
+                  "name": "背中サポートパッド",
+                  "subcategories": []
+                },
+                {
+                  "name": "アーチサポートインソール",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "医薬品・コンタクト・介護",
+      "subcategories": [
+        {
+          "name": "医薬品",
+          "subcategories": [
+            {
+              "name": "風邪薬",
+              "subcategories": [
+                {
+                  "name": "総合感冒薬",
+                  "subcategories": []
+                },
+                {
+                  "name": "カゼ予防薬",
+                  "subcategories": []
+                },
+                {
+                  "name": "咳止めシロップ",
+                  "subcategories": []
+                },
+                {
+                  "name": "点鼻タイプ感冒薬",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "鎮痛薬",
+              "subcategories": [
+                {
+                  "name": "頭痛用鎮痛剤",
+                  "subcategories": []
+                },
+                {
+                  "name": "関節痛緩和剤",
+                  "subcategories": []
+                },
+                {
+                  "name": "生理痛用鎮痛剤",
+                  "subcategories": []
+                },
+                {
+                  "name": "筋肉痛用鎮痛パッチ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "解熱薬",
+              "subcategories": [
+                {
+                  "name": "解熱鎮痛剤",
+                  "subcategories": []
+                },
+                {
+                  "name": "小児用解熱剤",
+                  "subcategories": []
+                },
+                {
+                  "name": "漢方系解熱薬",
+                  "subcategories": []
+                },
+                {
+                  "name": "錠剤タイプ解熱薬",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "鼻炎薬",
+              "subcategories": [
+                {
+                  "name": "抗ヒスタミン剤",
+                  "subcategories": []
+                },
+                {
+                  "name": "点鼻用鼻炎薬",
+                  "subcategories": []
+                },
+                {
+                  "name": "内服アレルギー薬",
+                  "subcategories": []
+                },
+                {
+                  "name": "漢方系鼻炎薬",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "コンタクト",
+          "subcategories": [
+            {
+              "name": "1day",
+              "subcategories": [
+                {
+                  "name": "高保湿1dayレンズ",
+                  "subcategories": []
+                },
+                {
+                  "name": "乱視用1dayレンズ",
+                  "subcategories": []
+                },
+                {
+                  "name": "遠近両用1dayレンズ",
+                  "subcategories": []
+                },
+                {
+                  "name": "超薄型1dayレンズ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "2week",
+              "subcategories": [
+                {
+                  "name": "通常2weekレンズ",
+                  "subcategories": []
+                },
+                {
+                  "name": "乱視用2weekレンズ",
+                  "subcategories": []
+                },
+                {
+                  "name": "遠近両用2weekレンズ",
+                  "subcategories": []
+                },
+                {
+                  "name": "高水分2weekレンズ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "カラコン",
+              "subcategories": [
+                {
+                  "name": "ブラウンカラコン",
+                  "subcategories": []
+                },
+                {
+                  "name": "ナチュラルカラコン",
+                  "subcategories": []
+                },
+                {
+                  "name": "グレーカラコン",
+                  "subcategories": []
+                },
+                {
+                  "name": "ブルーカラコン",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ハードレンズ",
+              "subcategories": [
+                {
+                  "name": "酸素透過性ハードレンズ",
+                  "subcategories": []
+                },
+                {
+                  "name": "乱視用ハードレンズ",
+                  "subcategories": []
+                },
+                {
+                  "name": "遠近両用ハードレンズ",
+                  "subcategories": []
+                },
+                {
+                  "name": "耐久性高いハードレンズ",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "衛生用品",
+          "subcategories": [
+            {
+              "name": "マスク",
+              "subcategories": [
+                {
+                  "name": "不織布マスク(50枚入り)",
+                  "subcategories": []
+                },
+                {
+                  "name": "不織布マスク(個包装)",
+                  "subcategories": []
+                },
+                {
+                  "name": "高機能抗菌マスク",
+                  "subcategories": []
+                },
+                {
+                  "name": "子供用カラフルマスク",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "消毒液",
+              "subcategories": [
+                {
+                  "name": "アルコール消毒液",
+                  "subcategories": []
+                },
+                {
+                  "name": "ノンアルコール消毒ジェル",
+                  "subcategories": []
+                },
+                {
+                  "name": "スプレータイプ消毒液",
+                  "subcategories": []
+                },
+                {
+                  "name": "抗菌ウエットティッシュ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "絆創膏",
+              "subcategories": [
+                {
+                  "name": "防水絆創膏",
+                  "subcategories": []
+                },
+                {
+                  "name": "大人用厚手絆創膏",
+                  "subcategories": []
+                },
+                {
+                  "name": "子供用キャラクター絆創膏",
+                  "subcategories": []
+                },
+                {
+                  "name": "高粘着絆創膏",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "体温計",
+              "subcategories": [
+                {
+                  "name": "電子体温計",
+                  "subcategories": []
+                },
+                {
+                  "name": "赤外線体温計",
+                  "subcategories": []
+                },
+                {
+                  "name": "耳式体温計",
+                  "subcategories": []
+                },
+                {
+                  "name": "非接触体温計",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "介護用品",
+          "subcategories": [
+            {
+              "name": "車椅子",
+              "subcategories": [
+                {
+                  "name": "自走式車椅子",
+                  "subcategories": []
+                },
+                {
+                  "name": "介助式車椅子",
+                  "subcategories": []
+                },
+                {
+                  "name": "軽量折りたたみ車椅子",
+                  "subcategories": []
+                },
+                {
+                  "name": "リクライニング車椅子",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "歩行器",
+              "subcategories": [
+                {
+                  "name": "シルバーカー",
+                  "subcategories": []
+                },
+                {
+                  "name": "アルミ製歩行器",
+                  "subcategories": []
+                },
+                {
+                  "name": "室内用歩行器",
+                  "subcategories": []
+                },
+                {
+                  "name": "多機能歩行器",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "介護ベッド",
+              "subcategories": [
+                {
+                  "name": "電動リクライニングベッド",
+                  "subcategories": []
+                },
+                {
+                  "name": "サイドレール付き介護ベッド",
+                  "subcategories": []
+                },
+                {
+                  "name": "低床介護ベッド",
+                  "subcategories": []
+                },
+                {
+                  "name": "調節機能付き介護ベッド",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "介護食",
+              "subcategories": [
+                {
+                  "name": "とろみ調整食",
+                  "subcategories": []
+                },
+                {
+                  "name": "嚥下食(ペースト)",
+                  "subcategories": []
+                },
+                {
+                  "name": "栄養補助食品(介護用)",
+                  "subcategories": []
+                },
+                {
+                  "name": "ソフト食セット",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ベビー・キッズ・マタニティ",
+      "subcategories": [
+        {
+          "name": "ベビー服",
+          "subcategories": [
+            {
+              "name": "ロンパース",
+              "subcategories": [
+                {
+                  "name": "新生児用ロンパース",
+                  "subcategories": []
+                },
+                {
+                  "name": "長袖オーガニックロンパース",
+                  "subcategories": []
+                },
+                {
+                  "name": "前開きロンパース",
+                  "subcategories": []
+                },
+                {
+                  "name": "吸水性高いロンパース",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ボディスーツ",
+              "subcategories": [
+                {
+                  "name": "タンクトップボディスーツ",
+                  "subcategories": []
+                },
+                {
+                  "name": "長袖ボディスーツ",
+                  "subcategories": []
+                },
+                {
+                  "name": "フロントジッパーボディ",
+                  "subcategories": []
+                },
+                {
+                  "name": "敏感肌用ボディスーツ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ベビードレス",
+              "subcategories": [
+                {
+                  "name": "フリル付きドレス",
+                  "subcategories": []
+                },
+                {
+                  "name": "レースベビードレス",
+                  "subcategories": []
+                },
+                {
+                  "name": "カジュアルベビードレス",
+                  "subcategories": []
+                },
+                {
+                  "name": "フォーマルベビードレス",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "カバーオール",
+              "subcategories": [
+                {
+                  "name": "フリースカバーオール",
+                  "subcategories": []
+                },
+                {
+                  "name": "ダウンカバーオール",
+                  "subcategories": []
+                },
+                {
+                  "name": "オーガニックカバーオール",
+                  "subcategories": []
+                },
+                {
+                  "name": "パイルカバーオール",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ベビーカー",
+          "subcategories": [
+            {
+              "name": "A型",
+              "subcategories": [
+                {
+                  "name": "新生児対応A型ベビーカー",
+                  "subcategories": []
+                },
+                {
+                  "name": "リクライニングA型ベビーカー",
+                  "subcategories": []
+                },
+                {
+                  "name": "軽量A型ベビーカー",
+                  "subcategories": []
+                },
+                {
+                  "name": "多機能A型ベビーカー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "B型",
+              "subcategories": [
+                {
+                  "name": "成長対応B型ベビーカー",
+                  "subcategories": []
+                },
+                {
+                  "name": "コンパクトB型ベビーカー",
+                  "subcategories": []
+                },
+                {
+                  "name": "折りたたみB型ベビーカー",
+                  "subcategories": []
+                },
+                {
+                  "name": "リクライニングB型ベビーカー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "二人乗り",
+              "subcategories": [
+                {
+                  "name": "縦型二人乗りベビーカー",
+                  "subcategories": []
+                },
+                {
+                  "name": "横型二人乗りベビーカー",
+                  "subcategories": []
+                },
+                {
+                  "name": "双子対応二人乗りベビーカー",
+                  "subcategories": []
+                },
+                {
+                  "name": "独立リクライニング二人乗り",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "バギー",
+              "subcategories": [
+                {
+                  "name": "軽量バギータイプ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ジョギング用バギー",
+                  "subcategories": []
+                },
+                {
+                  "name": "折りたたみバギー",
+                  "subcategories": []
+                },
+                {
+                  "name": "快適シートバギー",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "おむつ",
+          "subcategories": [
+            {
+              "name": "テープタイプ",
+              "subcategories": [
+                {
+                  "name": "新生児用テープおむつ",
+                  "subcategories": []
+                },
+                {
+                  "name": "Sサイズテープおむつ",
+                  "subcategories": []
+                },
+                {
+                  "name": "Mサイズテープおむつ",
+                  "subcategories": []
+                },
+                {
+                  "name": "大容量テープおむつ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "パンツタイプ",
+              "subcategories": [
+                {
+                  "name": "キッズ用パンツおむつ",
+                  "subcategories": []
+                },
+                {
+                  "name": "軽量パンツおむつ",
+                  "subcategories": []
+                },
+                {
+                  "name": "吸収力アップパンツ",
+                  "subcategories": []
+                },
+                {
+                  "name": "敏感肌用パンツおむつ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "トレーニング",
+              "subcategories": [
+                {
+                  "name": "おねしょ対策トレーニングパンツ",
+                  "subcategories": []
+                },
+                {
+                  "name": "色変わりトレーニングパンツ",
+                  "subcategories": []
+                },
+                {
+                  "name": "軽量トレーニングパンツ",
+                  "subcategories": []
+                },
+                {
+                  "name": "デザイントレーニングパンツ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "夜用",
+              "subcategories": [
+                {
+                  "name": "大吸収夜用おむつ",
+                  "subcategories": []
+                },
+                {
+                  "name": "寝かしつけ夜用おむつ",
+                  "subcategories": []
+                },
+                {
+                  "name": "吸収持続夜用おむつ",
+                  "subcategories": []
+                },
+                {
+                  "name": "快適夜用おむつ",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "マタニティ用品",
+          "subcategories": [
+            {
+              "name": "マタニティウェア",
+              "subcategories": [
+                {
+                  "name": "マタニティTシャツ",
+                  "subcategories": []
+                },
+                {
+                  "name": "マタニティパンツ",
+                  "subcategories": []
+                },
+                {
+                  "name": "マタニティドレス",
+                  "subcategories": []
+                },
+                {
+                  "name": "リラックスマタニティウェア",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "授乳服",
+              "subcategories": [
+                {
+                  "name": "前開き授乳ワンピース",
+                  "subcategories": []
+                },
+                {
+                  "name": "授乳ケープトップ",
+                  "subcategories": []
+                },
+                {
+                  "name": "サポート付き授乳服",
+                  "subcategories": []
+                },
+                {
+                  "name": "オーガニック授乳服",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "マタニティブラ",
+              "subcategories": [
+                {
+                  "name": "ノンワイヤーマタニティブラ",
+                  "subcategories": []
+                },
+                {
+                  "name": "フルカバーマタニティブラ",
+                  "subcategories": []
+                },
+                {
+                  "name": "調整可能マタニティブラ",
+                  "subcategories": []
+                },
+                {
+                  "name": "授乳口付きマタニティブラ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "妊娠帯",
+              "subcategories": [
+                {
+                  "name": "腹巻きタイプ妊娠帯",
+                  "subcategories": []
+                },
+                {
+                  "name": "骨盤サポート妊娠帯",
+                  "subcategories": []
+                },
+                {
+                  "name": "パンツタイプ妊娠帯",
+                  "subcategories": []
+                },
+                {
+                  "name": "多機能妊娠帯",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "日用品雑貨・文房具・手芸",
+      "subcategories": [
+        {
+          "name": "生活雑貨",
+          "subcategories": [
+            {
+              "name": "トイレットペーパー",
+              "subcategories": [
+                {
+                  "name": "3層シングルロール",
+                  "subcategories": []
+                },
+                {
+                  "name": "2層ダブルロール",
+                  "subcategories": []
+                },
+                {
+                  "name": "再生紙トイレットペーパー",
+                  "subcategories": []
+                },
+                {
+                  "name": "香り付きトイレットペーパー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ティッシュ",
+              "subcategories": [
+                {
+                  "name": "ボックスティッシュ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ポケットティッシュ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ローションティッシュ",
+                  "subcategories": []
+                },
+                {
+                  "name": "キッズ用ティッシュ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ゴミ袋",
+              "subcategories": [
+                {
+                  "name": "キッチン用透明ゴミ袋",
+                  "subcategories": []
+                },
+                {
+                  "name": "粗大ゴミ用ゴミ袋",
+                  "subcategories": []
+                },
+                {
+                  "name": "分別用ゴミ袋",
+                  "subcategories": []
+                },
+                {
+                  "name": "耐久性強化ゴミ袋",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ラップ",
+              "subcategories": [
+                {
+                  "name": "食品保存ラップ",
+                  "subcategories": []
+                },
+                {
+                  "name": "業務用ストレッチラップ",
+                  "subcategories": []
+                },
+                {
+                  "name": "オーブン対応ラップ",
+                  "subcategories": []
+                },
+                {
+                  "name": "再利用可能ラップ",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "文房具",
+          "subcategories": [
+            {
+              "name": "ボールペン",
+              "subcategories": [
+                {
+                  "name": "油性ボールペン",
+                  "subcategories": []
+                },
+                {
+                  "name": "ジェルインクボールペン",
+                  "subcategories": []
+                },
+                {
+                  "name": "万年筆タイプボールペン",
+                  "subcategories": []
+                },
+                {
+                  "name": "多機能ボールペン",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ノート",
+              "subcategories": [
+                {
+                  "name": "大学ノートA5",
+                  "subcategories": []
+                },
+                {
+                  "name": "方眼ノート",
+                  "subcategories": []
+                },
+                {
+                  "name": "ルーズリーフノート",
+                  "subcategories": []
+                },
+                {
+                  "name": "デザインノート",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "付箋",
+              "subcategories": [
+                {
+                  "name": "スタンダード付箋",
+                  "subcategories": []
+                },
+                {
+                  "name": "フィルム付箋",
+                  "subcategories": []
+                },
+                {
+                  "name": "強粘着付箋",
+                  "subcategories": []
+                },
+                {
+                  "name": "インデックス付箋",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "シャープペンシル",
+              "subcategories": [
+                {
+                  "name": "0.5mmシャープペンシル",
+                  "subcategories": []
+                },
+                {
+                  "name": "0.3mmシャープペンシル",
+                  "subcategories": []
+                },
+                {
+                  "name": "メカニカルシャープペンシル",
+                  "subcategories": []
+                },
+                {
+                  "name": "デザインシャープペンシル",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "裁縫用品",
+          "subcategories": [
+            {
+              "name": "針",
+              "subcategories": [
+                {
+                  "name": "縫い針セット",
+                  "subcategories": []
+                },
+                {
+                  "name": "刺繍用針",
+                  "subcategories": []
+                },
+                {
+                  "name": "手芸針",
+                  "subcategories": []
+                },
+                {
+                  "name": "ミシン針",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "糸",
+              "subcategories": [
+                {
+                  "name": "コットンミシン糸",
+                  "subcategories": []
+                },
+                {
+                  "name": "ポリエステル縫製糸",
+                  "subcategories": []
+                },
+                {
+                  "name": "刺繍糸",
+                  "subcategories": []
+                },
+                {
+                  "name": "シルク糸",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "はさみ",
+              "subcategories": [
+                {
+                  "name": "布用はさみ",
+                  "subcategories": []
+                },
+                {
+                  "name": "クラフトはさみ",
+                  "subcategories": []
+                },
+                {
+                  "name": "裁断はさみ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ピンキングはさみ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "メジャー",
+              "subcategories": [
+                {
+                  "name": "巻き取り式メジャー",
+                  "subcategories": []
+                },
+                {
+                  "name": "ソフトメジャー",
+                  "subcategories": []
+                },
+                {
+                  "name": "布用メジャー",
+                  "subcategories": []
+                },
+                {
+                  "name": "業務用ロングメジャー",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ギフト用品",
+          "subcategories": [
+            {
+              "name": "ラッピングペーパー",
+              "subcategories": [
+                {
+                  "name": "無地ラッピングペーパー",
+                  "subcategories": []
+                },
+                {
+                  "name": "柄入りラッピングペーパー",
+                  "subcategories": []
+                },
+                {
+                  "name": "クラフトラッピングペーパー",
+                  "subcategories": []
+                },
+                {
+                  "name": "箔押しラッピングペーパー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "リボン",
+              "subcategories": [
+                {
+                  "name": "サテンリボン",
+                  "subcategories": []
+                },
+                {
+                  "name": "オーガニジーリボン",
+                  "subcategories": []
+                },
+                {
+                  "name": "ワイヤーリボン",
+                  "subcategories": []
+                },
+                {
+                  "name": "シルクリボン",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "グリーティングカード",
+              "subcategories": [
+                {
+                  "name": "誕生日カード",
+                  "subcategories": []
+                },
+                {
+                  "name": "結婚祝いカード",
+                  "subcategories": []
+                },
+                {
+                  "name": "クリスマスカード",
+                  "subcategories": []
+                },
+                {
+                  "name": "お礼カード",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ギフトバッグ",
+              "subcategories": [
+                {
+                  "name": "紙製ギフトバッグ",
+                  "subcategories": []
+                },
+                {
+                  "name": "不織布ギフトバッグ",
+                  "subcategories": []
+                },
+                {
+                  "name": "巾着型ギフトバッグ",
+                  "subcategories": []
+                },
+                {
+                  "name": "エコバッグタイプ",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "美容・コスメ・香水",
+      "subcategories": [
+        {
+          "name": "スキンケア",
+          "subcategories": [
+            {
+              "name": "化粧水",
+              "subcategories": [
+                {
+                  "name": "保湿化粧水",
+                  "subcategories": []
+                },
+                {
+                  "name": "美白化粧水",
+                  "subcategories": []
+                },
+                {
+                  "name": "敏感肌用化粧水",
+                  "subcategories": []
+                },
+                {
+                  "name": "エイジングケア化粧水",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "乳液",
+              "subcategories": [
+                {
+                  "name": "保湿乳液",
+                  "subcategories": []
+                },
+                {
+                  "name": "エイジングケア乳液",
+                  "subcategories": []
+                },
+                {
+                  "name": "オールインワン乳液",
+                  "subcategories": []
+                },
+                {
+                  "name": "軽いテクスチャー乳液",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "美容液",
+              "subcategories": [
+                {
+                  "name": "ビタミンC美容液",
+                  "subcategories": []
+                },
+                {
+                  "name": "ヒアルロン酸美容液",
+                  "subcategories": []
+                },
+                {
+                  "name": "レチノール美容液",
+                  "subcategories": []
+                },
+                {
+                  "name": "コラーゲン美容液",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "クレンジング",
+              "subcategories": [
+                {
+                  "name": "クレンジングオイル",
+                  "subcategories": []
+                },
+                {
+                  "name": "クレンジングミルク",
+                  "subcategories": []
+                },
+                {
+                  "name": "ジェルクレンジング",
+                  "subcategories": []
+                },
+                {
+                  "name": "シートクレンジング",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "メイクアップ",
+          "subcategories": [
+            {
+              "name": "ファンデーション",
+              "subcategories": [
+                {
+                  "name": "リキッドファンデーション",
+                  "subcategories": []
+                },
+                {
+                  "name": "パウダーファンデーション",
+                  "subcategories": []
+                },
+                {
+                  "name": "ミネラルファンデーション",
+                  "subcategories": []
+                },
+                {
+                  "name": "クッションファンデーション",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "リップ",
+              "subcategories": [
+                {
+                  "name": "口紅",
+                  "subcategories": []
+                },
+                {
+                  "name": "ティントリップ",
+                  "subcategories": []
+                },
+                {
+                  "name": "リップグロス",
+                  "subcategories": []
+                },
+                {
+                  "name": "リップバーム",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "アイシャドウ",
+              "subcategories": [
+                {
+                  "name": "パウダーアイシャドウ",
+                  "subcategories": []
+                },
+                {
+                  "name": "クリームアイシャドウ",
+                  "subcategories": []
+                },
+                {
+                  "name": "リキッドアイシャドウ",
+                  "subcategories": []
+                },
+                {
+                  "name": "アイシャドウパレット",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "マスカラ",
+              "subcategories": [
+                {
+                  "name": "ボリュームマスカラ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ロングラッシュマスカラ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ウォータープルーフマスカラ",
+                  "subcategories": []
+                },
+                {
+                  "name": "フィルムタイプマスカラ",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ヘアケア",
+          "subcategories": [
+            {
+              "name": "シャンプー",
+              "subcategories": [
+                {
+                  "name": "ノンシリコンシャンプー",
+                  "subcategories": []
+                },
+                {
+                  "name": "スカルプシャンプー",
+                  "subcategories": []
+                },
+                {
+                  "name": "アミノ酸系シャンプー",
+                  "subcategories": []
+                },
+                {
+                  "name": "ダメージケアシャンプー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "コンディショナー",
+              "subcategories": [
+                {
+                  "name": "ボリュームダウンコンディショナー",
+                  "subcategories": []
+                },
+                {
+                  "name": "カラーヘア用コンディショナー",
+                  "subcategories": []
+                },
+                {
+                  "name": "オーガニックコンディショナー",
+                  "subcategories": []
+                },
+                {
+                  "name": "集中ケアコンディショナー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "トリートメント",
+              "subcategories": [
+                {
+                  "name": "洗い流すトリートメント",
+                  "subcategories": []
+                },
+                {
+                  "name": "洗い流さないトリートメント",
+                  "subcategories": []
+                },
+                {
+                  "name": "集中ヘアマスク",
+                  "subcategories": []
+                },
+                {
+                  "name": "カラーケアトリートメント",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ヘアオイル",
+              "subcategories": [
+                {
+                  "name": "アルガンオイル",
+                  "subcategories": []
+                },
+                {
+                  "name": "椿油",
+                  "subcategories": []
+                },
+                {
+                  "name": "シリコンオイル",
+                  "subcategories": []
+                },
+                {
+                  "name": "マルチオイルブレンド",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "香水",
+          "subcategories": [
+            {
+              "name": "オードトワレ",
+              "subcategories": [
+                {
+                  "name": "フローラルオードトワレ",
+                  "subcategories": []
+                },
+                {
+                  "name": "フルーティオードトワレ",
+                  "subcategories": []
+                },
+                {
+                  "name": "シトラスオードトワレ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ウッディオードトワレ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "オードパルファム",
+              "subcategories": [
+                {
+                  "name": "スパイシーオードパルファム",
+                  "subcategories": []
+                },
+                {
+                  "name": "グルマンオードパルファム",
+                  "subcategories": []
+                },
+                {
+                  "name": "オリエンタルオードパルファム",
+                  "subcategories": []
+                },
+                {
+                  "name": "フローラルオードパルファム",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "フレグランスミスト",
+              "subcategories": [
+                {
+                  "name": "ボディミスト",
+                  "subcategories": []
+                },
+                {
+                  "name": "ヘアミスト",
+                  "subcategories": []
+                },
+                {
+                  "name": "ファブリックミスト",
+                  "subcategories": []
+                },
+                {
+                  "name": "リフレッシュミスト",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ロールオン",
+              "subcategories": [
+                {
+                  "name": "ロールオンフレグランス",
+                  "subcategories": []
+                },
+                {
+                  "name": "パルファムロールオン",
+                  "subcategories": []
+                },
+                {
+                  "name": "アロマロールオン",
+                  "subcategories": []
+                },
+                {
+                  "name": "ミニロールオン",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "食品",
+      "subcategories": [
+        {
+          "name": "フルーツ",
+          "subcategories": [
+            {
+              "name": "りんご",
+              "subcategories": [
+                {
+                  "name": "ふじ",
+                  "subcategories": []
+                },
+                {
+                  "name": "つがる",
+                  "subcategories": []
+                },
+                {
+                  "name": "王林",
+                  "subcategories": []
+                },
+                {
+                  "name": "紅玉",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "みかん",
+              "subcategories": [
+                {
+                  "name": "温州みかん",
+                  "subcategories": []
+                },
+                {
+                  "name": "有田みかん",
+                  "subcategories": []
+                },
+                {
+                  "name": "デコポン",
+                  "subcategories": []
+                },
+                {
+                  "name": "はるみ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "バナナ",
+              "subcategories": [
+                {
+                  "name": "フィリピン産バナナ",
+                  "subcategories": []
+                },
+                {
+                  "name": "エクアドル産バナナ",
+                  "subcategories": []
+                },
+                {
+                  "name": "オーガニックバナナ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ミニバナナ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ぶどう",
+              "subcategories": [
+                {
+                  "name": "巨峰",
+                  "subcategories": []
+                },
+                {
+                  "name": "シャインマスカット",
+                  "subcategories": []
+                },
+                {
+                  "name": "デラウェア",
+                  "subcategories": []
+                },
+                {
+                  "name": "マスカット・オブ・アレキサンドリア",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "野菜",
+          "subcategories": [
+            {
+              "name": "トマト",
+              "subcategories": [
+                {
+                  "name": "ミニトマト",
+                  "subcategories": []
+                },
+                {
+                  "name": "大玉トマト",
+                  "subcategories": []
+                },
+                {
+                  "name": "トマト缶",
+                  "subcategories": []
+                },
+                {
+                  "name": "フルーツトマト",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "きゅうり",
+              "subcategories": [
+                {
+                  "name": "国産きゅうり",
+                  "subcategories": []
+                },
+                {
+                  "name": "曲がりきゅうり",
+                  "subcategories": []
+                },
+                {
+                  "name": "ミニきゅうり",
+                  "subcategories": []
+                },
+                {
+                  "name": "浅漬け用きゅうり",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "キャベツ",
+              "subcategories": [
+                {
+                  "name": "春キャベツ",
+                  "subcategories": []
+                },
+                {
+                  "name": "冬キャベツ",
+                  "subcategories": []
+                },
+                {
+                  "name": "高原キャベツ",
+                  "subcategories": []
+                },
+                {
+                  "name": "カットキャベツ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "じゃがいも",
+              "subcategories": [
+                {
+                  "name": "男爵",
+                  "subcategories": []
+                },
+                {
+                  "name": "メークイン",
+                  "subcategories": []
+                },
+                {
+                  "name": "キタアカリ",
+                  "subcategories": []
+                },
+                {
+                  "name": "インカのめざめ",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "肉",
+          "subcategories": [
+            {
+              "name": "牛肉",
+              "subcategories": [
+                {
+                  "name": "和牛(黒毛和牛)",
+                  "subcategories": []
+                },
+                {
+                  "name": "国産交雑牛",
+                  "subcategories": []
+                },
+                {
+                  "name": "オージービーフ",
+                  "subcategories": []
+                },
+                {
+                  "name": "USビーフ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "豚肉",
+              "subcategories": [
+                {
+                  "name": "国産豚ロース",
+                  "subcategories": []
+                },
+                {
+                  "name": "三元豚",
+                  "subcategories": []
+                },
+                {
+                  "name": "スペアリブ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ブランド豚",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "鶏肉",
+              "subcategories": [
+                {
+                  "name": "国産若鶏",
+                  "subcategories": []
+                },
+                {
+                  "name": "銘柄鶏",
+                  "subcategories": []
+                },
+                {
+                  "name": "むね肉",
+                  "subcategories": []
+                },
+                {
+                  "name": "手羽先",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "羊肉",
+              "subcategories": [
+                {
+                  "name": "ラム肉",
+                  "subcategories": []
+                },
+                {
+                  "name": "マトン肉",
+                  "subcategories": []
+                },
+                {
+                  "name": "ラムチョップ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ジンギスカン用羊肉",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "魚介類",
+          "subcategories": [
+            {
+              "name": "鮭",
+              "subcategories": [
+                {
+                  "name": "紅鮭",
+                  "subcategories": []
+                },
+                {
+                  "name": "銀鮭",
+                  "subcategories": []
+                },
+                {
+                  "name": "トラウトサーモン",
+                  "subcategories": []
+                },
+                {
+                  "name": "時鮭",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "まぐろ",
+              "subcategories": [
+                {
+                  "name": "本マグロ",
+                  "subcategories": []
+                },
+                {
+                  "name": "キハダマグロ",
+                  "subcategories": []
+                },
+                {
+                  "name": "メバチマグロ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ビンチョウマグロ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "いか",
+              "subcategories": [
+                {
+                  "name": "スルメイカ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ヤリイカ",
+                  "subcategories": []
+                },
+                {
+                  "name": "剣先イカ",
+                  "subcategories": []
+                },
+                {
+                  "name": "イカ刺し用イカ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "かに",
+              "subcategories": [
+                {
+                  "name": "タラバガニ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ズワイガニ",
+                  "subcategories": []
+                },
+                {
+                  "name": "毛ガニ",
+                  "subcategories": []
+                },
+                {
+                  "name": "紅ズワイガニ",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "本・雑誌・コミック",
+      "subcategories": [
+        {
+          "name": "書籍",
+          "subcategories": [
+            {
+              "name": "文学・小説",
+              "subcategories": [
+                {
+                  "name": "純文学",
+                  "subcategories": []
+                },
+                {
+                  "name": "ミステリー小説",
+                  "subcategories": []
+                },
+                {
+                  "name": "SF小説",
+                  "subcategories": []
+                },
+                {
+                  "name": "恋愛小説",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ノンフィクション",
+              "subcategories": [
+                {
+                  "name": "歴史書",
+                  "subcategories": []
+                },
+                {
+                  "name": "伝記",
+                  "subcategories": []
+                },
+                {
+                  "name": "社会科学",
+                  "subcategories": []
+                },
+                {
+                  "name": "科学・技術書",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "自己啓発",
+              "subcategories": [
+                {
+                  "name": "成功哲学",
+                  "subcategories": []
+                },
+                {
+                  "name": "ビジネス書",
+                  "subcategories": []
+                },
+                {
+                  "name": "コミュニケーション",
+                  "subcategories": []
+                },
+                {
+                  "name": "モチベーション",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "趣味・実用",
+              "subcategories": [
+                {
+                  "name": "料理本",
+                  "subcategories": []
+                },
+                {
+                  "name": "旅行ガイド",
+                  "subcategories": []
+                },
+                {
+                  "name": "DIY実践書",
+                  "subcategories": []
+                },
+                {
+                  "name": "ライフスタイル",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "雑誌",
+          "subcategories": [
+            {
+              "name": "ファッション雑誌",
+              "subcategories": [
+                {
+                  "name": "メンズファッション",
+                  "subcategories": []
+                },
+                {
+                  "name": "レディースファッション",
+                  "subcategories": []
+                },
+                {
+                  "name": "カジュアルスタイル",
+                  "subcategories": []
+                },
+                {
+                  "name": "トレンド特集",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "生活情報雑誌",
+              "subcategories": [
+                {
+                  "name": "住まい情報",
+                  "subcategories": []
+                },
+                {
+                  "name": "グルメ情報",
+                  "subcategories": []
+                },
+                {
+                  "name": "健康・美容",
+                  "subcategories": []
+                },
+                {
+                  "name": "旅行特集",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ビジネス雑誌",
+              "subcategories": [
+                {
+                  "name": "経済誌",
+                  "subcategories": []
+                },
+                {
+                  "name": "IT・テクノロジー",
+                  "subcategories": []
+                },
+                {
+                  "name": "企業特集",
+                  "subcategories": []
+                },
+                {
+                  "name": "マーケティング",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "週刊誌",
+              "subcategories": [
+                {
+                  "name": "ゴシップ",
+                  "subcategories": []
+                },
+                {
+                  "name": "政治・社会",
+                  "subcategories": []
+                },
+                {
+                  "name": "エンタメ",
+                  "subcategories": []
+                },
+                {
+                  "name": "事件・事故",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "コミック",
+          "subcategories": [
+            {
+              "name": "少年漫画",
+              "subcategories": [
+                {
+                  "name": "バトル漫画",
+                  "subcategories": []
+                },
+                {
+                  "name": "冒険漫画",
+                  "subcategories": []
+                },
+                {
+                  "name": "スポーツ漫画",
+                  "subcategories": []
+                },
+                {
+                  "name": "学園漫画",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "少女漫画",
+              "subcategories": [
+                {
+                  "name": "恋愛漫画",
+                  "subcategories": []
+                },
+                {
+                  "name": "ファンタジー漫画",
+                  "subcategories": []
+                },
+                {
+                  "name": "学園恋愛",
+                  "subcategories": []
+                },
+                {
+                  "name": "ドラマ漫画",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "青年漫画",
+              "subcategories": [
+                {
+                  "name": "シリアス漫画",
+                  "subcategories": []
+                },
+                {
+                  "name": "アクション漫画",
+                  "subcategories": []
+                },
+                {
+                  "name": "サスペンス漫画",
+                  "subcategories": []
+                },
+                {
+                  "name": "コメディ漫画",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "女性漫画",
+              "subcategories": [
+                {
+                  "name": "ロマンス漫画",
+                  "subcategories": []
+                },
+                {
+                  "name": "ヒューマンドラマ",
+                  "subcategories": []
+                },
+                {
+                  "name": "美容・ファッション漫画",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "文庫・レーベル",
+          "subcategories": [
+            {
+              "name": "文庫本",
+              "subcategories": [
+                {
+                  "name": "クラシック文学",
+                  "subcategories": []
+                },
+                {
+                  "name": "現代小説",
+                  "subcategories": []
+                },
+                {
+                  "name": "推理小説",
+                  "subcategories": []
+                },
+                {
+                  "name": "SF文庫",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "新書",
+              "subcategories": [
+                {
+                  "name": "経済新書",
+                  "subcategories": []
+                },
+                {
+                  "name": "歴史新書",
+                  "subcategories": []
+                },
+                {
+                  "name": "政治新書",
+                  "subcategories": []
+                },
+                {
+                  "name": "科学新書",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "社会評論",
+              "subcategories": [
+                {
+                  "name": "政治評論",
+                  "subcategories": []
+                },
+                {
+                  "name": "経済評論",
+                  "subcategories": []
+                },
+                {
+                  "name": "文化評論",
+                  "subcategories": []
+                },
+                {
+                  "name": "国際関係",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "翻訳書",
+              "subcategories": [
+                {
+                  "name": "海外小説",
+                  "subcategories": []
+                },
+                {
+                  "name": "海外ノンフィクション",
+                  "subcategories": []
+                },
+                {
+                  "name": "古典翻訳",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CD・音楽",
+      "subcategories": [
+        {
+          "name": "音楽CD",
+          "subcategories": [
+            {
+              "name": "ポップス",
+              "subcategories": [
+                {
+                  "name": "国内ポップ",
+                  "subcategories": []
+                },
+                {
+                  "name": "海外ポップ",
+                  "subcategories": []
+                },
+                {
+                  "name": "アイドルCD",
+                  "subcategories": []
+                },
+                {
+                  "name": "オリジナルサウンドトラック",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ロック",
+              "subcategories": [
+                {
+                  "name": "オルタナティブ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ヘヴィメタル",
+                  "subcategories": []
+                },
+                {
+                  "name": "インディーロック",
+                  "subcategories": []
+                },
+                {
+                  "name": "クラシックロック",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "クラシック",
+              "subcategories": [
+                {
+                  "name": "交響曲",
+                  "subcategories": []
+                },
+                {
+                  "name": "オペラ",
+                  "subcategories": []
+                },
+                {
+                  "name": "バロック音楽",
+                  "subcategories": []
+                },
+                {
+                  "name": "室内楽",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ジャズ",
+              "subcategories": [
+                {
+                  "name": "スムースジャズ",
+                  "subcategories": []
+                },
+                {
+                  "name": "フュージョン",
+                  "subcategories": []
+                },
+                {
+                  "name": "ビバップ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ラテンジャズ",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "デジタル音源",
+          "subcategories": [
+            {
+              "name": "ダウンロード配信",
+              "subcategories": [
+                {
+                  "name": "MP3配信",
+                  "subcategories": []
+                },
+                {
+                  "name": "AAC配信",
+                  "subcategories": []
+                },
+                {
+                  "name": "FLAC配信",
+                  "subcategories": []
+                },
+                {
+                  "name": "DRMフリー配信",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ストリーミング",
+              "subcategories": [
+                {
+                  "name": "定額ストリーミング",
+                  "subcategories": []
+                },
+                {
+                  "name": "広告付きストリーミング",
+                  "subcategories": []
+                },
+                {
+                  "name": "高音質ストリーミング",
+                  "subcategories": []
+                },
+                {
+                  "name": "ハイレゾストリーミング",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ライブ音源",
+              "subcategories": [
+                {
+                  "name": "ライブCD",
+                  "subcategories": []
+                },
+                {
+                  "name": "ライブ配信",
+                  "subcategories": []
+                },
+                {
+                  "name": "コンサート録音",
+                  "subcategories": []
+                },
+                {
+                  "name": "フェス音源",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "リミックス",
+              "subcategories": [
+                {
+                  "name": "ダンスリミックス",
+                  "subcategories": []
+                },
+                {
+                  "name": "エレクトロリミックス",
+                  "subcategories": []
+                },
+                {
+                  "name": "クラブリミックス",
+                  "subcategories": []
+                },
+                {
+                  "name": "ボーカルリミックス",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "レコード",
+          "subcategories": [
+            {
+              "name": "シングル盤",
+              "subcategories": [
+                {
+                  "name": "7インチシングル",
+                  "subcategories": []
+                },
+                {
+                  "name": "10インチシングル",
+                  "subcategories": []
+                },
+                {
+                  "name": "カラーディスク",
+                  "subcategories": []
+                },
+                {
+                  "name": "限定シングル",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "LP盤",
+              "subcategories": [
+                {
+                  "name": "クラシックLP",
+                  "subcategories": []
+                },
+                {
+                  "name": "限定LP",
+                  "subcategories": []
+                },
+                {
+                  "name": "新版LP",
+                  "subcategories": []
+                },
+                {
+                  "name": "カラーヴィニール",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "EP盤",
+              "subcategories": [
+                {
+                  "name": "ミニEP",
+                  "subcategories": []
+                },
+                {
+                  "name": "限定EP",
+                  "subcategories": []
+                },
+                {
+                  "name": "ボーナストラック付きEP",
+                  "subcategories": []
+                },
+                {
+                  "name": "特典付きEP",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "限定盤",
+              "subcategories": [
+                {
+                  "name": "特典付き限定盤",
+                  "subcategories": []
+                },
+                {
+                  "name": "サイン入り限定盤",
+                  "subcategories": []
+                },
+                {
+                  "name": "再録限定盤",
+                  "subcategories": []
+                },
+                {
+                  "name": "コレクターズ限定盤",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "音楽グッズ",
+          "subcategories": [
+            {
+              "name": "アーティストグッズ",
+              "subcategories": [
+                {
+                  "name": "Tシャツ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ポスター",
+                  "subcategories": []
+                },
+                {
+                  "name": "タオル",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "楽器アクセサリー",
+              "subcategories": [
+                {
+                  "name": "ギターアクセサリー",
+                  "subcategories": []
+                },
+                {
+                  "name": "ドラムスティック",
+                  "subcategories": []
+                },
+                {
+                  "name": "キーボードアクセサリー",
+                  "subcategories": []
+                },
+                {
+                  "name": "楽譜スタンド",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "音楽書籍",
+              "subcategories": [
+                {
+                  "name": "アーティスト写真集",
+                  "subcategories": []
+                },
+                {
+                  "name": "楽譜集",
+                  "subcategories": []
+                },
+                {
+                  "name": "バイオグラフィー",
+                  "subcategories": []
+                },
+                {
+                  "name": "ミュージックマガジン",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "コンサートグッズ",
+              "subcategories": [
+                {
+                  "name": "ライブチケット",
+                  "subcategories": []
+                },
+                {
+                  "name": "限定グッズ",
+                  "subcategories": []
+                },
+                {
+                  "name": "フェスバッジ",
+                  "subcategories": []
+                },
+                {
+                  "name": "サイン入りグッズ",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "おもちゃ・ホビー・グッズ",
+      "subcategories": [
+        {
+          "name": "おもちゃ",
+          "subcategories": [
+            {
+              "name": "教育玩具",
+              "subcategories": [
+                {
+                  "name": "積み木",
+                  "subcategories": []
+                },
+                {
+                  "name": "知育ロボット",
+                  "subcategories": []
+                },
+                {
+                  "name": "パズルブロック",
+                  "subcategories": []
+                },
+                {
+                  "name": "数学玩具",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "アクションフィギュア",
+              "subcategories": [
+                {
+                  "name": "スーパー英雄",
+                  "subcategories": []
+                },
+                {
+                  "name": "SFキャラクター",
+                  "subcategories": []
+                },
+                {
+                  "name": "アニメフィギュア",
+                  "subcategories": []
+                },
+                {
+                  "name": "映画キャラクター",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "パズル",
+              "subcategories": [
+                {
+                  "name": "ジグソーパズル",
+                  "subcategories": []
+                },
+                {
+                  "name": "立体パズル",
+                  "subcategories": []
+                },
+                {
+                  "name": "ロジックパズル",
+                  "subcategories": []
+                },
+                {
+                  "name": "マグネットパズル",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "知育玩具",
+              "subcategories": [
+                {
+                  "name": "幼児用おもちゃ",
+                  "subcategories": []
+                },
+                {
+                  "name": "知育ゲーム",
+                  "subcategories": []
+                },
+                {
+                  "name": "音の出る玩具",
+                  "subcategories": []
+                },
+                {
+                  "name": "カラフルブロック",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ホビー",
+          "subcategories": [
+            {
+              "name": "プラモデル",
+              "subcategories": [
+                {
+                  "name": "ガンダムモデル",
+                  "subcategories": []
+                },
+                {
+                  "name": "自動車模型",
+                  "subcategories": []
+                },
+                {
+                  "name": "戦闘機模型",
+                  "subcategories": []
+                },
+                {
+                  "name": "船舶模型",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ラジコン",
+              "subcategories": [
+                {
+                  "name": "ドローン",
+                  "subcategories": []
+                },
+                {
+                  "name": "RCカー",
+                  "subcategories": []
+                },
+                {
+                  "name": "ヘリコプター",
+                  "subcategories": []
+                },
+                {
+                  "name": "ボート型RC",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "クラフトキット",
+              "subcategories": [
+                {
+                  "name": "手作りアクセサリーキット",
+                  "subcategories": []
+                },
+                {
+                  "name": "ビーズクラフト",
+                  "subcategories": []
+                },
+                {
+                  "name": "木工キット",
+                  "subcategories": []
+                },
+                {
+                  "name": "ペーパークラフト",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ミニチュア",
+              "subcategories": [
+                {
+                  "name": "ミニチュア家具",
+                  "subcategories": []
+                },
+                {
+                  "name": "ミニチュア建物",
+                  "subcategories": []
+                },
+                {
+                  "name": "ミニチュアフード",
+                  "subcategories": []
+                },
+                {
+                  "name": "ミニチュア人形",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "模型・プラモデル",
+          "subcategories": [
+            {
+              "name": "1/144スケール",
+              "subcategories": [
+                {
+                  "name": "戦闘機1/144",
+                  "subcategories": []
+                },
+                {
+                  "name": "自動車1/144",
+                  "subcategories": []
+                },
+                {
+                  "name": "ミリタリーモデル1/144",
+                  "subcategories": []
+                },
+                {
+                  "name": "宇宙船1/144",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "1/72スケール",
+              "subcategories": [
+                {
+                  "name": "戦車1/72",
+                  "subcategories": []
+                },
+                {
+                  "name": "銃器1/72",
+                  "subcategories": []
+                },
+                {
+                  "name": "自動車1/72",
+                  "subcategories": []
+                },
+                {
+                  "name": "戦闘機1/72",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "1/48スケール",
+              "subcategories": [
+                {
+                  "name": "船舶1/48",
+                  "subcategories": []
+                },
+                {
+                  "name": "戦闘機1/48",
+                  "subcategories": []
+                },
+                {
+                  "name": "建造物1/48",
+                  "subcategories": []
+                },
+                {
+                  "name": "クラシック車1/48",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ジオラマキット",
+              "subcategories": [
+                {
+                  "name": "都市ジオラマ",
+                  "subcategories": []
+                },
+                {
+                  "name": "自然風景ジオラマ",
+                  "subcategories": []
+                },
+                {
+                  "name": "戦争ジオラマ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ミニチュアジオラマ",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "キャラクターグッズ",
+          "subcategories": [
+            {
+              "name": "アニメキャラ",
+              "subcategories": [
+                {
+                  "name": "フィギュア",
+                  "subcategories": []
+                },
+                {
+                  "name": "キーホルダー",
+                  "subcategories": []
+                },
+                {
+                  "name": "マグカップ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ゲームキャラ",
+              "subcategories": [
+                {
+                  "name": "コレクションフィギュア",
+                  "subcategories": []
+                },
+                {
+                  "name": "ステッカー",
+                  "subcategories": []
+                },
+                {
+                  "name": "マウスパッド",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "映画キャラ",
+              "subcategories": [
+                {
+                  "name": "レプリカ小物",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "スポーツチーム",
+              "subcategories": [
+                {
+                  "name": "ロゴグッズ",
+                  "subcategories": []
+                },
+                {
+                  "name": "キャップ",
+                  "subcategories": []
+                },
+                {
+                  "name": "マフラー",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "花・ガーデン・DYI",
+      "subcategories": [
+        {
+          "name": "園芸用品",
+          "subcategories": [
+            {
+              "name": "植物・種苗",
+              "subcategories": [
+                {
+                  "name": "花の種",
+                  "subcategories": []
+                },
+                {
+                  "name": "野菜苗",
+                  "subcategories": []
+                },
+                {
+                  "name": "ハーブ苗",
+                  "subcategories": []
+                },
+                {
+                  "name": "多肉植物",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "肥料・資材",
+              "subcategories": [
+                {
+                  "name": "オーガニック肥料",
+                  "subcategories": []
+                },
+                {
+                  "name": "緩効性肥料",
+                  "subcategories": []
+                },
+                {
+                  "name": "液体肥料",
+                  "subcategories": []
+                },
+                {
+                  "name": "堆肥",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "園芸用工具",
+              "subcategories": [
+                {
+                  "name": "園芸用ハサミ",
+                  "subcategories": []
+                },
+                {
+                  "name": "シャベル",
+                  "subcategories": []
+                },
+                {
+                  "name": "鍬",
+                  "subcategories": []
+                },
+                {
+                  "name": "散水ホース",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "鉢・プランター",
+              "subcategories": [
+                {
+                  "name": "テラコッタ鉢",
+                  "subcategories": []
+                },
+                {
+                  "name": "プラスチックプランター",
+                  "subcategories": []
+                },
+                {
+                  "name": "セラミック鉢",
+                  "subcategories": []
+                },
+                {
+                  "name": "ハンギングプランター",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ガーデン家具",
+          "subcategories": [
+            {
+              "name": "ガーデンテーブル",
+              "subcategories": [
+                {
+                  "name": "木製テーブル",
+                  "subcategories": []
+                },
+                {
+                  "name": "金属製テーブル",
+                  "subcategories": []
+                },
+                {
+                  "name": "ガラス天板テーブル",
+                  "subcategories": []
+                },
+                {
+                  "name": "折りたたみテーブル",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ガーデンチェア",
+              "subcategories": [
+                {
+                  "name": "プラスチックチェア",
+                  "subcategories": []
+                },
+                {
+                  "name": "木製チェア",
+                  "subcategories": []
+                },
+                {
+                  "name": "クッション付きチェア",
+                  "subcategories": []
+                },
+                {
+                  "name": "リクライニングチェア",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "パラソル",
+              "subcategories": [
+                {
+                  "name": "UVカットパラソル",
+                  "subcategories": []
+                },
+                {
+                  "name": "自動開閉パラソル",
+                  "subcategories": []
+                },
+                {
+                  "name": "カラフルパラソル",
+                  "subcategories": []
+                },
+                {
+                  "name": "アウトドアパラソル",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "アウトドアソファ",
+              "subcategories": [
+                {
+                  "name": "ロータイプソファ",
+                  "subcategories": []
+                },
+                {
+                  "name": "アームチェア",
+                  "subcategories": []
+                },
+                {
+                  "name": "ソファセット",
+                  "subcategories": []
+                },
+                {
+                  "name": "クッションソファ",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ガーデンデコレーション",
+          "subcategories": [
+            {
+              "name": "ガーデンライト",
+              "subcategories": [
+                {
+                  "name": "ソーラーライト",
+                  "subcategories": []
+                },
+                {
+                  "name": "LEDライト",
+                  "subcategories": []
+                },
+                {
+                  "name": "フェアリーライト",
+                  "subcategories": []
+                },
+                {
+                  "name": "スポットライト",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "フェンス装飾",
+              "subcategories": [
+                {
+                  "name": "プランターフェンス",
+                  "subcategories": []
+                },
+                {
+                  "name": "デコレーションフェンス",
+                  "subcategories": []
+                },
+                {
+                  "name": "ウッドパネル",
+                  "subcategories": []
+                },
+                {
+                  "name": "アイアンフェンス",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ウォーターフィーチャー",
+              "subcategories": [
+                {
+                  "name": "小噴水",
+                  "subcategories": []
+                },
+                {
+                  "name": "庭用池",
+                  "subcategories": []
+                },
+                {
+                  "name": "ウォータードラム",
+                  "subcategories": []
+                },
+                {
+                  "name": "水遊びセット",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "ガーデンオーナメント",
+              "subcategories": [
+                {
+                  "name": "ガーデン像",
+                  "subcategories": []
+                },
+                {
+                  "name": "鳥の置物",
+                  "subcategories": []
+                },
+                {
+                  "name": "風鈴",
+                  "subcategories": []
+                },
+                {
+                  "name": "ガーデンステーク",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "DIY工具",
+          "subcategories": [
+            {
+              "name": "電動工具",
+              "subcategories": [
+                {
+                  "name": "ドリル",
+                  "subcategories": []
+                },
+                {
+                  "name": "インパクトレンチ",
+                  "subcategories": []
+                },
+                {
+                  "name": "電動ノコギリ",
+                  "subcategories": []
+                },
+                {
+                  "name": "サンダー",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "手工具",
+              "subcategories": [
+                {
+                  "name": "ハンマー",
+                  "subcategories": []
+                },
+                {
+                  "name": "スクリュードライバー",
+                  "subcategories": []
+                },
+                {
+                  "name": "ペンチ",
+                  "subcategories": []
+                },
+                {
+                  "name": "六角レンチ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "塗装用品",
+              "subcategories": [
+                {
+                  "name": "ペイントブラシ",
+                  "subcategories": []
+                },
+                {
+                  "name": "ローラー",
+                  "subcategories": []
+                },
+                {
+                  "name": "スプレーガン",
+                  "subcategories": []
+                },
+                {
+                  "name": "マスキングテープ",
+                  "subcategories": []
+                }
+              ]
+            },
+            {
+              "name": "作業保護具",
+              "subcategories": [
+                {
+                  "name": "安全メガネ",
+                  "subcategories": []
+                },
+                {
+                  "name": "耐熱手袋",
+                  "subcategories": []
+                },
+                {
+                  "name": "ヘルメット",
+                  "subcategories": []
+                },
+                {
+                  "name": "作業服",
+                  "subcategories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

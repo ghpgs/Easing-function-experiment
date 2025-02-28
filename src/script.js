@@ -1,10 +1,9 @@
-/* ==========================
-   ① 定数＆グローバル変数
-========================== */
+/***********************
+  定数＆グローバル変数
+***********************/
 const MAX_TASKS = 2; // タスク回数
 const TIME_LIMIT_MS = 2000; // タスク制限時間(ms)
 
-// ---- ラテン方格 (5×5) 用の定義 ----
 const EASING_FUNCS = ["easeInOutSine", "easeInOutQuad", "easeInOutCubic", "easeInOutQuint", "easeInOutExpo"];
 const LATIN_SQUARE = [
   [0, 1, 2, 3, 4],
@@ -14,68 +13,32 @@ const LATIN_SQUARE = [
   [4, 0, 1, 2, 3],
 ];
 
-// 実験制御用
 let currentTaskIndex = 0;
-let startTime = 0; // タスク開始時刻
+let startTime = 0;
 let errorCount = 0;
 let timeoutId = null;
 let allLogs = [];
-
-// 「最初のクリック」が起きた秒数（タスク開始からの経過秒）
 let firstClickTime = null;
-
-// 1つのタスク中のクリック履歴
 let clicksThisTask = [];
-
-// ★追加ポイント：移動距離や滞在時間の管理
 let menuTravelDistance = 0;
 let lastClickTime = 0;
 let lastClickDepth = 0;
-
-// 多層メニュー (階層管理)
 let currentlyOpenMenus = [];
-
-// JSONデータ (メニュー用)
 let categoriesData = [];
-
-// タスク全体で使われるイージング
 let currentTaskEasing = "";
-
-// 正解アイテムまでのパス
 let currentCorrectPath = [];
-
-// ★アニメーション中かどうか
 let isAnimating = false;
 
-/* =============================
-   ★ チュートリアル関連の変数
-============================= */
-let isTutorialActive = false; // trueの間は「チュートリアル中」
-let tutorialTargetItem = "ビジネスノート"; // チュートリアルでクリックしてほしいアイテム
-let tutorialOverlay = null; // チュートリアル完了用オーバーレイ
+let isTutorialActive = false;
+let tutorialTargetItem = "最新型ドライバー";
+let tutorialOverlay = null;
 
-// ★ 参加者ID
-function generateRandomParticipantId() {
-  return Math.floor(Math.random() * 1000);
-}
-function setNewParticipantId() {
-  const newId = generateRandomParticipantId();
-  const newUrl = `${window.location.pathname}?participant=${newId}`;
-  window.history.replaceState({}, "", newUrl);
-  return newId;
-}
-const participantId = setNewParticipantId();
-console.log("参加者ID:", participantId);
-
-/* ==========================
-   グローバル変数（ボタン）
-========================== */
 let startTutorialBtn = null;
 let startTaskBtn = null;
 
-/* ==========================
-   ★ 全部リセットする関数
-========================== */
+/***********************
+  ユーティリティ関数
+***********************/
 function resetAllInfo() {
   currentTaskIndex = 0;
   startTime = 0;
@@ -91,11 +54,94 @@ function resetAllInfo() {
   isTutorialActive = false;
 }
 
-/* ==========================
-   ③ DOM読み込み時の処理
-========================== */
+function resetTaskVars() {
+  clicksThisTask = [];
+  errorCount = 0;
+  menuTravelDistance = 0;
+  lastClickTime = 0;
+  lastClickDepth = 0;
+  firstClickTime = null;
+}
+
+function generateRandomParticipantId() {
+  return Math.floor(Math.random() * 1000);
+}
+
+function setNewParticipantId() {
+  const newId = generateRandomParticipantId();
+  const newUrl = `${window.location.pathname}?participant=${newId}`;
+  window.history.replaceState({}, "", newUrl);
+  return newId;
+}
+
+const participantId = setNewParticipantId();
+console.log("参加者ID:", participantId);
+
+/***********************
+  HTMLテンプレート取得関数（チュートリアルオーバーレイ用）
+***********************/
+function createTutorialOverlay() {
+  const template = document.getElementById("tutorial-overlay-template");
+  if (!template) {
+    console.error("Tutorial overlay template not found");
+    return null;
+  }
+  const overlay = document.createElement("div");
+  overlay.classList.add("overlay", "hidden");
+  overlay.appendChild(template.content.cloneNode(true));
+
+  const closeTutorialBtn = overlay.querySelector("#closeTutorialBtn");
+  if (closeTutorialBtn) {
+    closeTutorialBtn.addEventListener("click", () => {
+      const tutorialRating = overlay.querySelector('input[name="tutorial-rating"]:checked')?.value || null;
+      tutorialRatingElem.forEach((input) => {
+        input.checked = false;
+      });
+
+      const tutorialCommentsElem = overlay.querySelector("#tutorial-comments");
+      if (tutorialCommentsElem) {
+        tutorialCommentsElem.value = "";
+      }
+      const surveyData = {
+        type: "tutorial",
+        rating: tutorialRating,
+        comments: tutorialComments,
+        timestamp: new Date().toISOString(),
+      };
+      if (!window.surveyLogs) window.surveyLogs = [];
+      window.surveyLogs.push(surveyData);
+      console.log("チュートリアルアンケート回答:", surveyData);
+
+      overlay.classList.add("hidden");
+      const feedbackElem = document.getElementById("feedback");
+      if (feedbackElem) {
+        feedbackElem.textContent = "";
+        feedbackElem.className = "";
+      }
+      const taskInfo = document.getElementById("taskInfo");
+      if (taskInfo) {
+        taskInfo.textContent = "";
+      }
+      if (startTutorialBtn) {
+        startTutorialBtn.disabled = false;
+      }
+      if (startTaskBtn) {
+        startTaskBtn.disabled = false;
+      }
+      closeAllSubmenus();
+      resetAllInfo();
+    });
+  } else {
+    console.error("閉じるボタンが見つかりませんでした");
+  }
+  return overlay;
+}
+
+/***********************
+  DOMContentLoaded イベント
+***********************/
 document.addEventListener("DOMContentLoaded", () => {
-  // ---------- 同意画面オーバーレイ ----------
+  // 同意画面の設定
   const consentOverlay = document.getElementById("consentOverlay");
   const agreeBtn = document.getElementById("agreeBtn");
   const disagreeBtn = document.getElementById("disagreeBtn");
@@ -107,44 +153,74 @@ document.addEventListener("DOMContentLoaded", () => {
     alert("同意いただけない場合は実験に参加できません。");
   });
 
-  // ---------- タスク終了オーバーレイ ----------
+  // タスク終了オーバーレイの設定（テンプレートから生成）
   const taskEndOverlay = document.getElementById("taskEndOverlay");
-  const continueTaskBtn = document.getElementById("continueTaskBtn");
-
-  // ★ ここが今回のポイント
-  continueTaskBtn.addEventListener("click", () => {
-    // ボタンのテキストを取得し、両端の空白を除去
-    const btnText = continueTaskBtn.textContent.trim();
-    console.log("【DEBUG】ボタンのテキスト:", JSON.stringify(btnText));
-
-    if (btnText === "結果へ進む") {
-      // 確認なしで結果表示へ
-      console.log("結果へ進む - confirmなしで結果へ");
-      taskEndOverlay.classList.add("hidden");
-      showResultsPage();
-    } else {
-      // 「次のタスクへ」などの場合は confirm を表示
-      console.log("次のタスクへ - confirm表示");
-      if (!confirm("次のタスクに進みますか？")) {
-        console.log("ユーザーはキャンセルしました");
-        return;
-      }
-      console.log("ユーザーはOKを押しました");
-      taskEndOverlay.classList.add("hidden");
-      startNextTask();
+  if (taskEndOverlay) {
+    const taskEndTemplate = document.getElementById("task-end-overlay-template");
+    if (taskEndTemplate) {
+      taskEndOverlay.appendChild(taskEndTemplate.content.cloneNode(true));
     }
-  });
 
-  // ---------- メインUI取得 ----------
+    // タスク終了オーバーレイの設定（テンプレートから生成済みの taskEndOverlay 内）
+    const continueTaskBtn = taskEndOverlay.querySelector("#continueTaskBtn");
+    if (continueTaskBtn) {
+      continueTaskBtn.addEventListener("click", () => {
+        // 必須項目は「タスクの使いやすさ評価」と「アニメーション評価」
+        const taskEaseRating = taskEndOverlay.querySelector('input[name="task-ease-rating"]:checked')?.value || null;
+        const animationRating = taskEndOverlay.querySelector('input[name="animation-rating"]:checked')?.value || null;
+
+        if (!taskEaseRating || !animationRating) {
+          alert("タスクアンケートの全ての項目に回答してください。");
+          return; // 必須項目が未回答の場合はここで処理終了
+        }
+
+        // 必須項目が回答済みの場合の処理
+        const taskComments = taskEndOverlay.querySelector("#task-comments").value;
+        const surveyData = {
+          type: "task",
+          taskIndex: currentTaskIndex,
+          easeRating: taskEaseRating,
+          animationRating: animationRating,
+          comments: taskComments,
+          usedEasing: currentTaskEasing,
+          timestamp: new Date().toISOString(),
+        };
+        if (!window.surveyLogs) window.surveyLogs = [];
+        window.surveyLogs.push(surveyData);
+        console.log("タスクアンケート回答:", surveyData);
+
+        // リセット処理（前のタスクのアンケート値を消す）
+        taskEndOverlay.querySelectorAll('input[type="radio"]').forEach((input) => {
+          input.checked = false;
+        });
+        const taskCommentsElem = taskEndOverlay.querySelector("#task-comments");
+        if (taskCommentsElem) {
+          taskCommentsElem.value = "";
+        }
+
+        // 次のタスクまたは結果表示への遷移
+        const btnText = continueTaskBtn.textContent.trim();
+        if (btnText === "結果へ進む") {
+          taskEndOverlay.classList.add("hidden");
+          showResultsPage();
+        } else {
+          if (!confirm("次のタスクに進みますか？")) return;
+          taskEndOverlay.classList.add("hidden");
+          startNextTask();
+        }
+      });
+    }
+  }
+
+  // メインUIの取得
   startTutorialBtn = document.getElementById("startTutorialBtn");
   startTaskBtn = document.getElementById("taskStartBtn");
-
   const menuPlaceholder = document.getElementById("menu-placeholder");
   const easingSelect = document.getElementById("easingSelect");
   const downloadAllLogsBtn = document.getElementById("downloadAllLogsBtn");
 
-  // JSON読み込み＆メニュー生成
-  fetch("rakuten_category_tree1.json")
+  // JSON読み込みとメニュー生成
+  fetch("../rakuten_categories.json")
     .then((res) => res.json())
     .then((data) => {
       categoriesData = data.categories;
@@ -155,42 +231,32 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((err) => console.error("JSON読み込み失敗:", err));
 
-  // イージングセレクト
   easingSelect.addEventListener("change", updateEasingFunction);
 
-  // ★ チュートリアル完了オーバーレイ
+  // チュートリアルオーバーレイの生成（テンプレートから）
   tutorialOverlay = createTutorialOverlay();
   document.body.appendChild(tutorialOverlay);
 
-  // 「チュートリアル開始」ボタン
   startTutorialBtn.addEventListener("click", () => {
-    if (!confirm("チュートリアルを開始しますか？")) {
-      console.log("キャンセルされました（チュートリアル開始）");
-      return;
-    }
+    if (!confirm("チュートリアルを開始しますか？")) return;
     startTutorial();
     startTutorialBtn.disabled = true;
     startTaskBtn.disabled = true;
   });
 
-  // 「本番タスク開始」ボタン
   startTaskBtn.addEventListener("click", () => {
-    if (!confirm("タスクを開始しますか？")) {
-      console.log("キャンセルされました（タスク開始）");
-      return;
-    }
+    if (!confirm("タスクを開始しますか？")) return;
     startTask();
     startTaskBtn.disabled = true;
     startTutorialBtn.disabled = true;
   });
 
-  // ログ一括ダウンロード
   downloadAllLogsBtn.addEventListener("click", handleDownloadAllLogs);
 });
 
-/* ==========================
-   メニュー生成 (再帰)
-========================== */
+/***********************
+  メニュー生成（再帰）
+***********************/
 function createMenuRecursive(categoryArray, parentUL) {
   categoryArray.forEach((cat) => {
     const li = document.createElement("li");
@@ -199,7 +265,6 @@ function createMenuRecursive(categoryArray, parentUL) {
     btn.classList.add("menu-item");
 
     if (cat.subcategories && cat.subcategories.length > 0) {
-      // 親カテゴリ
       const subUl = document.createElement("ul");
       subUl.classList.add("submenu");
       createMenuRecursive(cat.subcategories, subUl);
@@ -207,32 +272,24 @@ function createMenuRecursive(categoryArray, parentUL) {
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
         recordClick(cat.name);
-
-        // 本番タスク中のみエラー判定
         if (!isTutorialActive) {
           const currentDepth = getCategoryDepthByName(categoriesData, cat.name);
           if (currentDepth >= 1 && cat.name !== currentCorrectPath[currentDepth]) {
             errorCount++;
           }
         }
-
-        // 開閉アニメ
         animateSubmenu(subUl);
       });
 
       li.appendChild(btn);
       li.appendChild(subUl);
     } else {
-      // 葉ノード
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
         recordClick(cat.name);
-
         if (isTutorialActive) {
-          // チュートリアル回答チェック
           checkTutorialAnswer(cat.name);
         } else {
-          // 本番タスク回答チェック
           checkAnswer(cat.name);
           closeAllSubmenus();
         }
@@ -243,28 +300,23 @@ function createMenuRecursive(categoryArray, parentUL) {
   });
 }
 
-/* ==========================
-   クリック記録用関数
-========================== */
+/***********************
+  クリック記録関数
+***********************/
 function recordClick(categoryName) {
   const currentClickTime = performance.now();
   const currentDepth = getCategoryDepthByName(categoriesData, categoryName);
 
-  // 最初のクリック時刻
   if (firstClickTime === null) {
     firstClickTime = (currentClickTime - startTime) / 1000;
   }
 
-  // 滞在時間
   let stayTime = 0;
   if (lastClickTime !== 0) {
     stayTime = (currentClickTime - lastClickTime) / 1000;
   }
 
-  // 階層移動距離
   menuTravelDistance += Math.abs(currentDepth - lastClickDepth);
-
-  // クリック履歴に追加
   clicksThisTask.push({
     name: categoryName,
     depth: currentDepth,
@@ -272,20 +324,19 @@ function recordClick(categoryName) {
     stayTime: parseFloat(stayTime.toFixed(2)),
   });
 
-  // 更新
   lastClickTime = currentClickTime;
   lastClickDepth = currentDepth;
 }
 
-/* ==========================
-   ★ チュートリアル開始
-========================== */
+/***********************
+  チュートリアル開始／回答チェック
+***********************/
 function startTutorial() {
   isTutorialActive = true;
   resetTaskVars();
 
   const taskInfo = document.getElementById("taskInfo");
-  taskInfo.textContent = `【チュートリアル】「${tutorialTargetItem}」をクリックしてみてください。`;
+  taskInfo.textContent = `【チュートリアル】「${tutorialTargetItem}」をクリックしてください。`;
 
   const feedbackElem = document.getElementById("feedback");
   feedbackElem.textContent = "";
@@ -312,26 +363,21 @@ function checkTutorialAnswer(clickedText) {
     }, 2000);
     return;
   }
-
-  // 正解
   clearTimeout(timeoutId);
   feedbackElem.textContent = "チュートリアル：正解です！";
   feedbackElem.classList.remove("incorrect", "timeout");
   feedbackElem.classList.add("correct");
-
   closeAllSubmenus();
-  // チュートリアル完了オーバーレイを表示
   tutorialOverlay.classList.remove("hidden");
 }
 
-/* ==========================
-   ★ チュートリアル終了後 → 本番タスク
-========================== */
+/***********************
+  本番タスク開始／正解チェック／タイムアウト
+***********************/
 function startTask() {
   isTutorialActive = false;
   allLogs = [];
   currentTaskIndex = 0;
-
   document.getElementById("resultsPage").style.display = "none";
 
   const feedbackElem = document.getElementById("feedback");
@@ -341,9 +387,6 @@ function startTask() {
   startNextTask();
 }
 
-/* ==========================
-   本番タスク開始
-========================== */
 function startNextTask() {
   currentTaskIndex++;
   if (currentTaskIndex > MAX_TASKS) {
@@ -359,7 +402,6 @@ function startNextTask() {
   feedbackElem.textContent = "";
   feedbackElem.className = "";
 
-  // ラテン方格でイージング割り当て
   const rowIndex = participantId % 5;
   const colIndex = currentTaskIndex - 1;
   const easingIndex = LATIN_SQUARE[rowIndex][colIndex];
@@ -375,7 +417,6 @@ function startNextTask() {
   }
   updateEasingFunction();
 
-  // お題をランダム選択
   const leafNames = getAllLeafNames(categoriesData);
   const targetItemName = leafNames[Math.floor(Math.random() * leafNames.length)];
 
@@ -383,19 +424,13 @@ function startNextTask() {
   taskInfo.textContent = `タスク ${currentTaskIndex}/${MAX_TASKS}： 「${targetItemName}」をクリックしてください。`;
 
   startTime = performance.now();
-
-  // 正解パスを探して保持
   currentCorrectPath = findPathToLeaf(categoriesData, targetItemName) || [];
 
-  // タイムアウト
   timeoutId = setTimeout(() => {
     handleTimeout(targetItemName);
   }, TIME_LIMIT_MS);
 }
 
-/* ==========================
-   正解チェック
-========================== */
 function checkAnswer(clickedText) {
   const endTime = performance.now();
   const totalTimeSec = ((endTime - startTime) / 1000).toFixed(2);
@@ -418,7 +453,6 @@ function checkAnswer(clickedText) {
     return;
   }
 
-  // 正解
   feedbackElem.textContent = "正解です！";
   feedbackElem.className = "correct";
 
@@ -436,9 +470,8 @@ function checkAnswer(clickedText) {
     clicks: clicksThisTask,
   });
 
-  // タスク終了オーバーレイ（次のタスク、または結果へ）
   const taskEndOverlay = document.getElementById("taskEndOverlay");
-  const continueTaskBtn = document.getElementById("continueTaskBtn");
+  const continueTaskBtn = taskEndOverlay.querySelector("#continueTaskBtn");
   if (currentTaskIndex === MAX_TASKS) {
     continueTaskBtn.textContent = "結果へ進む";
   } else {
@@ -447,9 +480,6 @@ function checkAnswer(clickedText) {
   taskEndOverlay.classList.remove("hidden");
 }
 
-/* ==========================
-   タイムアウト
-========================== */
 function handleTimeout(targetItemName) {
   clearTimeout(timeoutId);
 
@@ -471,7 +501,7 @@ function handleTimeout(targetItemName) {
   });
 
   const taskEndOverlay = document.getElementById("taskEndOverlay");
-  const continueTaskBtn = document.getElementById("continueTaskBtn");
+  const continueTaskBtn = taskEndOverlay.querySelector("#continueTaskBtn");
   if (currentTaskIndex === MAX_TASKS) {
     continueTaskBtn.textContent = "結果へ進む";
   } else {
@@ -480,41 +510,67 @@ function handleTimeout(targetItemName) {
   taskEndOverlay.classList.remove("hidden");
 }
 
-/* ==========================
-   全タスク終了
-========================== */
+/***********************
+  結果表示／アンケート結果表示
+***********************/
 function showResultsPage() {
+  // フィードバック欄のクリア
   const feedbackElem = document.getElementById("feedback");
   feedbackElem.textContent = "";
   feedbackElem.className = "";
 
+  // 結果テーブルの更新
   const resultsPage = document.getElementById("resultsPage");
   const resultsTableBody = document.querySelector("#resultsTable tbody");
   const downloadAllLogsBtn = document.getElementById("downloadAllLogsBtn");
 
+  // 既存のテーブル内容をクリア
   resultsTableBody.innerHTML = "";
 
+  // タスクログ (allLogs) の各エントリに対してテーブル行を生成
   allLogs.forEach((log) => {
     const tr = document.createElement("tr");
 
+    // タスク番号
     const tdTask = document.createElement("td");
     tdTask.textContent = log.taskIndex;
 
+    // 正解項目
     const tdCorrect = document.createElement("td");
     tdCorrect.textContent = log.correctItem;
 
+    // 所要時間 (s)
     const tdTime = document.createElement("td");
     tdTime.textContent = parseFloat(log.totalTime).toFixed(2) + "s";
 
+    // エラー回数
     const tdError = document.createElement("td");
     tdError.textContent = log.errorCount;
 
+    // タイムアウト
     const tdTimeout = document.createElement("td");
     tdTimeout.textContent = log.timedOut ? "Yes" : "No";
 
+    // 使用したイージング関数
     const tdEasing = document.createElement("td");
     tdEasing.textContent = log.usedEasing;
 
+    // 使いやすさ評価・アニメーション評価（該当するタスク番号のアンケートを検索）
+    let easeRating = "-";
+    let animationRating = "-";
+    if (window.surveyLogs && window.surveyLogs.length > 0) {
+      const survey = window.surveyLogs.find((s) => s.type === "task" && s.taskIndex === log.taskIndex);
+      if (survey) {
+        easeRating = survey.easeRating || "-";
+        animationRating = survey.animationRating || "-";
+      }
+    }
+    const tdEaseRating = document.createElement("td");
+    tdEaseRating.textContent = easeRating;
+    const tdAnimRating = document.createElement("td");
+    tdAnimRating.textContent = animationRating;
+
+    // すべての列を行に追加
     tr.appendChild(tdTask);
     tr.appendChild(tdCorrect);
     tr.appendChild(tdTime);
@@ -529,11 +585,16 @@ function showResultsPage() {
   downloadAllLogsBtn.style.display = "inline-block";
 }
 
-/* ==========================
-   ログ一括ダウンロード
-========================== */
+/***********************
+  ログ一括ダウンロード
+***********************/
 function handleDownloadAllLogs() {
-  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(allLogs, null, 2));
+  const combinedData = {
+    participantId: participantId,
+    taskLogs: allLogs,
+    surveyLogs: window.surveyLogs || [],
+  };
+  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(combinedData, null, 2));
   const fileName = `participant_${participantId}_logs.json`;
   const anchor = document.createElement("a");
   anchor.setAttribute("href", dataStr);
@@ -541,18 +602,15 @@ function handleDownloadAllLogs() {
   anchor.click();
 }
 
-/* ==========================
-   イージング関数更新
-========================== */
+/***********************
+  イージング関数更新＆メニューアニメーション
+***********************/
 function updateEasingFunction() {
   const easingSelect = document.getElementById("easingSelect");
   const selectedEasing = easingSelect.value;
   document.documentElement.style.setProperty("--submenu-easing", selectedEasing);
 }
 
-/* ==========================
-   メニュー開閉アニメ (多層)
-========================== */
 function animateSubmenu(targetSubmenu) {
   if (!targetSubmenu) return;
   const level = getMenuLevel(targetSubmenu);
@@ -619,9 +677,6 @@ function getMenuLevel(submenu) {
   return level;
 }
 
-/* ==========================
-   葉ノードのname全取得
-========================== */
 function getAllLeafNames(categories) {
   let result = [];
   categories.forEach((cat) => {
@@ -634,9 +689,6 @@ function getAllLeafNames(categories) {
   return result;
 }
 
-/* ==========================
-   name → depth
-========================== */
 function getCategoryDepthByName(categories, targetName, depth = 0) {
   for (const cat of categories) {
     if (cat.name === targetName) {
@@ -650,9 +702,6 @@ function getCategoryDepthByName(categories, targetName, depth = 0) {
   return -1;
 }
 
-/* ==========================
-   ターゲットアイテムまでのパス (DFS)
-========================== */
 function findPathToLeaf(categories, targetName, currentPath = []) {
   for (const cat of categories) {
     const newPath = [...currentPath, cat.name];
@@ -669,9 +718,6 @@ function findPathToLeaf(categories, targetName, currentPath = []) {
   return null;
 }
 
-/* ==========================
-   アニメを飛ばして即開
-========================== */
 function openMenuImmediately(submenu) {
   submenu.style.transition = "none";
   submenu.classList.add("open");
@@ -680,74 +726,4 @@ function openMenuImmediately(submenu) {
   requestAnimationFrame(() => {
     submenu.style.transition = "";
   });
-}
-
-/* ==========================
-   ★ 変数リセット関数
-========================== */
-function resetTaskVars() {
-  clicksThisTask = [];
-  errorCount = 0;
-  menuTravelDistance = 0;
-  lastClickTime = 0;
-  lastClickDepth = 0;
-  firstClickTime = null;
-}
-
-/* ==========================
-   ★ チュートリアル完了オーバーレイ
-========================== */
-function createTutorialOverlay() {
-  const overlay = document.createElement("div");
-  overlay.classList.add("overlay", "hidden");
-
-  overlay.innerHTML = `
-    <div class="overlay-content">
-      <h2>チュートリアル完了</h2>
-      <p>ご理解ありがとうございます。<br>チュートリアルは以上です。</p>
-      <button id="closeTutorialBtn">閉じる</button>
-    </div>
-  `;
-
-  const closeTutorialBtn = overlay.querySelector("#closeTutorialBtn");
-  if (closeTutorialBtn) {
-    closeTutorialBtn.addEventListener("click", () => {
-      console.log("閉じるボタンがクリックされました");
-
-      // 1. オーバーレイを非表示
-      overlay.classList.add("hidden");
-
-      // 2. フィードバックとタスク情報の表示をクリア
-      const feedbackElem = document.getElementById("feedback");
-      if (feedbackElem) {
-        feedbackElem.textContent = "";
-        feedbackElem.className = "";
-      }
-      const taskInfo = document.getElementById("taskInfo");
-      if (taskInfo) {
-        taskInfo.textContent = "";
-      }
-
-      // 3. startTutorialBtn / startTaskBtn を有効化
-      if (startTutorialBtn) {
-        startTutorialBtn.disabled = false;
-      }
-      if (startTaskBtn) {
-        startTaskBtn.disabled = false;
-      }
-
-      // 4. サブメニューを閉じる
-      closeAllSubmenus();
-
-      // 5. 内部情報リセット
-      resetAllInfo();
-
-      console.log("startTutorialBtn.disabled:", startTutorialBtn ? startTutorialBtn.disabled : "not found");
-      console.log("startTaskBtn.disabled:", startTaskBtn ? startTaskBtn.disabled : "not found");
-    });
-  } else {
-    console.error("閉じるボタンが見つかりませんでした");
-  }
-
-  return overlay;
 }

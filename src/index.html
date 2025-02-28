@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>イージング関数実験</title>
+    <link rel="stylesheet" href="easing_functions.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>イージング関数における効果測定実験</h1>
+    <main>
+      <!-- イージング関数選択などのUI -->
+      <div class="config-area">
+        <label for="easingSelect">イージング関数選択：</label>
+        <select id="easingSelect">
+          <option value="var(--easeInOutSine)">easeInOutSine</option>
+          <option value="var(--easeInOutQuad)">easeInOutQuad</option>
+          <option value="var(--easeInOutCubic)">easeInOutCubic</option>
+          <option value="var(--easeInOutQuint)">easeInOutQuint</option>
+          <option value="var(--easeInOutExpo)">easeInOutExpo</option>
+        </select>
+        <button id="taskStartBtn">タスク開始</button>
+        <button id="startTutorialBtn">チュートリアル開始</button>
+      </div>
+
+      <!-- メインコンテンツ（フィードバック、メニュー表示エリア） -->
+      <div class="content-wrapper">
+        <div class="main-content">
+          <div id="taskInfo" class="task-info"></div>
+          <div id="feedback" class="feedback"></div>
+          <div id="menu-placeholder" class="menu-container"></div>
+        </div>
+      </div>
+
+      <!-- 同意画面オーバーレイ -->
+      <div id="consentOverlay" class="overlay">
+        <div class="overlay-content">
+          <h2>実験へのご協力に関する同意</h2>
+          <p>
+            本実験では操作ログ等を記録します。データは匿名化され、研究以外に利用しません。<br />
+            同意いただけない場合は実験に参加できません。
+          </p>
+          <button id="agreeBtn">同意する</button>
+          <button id="disagreeBtn">同意しない</button>
+        </div>
+      </div>
+
+      <!-- タスク終了オーバーレイ（内容はテンプレートから挿入） -->
+      <div id="taskEndOverlay" class="overlay hidden"></div>
+
+      <!-- 結果表示 -->
+      <section id="resultsPage" style="display: none">
+        <h2>結果一覧</h2>
+        <table id="resultsTable">
+          <thead>
+            <tr>
+              <th>タスク番号</th>
+              <th>正解項目</th>
+              <th>所要時間 (s)</th>
+              <th>エラー回数</th>
+              <th>タイムアウト</th>
+              <th>使用したイージング関数</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <div class="center-area">
+          <button id="downloadAllLogsBtn" style="display: none">結果をダウンロード</button>
+        </div>
+      </section>
+
+      <!-- チュートリアル完了オーバーレイ -->
+      <template id="tutorial-overlay-template">
+        <div class="overlay-content">
+          <h2>チュートリアル完了</h2>
+          <p>ご理解ありがとうございます。<br />チュートリアルは以上です。</p>
+          <div class="survey-section">
+            <h3>簡単なアンケート</h3>
+            <div class="survey-question">
+              <p>チュートリアルは理解しましたか？</p>
+              <div class="rating-container">
+                <label><input type="radio" name="tutorial-rating" value="1" /> 理解できた</label>
+                <label><input type="radio" name="tutorial-rating" value="5" /> 理解できなかった</label>
+              </div>
+            </div>
+            <div class="survey-question">
+              <p>コメントがあればご記入ください：</p>
+              <textarea id="tutorial-comments" rows="3" cols="40"></textarea>
+            </div>
+          </div>
+          <button id="closeTutorialBtn">閉じる</button>
+        </div>
+      </template>
+
+      <!-- タスク終了オーバーレイ -->
+      <template id="task-end-overlay-template">
+        <div class="overlay-content">
+          <h2>タスク完了</h2>
+          <div class="survey-section">
+            <h3>タスクについてのアンケート</h3>
+            <div class="survey-question">
+              <p>先ほどのメニューの操作は簡単でしたか？</p>
+              <div class="rating-container">
+                <label><input type="radio" name="task-ease-rating" value="1" /> 1 (難しい)</label>
+                <label><input type="radio" name="task-ease-rating" value="2" /> 2</label>
+                <label><input type="radio" name="task-ease-rating" value="3" /> 3</label>
+                <label><input type="radio" name="task-ease-rating" value="4" /> 4</label>
+                <label><input type="radio" name="task-ease-rating" value="5" /> 5 (簡単)</label>
+              </div>
+            </div>
+            <div class="survey-question">
+              <p>先ほどのメニューのアニメーションについてどう感じましたか？</p>
+              <div class="rating-container">
+                <label><input type="radio" name="animation-rating" value="1" /> 1 (悪い)</label>
+                <label><input type="radio" name="animation-rating" value="2" /> 2</label>
+                <label><input type="radio" name="animation-rating" value="3" /> 3</label>
+                <label><input type="radio" name="animation-rating" value="4" /> 4</label>
+                <label><input type="radio" name="animation-rating" value="5" /> 5 (良い)</label>
+              </div>
+            </div>
+            <div class="survey-question">
+              <p>コメントがあればご記入ください：</p>
+              <textarea id="task-comments" rows="3" cols="40"></textarea>
+            </div>
+          </div>
+          <button id="continueTaskBtn">次のタスクへ</button>
+        </div>
+      </template>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -61,7 +61,7 @@ def build_category_tree(max_depth):
 if __name__ == "__main__":
     # サンプルでは max_depth=3 として、1層目＋2層目＋3層目を取得する例
     # ※ 指定のサンプルJSONは3層目までネストしている
-    tree = build_category_tree(max_depth=4)
+    tree = build_category_tree(max_depth=5)
     # 結果をファイルに整形済みJSONとして保存
     with open("rakuten_category_tree.json", "w", encoding="utf-8") as f:
         json.dump(tree, f, ensure_ascii=False, indent=2)
