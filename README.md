@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f96abed5-78e7-4435-abee-6bce5ee02e72/deploy-status)](https://app.netlify.com/sites/curious-truffle-d2e8fc/deploys)
 # ローカルサーバーの立て方（Live Server & Python http.server）
 
 ## 目次
