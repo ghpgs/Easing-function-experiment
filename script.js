@@ -209,19 +209,28 @@ document.addEventListener("DOMContentLoaded", () => {
   startTaskBtn = document.getElementById("taskStartBtn");
   const menuPlaceholder = document.getElementById("menu-placeholder");
   const easingSelect = document.getElementById("easingSelect");
-  const downloadAllLogsBtn = document.getElementById("downloadAllLogsBtn");
 
   // JSON読み込みとメニュー生成
-  fetch("rakuten_categories.json")
-    .then((res) => res.json())
-    .then((data) => {
-      categoriesData = data.categories;
-      const menuRoot = document.createElement("ul");
-      menuRoot.classList.add("menu");
-      createMenuRecursive(categoriesData, menuRoot);
-      menuPlaceholder.appendChild(menuRoot);
+  fetch("https://script.google.com/macros/s/AKfycby-N7Be_9IY3mcA6MYjNKc9WsOCoG8fKUzpDDJEJ-OxhHq4QqdVkcisFUuY57iquppp/exec", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      participantId: 123,
+      taskLogs: [...],
+      surveyLogs: [...]
+    }),
+  })
+    .then(res => {
+      if (!res.ok) throw new Error("Network response was not ok");
+      return res.json();
     })
-    .catch((err) => console.error("JSON読み込み失敗:", err));
+    .then(data => {
+      console.log("送信成功:", data);
+    })
+    .catch(err => {
+      console.error("送信失敗:", err);
+    });
+  
 
   easingSelect.addEventListener("change", updateEasingFunction);
 
@@ -242,8 +251,6 @@ document.addEventListener("DOMContentLoaded", () => {
     startTaskBtn.disabled = true;
     startTutorialBtn.disabled = true;
   });
-
-  downloadAllLogsBtn.addEventListener("click", handleDownloadAllLogs);
 });
 
 /***********************
@@ -573,14 +580,12 @@ function showResultsPage() {
   })
     .then((res) => {
       if (res.ok) {
-        console.log("データが正常に送信されました！");
+        console.log("データ送信成功");
       } else {
-        console.error("送信失敗です…");
+        console.error("データ送信失敗:", res.status, res.statusText);
       }
     })
-    .catch((err) => {
-      console.error("エラーが発生しました：", err);
-    });
+    .catch((err) => console.error("エラー:", err));
 }
 
 /***********************
