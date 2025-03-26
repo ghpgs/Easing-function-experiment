@@ -132,15 +132,9 @@
     -->
     <!-- Netlify上でフォーム名として表示される -->
     <!-- index.html のフォームの例 -->
-    <form name="results" method="POST" data-netlify="true">
+    <form id="netlifyForm" name="results" method="POST" data-netlify="true" action="thank-you.html" style="display: none">
       <input type="hidden" name="form-name" value="results" />
-
-      <!-- ここに隠しフィールドを追加 -->
-      <input type="hidden" name="success" value="/index.html?_submitted=true" />
-
-      <!-- 送信データ -->
       <input type="hidden" id="netlifyFormData" name="jsonData" value="" />
-      <button type="submit">送信</button>
     </form>
 
     <!-- スクリプト読み込み -->

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>送信完了</title>
+    <script>
+      // URL パラメータから指定の値を取得する関数
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // 被験者IDを取得
+        const participantId = getQueryParam("participant");
+        // PsychExp のリダイレクト先の URL を設定
+        let targetUrl = "https://psychexp.com/register/MzMwNC1kMzlhZjA/";
+        if (participantId) {
+          targetUrl += "?participant=" + encodeURIComponent(participantId);
+        }
+        // 3秒後にリダイレクト
+        setTimeout(function () {
+          window.location.href = targetUrl;
+        }, 3000);
+      });
+    </script>
+  </head>
+  <body>
+    <p>ご回答ありがとうございます。5秒後にアンケートページへ自動的にリダイレクトします...</p>
+  </body>
+</html>
