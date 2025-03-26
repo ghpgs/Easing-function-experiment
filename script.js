@@ -462,49 +462,54 @@ function showResultsPage() {
   const resultsPage = document.getElementById("resultsPage");
   const resultsTableBody = document.querySelector("#resultsTable tbody");
   resultsTableBody.innerHTML = "";
+
   allLogs.forEach((log) => {
     const tr = document.createElement("tr");
+
     const tdTask = document.createElement("td");
     tdTask.textContent = log.taskIndex;
     tr.appendChild(tdTask);
+
     const tdCorrect = document.createElement("td");
     tdCorrect.textContent = log.correctItem;
     tr.appendChild(tdCorrect);
+
     const tdTime = document.createElement("td");
     tdTime.textContent = parseFloat(log.totalTime).toFixed(2) + "s";
     tr.appendChild(tdTime);
+
     const tdError = document.createElement("td");
     tdError.textContent = log.errorCount;
     tr.appendChild(tdError);
+
     const tdTimeout = document.createElement("td");
     tdTimeout.textContent = log.timedOut ? "Yes" : "No";
     tr.appendChild(tdTimeout);
+
     const tdEasing = document.createElement("td");
     tdEasing.textContent = log.usedEasing;
     tr.appendChild(tdEasing);
+
     resultsTableBody.appendChild(tr);
   });
+
   resultsPage.style.display = "block";
 
-  // 自動送信処理（fetchでGoogle Apps ScriptにPOST）
-  const combinedData = {
-    participantId: participantId,
-    taskLogs: allLogs,
-    surveyLogs: window.surveyLogs || [],
-  };
+  // 自動送信処理：URLSearchParams を使用して form 形式でデータ送信する
+  const params = new URLSearchParams();
+  params.append("participantId", participantId);
+  params.append("taskLogs", JSON.stringify(allLogs));
+  params.append("surveyLogs", JSON.stringify(window.surveyLogs || []));
 
   fetch("https://script.google.com/macros/s/AKfycby-N7Be_9IY3mcA6MYjNKc9WsOCoG8fKUzpDDJEJ-OxhHq4QqdVkcisFUuY57iquppp/exec", {
     method: "POST",
-    mode: "no-cors",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(combinedData),
+    // ヘッダーを明示的に設定しないことで、単純リクエストとして送信される
+    body: params,
   })
     .then((res) => {
-      if (res.ok) {
-        console.log("データが正常に送信されました！");
-      } else {
-        console.error("送信失敗です…");
-      }
+      // 単純リクエストの場合、レスポンスが opaque になる可能性があるので、
+      // ここでは送信完了のログだけ出す
+      console.log("データ送信リクエストを送信しました");
     })
     .catch((err) => {
       console.error("エラーが発生しました：", err);
