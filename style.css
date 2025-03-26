@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+label[for="easingSelect"],
+#easingSelect {
+  display: none !important;
+}
+
 /* ================================
    カスタム変数
 ================================ */
