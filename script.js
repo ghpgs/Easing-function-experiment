@@ -1,8 +1,8 @@
 /***********************
   定数＆グローバル変数
 ***********************/
-const MAX_TASKS = 2; // タスク回数
-const TIME_LIMIT_MS = 2000; // タスク制限時間(ms)
+const MAX_TASKS = 5; // タスク回数
+const TIME_LIMIT_MS = 15000; // タスク制限時間(ms)
 const EASING_FUNCS = ["easeInOutSine", "easeInOutQuad", "easeInOutCubic", "easeInOutQuint", "easeInOutExpo"];
 const LATIN_SQUARE = [
   [0, 1, 2, 3, 4],
@@ -12,11 +12,12 @@ const LATIN_SQUARE = [
   [4, 0, 1, 2, 3],
 ];
 
+// グローバル管理（surveyLogsは廃止して、全てをallLogs[]に統合）
 let currentTaskIndex = 0;
 let startTime = 0;
 let errorCount = 0;
 let timeoutId = null;
-let allLogs = [];
+let allLogs = []; // 各タスクのログ + アンケート回答をまとめて保持
 let firstClickTime = null;
 let clicksThisTask = [];
 let menuTravelDistance = 0;
@@ -29,6 +30,7 @@ let currentCorrectPath = [];
 let isAnimating = false;
 let isTutorialActive = false;
 let tutorialTargetItem = "最新型ドライバー";
+
 let tutorialOverlay = null;
 let startTutorialBtn = null;
 let startTaskBtn = null;
@@ -144,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const continueTaskBtn = taskEndOverlay.querySelector("#continueTaskBtn");
     if (continueTaskBtn) {
       continueTaskBtn.addEventListener("click", () => {
-        // アンケート情報をsurveyLogsに保存
+        // タスク終了アンケートの内容を、今のタスクのログに統合する
         const taskEaseRating = taskEndOverlay.querySelector('input[name="task-ease-rating"]:checked')?.value || null;
         const animationRating = taskEndOverlay.querySelector('input[name="animation-rating"]:checked')?.value || null;
         if (!taskEaseRating || !animationRating) {
@@ -152,18 +154,25 @@ document.addEventListener("DOMContentLoaded", () => {
           return;
         }
         const taskComments = taskEndOverlay.querySelector("#task-comments").value;
-        const surveyData = {
-          type: "task",
-          taskIndex: currentTaskIndex,
-          easeRating: taskEaseRating,
-          animationRating: animationRating,
-          comments: taskComments,
-          usedEasing: currentTaskEasing,
-          timestamp: new Date().toISOString(),
-        };
-        if (!window.surveyLogs) window.surveyLogs = [];
-        window.surveyLogs.push(surveyData);
-        console.log("タスクアンケート回答:", surveyData);
+
+        // すでに checkAnswer() or handleTimeout() で allLogs に本タスク分はpush済み
+        // その「最後のログ」に対してアンケート結果を追加
+        const lastLog = allLogs[allLogs.length - 1];
+        if (lastLog && lastLog.taskIndex === currentTaskIndex) {
+          lastLog.easeRating = taskEaseRating;
+          lastLog.animationRating = animationRating;
+          lastLog.comments = taskComments;
+          lastLog.timestamp = new Date().toISOString();
+        } else {
+          // 念のため、万が一見つからない場合は新規生成も可
+          allLogs.push({
+            taskIndex: currentTaskIndex,
+            easeRating: taskEaseRating,
+            animationRating: animationRating,
+            comments: taskComments,
+            timestamp: new Date().toISOString(),
+          });
+        }
 
         // 次に備えてラジオボタンやテキストをクリア
         taskEndOverlay.querySelectorAll('input[type="radio"]').forEach((input) => {
@@ -195,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const easingSelect = document.getElementById("easingSelect");
 
   // ▼ メニュー生成
-  // ここでは例として "rakuten_categories.json" をfetchしているが、無い場合は任意のカテゴリ配列を定義
+  // 例として "rakuten_categories.json" をfetch
   fetch("rakuten_categories.json")
     .then((res) => res.json())
     .then((data) => {
@@ -228,6 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
     startTask();
     startTaskBtn.disabled = true;
     startTutorialBtn.disabled = true;
+    menuPlaceholder.style.display = "block";
   });
 });
 
@@ -342,6 +352,8 @@ function checkTutorialAnswer(clickedText) {
   feedbackElem.classList.remove("incorrect", "timeout");
   feedbackElem.classList.add("correct");
   closeAllSubmenus();
+
+  // チュートリアル完了 ⇒ オーバーレイ表示
   tutorialOverlay.classList.remove("hidden");
 }
 
@@ -378,7 +390,8 @@ function startNextTask() {
   const colIndex = currentTaskIndex - 1;
   const easingIndex = LATIN_SQUARE[rowIndex][colIndex];
   currentTaskEasing = EASING_FUNCS[easingIndex];
-  // HTMLのセレクトも更新
+
+  // HTMLのセレクトも更新 (デモ的に動的切り替え)
   const assignedDropdownValue = `var(--${currentTaskEasing})`;
   const easingSelect = document.getElementById("easingSelect");
   for (const option of easingSelect.options) {
@@ -428,6 +441,8 @@ function checkAnswer(clickedText) {
   feedbackElem.textContent = "正解です！";
   feedbackElem.className = "correct";
   const firstClickTimeSec = firstClickTime !== null ? parseFloat(firstClickTime.toFixed(2)) : "N/A";
+
+  // タスクログを保存（アンケート回答以外をここでまとめる）
   allLogs.push({
     taskIndex: currentTaskIndex,
     correctItem: targetItemName,
@@ -526,21 +541,18 @@ function showResultsPage() {
 
   resultsPage.style.display = "block";
 
-  // ▼ ここでNetlifyフォームへ自動送信
+  // ここで最終的なデータ構造を作成（surveyLogsがなく、taskLogsのみ）
+  // => タスクログにアンケート情報も統合済み
   const finalData = {
     participantId: participantId,
-    taskLogs: allLogs,
-    surveyLogs: window.surveyLogs || [],
+    taskLogs: allLogs, // ← ここにeaseRating等の項目も含まれている
   };
+
   // hidden inputにJSON文字列を格納
   document.getElementById("netlifyFormData").value = JSON.stringify(finalData);
 
   // フォームを自動送信（Netlify側で集計される）
   document.getElementById("netlifyForm").submit();
-
-  // ▼ もともとのfetch送信やダウンロード機能を使わないならコメントアウト
-  // downloadResultsAsJson(finalData);
-  // sendDataToServer(finalData);
 }
 
 /***********************
@@ -664,8 +676,7 @@ function findPathToLeaf(categories, targetName, currentPath = []) {
 /***********************
   （オプション）ファイルダウンロード例
 ***********************/
-// もしユーザーにJSONファイルをダウンロードさせたい場合は、
-// ボタンのclickイベントなどでこの関数を呼ぶ
+// もしユーザーにJSONファイルをダウンロードさせたい場合など
 function downloadResultsAsJson(data) {
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
@@ -678,33 +689,15 @@ function downloadResultsAsJson(data) {
   URL.revokeObjectURL(url);
 }
 
-/***********************
-  （オプション）fetch送信例
-***********************/
-// 元々Google Apps Scriptに送っていた例などがあれば活用
-function sendDataToServer(data) {
-  const params = new URLSearchParams();
-  params.append("participantId", data.participantId);
-  params.append("taskLogs", JSON.stringify(data.taskLogs));
-  params.append("surveyLogs", JSON.stringify(data.surveyLogs));
-
-  fetch("https://example.com/your-endpoint", {
-    method: "POST",
-    body: params,
-  })
-    .then(() => console.log("サーバー送信完了"))
-    .catch((err) => console.error("送信失敗:", err));
-}
-
+// Netlifyフォーム用：URLパラメータのparticipant確認してフォームactionをカスタマイズ
 document.addEventListener("DOMContentLoaded", () => {
-  // 既に participantId は生成済み（setNewParticipantId() で URL に設定されている）
-  // URLから participant パラメータを取得する
+  // URLから participant パラメータを取得
   const urlParams = new URLSearchParams(window.location.search);
-  const participantId = urlParams.get("participant");
+  const pid = urlParams.get("participant");
 
-  if (participantId) {
+  if (pid) {
     // フォームの action 属性を "thank-you.html?participant=XXX" に更新
     const form = document.getElementById("netlifyForm");
-    form.action = "thank-you.html?participant=" + encodeURIComponent(participantId);
+    form.action = "thank-you.html?participant=" + encodeURIComponent(pid);
   }
 });
