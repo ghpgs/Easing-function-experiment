@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const downloadAllLogsBtn = document.getElementById("downloadAllLogsBtn");
 
   // JSON読み込みとメニュー生成
-  fetch("../rakuten_categories.json")
+  fetch("rakuten_categories.json")
     .then((res) => res.json())
     .then((data) => {
       categoriesData = data.categories;
