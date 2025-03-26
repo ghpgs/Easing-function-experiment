@@ -662,24 +662,6 @@ function findPathToLeaf(categories, targetName, currentPath = []) {
 }
 
 /***********************
-  最後に追加するコード
-***********************/
-document.addEventListener("DOMContentLoaded", function () {
-  // フォーム送信後の "?submitted=true" を検出
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.get("submitted") === "true") {
-    // 被験者IDを付与してリダイレクトしたいURL
-    const psycExpBaseUrl = "https://psychexp.com/register/MzMwNC1kMzlhZjA/";
-    // script.js 上部で生成している participantId を使う
-    const redirectUrl = participantId ? `${psycExpBaseUrl}?participant=${encodeURIComponent(participantId)}` : psycExpBaseUrl;
-
-    // 3秒後にリダイレクト
-    setTimeout(() => {
-      window.location.href = redirectUrl;
-    }, 5000);
-  }
-});
-/***********************
   （オプション）ファイルダウンロード例
 ***********************/
 // もしユーザーにJSONファイルをダウンロードさせたい場合は、
@@ -713,3 +695,13 @@ function sendDataToServer(data) {
     .then(() => console.log("サーバー送信完了"))
     .catch((err) => console.error("送信失敗:", err));
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(location.search);
+  if (params.has("_submitted")) {
+    // 3秒後にリダイレクト
+    setTimeout(() => {
+      window.location.href = "https://psychexp.com/register/MzMwNC1kMzlhZjA/?participant=...";
+    }, 5000);
+  }
+});
