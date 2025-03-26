@@ -494,17 +494,29 @@ function showResultsPage() {
   });
 
   resultsPage.style.display = "block";
+}
 
-  // 自動送信処理：URLSearchParams を使用して form 形式でデータ送信する
+// 例）タスク終了時やアンケ終了時に呼ばれる処理
+function uploadDataToGAS(participantId, allLogs, surveyLogs) {
+  // URLSearchParams で送る
   const params = new URLSearchParams();
   params.append("participantId", participantId);
   params.append("taskLogs", JSON.stringify(allLogs));
-  params.append("surveyLogs", JSON.stringify(window.surveyLogs || []));
+  params.append("surveyLogs", JSON.stringify(surveyLogs));
 
-  fetch("https://script.google.com/macros/s/AKfycbzYDB7h_m5Ysc7jf_HwnzSDqUJJFCG_7wu_QhwfgBx7NK4dl1_75KJ3c5UVwHCMoai7/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbwsedjHXqCsR1FLBzLHz_rShUCuvXq_6-0uBacGcZ6i4YeaBbblPebW6GuJpLu-kupA/exec", {
     method: "POST",
+    // Content-Type を手動指定しないことで、CORSエラーを回避しやすくなる
     body: params,
-  });
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("送信結果:", data);
+      // data.status === "success" であれば成功
+    })
+    .catch((err) => {
+      console.error("送信失敗:", err);
+    });
 }
 
 /***********************
