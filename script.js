@@ -501,19 +501,10 @@ function showResultsPage() {
   params.append("taskLogs", JSON.stringify(allLogs));
   params.append("surveyLogs", JSON.stringify(window.surveyLogs || []));
 
-  fetch("https://script.google.com/macros/s/AKfycby-N7Be_9IY3mcA6MYjNKc9WsOCoG8fKUzpDDJEJ-OxhHq4QqdVkcisFUuY57iquppp/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbzYDB7h_m5Ysc7jf_HwnzSDqUJJFCG_7wu_QhwfgBx7NK4dl1_75KJ3c5UVwHCMoai7/exec", {
     method: "POST",
-    // ヘッダーを明示的に設定しないことで、単純リクエストとして送信される
     body: params,
-  })
-    .then((res) => {
-      // 単純リクエストの場合、レスポンスが opaque になる可能性があるので、
-      // ここでは送信完了のログだけ出す
-      console.log("データ送信リクエストを送信しました");
-    })
-    .catch((err) => {
-      console.error("エラーが発生しました：", err);
-    });
+  });
 }
 
 /***********************
