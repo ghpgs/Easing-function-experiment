@@ -495,6 +495,7 @@ function showResultsPage() {
 
   fetch("https://script.google.com/macros/s/AKfycby-N7Be_9IY3mcA6MYjNKc9WsOCoG8fKUzpDDJEJ-OxhHq4QqdVkcisFUuY57iquppp/exec", {
     method: "POST",
+    mode: "no-cors",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(combinedData),
   })
