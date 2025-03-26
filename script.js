@@ -662,6 +662,24 @@ function findPathToLeaf(categories, targetName, currentPath = []) {
 }
 
 /***********************
+  最後に追加するコード
+***********************/
+document.addEventListener("DOMContentLoaded", function () {
+  // フォーム送信後の "?submitted=true" を検出
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get("submitted") === "true") {
+    // 被験者IDを付与してリダイレクトしたいURL
+    const psycExpBaseUrl = "https://psychexp.com/register/MzMwNC1kMzlhZjA/";
+    // script.js 上部で生成している participantId を使う
+    const redirectUrl = participantId ? `${psycExpBaseUrl}?participant=${encodeURIComponent(participantId)}` : psycExpBaseUrl;
+
+    // 3秒後にリダイレクト
+    setTimeout(() => {
+      window.location.href = redirectUrl;
+    }, 5000);
+  }
+});
+/***********************
   （オプション）ファイルダウンロード例
 ***********************/
 // もしユーザーにJSONファイルをダウンロードさせたい場合は、
@@ -676,4 +694,22 @@ function downloadResultsAsJson(data) {
   a.click();
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
+}
+
+/***********************
+  （オプション）fetch送信例
+***********************/
+// 元々Google Apps Scriptに送っていた例などがあれば活用
+function sendDataToServer(data) {
+  const params = new URLSearchParams();
+  params.append("participantId", data.participantId);
+  params.append("taskLogs", JSON.stringify(data.taskLogs));
+  params.append("surveyLogs", JSON.stringify(data.surveyLogs));
+
+  fetch("https://example.com/your-endpoint", {
+    method: "POST",
+    body: params,
+  })
+    .then(() => console.log("サーバー送信完了"))
+    .catch((err) => console.error("送信失敗:", err));
 }

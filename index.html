@@ -127,14 +127,12 @@
     </main>
 
     <!--
-  ▼▼▼ Netlify でフォームとして認識させるための仕組み ▼▼▼
-  このformを自動サブミットして、最終的なJSONデータを送信する
--->
+      ▼▼▼ Netlify でフォームとして認識させるための仕組み ▼▼▼
+      このformを自動サブミットして、最終的なJSONデータを送信する
+    -->
     <!-- Netlify上でフォーム名として表示される -->
-    <form id="netlifyForm" name="results" method="POST" data-netlify="true" action="/thank-you.html" style="display: none">
-      <!-- Netlifyがフォームとして認識するための必須フィールド -->
+    <form id="netlifyForm" name="results" method="POST" data-netlify="true" action="?submitted=true" style="display: none">
       <input type="hidden" name="form-name" value="results" />
-      <!-- 実験結果をJSON文字列化して格納する -->
       <input type="hidden" id="netlifyFormData" name="jsonData" value="" />
     </form>
 
