@@ -697,11 +697,14 @@ function sendDataToServer(data) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const params = new URLSearchParams(location.search);
-  if (params.has("_submitted")) {
-    // 3秒後にリダイレクト
-    setTimeout(() => {
-      window.location.href = "https://psychexp.com/register/MzMwNC1kMzlhZjA/?participant=...";
-    }, 5000);
+  // 既に participantId は生成済み（setNewParticipantId() で URL に設定されている）
+  // URLから participant パラメータを取得する
+  const urlParams = new URLSearchParams(window.location.search);
+  const participantId = urlParams.get("participant");
+
+  if (participantId) {
+    // フォームの action 属性を "thank-you.html?participant=XXX" に更新
+    const form = document.getElementById("netlifyForm");
+    form.action = "thank-you.html?participant=" + encodeURIComponent(participantId);
   }
 });
