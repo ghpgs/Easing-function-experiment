@@ -2,10 +2,12 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="favicon.ico" />
     <title>イージング関数実験</title>
     <link rel="stylesheet" href="easing_functions.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <h1>イージング関数における効果測定実験</h1>
     <main>
@@ -74,20 +76,6 @@
         <div class="overlay-content">
           <h2>チュートリアル完了</h2>
           <p>ご理解ありがとうございます。<br />チュートリアルは以上です。</p>
-          <div class="survey-section">
-            <h3>簡単なアンケート</h3>
-            <div class="survey-question">
-              <p>チュートリアルは理解しましたか？</p>
-              <div class="rating-container">
-                <label><input type="radio" name="tutorial-rating" value="1" /> 理解できた</label>
-                <label><input type="radio" name="tutorial-rating" value="5" /> 理解できなかった</label>
-              </div>
-            </div>
-            <div class="survey-question">
-              <p>コメントがあればご記入ください：</p>
-              <textarea id="tutorial-comments" rows="3" cols="40"></textarea>
-            </div>
-          </div>
           <button id="closeTutorialBtn">閉じる</button>
         </div>
       </template>
@@ -99,23 +87,29 @@
           <div class="survey-section">
             <h3>タスクについてのアンケート</h3>
             <div class="survey-question">
-              <p>先ほどのメニューの操作は簡単でしたか？</p>
+              <p>
+                先ほどのメニューの操作は簡単でしたか？<br />
+                1（難しい）〜 5（簡単）
+              </p>
               <div class="rating-container">
-                <label><input type="radio" name="task-ease-rating" value="1" /> 1 (難しい)</label>
+                <label><input type="radio" name="task-ease-rating" value="1" /> 1</label>
                 <label><input type="radio" name="task-ease-rating" value="2" /> 2</label>
                 <label><input type="radio" name="task-ease-rating" value="3" /> 3</label>
                 <label><input type="radio" name="task-ease-rating" value="4" /> 4</label>
-                <label><input type="radio" name="task-ease-rating" value="5" /> 5 (簡単)</label>
+                <label><input type="radio" name="task-ease-rating" value="5" /> 5</label>
               </div>
             </div>
             <div class="survey-question">
-              <p>先ほどのメニューのアニメーションについてどう感じましたか？</p>
+              <p>
+                先ほどのメニューのアニメーションについてどう感じましたか？<br />
+                1（悪い）〜 5（良い）
+              </p>
               <div class="rating-container">
-                <label><input type="radio" name="animation-rating" value="1" /> 1 (悪い)</label>
+                <label><input type="radio" name="animation-rating" value="1" /> 1</label>
                 <label><input type="radio" name="animation-rating" value="2" /> 2</label>
                 <label><input type="radio" name="animation-rating" value="3" /> 3</label>
                 <label><input type="radio" name="animation-rating" value="4" /> 4</label>
-                <label><input type="radio" name="animation-rating" value="5" /> 5 (良い)</label>
+                <label><input type="radio" name="animation-rating" value="5" /> 5</label>
               </div>
             </div>
             <div class="survey-question">

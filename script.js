@@ -93,41 +93,33 @@ function createTutorialOverlay() {
   const closeTutorialBtn = overlay.querySelector("#closeTutorialBtn");
   if (closeTutorialBtn) {
     closeTutorialBtn.addEventListener("click", () => {
-      const tutorialRating = overlay.querySelector('input[name="tutorial-rating"]:checked')?.value || null;
-      tutorialRatingElem.forEach((input) => {
-        input.checked = false;
-      });
-
-      const tutorialCommentsElem = overlay.querySelector("#tutorial-comments");
-      if (tutorialCommentsElem) {
-        tutorialCommentsElem.value = "";
-      }
-      const surveyData = {
-        type: "tutorial",
-        rating: tutorialRating,
-        comments: tutorialComments,
-        timestamp: new Date().toISOString(),
-      };
-      if (!window.surveyLogs) window.surveyLogs = [];
-      window.surveyLogs.push(surveyData);
-      console.log("チュートリアルアンケート回答:", surveyData);
-
+      // オーバーレイを非表示
       overlay.classList.add("hidden");
+
+      // フィードバック要素をクリア
       const feedbackElem = document.getElementById("feedback");
       if (feedbackElem) {
         feedbackElem.textContent = "";
         feedbackElem.className = "";
       }
+
+      // タスク情報をクリア
       const taskInfo = document.getElementById("taskInfo");
       if (taskInfo) {
         taskInfo.textContent = "";
       }
+
+      // ボタンを有効化
+      const startTutorialBtn = document.getElementById("startTutorialBtn");
+      const startTaskBtn = document.getElementById("taskStartBtn");
       if (startTutorialBtn) {
         startTutorialBtn.disabled = false;
       }
       if (startTaskBtn) {
         startTaskBtn.disabled = false;
       }
+
+      // サブメニューとその他の情報をリセット
       closeAllSubmenus();
       resetAllInfo();
     });
@@ -522,84 +514,73 @@ function showResultsPage() {
   // 結果テーブルの更新
   const resultsPage = document.getElementById("resultsPage");
   const resultsTableBody = document.querySelector("#resultsTable tbody");
-  const downloadAllLogsBtn = document.getElementById("downloadAllLogsBtn");
 
   // 既存のテーブル内容をクリア
   resultsTableBody.innerHTML = "";
 
-  // タスクログ (allLogs) の各エントリに対してテーブル行を生成
+  // タスクログ (allLogs) の各エントリに対してテーブル行を生成して追加
   allLogs.forEach((log) => {
     const tr = document.createElement("tr");
 
     // タスク番号
     const tdTask = document.createElement("td");
     tdTask.textContent = log.taskIndex;
+    tr.appendChild(tdTask);
 
     // 正解項目
     const tdCorrect = document.createElement("td");
     tdCorrect.textContent = log.correctItem;
+    tr.appendChild(tdCorrect);
 
-    // 所要時間 (s)
+    // 所要時間
     const tdTime = document.createElement("td");
     tdTime.textContent = parseFloat(log.totalTime).toFixed(2) + "s";
+    tr.appendChild(tdTime);
 
     // エラー回数
     const tdError = document.createElement("td");
     tdError.textContent = log.errorCount;
+    tr.appendChild(tdError);
 
     // タイムアウト
     const tdTimeout = document.createElement("td");
     tdTimeout.textContent = log.timedOut ? "Yes" : "No";
+    tr.appendChild(tdTimeout);
 
     // 使用したイージング関数
     const tdEasing = document.createElement("td");
     tdEasing.textContent = log.usedEasing;
-
-    // 使いやすさ評価・アニメーション評価（該当するタスク番号のアンケートを検索）
-    let easeRating = "-";
-    let animationRating = "-";
-    if (window.surveyLogs && window.surveyLogs.length > 0) {
-      const survey = window.surveyLogs.find((s) => s.type === "task" && s.taskIndex === log.taskIndex);
-      if (survey) {
-        easeRating = survey.easeRating || "-";
-        animationRating = survey.animationRating || "-";
-      }
-    }
-    const tdEaseRating = document.createElement("td");
-    tdEaseRating.textContent = easeRating;
-    const tdAnimRating = document.createElement("td");
-    tdAnimRating.textContent = animationRating;
-
-    // すべての列を行に追加
-    tr.appendChild(tdTask);
-    tr.appendChild(tdCorrect);
-    tr.appendChild(tdTime);
-    tr.appendChild(tdError);
-    tr.appendChild(tdTimeout);
     tr.appendChild(tdEasing);
 
+    // 組み立てた行をテーブルに追加
     resultsTableBody.appendChild(tr);
   });
 
+  // 結果ページを表示
   resultsPage.style.display = "block";
-  downloadAllLogsBtn.style.display = "inline-block";
-}
 
-/***********************
-  ログ一括ダウンロード
-***********************/
-function handleDownloadAllLogs() {
+  // ここで実験ログを自動送信（fetch POST）
   const combinedData = {
     participantId: participantId,
     taskLogs: allLogs,
     surveyLogs: window.surveyLogs || [],
   };
-  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(combinedData, null, 2));
-  const fileName = `participant_${participantId}_logs.json`;
-  const anchor = document.createElement("a");
-  anchor.setAttribute("href", dataStr);
-  anchor.setAttribute("download", fileName);
-  anchor.click();
+
+  fetch("https://script.google.com/macros/s/AKfycbwEk0m0NOfzkz-dXBdTq7THpr56CXwj9XWy-T9HEsCGT11HpLBlP8cjlvgcvg1rdecH/exec", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(combinedData),
+  })
+    .then((res) => {
+      if (res.ok) {
+        console.log("データが正常に送信されました！");
+      } else {
+        console.error("送信失敗です…");
+      }
+    })
+    .catch((err) => {
+      console.error("エラーが発生しました：", err);
+    });
 }
 
 /***********************
