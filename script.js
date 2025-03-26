@@ -66,6 +66,7 @@ function generateRandomParticipantId() {
 
 function setNewParticipantId() {
   const newId = generateRandomParticipantId();
+  // URLクエリで participant を更新（任意）
   const newUrl = `${window.location.pathname}?participant=${newId}`;
   window.history.replaceState({}, "", newUrl);
   return newId;
@@ -75,7 +76,7 @@ const participantId = setNewParticipantId();
 console.log("参加者ID:", participantId);
 
 /***********************
-  HTMLテンプレート取得関数（チュートリアルオーバーレイ用）
+  HTMLテンプレート取得（チュートリアルオーバーレイ）
 ***********************/
 function createTutorialOverlay() {
   const template = document.getElementById("tutorial-overlay-template");
@@ -121,7 +122,7 @@ function createTutorialOverlay() {
   DOMContentLoaded イベント
 ***********************/
 document.addEventListener("DOMContentLoaded", () => {
-  // 同意画面の設定
+  // ▼ 同意画面の設定
   const consentOverlay = document.getElementById("consentOverlay");
   const agreeBtn = document.getElementById("agreeBtn");
   const disagreeBtn = document.getElementById("disagreeBtn");
@@ -133,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
     alert("同意いただけない場合は実験に参加できません。");
   });
 
-  // タスク終了オーバーレイの設定（テンプレートから生成）
+  // ▼ タスク終了オーバーレイの設定（テンプレートから生成）
   const taskEndOverlay = document.getElementById("taskEndOverlay");
   if (taskEndOverlay) {
     const taskEndTemplate = document.getElementById("task-end-overlay-template");
@@ -143,6 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const continueTaskBtn = taskEndOverlay.querySelector("#continueTaskBtn");
     if (continueTaskBtn) {
       continueTaskBtn.addEventListener("click", () => {
+        // アンケート情報をsurveyLogsに保存
         const taskEaseRating = taskEndOverlay.querySelector('input[name="task-ease-rating"]:checked')?.value || null;
         const animationRating = taskEndOverlay.querySelector('input[name="animation-rating"]:checked')?.value || null;
         if (!taskEaseRating || !animationRating) {
@@ -162,6 +164,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!window.surveyLogs) window.surveyLogs = [];
         window.surveyLogs.push(surveyData);
         console.log("タスクアンケート回答:", surveyData);
+
+        // 次に備えてラジオボタンやテキストをクリア
         taskEndOverlay.querySelectorAll('input[type="radio"]').forEach((input) => {
           input.checked = false;
         });
@@ -169,6 +173,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (taskCommentsElem) {
           taskCommentsElem.value = "";
         }
+
+        // タスク完了 or 続行
         const btnText = continueTaskBtn.textContent.trim();
         if (btnText === "結果へ進む") {
           taskEndOverlay.classList.add("hidden");
@@ -182,11 +188,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // ▼ チュートリアル/タスク開始ボタン
   startTutorialBtn = document.getElementById("startTutorialBtn");
   startTaskBtn = document.getElementById("taskStartBtn");
   const menuPlaceholder = document.getElementById("menu-placeholder");
   const easingSelect = document.getElementById("easingSelect");
 
+  // ▼ メニュー生成
+  // ここでは例として "rakuten_categories.json" をfetchしているが、無い場合は任意のカテゴリ配列を定義
   fetch("rakuten_categories.json")
     .then((res) => res.json())
     .then((data) => {
@@ -198,11 +207,14 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((err) => console.error("JSON読み込み失敗:", err));
 
+  // ▼ イージング関数変更
   easingSelect.addEventListener("change", updateEasingFunction);
 
+  // ▼ チュートリアルオーバーレイ作成＆追加
   tutorialOverlay = createTutorialOverlay();
   document.body.appendChild(tutorialOverlay);
 
+  // ▼ チュートリアル開始
   startTutorialBtn.addEventListener("click", () => {
     if (!confirm("チュートリアルを開始しますか？")) return;
     startTutorial();
@@ -210,6 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
     startTaskBtn.disabled = true;
   });
 
+  // ▼ タスク開始
   startTaskBtn.addEventListener("click", () => {
     if (!confirm("タスクを開始しますか？")) return;
     startTask();
@@ -237,6 +250,7 @@ function createMenuRecursive(categoryArray, parentUL) {
         e.stopPropagation();
         recordClick(cat.name);
         if (!isTutorialActive) {
+          // ミスクリック（誤親カテゴリを開いた等）
           const currentDepth = getCategoryDepthByName(categoriesData, cat.name);
           if (currentDepth >= 1 && cat.name !== currentCorrectPath[currentDepth]) {
             errorCount++;
@@ -247,6 +261,7 @@ function createMenuRecursive(categoryArray, parentUL) {
       li.appendChild(btn);
       li.appendChild(subUl);
     } else {
+      // リーフノード（商品）
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
         recordClick(cat.name);
@@ -279,7 +294,6 @@ function recordClick(categoryName) {
     stayTime = (currentClickTime - lastClickTime) / 1000;
   }
 
-  menuTravelDistance += Math.abs(currentDepth - lastClickDepth);
   clicksThisTask.push({
     name: categoryName,
     depth: currentDepth,
@@ -287,6 +301,7 @@ function recordClick(categoryName) {
     stayTime: parseFloat(stayTime.toFixed(2)),
   });
 
+  menuTravelDistance += Math.abs(currentDepth - lastClickDepth);
   lastClickTime = currentClickTime;
   lastClickDepth = currentDepth;
 }
@@ -353,13 +368,17 @@ function startNextTask() {
   resetTaskVars();
   closeAllSubmenus();
   clearTimeout(timeoutId);
+
   const feedbackElem = document.getElementById("feedback");
   feedbackElem.textContent = "";
   feedbackElem.className = "";
+
+  // Latin Square でイージング関数を割り当て
   const rowIndex = participantId % 5;
   const colIndex = currentTaskIndex - 1;
   const easingIndex = LATIN_SQUARE[rowIndex][colIndex];
   currentTaskEasing = EASING_FUNCS[easingIndex];
+  // HTMLのセレクトも更新
   const assignedDropdownValue = `var(--${currentTaskEasing})`;
   const easingSelect = document.getElementById("easingSelect");
   for (const option of easingSelect.options) {
@@ -369,12 +388,16 @@ function startNextTask() {
     }
   }
   updateEasingFunction();
+
+  // ランダムに商品（リーフノード）をターゲットとして選ぶ
   const leafNames = getAllLeafNames(categoriesData);
   const targetItemName = leafNames[Math.floor(Math.random() * leafNames.length)];
   const taskInfo = document.getElementById("taskInfo");
   taskInfo.textContent = `タスク ${currentTaskIndex}/${MAX_TASKS}： 「${targetItemName}」をクリックしてください。`;
   startTime = performance.now();
   currentCorrectPath = findPathToLeaf(categoriesData, targetItemName) || [];
+
+  // タイムアウト設定
   timeoutId = setTimeout(() => {
     handleTimeout(targetItemName);
   }, TIME_LIMIT_MS);
@@ -388,6 +411,7 @@ function checkAnswer(clickedText) {
   const match = taskInfo.textContent.match(/「(.*?)」/);
   if (!match) return;
   const targetItemName = match[1];
+
   if (clickedText !== targetItemName) {
     errorCount++;
     feedbackElem.textContent = "間違いです。もう一度試してください。";
@@ -399,6 +423,8 @@ function checkAnswer(clickedText) {
     }, 2000);
     return;
   }
+
+  // 正解時
   feedbackElem.textContent = "正解です！";
   feedbackElem.className = "correct";
   const firstClickTimeSec = firstClickTime !== null ? parseFloat(firstClickTime.toFixed(2)) : "N/A";
@@ -413,6 +439,8 @@ function checkAnswer(clickedText) {
     menuTravelDistance: menuTravelDistance,
     clicks: clicksThisTask,
   });
+
+  // タスク終了オーバーレイを表示
   const taskEndOverlay = document.getElementById("taskEndOverlay");
   const continueTaskBtn = taskEndOverlay.querySelector("#continueTaskBtn");
   if (currentTaskIndex === MAX_TASKS) {
@@ -427,6 +455,7 @@ function handleTimeout(targetItemName) {
   clearTimeout(timeoutId);
   const feedbackElem = document.getElementById("feedback");
   feedbackElem.classList.add("timeout");
+
   const firstClickTimeSec = firstClickTime !== null ? parseFloat(firstClickTime.toFixed(2)) : "N/A";
   allLogs.push({
     taskIndex: currentTaskIndex,
@@ -439,6 +468,8 @@ function handleTimeout(targetItemName) {
     menuTravelDistance: menuTravelDistance,
     clicks: clicksThisTask,
   });
+
+  // タスク終了オーバーレイを表示
   const taskEndOverlay = document.getElementById("taskEndOverlay");
   const continueTaskBtn = taskEndOverlay.querySelector("#continueTaskBtn");
   if (currentTaskIndex === MAX_TASKS) {
@@ -450,10 +481,10 @@ function handleTimeout(targetItemName) {
 }
 
 /***********************
-  結果表示／自動送信
+  結果表示／Netlifyフォームで送信
 ***********************/
 function showResultsPage() {
-  // フィードバック欄のクリア
+  // フィードバック欄リセット
   const feedbackElem = document.getElementById("feedback");
   feedbackElem.textContent = "";
   feedbackElem.className = "";
@@ -494,33 +525,26 @@ function showResultsPage() {
   });
 
   resultsPage.style.display = "block";
-}
 
-// 例）タスク終了時やアンケ終了時に呼ばれる処理
-function uploadDataToGAS(participantId, allLogs, surveyLogs) {
-  // URLSearchParams で送る
-  const params = new URLSearchParams();
-  params.append("participantId", participantId);
-  params.append("taskLogs", JSON.stringify(allLogs));
-  params.append("surveyLogs", JSON.stringify(surveyLogs));
+  // ▼ ここでNetlifyフォームへ自動送信
+  const finalData = {
+    participantId: participantId,
+    taskLogs: allLogs,
+    surveyLogs: window.surveyLogs || [],
+  };
+  // hidden inputにJSON文字列を格納
+  document.getElementById("netlifyFormData").value = JSON.stringify(finalData);
 
-  fetch("https://script.google.com/macros/s/AKfycbwsedjHXqCsR1FLBzLHz_rShUCuvXq_6-0uBacGcZ6i4YeaBbblPebW6GuJpLu-kupA/exec", {
-    method: "POST",
-    // Content-Type を手動指定しないことで、CORSエラーを回避しやすくなる
-    body: params,
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      console.log("送信結果:", data);
-      // data.status === "success" であれば成功
-    })
-    .catch((err) => {
-      console.error("送信失敗:", err);
-    });
+  // フォームを自動送信（Netlify側で集計される）
+  document.getElementById("netlifyForm").submit();
+
+  // ▼ もともとのfetch送信やダウンロード機能を使わないならコメントアウト
+  // downloadResultsAsJson(finalData);
+  // sendDataToServer(finalData);
 }
 
 /***********************
-  イージング関数更新＆メニューアニメーション
+  イージング関数＆サブメニューのアニメーション
 ***********************/
 function updateEasingFunction() {
   const easingSelect = document.getElementById("easingSelect");
@@ -593,6 +617,9 @@ function getMenuLevel(submenu) {
   return level;
 }
 
+/***********************
+  カテゴリ探索系（パスや深さ取得）
+***********************/
 function getAllLeafNames(categories) {
   let result = [];
   categories.forEach((cat) => {
@@ -634,12 +661,19 @@ function findPathToLeaf(categories, targetName, currentPath = []) {
   return null;
 }
 
-function openMenuImmediately(submenu) {
-  submenu.style.transition = "none";
-  submenu.classList.add("open");
-  currentlyOpenMenus[getMenuLevel(submenu)] = submenu;
-  isAnimating = false;
-  requestAnimationFrame(() => {
-    submenu.style.transition = "";
-  });
+/***********************
+  （オプション）ファイルダウンロード例
+***********************/
+// もしユーザーにJSONファイルをダウンロードさせたい場合は、
+// ボタンのclickイベントなどでこの関数を呼ぶ
+function downloadResultsAsJson(data) {
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `results_participant_${data.participantId}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
 }
