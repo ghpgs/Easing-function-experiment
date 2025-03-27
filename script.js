@@ -202,11 +202,14 @@ document.addEventListener("DOMContentLoaded", () => {
   startTutorialBtn = document.getElementById("startTutorialBtn");
   startTaskBtn = document.getElementById("taskStartBtn");
   const menuPlaceholder = document.getElementById("menu-placeholder");
+  if (menuPlaceholder) {
+    menuPlaceholder.style.display = "block";
+  }
   const easingSelect = document.getElementById("easingSelect");
 
   // ▼ メニュー生成
   // 例として "rakuten_categories.json" をfetch
-  fetch("rakuten_categories.json")
+  fetch("rakuten_categories_dummy.json")
     .then((res) => res.json())
     .then((data) => {
       categoriesData = data.categories;
@@ -494,6 +497,7 @@ function handleTimeout(targetItemName) {
     continueTaskBtn.textContent = "次のタスクへ";
   }
   taskEndOverlay.classList.remove("hidden");
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 /***********************
