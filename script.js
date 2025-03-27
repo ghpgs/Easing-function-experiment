@@ -1,6 +1,6 @@
 /***********************
-  定数＆グローバル変数
-***********************/
+      定数＆グローバル変数
+    ***********************/
 const MAX_TASKS = 5; // タスク回数
 const TIME_LIMIT_MS = 15000; // タスク制限時間(ms)
 const EASING_FUNCS = ["easeInOutSine", "easeInOutQuad", "easeInOutCubic", "easeInOutQuint", "easeInOutExpo"];
@@ -29,15 +29,15 @@ let currentTaskEasing = "";
 let currentCorrectPath = [];
 let isAnimating = false;
 let isTutorialActive = false;
-let tutorialTargetItem = "最新型ドライバー";
+let tutorialTargetItem = "キッチンラップ"; // チュートリアルでクリックする商品名
 
 let tutorialOverlay = null;
 let startTutorialBtn = null;
 let startTaskBtn = null;
 
 /***********************
-  ユーティリティ関数
-***********************/
+        ユーティリティ関数
+      ***********************/
 function resetAllInfo() {
   currentTaskIndex = 0;
   startTime = 0;
@@ -78,8 +78,8 @@ const participantId = setNewParticipantId();
 console.log("参加者ID:", participantId);
 
 /***********************
-  HTMLテンプレート取得（チュートリアルオーバーレイ）
-***********************/
+        HTMLテンプレート取得（チュートリアルオーバーレイ）
+      ***********************/
 function createTutorialOverlay() {
   const template = document.getElementById("tutorial-overlay-template");
   if (!template) {
@@ -121,131 +121,8 @@ function createTutorialOverlay() {
 }
 
 /***********************
-  DOMContentLoaded イベント
-***********************/
-document.addEventListener("DOMContentLoaded", () => {
-  // ▼ 同意画面の設定
-  const consentOverlay = document.getElementById("consentOverlay");
-  const agreeBtn = document.getElementById("agreeBtn");
-  const disagreeBtn = document.getElementById("disagreeBtn");
-
-  agreeBtn.addEventListener("click", () => {
-    consentOverlay.classList.add("hidden");
-  });
-  disagreeBtn.addEventListener("click", () => {
-    alert("同意いただけない場合は実験に参加できません。");
-  });
-
-  // ▼ タスク終了オーバーレイの設定（テンプレートから生成）
-  const taskEndOverlay = document.getElementById("taskEndOverlay");
-  if (taskEndOverlay) {
-    const taskEndTemplate = document.getElementById("task-end-overlay-template");
-    if (taskEndTemplate) {
-      taskEndOverlay.appendChild(taskEndTemplate.content.cloneNode(true));
-    }
-    const continueTaskBtn = taskEndOverlay.querySelector("#continueTaskBtn");
-    if (continueTaskBtn) {
-      continueTaskBtn.addEventListener("click", () => {
-        // タスク終了アンケートの内容を、今のタスクのログに統合する
-        const taskEaseRating = taskEndOverlay.querySelector('input[name="task-ease-rating"]:checked')?.value || null;
-        const animationRating = taskEndOverlay.querySelector('input[name="animation-rating"]:checked')?.value || null;
-        if (!taskEaseRating || !animationRating) {
-          alert("タスクアンケートの全ての項目に回答してください。");
-          return;
-        }
-        const taskComments = taskEndOverlay.querySelector("#task-comments").value;
-
-        // すでに checkAnswer() or handleTimeout() で allLogs に本タスク分はpush済み
-        // その「最後のログ」に対してアンケート結果を追加
-        const lastLog = allLogs[allLogs.length - 1];
-        if (lastLog && lastLog.taskIndex === currentTaskIndex) {
-          lastLog.easeRating = taskEaseRating;
-          lastLog.animationRating = animationRating;
-          lastLog.comments = taskComments;
-          lastLog.timestamp = new Date().toISOString();
-        } else {
-          // 念のため、万が一見つからない場合は新規生成も可
-          allLogs.push({
-            taskIndex: currentTaskIndex,
-            easeRating: taskEaseRating,
-            animationRating: animationRating,
-            comments: taskComments,
-            timestamp: new Date().toISOString(),
-          });
-        }
-
-        // 次に備えてラジオボタンやテキストをクリア
-        taskEndOverlay.querySelectorAll('input[type="radio"]').forEach((input) => {
-          input.checked = false;
-        });
-        const taskCommentsElem = taskEndOverlay.querySelector("#task-comments");
-        if (taskCommentsElem) {
-          taskCommentsElem.value = "";
-        }
-
-        // タスク完了 or 続行
-        const btnText = continueTaskBtn.textContent.trim();
-        if (btnText === "結果へ進む") {
-          if (!confirm("結果に進みますか？")) return;
-        if (btnText === "次へ進む") {
-          taskEndOverlay.classList.add("hidden");
-          showResultsPage();
-        } else {
-          if (!confirm("次のタスクに進みますか？")) return;
-          taskEndOverlay.classList.add("hidden");
-          startNextTask();
-        }
-      });
-    }
-  }
-
-  // ▼ チュートリアル/タスク開始ボタン
-  startTutorialBtn = document.getElementById("startTutorialBtn");
-  startTaskBtn = document.getElementById("taskStartBtn");
-  const menuPlaceholder = document.getElementById("menu-placeholder");
-  const easingSelect = document.getElementById("easingSelect");
-
-  // ▼ メニュー生成
-  // 例として "rakuten_categories.json" をfetch
-  fetch("rakuten_categories_2_dummy.json")
-    .then((res) => res.json())
-    .then((data) => {
-      categoriesData = data.categories;
-      const menuRoot = document.createElement("ul");
-      menuRoot.classList.add("menu");
-      createMenuRecursive(categoriesData, menuRoot);
-      menuPlaceholder.appendChild(menuRoot);
-    })
-    .catch((err) => console.error("JSON読み込み失敗:", err));
-
-  // ▼ イージング関数変更
-  easingSelect.addEventListener("change", updateEasingFunction);
-
-  // ▼ チュートリアルオーバーレイ作成＆追加
-  tutorialOverlay = createTutorialOverlay();
-  document.body.appendChild(tutorialOverlay);
-
-  // ▼ チュートリアル開始
-  startTutorialBtn.addEventListener("click", () => {
-    if (!confirm("チュートリアルを開始しますか？")) return;
-    startTutorial();
-    startTutorialBtn.disabled = true;
-    startTaskBtn.disabled = true;
-  });
-
-  // ▼ タスク開始
-  startTaskBtn.addEventListener("click", () => {
-    if (!confirm("タスクを開始しますか？")) return;
-    startTask();
-    startTaskBtn.disabled = true;
-    startTutorialBtn.disabled = true;
-    menuPlaceholder.style.display = "block";
-  });
-});
-
-/***********************
-  メニュー生成（再帰）
-***********************/
+        メニュー生成（再帰）
+      ***********************/
 function createMenuRecursive(categoryArray, parentUL) {
   categoryArray.forEach((cat) => {
     const li = document.createElement("li");
@@ -291,8 +168,8 @@ function createMenuRecursive(categoryArray, parentUL) {
 }
 
 /***********************
-  クリック記録関数
-***********************/
+        クリック記録関数
+      ***********************/
 function recordClick(categoryName) {
   const currentClickTime = performance.now();
   const currentDepth = getCategoryDepthByName(categoriesData, categoryName);
@@ -319,8 +196,8 @@ function recordClick(categoryName) {
 }
 
 /***********************
-  チュートリアル開始／回答チェック
-***********************/
+        チュートリアル開始／回答チェック
+      ***********************/
 function startTutorial() {
   isTutorialActive = true;
   resetTaskVars();
@@ -360,8 +237,8 @@ function checkTutorialAnswer(clickedText) {
 }
 
 /***********************
-  本番タスク開始／正解チェック／タイムアウト
-***********************/
+        本番タスク開始／正解チェック／タイムアウト
+      ***********************/
 function startTask() {
   isTutorialActive = false;
   allLogs = [];
@@ -498,8 +375,8 @@ function handleTimeout(targetItemName) {
 }
 
 /***********************
-  結果表示／Netlifyフォームで送信
-***********************/
+        結果表示／Netlifyフォームで送信
+      ***********************/
 function showResultsPage() {
   // フィードバック欄リセット
   const feedbackElem = document.getElementById("feedback");
@@ -558,8 +435,8 @@ function showResultsPage() {
 }
 
 /***********************
-  イージング関数＆サブメニューのアニメーション
-***********************/
+        イージング関数＆サブメニューのアニメーション
+      ***********************/
 function updateEasingFunction() {
   const easingSelect = document.getElementById("easingSelect");
   const selectedEasing = easingSelect.value;
@@ -632,8 +509,8 @@ function getMenuLevel(submenu) {
 }
 
 /***********************
-  カテゴリ探索系（パスや深さ取得）
-***********************/
+        カテゴリ探索系（パスや深さ取得）
+      ***********************/
 function getAllLeafNames(categories) {
   let result = [];
   categories.forEach((cat) => {
@@ -676,9 +553,8 @@ function findPathToLeaf(categories, targetName, currentPath = []) {
 }
 
 /***********************
-  （オプション）ファイルダウンロード例
-***********************/
-// もしユーザーにJSONファイルをダウンロードさせたい場合など
+        （オプション）ファイルダウンロード例
+      ***********************/
 function downloadResultsAsJson(data) {
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
@@ -691,12 +567,130 @@ function downloadResultsAsJson(data) {
   URL.revokeObjectURL(url);
 }
 
-// Netlifyフォーム用：URLパラメータのparticipant確認してフォームactionをカスタマイズ
+/***********************
+        DOMContentLoaded
+      ***********************/
 document.addEventListener("DOMContentLoaded", () => {
-  // URLから participant パラメータを取得
+  // ▼ 同意画面の設定
+  const consentOverlay = document.getElementById("consentOverlay");
+  const agreeBtn = document.getElementById("agreeBtn");
+  const disagreeBtn = document.getElementById("disagreeBtn");
+
+  agreeBtn.addEventListener("click", () => {
+    consentOverlay.classList.add("hidden");
+  });
+  disagreeBtn.addEventListener("click", () => {
+    alert("同意いただけない場合は実験に参加できません。");
+  });
+
+  // ▼ タスク終了オーバーレイの設定（テンプレートから生成）
+  const taskEndOverlay = document.getElementById("taskEndOverlay");
+  if (taskEndOverlay) {
+    const taskEndTemplate = document.getElementById("task-end-overlay-template");
+    if (taskEndTemplate) {
+      taskEndOverlay.appendChild(taskEndTemplate.content.cloneNode(true));
+    }
+    const continueTaskBtn = taskEndOverlay.querySelector("#continueTaskBtn");
+    if (continueTaskBtn) {
+      continueTaskBtn.addEventListener("click", () => {
+        // タスク終了アンケートの内容を、今のタスクのログに統合する
+        const taskEaseRating = taskEndOverlay.querySelector('input[name="task-ease-rating"]:checked')?.value || null;
+        const animationRating = taskEndOverlay.querySelector('input[name="animation-rating"]:checked')?.value || null;
+        if (!taskEaseRating || !animationRating) {
+          alert("タスクアンケートの全ての項目に回答してください。");
+          return;
+        }
+        const taskComments = taskEndOverlay.querySelector("#task-comments").value;
+
+        // すでに checkAnswer() or handleTimeout() で allLogs に本タスク分はpush済み
+        // その「最後のログ」に対してアンケート結果を追加
+        const lastLog = allLogs[allLogs.length - 1];
+        if (lastLog && lastLog.taskIndex === currentTaskIndex) {
+          lastLog.easeRating = taskEaseRating;
+          lastLog.animationRating = animationRating;
+          lastLog.comments = taskComments;
+          lastLog.timestamp = new Date().toISOString();
+        } else {
+          // 念のため、万が一見つからない場合は新規生成
+          allLogs.push({
+            taskIndex: currentTaskIndex,
+            easeRating: taskEaseRating,
+            animationRating: animationRating,
+            comments: taskComments,
+            timestamp: new Date().toISOString(),
+          });
+        }
+
+        // 次に備えてラジオボタンやテキストをクリア
+        taskEndOverlay.querySelectorAll('input[type="radio"]').forEach((input) => {
+          input.checked = false;
+        });
+        const taskCommentsElem = taskEndOverlay.querySelector("#task-comments");
+        if (taskCommentsElem) {
+          taskCommentsElem.value = "";
+        }
+
+        // タスク完了 or 続行
+        const btnText = continueTaskBtn.textContent.trim();
+        if (btnText === "結果へ進む") {
+          if (!confirm("結果に進みますか？")) return;
+          taskEndOverlay.classList.add("hidden");
+          showResultsPage();
+        } else if (btnText === "次へ進む" || btnText === "次のタスクへ") {
+          if (!confirm("次のタスクに進みますか？")) return;
+          taskEndOverlay.classList.add("hidden");
+          startNextTask();
+        }
+      });
+    }
+  }
+
+  // ▼ チュートリアル/タスク開始ボタン
+  startTutorialBtn = document.getElementById("startTutorialBtn");
+  startTaskBtn = document.getElementById("taskStartBtn");
+  const menuPlaceholder = document.getElementById("menu-placeholder");
+  const easingSelect = document.getElementById("easingSelect");
+
+  // ▼ メニュー生成
+  // 例として "rakuten_categories_2_dummy.json" をfetch
+  fetch("rakuten_categories_2_dummy.json")
+    .then((res) => res.json())
+    .then((data) => {
+      categoriesData = data.categories;
+      const menuRoot = document.createElement("ul");
+      menuRoot.classList.add("menu");
+      createMenuRecursive(categoriesData, menuRoot);
+      menuPlaceholder.appendChild(menuRoot);
+    })
+    .catch((err) => console.error("JSON読み込み失敗:", err));
+
+  // ▼ イージング関数変更
+  easingSelect.addEventListener("change", updateEasingFunction);
+
+  // ▼ チュートリアルオーバーレイ作成＆追加
+  tutorialOverlay = createTutorialOverlay();
+  document.body.appendChild(tutorialOverlay);
+
+  // ▼ チュートリアル開始
+  startTutorialBtn.addEventListener("click", () => {
+    if (!confirm("チュートリアルを開始しますか？")) return;
+    startTutorial();
+    startTutorialBtn.disabled = true;
+    startTaskBtn.disabled = true;
+  });
+
+  // ▼ タスク開始
+  startTaskBtn.addEventListener("click", () => {
+    if (!confirm("タスクを開始しますか？")) return;
+    startTask();
+    startTaskBtn.disabled = true;
+    startTutorialBtn.disabled = true;
+    menuPlaceholder.style.display = "block";
+  });
+
+  // ▼ Netlifyフォーム用：URLパラメータのparticipant確認してフォームactionをカスタマイズ
   const urlParams = new URLSearchParams(window.location.search);
   const pid = urlParams.get("participant");
-
   if (pid) {
     // フォームの action 属性を "thank-you.html?participant=XXX" に更新
     const form = document.getElementById("netlifyForm");
