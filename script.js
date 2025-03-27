@@ -2,7 +2,7 @@
   定数＆グローバル変数
 ***********************/
 const MAX_TASKS = 5; // タスク回数
-const TIME_LIMIT_MS = 1000; // タスク制限時間(ms)
+const TIME_LIMIT_MS = 15000; // タスク制限時間(ms)
 const EASING_FUNCS = ["easeInOutSine", "easeInOutQuad", "easeInOutCubic", "easeInOutQuint", "easeInOutExpo"];
 const LATIN_SQUARE = [
   [0, 1, 2, 3, 4],
@@ -185,7 +185,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // タスク完了 or 続行
         const btnText = continueTaskBtn.textContent.trim();
-        if (btnText === "次へ進む") {
+        if (btnText === "結果へ進む") {
+          if (!confirm("結果に進みますか？")) return;
           taskEndOverlay.classList.add("hidden");
           showResultsPage();
         } else {

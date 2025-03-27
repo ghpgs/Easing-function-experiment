@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <title>送信完了</title>
+    <title>タスク完了</title>
     <script>
       // URL パラメータから指定の値を取得する関数
       function getQueryParam(param) {
@@ -14,14 +14,14 @@
         // 被験者IDを取得
         const participantId = getQueryParam("participant");
         // PsychExp のリダイレクト先の URL を設定
-        let targetUrl = "hhttps://psychexp.com/register/MzMwNi03ODNlOGY/";
+        let targetUrl = "https://psychexp.com/register/MzMwNi03ODNlOGY/";
         if (participantId) {
           targetUrl += "?participant=" + encodeURIComponent(participantId);
         }
-        // 3秒後にリダイレクト
+        // 5秒後にリダイレクト
         setTimeout(function () {
           window.location.href = targetUrl;
-        }, 3000);
+        }, 5000);
       });
     </script>
   </head>
