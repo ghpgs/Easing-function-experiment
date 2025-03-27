@@ -5,7 +5,7 @@
       "subcategories": [
         {
           "name": "アウトドア",
-          "subcategories": [{ "name": "テント" }, { "name": "BBQ用品" }, { "name": "アウトドア照明ライト" }, { "name": "アウトドア寝具" }]
+          "subcategories": [{ "name": "テント" }, { "name": "BBQ用品" }, { "name": "アウトドア照明" }, { "name": "アウトドア寝具" }]
         },
         {
           "name": "ゴルフ",
@@ -22,11 +22,11 @@
       ]
     },
     {
-      "name": "ダイエット・リラクゼーション・健康食品、グッズ",
+      "name": "ダイエット・リラックス・健康食品、グッズ",
       "subcategories": [
         {
-          "name": "リラクゼーション＆セルフケア",
-          "subcategories": [{ "name": "アロマセラピー" }, { "name": "ストレス軽減" }, { "name": "冷え対策グッズ" }, { "name": "メンタルリラクゼーション" }]
+          "name": "リラックス＆セルフケア",
+          "subcategories": [{ "name": "アロマセラピー" }, { "name": "ストレス軽減グッズ" }, { "name": "冷え対策グッズ" }, { "name": "リラックスソファ" }]
         },
         {
           "name": "ダイエット食品",
@@ -34,32 +34,11 @@
         },
         {
           "name": "健康サプリ",
-          "subcategories": [{ "name": "マルチビタミン" }, { "name": "コラーゲン" }, { "name": "DHA・EPA" }, { "name": "乳酸菌" }]
+          "subcategories": [{ "name": "マルチビタミンサプリ" }, { "name": "コラーゲンサプリ" }, { "name": "DHA・EPAサプリ" }, { "name": "乳酸菌サプリ" }]
         },
         {
           "name": "健康グッズ",
-          "subcategories": [{ "name": "マッサージ器" }, { "name": "体組成計" }, { "name": "睡眠グッズ" }, { "name": "姿勢サポート" }]
-        }
-      ]
-    },
-    {
-      "name": "医薬品、介護衛生・コンタクトレンズ",
-      "subcategories": [
-        {
-          "name": "医薬品",
-          "subcategories": [{ "name": "風邪薬" }, { "name": "鎮痛薬" }, { "name": "解熱薬" }, { "name": "鼻炎薬" }]
-        },
-        {
-          "name": "コンタクト",
-          "subcategories": [{ "name": "使い捨て用コンタクト" }, { "name": "2week用コンタクト" }, { "name": "カラコン" }, { "name": "ハードコンタクトレンズ" }]
-        },
-        {
-          "name": "衛生用品",
-          "subcategories": [{ "name": "マスク" }, { "name": "消毒液" }, { "name": "絆創膏" }, { "name": "体温計" }]
-        },
-        {
-          "name": "介護用品",
-          "subcategories": [{ "name": "車いす" }, { "name": "歩行器" }, { "name": "介護ベッド" }, { "name": "介護食" }]
+          "subcategories": [{ "name": "マッサージ器" }, { "name": "体温計" }, { "name": "睡眠グッズ" }, { "name": "姿勢サポート健康グッズ" }]
         }
       ]
     },
@@ -68,28 +47,28 @@
       "subcategories": [
         {
           "name": "ペットフード",
-          "subcategories": [{ "name": "栄養ペットフード" }, { "name": "ウェットペットフード" }, { "name": "ペット用おやつ" }, { "name": "ペット用ダイエットフード" }]
+          "subcategories": [{ "name": "栄養ペットフード" }, { "name": "ウェットペットフード" }, { "name": "ペット用おやつ" }, { "name": "ダイエット用ペットフード" }]
         },
         {
           "name": "ペットケア用品",
-          "subcategories": [{ "name": "ペットケアシャンプー" }, { "name": "ペットブラッシング用品" }, { "name": "ペットデンタルケア" }, { "name": "ペット用耳＆目ケア" }]
+          "subcategories": [{ "name": "ペットケアシャンプー" }, { "name": "ペットブラッシング用品" }, { "name": "ペットデンタルケア" }, { "name": "ペット用顔ケア" }]
         },
         {
           "name": "ペットグッズ",
-          "subcategories": [{ "name": "ペット用ベッド・マット" }, { "name": "ペット用トイレグッズ" }, { "name": "ペット用おもちゃ" }, { "name": "ペット用散歩グッズ" }]
+          "subcategories": [{ "name": "ペット用ベッドグッズ" }, { "name": "ペット用トイレグッズ" }, { "name": "ペット用おもちゃグッズ" }, { "name": "ペット用散歩グッズ" }]
         },
         {
           "name": "ペットお出かけ用品",
-          "subcategories": [{ "name": "ペットキャリーバッグ" }, { "name": "ペットカート・バギー" }, { "name": "ペットドライブ用品" }, { "name": "ペット服" }]
+          "subcategories": [{ "name": "ペットキャリーバッグ" }, { "name": "ペットお出かけカート" }, { "name": "ペット用ドライブ用品" }, { "name": "ペットアウトドア服" }]
         }
       ]
     },
     {
-      "name": "雑貨・文具・裁縫・ギフト",
+      "name": "生活雑貨・文具・裁縫・ギフト",
       "subcategories": [
         {
           "name": "生活雑貨",
-          "subcategories": [{ "name": "トイレットペーパー" }, { "name": "ティッシュ" }, { "name": "ゴミ袋" }, { "name": "キッチンラップ" }]
+          "subcategories": [{ "name": "トイレットペーパー" }, { "name": "ティッシュ" }, { "name": "ゴミ袋" }, { "name": "ゴミ箱" }]
         },
         {
           "name": "文房具",
@@ -97,32 +76,11 @@
         },
         {
           "name": "裁縫用品",
-          "subcategories": [{ "name": "裁縫針" }, { "name": "裁縫糸" }, { "name": "裁縫はさみ" }, { "name": "巻き尺" }]
+          "subcategories": [{ "name": "裁縫針" }, { "name": "裁縫糸" }, { "name": "裁縫はさみ" }, { "name": "裁縫用レザー" }]
         },
         {
           "name": "ギフト用品",
-          "subcategories": [{ "name": "ギフトラッピングペーパー" }, { "name": "ギフト用リボン" }, { "name": "あいさつカード" }, { "name": "ギフトバッグ" }]
-        }
-      ]
-    },
-    {
-      "name": "美容・コスメ・香水",
-      "subcategories": [
-        {
-          "name": "スキンケア",
-          "subcategories": [{ "name": "化粧水" }, { "name": "乳液" }, { "name": "美容液" }, { "name": "クレンジング" }]
-        },
-        {
-          "name": "メイクアップ",
-          "subcategories": [{ "name": "ファンデーション" }, { "name": "リップ" }, { "name": "アイシャドウ" }, { "name": "マスカラ" }]
-        },
-        {
-          "name": "ヘアケア",
-          "subcategories": [{ "name": "シャンプー" }, { "name": "コンディショナー" }, { "name": "トリートメント" }, { "name": "ヘアオイル" }]
-        },
-        {
-          "name": "メイクアップアクセサリー",
-          "subcategories": [{ "name": "メイクブラシ" }, { "name": "メイクポーチ" }, { "name": "メイクミラー" }, { "name": "アイブロウツール" }]
+          "subcategories": [{ "name": "ギフトラッピングペーパー" }, { "name": "ギフト用リボン" }, { "name": "ギフトカード" }, { "name": "ギフトバッグ" }]
         }
       ]
     },
@@ -148,68 +106,27 @@
       ]
     },
     {
-      "name": "書籍・雑誌・コミック",
+      "name": "書籍・雑誌・漫画・児童書",
       "subcategories": [
         {
           "name": "書籍",
-          "subcategories": [{ "name": "文学・小説" }, { "name": "ノンフィクション" }, { "name": "自己啓発" }, { "name": "趣味・実用" }]
+          "subcategories": [{ "name": "文学・小説書籍" }, { "name": "ノンフィクション書籍" }, { "name": "自己啓発書籍" }, { "name": "趣味・実用書籍" }]
         },
         {
           "name": "雑誌",
           "subcategories": [{ "name": "ファッション雑誌" }, { "name": "生活情報雑誌" }, { "name": "ビジネス雑誌" }, { "name": "週刊誌" }]
         },
         {
-          "name": "コミック",
+          "name": "漫画",
           "subcategories": [{ "name": "少年漫画" }, { "name": "少女漫画" }, { "name": "青年漫画" }, { "name": "女性漫画" }]
         },
         {
-          "name": "文庫・レーベル",
-          "subcategories": [{ "name": "文庫本" }, { "name": "新書" }, { "name": "社会評論" }, { "name": "翻訳書" }]
+          "name": "児童書・絵本",
+          "subcategories": [{ "name": "絵本" }, { "name": "読み物（低学年向け）" }, { "name": "読み物（中高学年向け）" }, { "name": "児童知育本" }]
         }
       ]
     },
-    {
-      "name": "CD・音楽",
-      "subcategories": [
-        {
-          "name": "音楽CD",
-          "subcategories": [{ "name": "ポップス" }, { "name": "ロック" }, { "name": "クラシック" }, { "name": "ジャズ" }]
-        },
-        {
-          "name": "デジタル音源",
-          "subcategories": [{ "name": "ダウンロード配信" }, { "name": "ストリーミング" }, { "name": "ライブ音源" }, { "name": "リミックス" }]
-        },
-        {
-          "name": "レコード",
-          "subcategories": [{ "name": "シングルレコード盤" }, { "name": "アルバムレコード" }, { "name": "プレミアムレコード盤" }, { "name": "特典レコード盤" }]
-        },
-        {
-          "name": "音楽ライフ・グッズ",
-          "subcategories": [{ "name": "アーティスト＆ライブグッズ" }, { "name": "音楽制作・DTM" }, { "name": "楽器・演奏サポート" }, { "name": "音楽関連書籍・教材" }]
-        }
-      ]
-    },
-    {
-      "name": "おもちゃ・ホビー・模型・キット",
-      "subcategories": [
-        {
-          "name": "おもちゃ",
-          "subcategories": [{ "name": "教育玩具" }, { "name": "アクションフィギュア" }, { "name": "パズル" }, { "name": "知育玩具" }]
-        },
-        {
-          "name": "ホビー玩具",
-          "subcategories": [{ "name": "プラモデル" }, { "name": "ラジコン" }, { "name": "クラフトキット" }, { "name": "ミニチュア" }]
-        },
-        {
-          "name": "模型・プラモデル",
-          "subcategories": [{ "name": "1/48スケール" }, { "name": "1/72スケール" }, { "name": "1/60スケール" }, { "name": "ジオラマキット" }]
-        },
-        {
-          "name": "サイエンス・実験ホビー",
-          "subcategories": [{ "name": "科学実験ホビーキット" }, { "name": "天体・宇宙ホビー" }, { "name": "自然観察ホビー" }, { "name": "ロボット・プログラミングトイ" }]
-        }
-      ]
-    },
+
     {
       "name": "園芸・ガーデン・DYI",
       "subcategories": [
@@ -219,15 +136,15 @@
         },
         {
           "name": "ガーデン家具",
-          "subcategories": [{ "name": "ガーデンテーブル" }, { "name": "ガーデンチェア" }, { "name": "パラソル" }, { "name": "アウトドアソファ" }]
+          "subcategories": [{ "name": "ガーデンテーブル" }, { "name": "ガーデンチェア" }, { "name": "ガーデンマット" }, { "name": "アウトドアソファ" }]
         },
         {
-          "name": "ガーデンデコレーション",
-          "subcategories": [{ "name": "ガーデンライト" }, { "name": "フェンス装飾" }, { "name": "ガーデン散水装置" }, { "name": "ガーデンオブジェクト" }]
+          "name": "ガーデンデコ",
+          "subcategories": [{ "name": "ガーデンライト" }, { "name": "フェンス装飾" }, { "name": "ガーデン噴水" }, { "name": "ガーデンプランター" }]
         },
         {
           "name": "DIY工具",
-          "subcategories": [{ "name": "電動工具" }, { "name": "手工具" }, { "name": "塗装用品" }, { "name": "作業保護具" }]
+          "subcategories": [{ "name": "DYI用電動工具" }, { "name": "DYI用手工具" }, { "name": "DYI用塗装用品" }, { "name": "DYI用作業保護具" }]
         }
       ]
     }

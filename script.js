@@ -2,7 +2,7 @@
       定数＆グローバル変数
     ***********************/
 const MAX_TASKS = 5; // タスク回数
-const TIME_LIMIT_MS = 15000; // タスク制限時間(ms)
+const TIME_LIMIT_MS = 200000; // タスク制限時間(ms)
 const EASING_FUNCS = ["easeInOutSine", "easeInOutQuad", "easeInOutCubic", "easeInOutQuint", "easeInOutExpo"];
 const LATIN_SQUARE = [
   [0, 1, 2, 3, 4],
@@ -208,10 +208,11 @@ function startTutorial() {
   feedbackElem.className = "";
   clearTimeout(timeoutId);
   timeoutId = setTimeout(() => {
-    feedbackElem.textContent = "（チュートリアル：時間切れ？ もう一度トライ可能）";
+    feedbackElem.textContent = "（チュートリアル：時間切れです もう一度トライ可能）";
     feedbackElem.classList.add("timeout");
   }, TIME_LIMIT_MS);
   startTime = performance.now();
+  document.getElementById("menu-placeholder").style.display = "block";
 }
 
 function checkTutorialAnswer(clickedText) {
