@@ -29,7 +29,7 @@ let currentTaskEasing = "";
 let currentCorrectPath = [];
 let isAnimating = false;
 let isTutorialActive = false;
-let tutorialTargetItem = "キッチンラップ"; // チュートリアルでクリックする商品名
+let tutorialTargetItem = "トイレットペーパー"; // チュートリアルでクリックする商品名
 
 let tutorialOverlay = null;
 let startTutorialBtn = null;

@@ -1,0 +1,103 @@
+{
+  "participantId": 853,
+  "taskLogs": [
+    {
+      "taskIndex": 1,
+      "correctItem": "フェンス装飾",
+      "totalTime": "8.60",
+      "errorCount": 2,
+      "timedOut": false,
+      "usedEasing": "easeInOutQuint",
+      "firstClickTime": 2.93,
+      "menuTravelDistance": 2,
+      "clicks": [
+        { "name": "園芸・ガーデン・DYI", "depth": 0, "duringAnimation": false, "stayTime": 0 },
+        { "name": "園芸用品", "depth": 1, "duringAnimation": true, "stayTime": 1.29 },
+        { "name": "ガーデン家具", "depth": 1, "duringAnimation": true, "stayTime": 1.28 },
+        { "name": "ガーデンデコ", "depth": 1, "duringAnimation": false, "stayTime": 0.92 },
+        { "name": "フェンス装飾", "depth": 2, "duringAnimation": false, "stayTime": 2.18 }
+      ],
+      "easeRating": "4",
+      "animationRating": "3",
+      "comments": "",
+      "timestamp": "2025-04-16T04:16:03.960Z"
+    },
+    {
+      "taskIndex": 2,
+      "correctItem": "羊肉",
+      "totalTime": "5.02",
+      "errorCount": 0,
+      "timedOut": false,
+      "usedEasing": "easeInOutExpo",
+      "firstClickTime": 1.49,
+      "menuTravelDistance": 2,
+      "clicks": [
+        { "name": "食品", "depth": 0, "duringAnimation": false, "stayTime": 0 },
+        { "name": "肉", "depth": 1, "duringAnimation": true, "stayTime": 1.21 },
+        { "name": "羊肉", "depth": 2, "duringAnimation": true, "stayTime": 2.31 }
+      ],
+      "easeRating": "2",
+      "animationRating": "5",
+      "comments": "",
+      "timestamp": "2025-04-16T04:16:13.319Z"
+    },
+    {
+      "taskIndex": 3,
+      "correctItem": "バット",
+      "totalTime": "6.82",
+      "errorCount": 0,
+      "timedOut": false,
+      "usedEasing": "easeInOutSine",
+      "firstClickTime": 3.79,
+      "menuTravelDistance": 2,
+      "clicks": [
+        { "name": "スポーツ・アウトドア", "depth": 0, "duringAnimation": true, "stayTime": 0 },
+        { "name": "野球", "depth": 1, "duringAnimation": true, "stayTime": 2.08 },
+        { "name": "バット", "depth": 2, "duringAnimation": true, "stayTime": 0.96 }
+      ],
+      "easeRating": "2",
+      "animationRating": "2",
+      "comments": "",
+      "timestamp": "2025-04-16T04:16:23.631Z"
+    },
+    {
+      "taskIndex": 4,
+      "correctItem": "絵本",
+      "totalTime": "6.85",
+      "errorCount": 1,
+      "timedOut": false,
+      "usedEasing": "easeInOutQuad",
+      "firstClickTime": 2.5,
+      "menuTravelDistance": 2,
+      "clicks": [
+        { "name": "書籍・雑誌・漫画・児童書", "depth": 0, "duringAnimation": true, "stayTime": 0 },
+        { "name": "書籍", "depth": 1, "duringAnimation": true, "stayTime": 1.29 },
+        { "name": "児童書・絵本", "depth": 1, "duringAnimation": true, "stayTime": 2.24 },
+        { "name": "絵本", "depth": 2, "duringAnimation": false, "stayTime": 0.83 }
+      ],
+      "easeRating": "3",
+      "animationRating": "5",
+      "comments": "",
+      "timestamp": "2025-04-16T04:16:34.190Z"
+    },
+    {
+      "taskIndex": 5,
+      "correctItem": "植物・種苗",
+      "totalTime": "9.63",
+      "errorCount": 0,
+      "timedOut": false,
+      "usedEasing": "easeInOutCubic",
+      "firstClickTime": 2.05,
+      "menuTravelDistance": 2,
+      "clicks": [
+        { "name": "園芸・ガーデン・DYI", "depth": 0, "duringAnimation": false, "stayTime": 0 },
+        { "name": "園芸用品", "depth": 1, "duringAnimation": true, "stayTime": 6.62 },
+        { "name": "植物・種苗", "depth": 2, "duringAnimation": true, "stayTime": 0.96 }
+      ],
+      "easeRating": "2",
+      "animationRating": "3",
+      "comments": "",
+      "timestamp": "2025-04-16T04:16:47.353Z"
+    }
+  ]
+}
