@@ -18,10 +18,10 @@
         <label for="easingSelect">イージング関数選択：</label>
         <select id="easingSelect">
           <option value="var(--easeInOutSine)">easeInOutSine</option>
-          <option value="var(--easeInOutQuad)">easeInOutQuad</option>
-          <option value="var(--easeInOutCubic)">easeInOutCubic</option>
+          <option value="var(--easeInOutQuart)">easeInOutQuart</option>
           <option value="var(--easeInOutQuint)">easeInOutQuint</option>
           <option value="var(--easeInOutExpo)">easeInOutExpo</option>
+          <option value="var(--easeInOutBack)">easeInOutBack</option>
         </select>
         <button id="taskStartBtn">タスク開始</button>
         <button id="startTutorialBtn">チュートリアル開始</button>
@@ -75,6 +75,18 @@
         </div>
       </section>
 
+      <!-- 説明用オーバーレイ -->
+      <template id="tutorial-intro-overlay-template">
+        <div class="overlay-content">
+          <img src="tutorial.png" alt="チュートリアル説明画像" style="max-width: 100%; height: auto; border-radius: 8px" />
+          <p>
+            メニューの操作方法はこちらです。<br />マウスホバーは機能しないので、メニューを開くたびにクリックで選択してください。<br />
+            下のボタンで開始してください。
+          </p>
+          <button id="tutorialIntroCloseBtn">閉じる</button>
+        </div>
+      </template>
+
       <!-- チュートリアル完了オーバーレイ -->
       <template id="tutorial-overlay-template">
         <div class="overlay-content">
@@ -87,33 +99,48 @@
       <!-- タスク終了オーバーレイ -->
       <template id="task-end-overlay-template">
         <div class="overlay-content">
-          <h2>タスク完了</h2>
+          <h2>タスクについてのアンケート</h2>
           <div class="survey-section">
-            <h3>タスクについてのアンケート</h3>
             <div class="survey-question">
-              <p>
-                先ほどのメニューの操作は簡単でしたか？<br />
-                1（難しい）〜 5（簡単）
-              </p>
-              <div class="rating-container">
-                <label><input type="radio" name="task-ease-rating" value="1" /> 1</label>
-                <label><input type="radio" name="task-ease-rating" value="2" /> 2</label>
-                <label><input type="radio" name="task-ease-rating" value="3" /> 3</label>
-                <label><input type="radio" name="task-ease-rating" value="4" /> 4</label>
-                <label><input type="radio" name="task-ease-rating" value="5" /> 5</label>
+              <p></p>
+              <div class="survey-question">
+                <p>
+                  Q1.このアニメーションはメニューの操作を分かりやすくしましたか？<br />
+                  1(全くそう思わない) 〜 5(とてもそう思う)
+                </p>
+                <div class="rating-container">
+                  <label><input type="radio" name="animation-ease-rating" value="1" /> 1</label>
+                  <label><input type="radio" name="animation-ease-rating" value="2" /> 2</label>
+                  <label><input type="radio" name="animation-ease-rating" value="3" /> 3</label>
+                  <label><input type="radio" name="animation-ease-rating" value="4" /> 4</label>
+                  <label><input type="radio" name="animation-ease-rating" value="5" /> 5</label>
+                </div>
               </div>
-            </div>
-            <div class="survey-question">
-              <p>
-                先ほどのメニューのアニメーションについてどう感じましたか？<br />
-                1（悪い）〜 5（良い）
-              </p>
-              <div class="rating-container">
-                <label><input type="radio" name="animation-rating" value="1" /> 1</label>
-                <label><input type="radio" name="animation-rating" value="2" /> 2</label>
-                <label><input type="radio" name="animation-rating" value="3" /> 3</label>
-                <label><input type="radio" name="animation-rating" value="4" /> 4</label>
-                <label><input type="radio" name="animation-rating" value="5" /> 5</label>
+              <div class="survey-question">
+                <p>
+                  Q2.今回のタスクは難しかったですか？<br />
+                  1(全くそう思わない) 〜 5(とてもそう思う)
+                </p>
+                <div class="rating-container">
+                  <label><input type="radio" name="task-difficulty-rating" value="1" /> 1</label>
+                  <label><input type="radio" name="task-difficulty-rating" value="2" /> 2</label>
+                  <label><input type="radio" name="task-difficulty-rating" value="3" /> 3</label>
+                  <label><input type="radio" name="task-difficulty-rating" value="4" /> 4</label>
+                  <label><input type="radio" name="task-difficulty-rating" value="5" /> 5</label>
+                </div>
+              </div>
+              <div class="survey-question">
+                <p>
+                  Q3.今回のアニメーションの動きに違いを感じましたか？<br />
+                  1(全く感じなかった)〜 5(とても感じた)
+                </p>
+                <div class="rating-container">
+                  <label><input type="radio" name="animation-difference-rating" value="1" /> 1</label>
+                  <label><input type="radio" name="animation-difference-rating" value="2" /> 2</label>
+                  <label><input type="radio" name="animation-difference-rating" value="3" /> 3</label>
+                  <label><input type="radio" name="animation-difference-rating" value="4" /> 4</label>
+                  <label><input type="radio" name="animation-difference-rating" value="5" /> 5</label>
+                </div>
               </div>
             </div>
             <div class="survey-question">

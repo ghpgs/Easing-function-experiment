@@ -1,9 +1,10 @@
 /***********************
       定数＆グローバル変数
     ***********************/
-const MAX_TASKS = 5; // タスク回数 // 25回にする？
+const MAX_TASKS = 20; // タスク回数 // 25回にする？
 const TIME_LIMIT_MS = 200000; // タスク制限時間(ms)
-const EASING_FUNCS = ["easeInOutSine", "easeInOutQuad", "easeInOutCubic", "easeInOutQuint", "easeInOutExpo"];
+const EASING_FUNCS = ["easeInOutSine", "easeInOutQuad", "easeInOutQuint", "easeInOutExpo", "easeInOutBack"];
+
 const LATIN_SQUARE = [
   [0, 1, 2, 3, 4],
   [1, 2, 3, 4, 0],
@@ -584,6 +585,55 @@ document.addEventListener("DOMContentLoaded", () => {
     alert("同意いただけない場合は実験に参加できません。");
   });
 
+  // ▼ 説明用オーバーレイ生成
+  let tutorialIntroOverlay = null;
+  function createTutorialIntroOverlay() {
+    const template = document.getElementById("tutorial-intro-overlay-template");
+    if (!template) return null;
+    const overlay = document.createElement("div");
+    overlay.classList.add("overlay", "hidden");
+    overlay.appendChild(template.content.cloneNode(true));
+    overlay.querySelector("#tutorialIntroCloseBtn").addEventListener("click", () => {
+      overlay.classList.add("hidden");
+      // オーバーレイ閉じたら confirm ダイアログ
+      if (confirm("チュートリアルを開始しますか？")) {
+        startTutorial();
+        startTutorialBtn.disabled = true;
+        startTaskBtn.disabled = true;
+      } else {
+        // キャンセル時はボタン再有効化
+        startTutorialBtn.disabled = false;
+        startTaskBtn.disabled = false;
+      }
+    });
+    return overlay;
+  }
+  // ▼ オーバーレイをbodyに追加
+  tutorialIntroOverlay = createTutorialIntroOverlay();
+  document.body.appendChild(tutorialIntroOverlay);
+
+  // ▼ チュートリアル/タスク開始ボタン取得
+  startTutorialBtn = document.getElementById("startTutorialBtn");
+  startTaskBtn = document.getElementById("taskStartBtn");
+
+  // ▼ チュートリアルボタンの挙動を上書き
+  startTutorialBtn.addEventListener("click", () => {
+    // まず説明オーバーレイを表示
+    tutorialIntroOverlay.classList.remove("hidden");
+    // ボタンを一時的に無効化
+    startTutorialBtn.disabled = true;
+    startTaskBtn.disabled = true;
+  });
+
+  // ▼ タスク開始ボタン（既存のまま）
+  startTaskBtn.addEventListener("click", () => {
+    if (!confirm("タスクを開始しますか？")) return;
+    startTask();
+    startTaskBtn.disabled = true;
+    startTutorialBtn.disabled = true;
+    document.getElementById("menu-placeholder").style.display = "block";
+  });
+
   // ▼ タスク終了オーバーレイの設定（テンプレートから生成）
   const taskEndOverlay = document.getElementById("taskEndOverlay");
   if (taskEndOverlay) {
@@ -595,28 +645,32 @@ document.addEventListener("DOMContentLoaded", () => {
     if (continueTaskBtn) {
       continueTaskBtn.addEventListener("click", () => {
         // タスク終了アンケートの内容を、今のタスクのログに統合する
-        const taskEaseRating = taskEndOverlay.querySelector('input[name="task-ease-rating"]:checked')?.value || null;
-        const animationRating = taskEndOverlay.querySelector('input[name="animation-rating"]:checked')?.value || null;
-        if (!taskEaseRating || !animationRating) {
+        const animationEaseRating = taskEndOverlay.querySelector('input[name="animation-ease-rating"]:checked')?.value || null;
+        const taskDifficultyRating = taskEndOverlay.querySelector('input[name="task-difficulty-rating"]:checked')?.value || null;
+        const animationDifferenceRating = taskEndOverlay.querySelector('input[name="animation-difference-rating"]:checked')?.value || null;
+
+        if (!animationEaseRating || !taskDifficultyRating || !animationDifferenceRating) {
           alert("タスクアンケートの全ての項目に回答してください。");
           return;
         }
+
         const taskComments = taskEndOverlay.querySelector("#task-comments").value;
 
         // すでに checkAnswer() or handleTimeout() で allLogs に本タスク分はpush済み
         // その「最後のログ」に対してアンケート結果を追加
         const lastLog = allLogs[allLogs.length - 1];
         if (lastLog && lastLog.taskIndex === currentTaskIndex) {
-          lastLog.easeRating = taskEaseRating;
-          lastLog.animationRating = animationRating;
+          lastLog.animationEaseRating = animationEaseRating;
+          lastLog.taskDifficultyRating = taskDifficultyRating;
+          lastLog.animationDifferenceRating = animationDifferenceRating;
           lastLog.comments = taskComments;
           lastLog.timestamp = new Date().toISOString();
         } else {
-          // 念のため、万が一見つからない場合は新規生成
           allLogs.push({
             taskIndex: currentTaskIndex,
-            easeRating: taskEaseRating,
-            animationRating: animationRating,
+            animationEaseRating,
+            taskDifficultyRating,
+            animationDifferenceRating,
             comments: taskComments,
             timestamp: new Date().toISOString(),
           });
@@ -672,23 +726,6 @@ document.addEventListener("DOMContentLoaded", () => {
   tutorialOverlay = createTutorialOverlay();
   document.body.appendChild(tutorialOverlay);
 
-  // ▼ チュートリアル開始
-  startTutorialBtn.addEventListener("click", () => {
-    if (!confirm("チュートリアルを開始しますか？")) return;
-    startTutorial();
-    startTutorialBtn.disabled = true;
-    startTaskBtn.disabled = true;
-  });
-
-  // ▼ タスク開始
-  startTaskBtn.addEventListener("click", () => {
-    if (!confirm("タスクを開始しますか？")) return;
-    startTask();
-    startTaskBtn.disabled = true;
-    startTutorialBtn.disabled = true;
-    menuPlaceholder.style.display = "block";
-  });
-
   // ▼ Netlifyフォーム用：URLパラメータのparticipant確認してフォームactionをカスタマイズ
   const urlParams = new URLSearchParams(window.location.search);
   const pid = urlParams.get("participant");
@@ -698,3 +735,20 @@ document.addEventListener("DOMContentLoaded", () => {
     form.action = "thank-you.html?participant=" + encodeURIComponent(pid);
   }
 });
+
+function getLeafNamesWithDepthAndSiblingCount(categories, targetDepth, siblingCount) {
+  let result = [];
+  function helper(cats, depth, parentSubCount) {
+    cats.forEach((cat) => {
+      if (cat.subcategories && cat.subcategories.length > 0) {
+        helper(cat.subcategories, depth + 1, cat.subcategories.length);
+      } else {
+        if (depth === targetDepth && parentSubCount === siblingCount) {
+          result.push(cat.name);
+        }
+      }
+    });
+  }
+  helper(categories, 0, 0);
+  return result;
+}

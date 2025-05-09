@@ -7,15 +7,15 @@
 
 label[for="easingSelect"],
 #easingSelect {
-  display: none !important;
+  display: block !important;
 }
 
 /* ================================
    カスタム変数
 ================================ */
 :root {
-  --submenu-easing: var(--easeInOutSine);
-  --submenu-animation-duration: 0.5s;
+  --submenu-easing: var(--easeInOut);
+  --submenu-animation-duration: 1s;
 }
 
 body {
