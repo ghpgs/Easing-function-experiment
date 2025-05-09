@@ -1,7 +1,7 @@
 /***********************
       定数＆グローバル変数
     ***********************/
-const MAX_TASKS = 5; // タスク回数
+const MAX_TASKS = 5; // タスク回数 // 25回にする？
 const TIME_LIMIT_MS = 200000; // タスク制限時間(ms)
 const EASING_FUNCS = ["easeInOutSine", "easeInOutQuad", "easeInOutCubic", "easeInOutQuint", "easeInOutExpo"];
 const LATIN_SQUARE = [

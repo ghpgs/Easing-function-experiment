@@ -15,7 +15,7 @@ label[for="easingSelect"],
 ================================ */
 :root {
   --submenu-easing: var(--easeInOutSine);
-  --submenu-animation-duration: 0.1s;
+  --submenu-animation-duration: 0.5s;
 }
 
 body {
