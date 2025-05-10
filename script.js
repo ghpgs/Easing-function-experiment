@@ -1,8 +1,8 @@
 /***********************
       定数＆グローバル変数
     ***********************/
-const MAX_TASKS = 25; // タスク回数 // 25回にする？
-const TIME_LIMIT_MS = 200000; // タスク制限時間(ms)
+const MAX_TASKS = 10; // タスク回数 // 25回にする？
+const TIME_LIMIT_MS = 15000; // タスク制限時間(ms)
 const EASING_FUNCS = ["easeInOutSine", "easeInOutQuad", "easeInOutQuint", "easeInOutExpo", "easeInOutBack"];
 
 const LATIN_SQUARE = [
@@ -203,7 +203,7 @@ function startTutorial() {
   isTutorialActive = true;
   resetTaskVars();
   const taskInfo = document.getElementById("taskInfo");
-  taskInfo.textContent = `【チュートリアル】「${tutorialTargetItem}」をクリックしてください。`;
+  taskInfo.textContent = `【チュートリアル】「${tutorialTargetItem}」をメニューから見つけて、クリックしてください。`;
   const feedbackElem = document.getElementById("feedback");
   feedbackElem.textContent = "";
   feedbackElem.className = "";
@@ -287,7 +287,7 @@ function startNextTask() {
   const leafNames = getAllLeafNames(categoriesData);
   const targetItemName = leafNames[Math.floor(Math.random() * leafNames.length)];
   const taskInfo = document.getElementById("taskInfo");
-  taskInfo.textContent = `タスク ${currentTaskIndex}/${MAX_TASKS}： 「${targetItemName}」をクリックしてください。`;
+  taskInfo.textContent = `タスク ${currentTaskIndex}/${MAX_TASKS}： 「${targetItemName}」をメニューから見つけて、クリックしてください。`;
   startTime = performance.now();
   currentCorrectPath = findPathToLeaf(categoriesData, targetItemName) || [];
 
