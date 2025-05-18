@@ -15,7 +15,7 @@ label[for="easingSelect"],
 ================================ */
 :root {
   --submenu-easing: var(--easeInOut);
-  --submenu-animation-duration: 0.8s;
+  --submenu-animation-duration: 1s;
 }
 
 body {
@@ -201,6 +201,7 @@ select {
 /* ================================
    サブメニュー
 ================================ */
+/* ここを変更しよう！ */
 .submenu {
   list-style: none;
   padding: 0;
@@ -213,14 +214,14 @@ select {
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
   opacity: 0;
   pointer-events: none;
-  transform: translateY(10px);
+  transform: translateX(-20px); /* 横方向に少し移動 */
   transition: opacity var(--submenu-animation-duration) var(--submenu-easing), transform var(--submenu-animation-duration) var(--submenu-easing);
 }
 
 .submenu.open {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
 /* ================================
