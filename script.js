@@ -2,8 +2,8 @@
 定数＆グローバル変数
 ***********************/
 
-const MAX_TASKS = 1; // タスク回数 // 25回にする？
-const TIME_LIMIT_MS = 15000; // タスク制限時間(ms)
+const MAX_TASKS = 3; // タスク回数：5つのタスク×5つのイージング関数 🌟
+const TIME_LIMIT_MS = 150000; // タスク制限時間(ms)
 const EASING_FUNCS = ["easeInOutSine", "easeInOutQuad", "easeInOutQuint", "easeInOutExpo", "easeInOutBack"];
 
 // 固定タスクセットを追加 🌟
@@ -129,7 +129,6 @@ function createTutorialOverlay() {
   } else {
     console.error("閉じるボタンが見つかりませんでした");
   }
-
   return overlay;
 }
 
@@ -189,10 +188,12 @@ function recordClick(categoryName) {
   if (firstClickTime === null) {
     firstClickTime = (currentClickTime - startTime) / 1000;
   }
+
   let stayTime = 0;
   if (lastClickTime !== 0) {
     stayTime = (currentClickTime - lastClickTime) / 1000;
   }
+
   clicksThisTask.push({
     name: categoryName,
     depth: currentDepth,
@@ -237,6 +238,7 @@ function checkTutorialAnswer(clickedText) {
     }, 2000);
     return;
   }
+
   clearTimeout(timeoutId);
   feedbackElem.textContent = "チュートリアル：正解です！";
   feedbackElem.classList.remove("incorrect", "timeout");
@@ -261,7 +263,7 @@ function startTask() {
   startNextTask();
 }
 
-// 🌟 タスクセット実装: ランダム商品選択ではなく、固定タスクを使用する
+// 🌟 修正版：タスクもラテン方格で制御
 function startNextTask() {
   currentTaskIndex++;
   if (currentTaskIndex > MAX_TASKS) {
@@ -279,8 +281,10 @@ function startNextTask() {
   // Latin Square でイージング関数とタスクを割り当て
   const rowIndex = participantId % 5; // 被験者IDに基づく行
   const colIndex = (currentTaskIndex - 1) % 5; // タスク番号に基づく列（MOD 5で循環）
+  
+  // 🌟 修正：タスク順序もラテン方格で制御
   const easingIndex = LATIN_SQUARE[rowIndex][colIndex];
-  const taskIndex = colIndex; // タスクインデックスも0-4の循環
+  const taskIndex = LATIN_SQUARE[(rowIndex + 1) % 5][colIndex]; // ← 1行ずらして使用
 
   // 現在のイージングとタスクを設定
   currentTaskEasing = EASING_FUNCS[easingIndex];
@@ -295,7 +299,6 @@ function startNextTask() {
       break;
     }
   }
-
   updateEasingFunction();
 
   // 固定タスクから対象商品を設定
@@ -307,10 +310,9 @@ function startNextTask() {
   currentCorrectPath = findPathToLeaf(categoriesData, targetItemName) || [];
 
   // ログ出力（デバッグ用）
-  console.log(`タスク${currentTaskIndex}: イージング=${currentTaskEasing}, 商品=${targetItemName}`);
+  console.log(`タスク${currentTaskIndex}: イージング=${currentTaskEasing}, 商品=${targetItemName}, タスクインデックス=${taskIndex}`);
 
   startTime = performance.now();
-
   // タイムアウト設定
   timeoutId = setTimeout(() => {
     handleTimeout(targetItemName);
@@ -325,6 +327,7 @@ function checkAnswer(clickedText) {
   const match = taskInfo.textContent.match(/「(.*?)」/);
   if (!match) return;
   const targetItemName = match[1];
+
   if (clickedText !== targetItemName) {
     errorCount++;
     feedbackElem.textContent = "間違いです。もう一度試してください。";
@@ -336,6 +339,7 @@ function checkAnswer(clickedText) {
     }, 2000);
     return;
   }
+
   // 正解時
   feedbackElem.textContent = "正解です！";
   feedbackElem.className = "correct";
@@ -370,6 +374,7 @@ function handleTimeout(targetItemName) {
   const feedbackElem = document.getElementById("feedback");
   feedbackElem.classList.add("timeout");
   const firstClickTimeSec = firstClickTime !== null ? parseFloat(firstClickTime.toFixed(2)) : "N/A";
+
   allLogs.push({
     taskIndex: currentTaskIndex,
     correctItem: targetItemName,
@@ -381,6 +386,7 @@ function handleTimeout(targetItemName) {
     menuTravelDistance: menuTravelDistance,
     clicks: clicksThisTask,
   });
+
   // タスク終了オーバーレイを表示
   const taskEndOverlay = document.getElementById("taskEndOverlay");
   const continueTaskBtn = taskEndOverlay.querySelector("#continueTaskBtn");
@@ -401,32 +407,41 @@ function showResultsPage() {
   const feedbackElem = document.getElementById("feedback");
   feedbackElem.textContent = "";
   feedbackElem.className = "";
+
   // 結果テーブルの更新
   const resultsPage = document.getElementById("resultsPage");
   const resultsTableBody = document.querySelector("#resultsTable tbody");
   resultsTableBody.innerHTML = "";
+
   allLogs.forEach((log) => {
     const tr = document.createElement("tr");
     const tdTask = document.createElement("td");
     tdTask.textContent = log.taskIndex;
     tr.appendChild(tdTask);
+
     const tdCorrect = document.createElement("td");
     tdCorrect.textContent = log.correctItem;
     tr.appendChild(tdCorrect);
+
     const tdTime = document.createElement("td");
     tdTime.textContent = parseFloat(log.totalTime).toFixed(2) + "s";
     tr.appendChild(tdTime);
+
     const tdError = document.createElement("td");
     tdError.textContent = log.errorCount;
     tr.appendChild(tdError);
+
     const tdTimeout = document.createElement("td");
     tdTimeout.textContent = log.timedOut ? "Yes" : "No";
     tr.appendChild(tdTimeout);
+
     const tdEasing = document.createElement("td");
     tdEasing.textContent = log.usedEasing;
     tr.appendChild(tdEasing);
+
     resultsTableBody.appendChild(tr);
   });
+
   resultsPage.style.display = "block";
 
   // ここで最終的なデータ構造を作成（surveyLogsがなく、taskLogsのみ）
@@ -438,6 +453,7 @@ function showResultsPage() {
 
   // hidden inputにJSON文字列を格納
   document.getElementById("netlifyFormData").value = JSON.stringify(finalData);
+
   // フォームを自動送信（Netlify側で集計される）
   document.getElementById("netlifyForm").submit();
 }
@@ -587,9 +603,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const consentOverlay = document.getElementById("consentOverlay");
   const agreeBtn = document.getElementById("agreeBtn");
   const disagreeBtn = document.getElementById("disagreeBtn");
+
   agreeBtn.addEventListener("click", () => {
     consentOverlay.classList.add("hidden");
   });
+
   disagreeBtn.addEventListener("click", () => {
     alert("同意いただけない場合は実験に参加できません。");
   });
@@ -602,6 +620,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const overlay = document.createElement("div");
     overlay.classList.add("overlay", "hidden");
     overlay.appendChild(template.content.cloneNode(true));
+
     overlay.querySelector("#tutorialIntroCloseBtn").addEventListener("click", () => {
       overlay.classList.add("hidden");
       // オーバーレイ閉じたら confirm ダイアログ
@@ -621,9 +640,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // ▼ オーバーレイをbodyに追加
   tutorialIntroOverlay = createTutorialIntroOverlay();
   document.body.appendChild(tutorialIntroOverlay);
+
   // ▼ チュートリアル/タスク開始ボタン取得
   startTutorialBtn = document.getElementById("startTutorialBtn");
   startTaskBtn = document.getElementById("taskStartBtn");
+
   // ▼ チュートリアルボタンの挙動を上書き
   startTutorialBtn.addEventListener("click", () => {
     // まず説明オーバーレイを表示
@@ -632,6 +653,7 @@ document.addEventListener("DOMContentLoaded", () => {
     startTutorialBtn.disabled = true;
     startTaskBtn.disabled = true;
   });
+
   // ▼ タスク開始ボタン（既存のまま）
   startTaskBtn.addEventListener("click", () => {
     if (!confirm("タスクを開始しますか？")) return;
@@ -656,12 +678,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const animationEaseRating = taskEndOverlay.querySelector('input[name="animation-ease-rating"]:checked')?.value || null;
         const taskDifficultyRating = taskEndOverlay.querySelector('input[name="task-difficulty-rating"]:checked')?.value || null;
         const animationDifferenceRating = taskEndOverlay.querySelector('input[name="animation-difference-rating"]:checked')?.value || null;
+
         if (!animationEaseRating || !taskDifficultyRating || !animationDifferenceRating) {
           alert("タスクアンケートの全ての項目に回答してください。");
           return;
         }
 
         const taskComments = taskEndOverlay.querySelector("#task-comments").value;
+
         // すでに checkAnswer() or handleTimeout() で allLogs に本タスク分はpush済み
         // その「最後のログ」に対してアンケート結果を追加
         const lastLog = allLogs[allLogs.length - 1];

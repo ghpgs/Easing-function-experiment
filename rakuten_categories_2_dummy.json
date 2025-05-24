@@ -47,7 +47,7 @@
       "subcategories": [
         {
           "name": "ペットフード",
-          "subcategories": [{ "name": "栄養ペットフード" }, { "name": "ウェットペットフード" }, { "name": "ペット用おやつ" }, { "name": "ダイエット用ペットフード" }]
+          "subcategories": [{ "name": "キャットフード" }, { "name": "ドッグフード" }, { "name": "鳥用フード" }, { "name": "ウサギフード" }]
         },
         {
           "name": "ペットケア用品",
@@ -110,7 +110,7 @@
       "subcategories": [
         {
           "name": "書籍",
-          "subcategories": [{ "name": "文学・小説書籍" }, { "name": "ノンフィクション書籍" }, { "name": "自己啓発書籍" }, { "name": "趣味・実用書籍" }]
+          "subcategories": [{ "name": "小説" }, { "name": "ノンフィクション書籍" }, { "name": "自己啓発書籍" }, { "name": "趣味・実用書籍" }]
         },
         {
           "name": "雑誌",
@@ -132,7 +132,7 @@
       "subcategories": [
         {
           "name": "園芸用品",
-          "subcategories": [{ "name": "植物・種苗" }, { "name": "肥料・資材" }, { "name": "園芸用工具" }, { "name": "鉢・プランター" }]
+          "subcategories": [{ "name": "植物・種苗" }, { "name": "肥料・資材" }, { "name": "園芸用工具" }, { "name": "植木鉢" }]
         },
         {
           "name": "ガーデン家具",
