@@ -1,31 +1,67 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <title>タスク完了</title>
-    <script>
-      // URL パラメータから指定の値を取得する関数
-      function getQueryParam(param) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(param);
+<head>
+  <meta charset="UTF-8" />
+  <title>タスク完了</title>
+  <link rel="shortcut icon" href="favicon.ico" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body { text-align: center; background: #f4f8fb; font-family: Arial, sans-serif;}
+    h2 { color: #1565c0; margin-top: 36px;}
+    .id-box {
+      background: #f0f0f0;
+      padding: 20px 8px 30px 8px;
+      margin: 30px auto 20px auto;
+      border-radius: 10px;
+      width: 350px;
+      max-width: 90vw;
+      box-shadow: 0 8px 24px rgba(80,90,120,0.09);
+    }
+    #participant-display { color: #0066cc; font-size: 36px; margin: 8px 0;}
+    button {
+      padding:12px 28px; font-size:18px; border-radius:8px; background:#1277cf; color:#fff; border:none;
+      font-weight:bold; cursor:pointer; margin-top:8px;
+    }
+    button:hover { background: #0057a6;}
+    .info {color: #444; margin-top:14px;}
+    .loading { color: #888; margin-top: 28px;}
+    .copied { color: #28a745; font-weight: bold;}
+  </style>
+</head>
+<body>
+  <h2>タスクが完了しました！</h2>
+  <div class="id-box">
+    <p><strong>あなたの被験者ID</strong></p>
+    <h1 id="participant-display">---</h1>
+    <button onclick="copyIdAndNext()">IDをコピーしてアンケートへ</button>
+    <p class="info">この番号をアンケートの最初の欄に貼り付けてください</p>
+  </div>
+  
+  <script>
+    const pid = new URLSearchParams(window.location.search).get('participant');
+    document.getElementById('participant-display').textContent = pid || '不明';
+    
+    // アンケートURL（participantパラメータ付き）
+    const surveyUrl = `https://psychexp.com/register/MzMzNS03YzlmMTE/?participant=${encodeURIComponent(pid)}`;
+    
+    function copyIdAndNext(){
+      if(pid){
+        navigator.clipboard.writeText(pid).then(() => {
+          // コピー成功時の表示更新
+          document.getElementById('loading-msg').innerHTML = 
+            '<span class="copied">✅ IDをコピーしました！アンケートページに移動します...</span>';
+          
+          // コピー後すぐにアンケートに移動
+          setTimeout(() => {
+            window.location.href = surveyUrl;
+          }, 1000);
+        }).catch(() => {
+          alert("コピーに失敗しました。手動でIDをメモしてください。");
+        });
+      } else {
+        alert("IDが取得できませんでした。");
       }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        // 被験者IDを取得
-        const participantId = getQueryParam("participant");
-        // PsychExp のリダイレクト先の URL を設定
-        let targetUrl = "https://psychexp.com/register/MzMwNi03ODNlOGY/";
-        if (participantId) {
-          targetUrl += "?participant=" + encodeURIComponent(participantId);
-        }
-        // 5秒後にリダイレクト
-        setTimeout(function () {
-          window.location.href = targetUrl;
-        }, 5000);
-      });
-    </script>
-  </head>
-  <body>
-    <p>ご回答ありがとうございます。5秒後にアンケートページへ自動的にリダイレクトします...</p>
-  </body>
+    }
+  </script>
+</body>
 </html>

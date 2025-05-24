@@ -2,17 +2,17 @@
 定数＆グローバル変数
 ***********************/
 
-const MAX_TASKS = 10; // タスク回数 // 25回にする？
+const MAX_TASKS = 1; // タスク回数 // 25回にする？
 const TIME_LIMIT_MS = 15000; // タスク制限時間(ms)
 const EASING_FUNCS = ["easeInOutSine", "easeInOutQuad", "easeInOutQuint", "easeInOutExpo", "easeInOutBack"];
 
 // 固定タスクセットを追加 🌟
 const FIXED_TASKS = [
-  { category: "生活雑貨・文具・裁縫・ギフト", subcat: "文房具", item: "ボールペン" },
-  { category: "食品", subcat: "野菜", item: "トマト" },
-  { category: "ペット用品", subcat: "ペットグッズ", item: "ペット用おもちゃグッズ" },
-  { category: "園芸・ガーデン・DYI", subcat: "DIY工具", item: "DYI用手工具" },
-  { category: "書籍・雑誌・漫画・児童書", subcat: "書籍", item: "自己啓発書籍" },
+  { category: "スポーツ・アウトドア", subcat: "ゴルフ", item: "ゴルフボール" },
+  { category: "食品", subcat: "フルーツ", item: "りんご" },
+  { category: "ペット用品", subcat: "ペットフード", item: "ドッグフード" },
+  { category: "園芸・ガーデン・DIY", subcat: "園芸用品", item: "植木鉢" },
+  { category: "書籍・雑誌・漫画・児童書", subcat: "書籍", item: "小説" },
 ];
 
 const LATIN_SQUARE = [
