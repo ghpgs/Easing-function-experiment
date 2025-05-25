@@ -17,11 +17,13 @@
       <div class="config-area">
         <label for="easingSelect">イージング関数選択：</label>
         <select id="easingSelect">
-          <option value="var(--easeInOutSine)">easeInOutSine</option>
+          <option value="var(--linear)">linear</option>
+          <!-- <option value="var(--easeInOutSine)">easeInOutSine</option> -->
           <option value="var(--easeInOutQuart)">easeInOutQuart</option>
           <option value="var(--easeInOutQuint)">easeInOutQuint</option>
           <option value="var(--easeInOutExpo)">easeInOutExpo</option>
           <option value="var(--easeInOutBack)">easeInOutBack</option>
+
         </select>
         <button id="taskStartBtn">タスク開始</button>
         <button id="startTutorialBtn">チュートリアル開始</button>
@@ -105,7 +107,8 @@
               <p></p>
               <div class="survey-question">
                 <p>
-                  Q1.メニューの動きは自然に感じましたか？<br />
+                  今回のタスク内容の難しさは除いて、メニューのアニメーションのみについてお答えください。
+                  Q1.メニューの開閉アニメーションは滑らかに感じましたか？<br />
                   1(全くそう思わない) 〜 5(とてもそう思う)
                 </p>
                 <div class="rating-container">
@@ -118,7 +121,7 @@
               </div>
               <div class="survey-question">
                 <p>
-                  Q2.アニメーションの違いが操作のしやすさに影響しましたか？<br />
+                  Q2.メニューの動きは自然に感じましたか？<br />
                   1(全くそう思わない) 〜 5(とてもそう思う)
                 </p>
                 <div class="rating-container">
@@ -131,7 +134,7 @@
               </div>
               <div class="survey-question">
                 <p>
-                  Q3.このメニューの使い心地はどうでしたか？<br />
+                  Q3.アニメーションの違いが操作のしやすさに影響しましたか？<br />
                   1(全く感じなかった)〜 5(とても感じた)
                 </p>
                 <div class="rating-container">

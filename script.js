@@ -4,7 +4,7 @@
 
 const MAX_TASKS = 3; // タスク回数：5つのタスク×5つのイージング関数 🌟
 const TIME_LIMIT_MS = 150000; // タスク制限時間(ms)
-const EASING_FUNCS = ["easeInOutSine", "easeInOutQuad", "easeInOutQuint", "easeInOutExpo", "easeInOutBack"];
+const EASING_FUNCS = ["linear", "easeInOutQuad", "easeInOutQuint", "easeInOutExpo", "easeInOutBack"];
 
 // 固定タスクセットを追加 🌟
 const FIXED_TASKS = [
