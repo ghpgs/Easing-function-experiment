@@ -9,9 +9,9 @@ const EASING_FUNCS = ["linear", "easeInOutQuad", "easeInOutQuint", "easeInOutExp
 // 固定タスクセットを追加 🌟
 const FIXED_TASKS = [
   { category: "スポーツ・アウトドア", subcat: "ゴルフ", item: "ゴルフボール" },
-  { category: "食品", subcat: "フルーツ", item: "りんご" },
-  { category: "ペット用品", subcat: "ペットフード", item: "ドッグフード" },
-  { category: "園芸・ガーデン・DIY", subcat: "園芸用品", item: "植木鉢" },
+  { category: "日常食料品", subcat: "フルーツ", item: "りんご" },
+  { category: "ペット日用品", subcat: "ペットフード", item: "ドッグフード" },
+  { category: "園芸・ガーデン", subcat: "園芸用品", item: "植木鉢" },
   { category: "書籍・雑誌・漫画・児童書", subcat: "書籍", item: "小説" },
 ];
 
@@ -281,7 +281,7 @@ function startNextTask() {
   // Latin Square でイージング関数とタスクを割り当て
   const rowIndex = participantId % 5; // 被験者IDに基づく行
   const colIndex = (currentTaskIndex - 1) % 5; // タスク番号に基づく列（MOD 5で循環）
-  
+
   // 🌟 修正：タスク順序もラテン方格で制御
   const easingIndex = LATIN_SQUARE[rowIndex][colIndex];
   const taskIndex = LATIN_SQUARE[(rowIndex + 1) % 5][colIndex]; // ← 1行ずらして使用
