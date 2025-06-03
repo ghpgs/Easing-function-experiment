@@ -2,7 +2,7 @@
 定数＆グローバル変数
 ***********************/
 
-const MAX_TASKS = 10; // タスク回数：5つのタスク×5つのイージング関数 🌟
+const MAX_TASKS = 9; // タスク回数：5つのタスク×5つのイージング関数 🌟
 const TIME_LIMIT_MS = 150000; // タスク制限時間(ms)
 const EASING_FUNCS = ["linear", "easeInOutQuad", "easeInOutQuint", "easeInOutExpo", "easeInOutBack"];
 
