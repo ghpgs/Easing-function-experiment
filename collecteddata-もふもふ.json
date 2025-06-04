@@ -74,7 +74,7 @@
         { "name": "書籍", "depth": 1, "duringAnimation": true, "stayTime": 1.29 },
         { "name": "児童書・絵本", "depth": 1, "duringAnimation": true, "stayTime": 2.24 },
         { "name": "絵本", "depth": 2, "duringAnimation": false, "stayTime": 0.83 }
-      ], 関数ごとの正答率，関数ごとの時間，タスクごとの正答率，タスクごとの時間，時間ごとだとどの関数でもだんだん早くなる
+      ], 関数ごとの正答率，かんすうごと
       "easeRating": "3",
       "animationRating": "5",
       "comments": "",
