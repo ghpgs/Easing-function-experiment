@@ -1,8 +1,7 @@
 /***********************
 定数＆グローバル変数
 ***********************/
-
-const MAX_TASKS = 5; // タスク回数：5つのタスク×5つのイージング関数 🌟
+const MAX_TASKS = 3; // タスク回数：5つのタスク×5つのイージング関数 🌟
 const TIME_LIMIT_MS = 150000; // タスク制限時間(ms)
 const EASING_FUNCS = ["linear", "easeInOutQuad", "easeInOutQuint", "easeInOutExpo", "easeInOutBack"];
 
@@ -471,15 +470,18 @@ function updateEasingFunction() {
 function animateSubmenu(targetSubmenu) {
   if (!targetSubmenu) return;
   const level = getMenuLevel(targetSubmenu);
-  isAnimating = true;
+
+  // 既に開いてるサブメニューがあれば同時に閉じる
   if (currentlyOpenMenus[level] && currentlyOpenMenus[level] !== targetSubmenu) {
-    closeSubmenuWithAnimation(currentlyOpenMenus[level], () => {
-      openSubmenu(targetSubmenu, level);
-    });
-  } else {
-    toggleSubmenu(targetSubmenu, level);
+    // 閉じる
+    currentlyOpenMenus[level].classList.remove("open");
   }
+  // 開く
+  targetSubmenu.classList.add("open");
+  currentlyOpenMenus[level] = targetSubmenu;
+  updateEasingFunction();
 }
+
 
 function openSubmenu(submenu, level) {
   closeSubmenuAtLevel(level);
@@ -790,3 +792,4 @@ function getLeafNamesWithDepthAndSiblingCount(categories, targetDepth, siblingCo
   helper(categories, 0, 0);
   return result;
 }
+
