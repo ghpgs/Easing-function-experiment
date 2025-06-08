@@ -26,13 +26,12 @@
     .info {color: #444; margin-top:14px;}
     .loading { color: #888; margin-top: 28px;}
     .copied { color: #28a745; font-weight: bold;}
-    
-    /* 隠しテキストエリア用のスタイル */
     .hidden-textarea {
       position: absolute;
       left: -9999px;
       opacity: 0;
     }
+    #status-msg { margin-top: 14px; min-height: 1.5em; }
   </style>
 </head>
 <body>
@@ -41,45 +40,32 @@
     <p><strong>あなたの被験者ID</strong></p>
     <h1 id="participant-display">---</h1>
     <button onclick="copyIdAndNext()">IDをコピーしてアンケートへ</button>
+    <div id="status-msg"></div>
     <p class="info">この番号をアンケートの最初の欄に貼り付けてください</p>
   </div>
-  
-  <!-- フォールバック用の隠しテキストエリア -->
   <textarea id="fallback-textarea" class="hidden-textarea"></textarea>
-  
   <script>
     const pid = new URLSearchParams(window.location.search).get('participant');
     document.getElementById('participant-display').textContent = pid || '不明';
-    
-    // アンケートURL
     const surveyUrl = `https://psychexp.com/register/MzMzNS03YzlmMTE/?participant=${encodeURIComponent(pid)}`;
-    
-    // 複数の方法でコピーを試行する関数
+
     function copyToClipboard(text) {
       return new Promise((resolve, reject) => {
-        // 方法1: 最新のClipboard API
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(text)
             .then(resolve)
-            .catch(() => {
-              // 方法2: フォールバック - テキストエリアを使用
-              fallbackCopy(text, resolve, reject);
-            });
+            .catch(() => fallbackCopy(text, resolve, reject));
         } else {
-          // 方法2: フォールバック - テキストエリアを使用
           fallbackCopy(text, resolve, reject);
         }
       });
     }
-    
-    // フォールバック用コピー関数
     function fallbackCopy(text, resolve, reject) {
       try {
         const textarea = document.getElementById('fallback-textarea');
         textarea.value = text;
         textarea.select();
-        textarea.setSelectionRange(0, 99999); // モバイル対応
-        
+        textarea.setSelectionRange(0, 99999);
         const successful = document.execCommand('copy');
         if (successful) {
           resolve();
@@ -90,25 +76,19 @@
         reject(err);
       }
     }
-    
     function copyIdAndNext(){
+      const statusMsg = document.getElementById('status-msg');
+      statusMsg.innerHTML = '';
       if(pid){
-        // コピー試行
         copyToClipboard(pid)
           .then(() => {
-            // コピー成功
-            document.getElementById('status-msg').innerHTML = 
-              '<span class="copied">✅ IDをコピーしました！アンケートページに移動します...</span>';
-            
+            statusMsg.innerHTML = '<span class="copied">✅ IDをコピーしました！アンケートページに移動します...</span>';
             setTimeout(() => {
               window.location.href = surveyUrl;
             }, 1500);
           })
           .catch(() => {
-            // コピー失敗時 - 手動コピーを促す
             alert(`コピーに失敗しました。以下のIDを手動でコピーしてください:\n${pid}`);
-            
-            // それでもアンケートページに移動
             setTimeout(() => {
               window.location.href = surveyUrl;
             }, 2000);
@@ -117,11 +97,10 @@
         alert("IDが取得できませんでした。");
       }
     }
-    
-    // 5秒後の自動移動
+    // 8分超で自動遷移
     setTimeout(() => {
       window.location.href = surveyUrl;
-    }, 500000);
+    }, 480000);
   </script>
 </body>
 </html>
