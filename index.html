@@ -42,7 +42,7 @@
           <h2>実験へのご協力に関する同意</h2>
           <p>
             本実験では操作ログ等を記録します。データは匿名化され、研究以外に利用しません。<br />
-            同意いただけたら「同意する」をクリックし，F11キーで全画面表示してください。<br />
+            同意いただけたら「同意する」をクリックし、F11キーで全画面表示してください。<br />
           </p>
           <button id="agreeBtn">同意する</button>
           <button id="disagreeBtn">同意しない</button>
@@ -141,7 +141,7 @@
       <template id="tutorial-overlay-template">
         <div class="overlay-content">
           <h2>チュートリアル完了</h2>
-          <p>ご理解ありがとうございます。<br />チュートリアルは以上です。タスク開始前にメニューの内容を確認しておいてください。</p>
+          チュートリアルは以上です。<br />タスク開始ボタンを押す前にメニューの内容を確認しておいてください。</p>
           <button id="closeTutorialBtn">閉じる</button>
         </div>
       </template>
@@ -151,58 +151,56 @@
         <div class="overlay-content">
           <h2>タスクについてのアンケート</h2>
           <div class="survey-section">
-            <div class="survey-question">
-              <p></p>
-              <div class="survey-question">
-                <p>
-                  今回のタスク内容の難しさは除いて、メニューのアニメーションのみについてお答えください。<br />
-                  Q1.メニューの開閉アニメーションは滑らかに感じましたか？<br />
-                  1(全くそう思わない) 〜 5(とてもそう思う)
-                </p>
-                <div class="rating-container">
-                  <label><input type="radio" name="animation-ease-rating" value="1" /> 1</label>
-                  <label><input type="radio" name="animation-ease-rating" value="2" /> 2</label>
-                  <label><input type="radio" name="animation-ease-rating" value="3" /> 3</label>
-                  <label><input type="radio" name="animation-ease-rating" value="4" /> 4</label>
-                  <label><input type="radio" name="animation-ease-rating" value="5" /> 5</label>
-                </div>
-              </div>
-              <div class="survey-question">
-                <p>
-                  Q2.メニューの動きは自然に感じましたか？<br />
-                  1(全くそう思わない) 〜 5(とてもそう思う)
-                </p>
-                <div class="rating-container">
-                  <label><input type="radio" name="task-difficulty-rating" value="1" /> 1</label>
-                  <label><input type="radio" name="task-difficulty-rating" value="2" /> 2</label>
-                  <label><input type="radio" name="task-difficulty-rating" value="3" /> 3</label>
-                  <label><input type="radio" name="task-difficulty-rating" value="4" /> 4</label>
-                  <label><input type="radio" name="task-difficulty-rating" value="5" /> 5</label>
-                </div>
-              </div>
-              <div class="survey-question">
-                <p>
-                  Q3.アニメーションの違いが操作のしやすさに影響しましたか？<br />
-                  1(全く感じなかった)〜 5(とても感じた)
-                </p>
-                <div class="rating-container">
-                  <label><input type="radio" name="animation-difference-rating" value="1" /> 1</label>
-                  <label><input type="radio" name="animation-difference-rating" value="2" /> 2</label>
-                  <label><input type="radio" name="animation-difference-rating" value="3" /> 3</label>
-                  <label><input type="radio" name="animation-difference-rating" value="4" /> 4</label>
-                  <label><input type="radio" name="animation-difference-rating" value="5" /> 5</label>
-                </div>
-              </div>
-            </div>
-            <div class="survey-question">
-              <p>コメントがあればご記入ください：</p>
-              <textarea id="task-comments" rows="3" cols="40"></textarea>
-            </div>
+            <table class="survey-table">
+              <tr>
+                <td class="question-text">
+                  Q1. メニューの開閉アニメーションは滑らかに感じましたか？<br>
+                  <span class="sub">1(全くそう思わない) ～ 5(とてもそう思う)</span>
+                </td>
+                <td class="radio-group">
+                  <label><input type="radio" name="animation-ease-rating" value="1">1</label>
+                  <label><input type="radio" name="animation-ease-rating" value="2">2</label>
+                  <label><input type="radio" name="animation-ease-rating" value="3">3</label>
+                  <label><input type="radio" name="animation-ease-rating" value="4">4</label>
+                  <label><input type="radio" name="animation-ease-rating" value="5">5</label>
+                </td>
+              </tr>
+              <tr>
+                <td class="question-text">
+                  Q2. メニューの動きは自然に感じましたか？<br>
+                  <span class="sub">1(全くそう思わない) ～ 5(とてもそう思う)</span>
+                </td>
+                <td class="radio-group">
+                  <label><input type="radio" name="task-difficulty-rating" value="1">1</label>
+                  <label><input type="radio" name="task-difficulty-rating" value="2">2</label>
+                  <label><input type="radio" name="task-difficulty-rating" value="3">3</label>
+                  <label><input type="radio" name="task-difficulty-rating" value="4">4</label>
+                  <label><input type="radio" name="task-difficulty-rating" value="5">5</label>
+                </td>
+              </tr>
+              <tr>
+                <td class="question-text">
+                  Q3. アニメーションの違いが操作のしやすさに影響しましたか？<br>
+                  <span class="sub">1(全く感じなかった) ～ 5(とても感じた)</span>
+                </td>
+                <td class="radio-group">
+                  <label><input type="radio" name="animation-difference-rating" value="1">1</label>
+                  <label><input type="radio" name="animation-difference-rating" value="2">2</label>
+                  <label><input type="radio" name="animation-difference-rating" value="3">3</label>
+                  <label><input type="radio" name="animation-difference-rating" value="4">4</label>
+                  <label><input type="radio" name="animation-difference-rating" value="5">5</label>
+                </td>
+              </tr>
+              <tr>
+                <td class="question-text">コメントがあればご記入ください：</td>
+                <td><textarea id="task-comments" rows="3" cols="35"></textarea></td>
+              </tr>
+            </table>
           </div>
           <button id="continueTaskBtn">次のタスクへ</button>
         </div>
       </template>
-    </main>
+
 
     <!-- Netlifyフォーム -->
     <form id="netlifyForm" name="results" method="POST" data-netlify="true" action="thank-you.html" style="display: none">

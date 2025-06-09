@@ -274,13 +274,17 @@ select {
 }
 
 .overlay-content {
+  max-width: 900px;   /* 最大幅 */
+  min-width: 400px;   /* 最小幅 */
   background: white;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 6);
-  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  margin: 0 auto;
+  box-sizing: border-box;
 }
+
 
 .overlay-content button {
   margin-top: 10px;
@@ -408,6 +412,48 @@ textarea {
 }
 #continueButton:hover {
   background: #4171c5;
+}
+
+.survey-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  margin: 0 auto;
+  background: #f7f7f7;
+  border-radius: 10px;
+  font-size: 1.05em;
+}
+.survey-table td {
+  vertical-align: middle;
+  padding: 12px 10px;
+  border: none;
+}
+.survey-table .question-text {
+  width: 60%;
+  font-weight: bold;
+  text-align: left;
+}
+.survey-table .sub {
+  font-size: 0.95em;
+  color: #666;
+  font-weight: normal;
+}
+.survey-table .radio-group label {
+  margin-right: 15px;
+  font-weight: normal;
+  font-size: 1.1em;
+}
+.survey-table .radio-group input[type="radio"] {
+  margin-right: 4px;
+  accent-color: #1277cf;
+}
+textarea {
+  width: 90%;
+  min-height: 2.5em;
+  font-size: 1em;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
 /* main > *:not(#rewardScreen) {

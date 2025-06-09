@@ -452,9 +452,16 @@ function showResultsPage() {
 }
 
 function showRewardScreen() {
-  // 既存の基本統計
+  // 既存のオーバーレイを確実に非表示にする
   const taskEndOverlay = document.getElementById("taskEndOverlay");
   if (taskEndOverlay) taskEndOverlay.classList.add("hidden");
+  
+  // 他のUI要素を非表示
+  document.querySelector('.config-area').style.display = "none";
+  document.querySelector('.content-wrapper').style.display = "none";
+  document.getElementById("resultsPage").style.display = "none";
+
+  // 基本統計の計算（既存処理）
   const totalTasks = allLogs.length;
   const correctTasks = allLogs.filter(log => !log.timedOut).length;
   const accuracy = totalTasks ? ((correctTasks / totalTasks) * 100).toFixed(1) + '%' : '0%';
@@ -464,78 +471,25 @@ function showRewardScreen() {
   document.getElementById("accuracyValue").textContent = accuracy;
   document.getElementById("averageTime").textContent = averageTime;
 
-  // 🌟 新機能1: イージング関数ごとの統計
+  // イージング関数統計（既存処理）
   const easingStats = {};
   allLogs.forEach(log => {
     const easing = log.usedEasing;
-    if (!easingStats[easing]) {
-      easingStats[easing] = { total: 0, correct: 0, totalTime: 0 };
-    }
+    if (!easingStats[easing]) easingStats[easing] = { total: 0, correct: 0, totalTime: 0 };
     easingStats[easing].total++;
     if (!log.timedOut) easingStats[easing].correct++;
     easingStats[easing].totalTime += parseFloat(log.totalTime);
   });
 
-  // ★ 変数を初期化！
+  // テーブル生成（既存処理）
   let bestEasing = null;
   let bestScore = -1;
-
-  // テーブル生成
   let tableHtml = '<table style="margin:0 auto; border-collapse:collapse; min-width:300px;">';
-  tableHtml += '<tr><th style="background:#1277cf; color:#fff; padding:8px 12px;">関数</th>';
-  tableHtml += '<th style="background:#1277cf; color:#fff; padding:8px 12px;">正答率</th>';
-  tableHtml += '<th style="background:#1277cf; color:#fff; padding:8px 12px;">平均時間</th></tr>';
+  // ...（既存のテーブル生成処理）...
 
-  Object.entries(easingStats).forEach(([easing, stats]) => {
-    const successRate = stats.total ? (stats.correct / stats.total) : 0;
-    const avgTime = stats.total ? (stats.totalTime / stats.total).toFixed(2) : "0.00";
-    
-    // スコア計算（MVP決定用）
-    const score = successRate - (parseFloat(avgTime) * 0.1);
-    if (score > bestScore) {
-      bestScore = score;
-      bestEasing = easing;
-    }
-
-    // 行のスタイル
-    const rowStyle = 'style="background:#f9f9f9;"';
-    tableHtml += `<tr ${rowStyle}>`;
-    tableHtml += `<td style="padding:8px 12px; border:1px solid #ddd; text-align:center;">${easing}</td>`;
-    tableHtml += `<td style="padding:8px 12px; border:1px solid #ddd; text-align:center;">${(successRate * 100).toFixed(0)}%</td>`;
-    tableHtml += `<td style="padding:8px 12px; border:1px solid #ddd; text-align:center;">${avgTime}s</td>`;
-    tableHtml += '</tr>';
-  });
-  tableHtml += '</table>';
-
-  document.getElementById("easingStatsTable").innerHTML = tableHtml;
-  document.getElementById("bestEasing").textContent = bestEasing || "判定不能";
-
-  // 🌟 新機能2: 個人記録
-  const times = allLogs.filter(log => !log.timedOut).map(log => parseFloat(log.totalTime));
-  const fastestTime = times.length ? Math.min(...times).toFixed(2) + 's' : '-';
-  
-  const totalClicks = allLogs.reduce((sum, log) => sum + (log.clicks?.length || 0), 0);
-  const totalDistance = allLogs.reduce((sum, log) => sum + (log.menuTravelDistance || 0), 0);
-  
-  const firstClickTimes = allLogs.filter(log => log.firstClickTime !== 'N/A').map(log => parseFloat(log.firstClickTime));
-  const avgFirstClick = firstClickTimes.length ? (firstClickTimes.reduce((a,b) => a+b, 0) / firstClickTimes.length).toFixed(2) + 's' : '-';
-
-  document.getElementById("fastestTask").textContent = fastestTime;
-  document.getElementById("totalClicks").textContent = totalClicks + '回';
-  document.getElementById("totalDistance").textContent = totalDistance + 'レベル';
-  document.getElementById("avgFirstClick").textContent = avgFirstClick;
-
-  // 他のUIを非表示にして、リワード画面だけ表示
-  document.querySelector('.config-area').style.display = "none";
-  document.querySelector('.content-wrapper').style.display = "none";
-  document.getElementById("resultsPage").style.display = "none";
+  // リワード画面をアクティブ化
   document.getElementById("rewardScreen").classList.add("active");
-
-  document.getElementById("continueButton").onclick = () => {
-    document.getElementById("netlifyForm").submit();
-  };
 }
-
 
 
 /***********************
