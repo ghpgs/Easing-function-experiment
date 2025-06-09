@@ -347,3 +347,73 @@ textarea {
 #surveyResultsTable {
   margin-top: 30px;
 }
+
+#rewardScreen {
+  display: none;
+  background: none;      /* ← 背景色を消す */
+  box-shadow: none;      /* ← 影を消す */
+  border-radius: 0;      /* ← 角丸を消す */
+  padding: 0;            /* ← 余白を消す */
+  min-width: 0;          /* ← 幅制限も外す */
+  text-align: center;
+  margin: 40px 0 0 0;    /* ← 必要なら上だけ余白 */
+  max-width: 100%;       /* ← 幅いっぱい使う */
+}
+#rewardScreen.active { display: block; }
+
+#rewardScreen table {
+  width: 30%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1rem;
+  font-family: Arial, sans-serif;
+}
+
+#rewardScreen th, #rewardScreen td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+#rewardScreen th {
+  background-color: #1277cf;
+  color: white;
+  font-weight: bold;
+}
+
+#rewardScreen tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#rewardScreen tr:hover {
+  background-color: #d1e7ff;
+}
+
+#rewardScreen .mvp-easing {
+  font-weight: bold;
+  color: #ff6b35;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+#continueButton {
+  margin-top: 1.5rem;
+  padding: 0.7em 2em;
+  font-size: 1.1em;
+  background: #5a8dee;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#continueButton:hover {
+  background: #4171c5;
+}
+
+/* main > *:not(#rewardScreen) {
+  display: none !important;
+}
+#rewardScreen {
+  display: block !important;
+} */
+

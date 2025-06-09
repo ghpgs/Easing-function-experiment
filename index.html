@@ -18,18 +18,16 @@
         <label for="easingSelect">イージング関数選択：</label>
         <select id="easingSelect">
           <option value="var(--linear)">linear</option>
-          <!-- <option value="var(--easeInOutSine)">easeInOutSine</option> -->
           <option value="var(--easeInOutQuart)">easeInOutQuart</option>
           <option value="var(--easeInOutQuint)">easeInOutQuint</option>
           <option value="var(--easeInOutExpo)">easeInOutExpo</option>
           <option value="var(--easeInOutBack)">easeInOutBack</option>
-
         </select>
         <button id="taskStartBtn">タスク開始</button>
         <button id="startTutorialBtn">チュートリアル開始</button>
       </div>
 
-      <!-- メインコンテンツ（フィードバック、メニュー表示エリア） -->
+      <!-- メインコンテンツ -->
       <div class="content-wrapper">
         <div class="main-content">
           <div id="taskInfo" class="task-info"></div>
@@ -71,12 +69,62 @@
           <tbody></tbody>
         </table>
         <div class="center-area">
-          <!-- もともとダウンロードボタンだったが、今回はNetlify送信に対応 
-               必要に応じて残しておき、活用しないなら削除してもOK -->
           <button id="downloadAllLogsBtn" style="display: none">結果をダウンロード</button>
         </div>
       </section>
 
+      <!-- ★★★ ここがreward画面！★★★ -->
+      <section id="rewardScreen">
+        <h2>タスク完了しました！</h2>
+
+        <!-- 2️⃣ MVPイージング関数 -->
+        <div style="margin:1em 0;">
+          <p class="mvp-easing">🏅 MVPイージング関数: <span id="bestEasing">-</span></p>
+        </div>
+
+        <!-- 1️⃣ イージング関数ごとのパフォーマンステーブル -->
+        <div style="margin:1.5em 0;">
+          <div id="easingStatsTable"></div>
+        </div>
+        
+
+        
+        <!-- 3️⃣ 個人記録を項目・値テーブルで -->
+        <table style="margin:1.5em auto; border-collapse:collapse; min-width:320px; font-size:1.1em;">
+          <tr>
+            <th style="background:#1277cf; color:#fff; padding:8px 12px;">項目</th>
+            <th style="background:#1277cf; color:#fff; padding:8px 12px;">値</th>
+          </tr>
+          <tr>
+            <td style="padding:8px 12px; border:1px solid #ddd;">全体正解率</td>
+            <td style="padding:8px 12px; border:1px solid #ddd;"><span id="accuracyValue">0%</span></td>
+          </tr>
+          <tr>
+            <td style="padding:8px 12px; border:1px solid #ddd;">平均時間</td>
+            <td style="padding:8px 12px; border:1px solid #ddd;"><span id="averageTime">0.00s</span></td>
+          </tr>
+          <tr>
+            <td style="padding:8px 12px; border:1px solid #ddd;">最速タスク</td>
+            <td style="padding:8px 12px; border:1px solid #ddd;"><span id="fastestTask">-</span></td>
+          </tr>
+          <tr>
+            <td style="padding:8px 12px; border:1px solid #ddd;">総クリック数</td>
+            <td style="padding:8px 12px; border:1px solid #ddd;"><span id="totalClicks">-</span></td>
+          </tr>
+          <tr>
+            <td style="padding:8px 12px; border:1px solid #ddd;">メニュー移動距離</td>
+            <td style="padding:8px 12px; border:1px solid #ddd;"><span id="totalDistance">-</span></td>
+          </tr>
+          <tr>
+            <td style="padding:8px 12px; border:1px solid #ddd;">初回クリック平均</td>
+            <td style="padding:8px 12px; border:1px solid #ddd;"><span id="avgFirstClick">-</span></td>
+          </tr>
+        </table>
+      
+        <button id="continueButton">アンケートへ進む</button>
+      </section>
+      
+      
       <!-- 説明用オーバーレイ -->
       <template id="tutorial-intro-overlay-template">
         <div class="overlay-content">
@@ -156,12 +204,7 @@
       </template>
     </main>
 
-    <!--
-      ▼▼▼ Netlify でフォームとして認識させるための仕組み ▼▼▼
-      このformを自動サブミットして、最終的なJSONデータを送信する
-    -->
-    <!-- Netlify上でフォーム名として表示される -->
-    <!-- index.html のフォームの例 -->
+    <!-- Netlifyフォーム -->
     <form id="netlifyForm" name="results" method="POST" data-netlify="true" action="thank-you.html" style="display: none">
       <input type="hidden" name="form-name" value="results" />
       <input type="hidden" id="netlifyFormData" name="jsonData" value="" />

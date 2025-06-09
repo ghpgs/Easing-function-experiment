@@ -1,8 +1,8 @@
 /***********************
 定数＆グローバル変数
 ***********************/
-const MAX_TASKS = 1; // タスク回数：5つのタスク×5つのイージング関数
-const TIME_LIMIT_MS = 150000; // タスク制限時間(ms)
+const MAX_TASKS = 25; // タスク回数：5つのタスク×5つのイージング関数
+const TIME_LIMIT_MS = 10005; // タスク制限時間(ms)
 const EASING_FUNCS = ["linear", "easeInOutQuad", "easeInOutQuint", "easeInOutExpo", "easeInOutBack"];
 
 // 固定タスクセットを追加
@@ -264,26 +264,24 @@ function startTask() {
 
 // 🌟 修正版：タスクもラテン方格で制御
 function startNextTask() {
-  currentTaskIndex++;
-  if (currentTaskIndex > MAX_TASKS) {
-    showResultsPage();
+  // 終了判定を最初に行う
+  if (currentTaskIndex >= MAX_TASKS) {
+    showRewardScreen();
     return;
   }
 
+  currentTaskIndex++; // ここでインクリメント
   resetTaskVars();
   closeAllSubmenus();
   clearTimeout(timeoutId);
-  const feedbackElem = document.getElementById("feedback");
-  feedbackElem.textContent = "";
-  feedbackElem.className = "";
 
-  // Latin Square でイージング関数とタスクを割り当て
-  const rowIndex = participantId % 5; // 被験者IDに基づく行
-  const colIndex = (currentTaskIndex - 1) % 5; // タスク番号に基づく列（MOD 5で循環）
+  // ラテン方格のインデックス計算（currentTaskIndexは1始まり）
+  const rowIndex = participantId % 5;
+  const colIndex = (currentTaskIndex - 1) % 5; // 0-4の範囲
 
-  // 🌟 修正：タスク順序もラテン方格で制御
+  // タスクインデックス計算（行を1つずらす）
   const easingIndex = LATIN_SQUARE[rowIndex][colIndex];
-  const taskIndex = LATIN_SQUARE[(rowIndex + 1) % 5][colIndex]; // ← 1行ずらして使用
+  const taskIndex = LATIN_SQUARE[(rowIndex + 1) % 5][colIndex];
 
   // 現在のイージングとタスクを設定
   currentTaskEasing = EASING_FUNCS[easingIndex];
@@ -366,6 +364,7 @@ function checkAnswer(clickedText) {
     continueTaskBtn.textContent = "次のタスクへ";
   }
   taskEndOverlay.classList.remove("hidden");
+  
 }
 
 function handleTimeout(targetItemName) {
@@ -391,6 +390,7 @@ function handleTimeout(targetItemName) {
   const continueTaskBtn = taskEndOverlay.querySelector("#continueTaskBtn");
   if (currentTaskIndex === MAX_TASKS) {
     continueTaskBtn.textContent = "結果へ進む";
+    // ★ showRewardScreen()は削除！アンケート後に呼ばれる
   } else {
     continueTaskBtn.textContent = "次のタスクへ";
   }
@@ -404,8 +404,10 @@ function handleTimeout(targetItemName) {
 function showResultsPage() {
   // フィードバック欄リセット
   const feedbackElem = document.getElementById("feedback");
-  feedbackElem.textContent = "";
-  feedbackElem.className = "";
+  if (feedbackElem) {
+    feedbackElem.textContent = "";
+    feedbackElem.className = "";
+  }
 
   // 結果テーブルの更新
   const resultsPage = document.getElementById("resultsPage");
@@ -414,6 +416,7 @@ function showResultsPage() {
 
   allLogs.forEach((log) => {
     const tr = document.createElement("tr");
+
     const tdTask = document.createElement("td");
     tdTask.textContent = log.taskIndex;
     tr.appendChild(tdTask);
@@ -441,21 +444,99 @@ function showResultsPage() {
     resultsTableBody.appendChild(tr);
   });
 
+  // 表示だけ
   resultsPage.style.display = "block";
 
-  // ここで最終的なデータ構造を作成（surveyLogsがなく、taskLogsのみ）
-  // => タスクログにアンケート情報も統合済み
-  const finalData = {
-    participantId: participantId,
-    taskLogs: allLogs, // ← ここにeaseRating等の項目も含まれている
-  };
-
-  // hidden inputにJSON文字列を格納
-  document.getElementById("netlifyFormData").value = JSON.stringify(finalData);
-
-  // フォームを自動送信（Netlify側で集計される）
-  document.getElementById("netlifyForm").submit();
+  // デバッグ用：コンソールでも確認
+  console.table(allLogs);
 }
+
+function showRewardScreen() {
+  // 既存の基本統計
+  const taskEndOverlay = document.getElementById("taskEndOverlay");
+  if (taskEndOverlay) taskEndOverlay.classList.add("hidden");
+  const totalTasks = allLogs.length;
+  const correctTasks = allLogs.filter(log => !log.timedOut).length;
+  const accuracy = totalTasks ? ((correctTasks / totalTasks) * 100).toFixed(1) + '%' : '0%';
+  const totalTime = allLogs.reduce((sum, log) => sum + parseFloat(log.totalTime), 0);
+  const averageTime = totalTasks ? (totalTime / totalTasks).toFixed(2) + 's' : '0.00s';
+
+  document.getElementById("accuracyValue").textContent = accuracy;
+  document.getElementById("averageTime").textContent = averageTime;
+
+  // 🌟 新機能1: イージング関数ごとの統計
+  const easingStats = {};
+  allLogs.forEach(log => {
+    const easing = log.usedEasing;
+    if (!easingStats[easing]) {
+      easingStats[easing] = { total: 0, correct: 0, totalTime: 0 };
+    }
+    easingStats[easing].total++;
+    if (!log.timedOut) easingStats[easing].correct++;
+    easingStats[easing].totalTime += parseFloat(log.totalTime);
+  });
+
+  // ★ 変数を初期化！
+  let bestEasing = null;
+  let bestScore = -1;
+
+  // テーブル生成
+  let tableHtml = '<table style="margin:0 auto; border-collapse:collapse; min-width:300px;">';
+  tableHtml += '<tr><th style="background:#1277cf; color:#fff; padding:8px 12px;">関数</th>';
+  tableHtml += '<th style="background:#1277cf; color:#fff; padding:8px 12px;">正答率</th>';
+  tableHtml += '<th style="background:#1277cf; color:#fff; padding:8px 12px;">平均時間</th></tr>';
+
+  Object.entries(easingStats).forEach(([easing, stats]) => {
+    const successRate = stats.total ? (stats.correct / stats.total) : 0;
+    const avgTime = stats.total ? (stats.totalTime / stats.total).toFixed(2) : "0.00";
+    
+    // スコア計算（MVP決定用）
+    const score = successRate - (parseFloat(avgTime) * 0.1);
+    if (score > bestScore) {
+      bestScore = score;
+      bestEasing = easing;
+    }
+
+    // 行のスタイル
+    const rowStyle = 'style="background:#f9f9f9;"';
+    tableHtml += `<tr ${rowStyle}>`;
+    tableHtml += `<td style="padding:8px 12px; border:1px solid #ddd; text-align:center;">${easing}</td>`;
+    tableHtml += `<td style="padding:8px 12px; border:1px solid #ddd; text-align:center;">${(successRate * 100).toFixed(0)}%</td>`;
+    tableHtml += `<td style="padding:8px 12px; border:1px solid #ddd; text-align:center;">${avgTime}s</td>`;
+    tableHtml += '</tr>';
+  });
+  tableHtml += '</table>';
+
+  document.getElementById("easingStatsTable").innerHTML = tableHtml;
+  document.getElementById("bestEasing").textContent = bestEasing || "判定不能";
+
+  // 🌟 新機能2: 個人記録
+  const times = allLogs.filter(log => !log.timedOut).map(log => parseFloat(log.totalTime));
+  const fastestTime = times.length ? Math.min(...times).toFixed(2) + 's' : '-';
+  
+  const totalClicks = allLogs.reduce((sum, log) => sum + (log.clicks?.length || 0), 0);
+  const totalDistance = allLogs.reduce((sum, log) => sum + (log.menuTravelDistance || 0), 0);
+  
+  const firstClickTimes = allLogs.filter(log => log.firstClickTime !== 'N/A').map(log => parseFloat(log.firstClickTime));
+  const avgFirstClick = firstClickTimes.length ? (firstClickTimes.reduce((a,b) => a+b, 0) / firstClickTimes.length).toFixed(2) + 's' : '-';
+
+  document.getElementById("fastestTask").textContent = fastestTime;
+  document.getElementById("totalClicks").textContent = totalClicks + '回';
+  document.getElementById("totalDistance").textContent = totalDistance + 'レベル';
+  document.getElementById("avgFirstClick").textContent = avgFirstClick;
+
+  // 他のUIを非表示にして、リワード画面だけ表示
+  document.querySelector('.config-area').style.display = "none";
+  document.querySelector('.content-wrapper').style.display = "none";
+  document.getElementById("resultsPage").style.display = "none";
+  document.getElementById("rewardScreen").classList.add("active");
+
+  document.getElementById("continueButton").onclick = () => {
+    document.getElementById("netlifyForm").submit();
+  };
+}
+
+
 
 /***********************
 イージング関数＆サブメニューのアニメーション
@@ -676,6 +757,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const continueTaskBtn = taskEndOverlay.querySelector("#continueTaskBtn");
     if (continueTaskBtn) {
       continueTaskBtn.addEventListener("click", () => {
+        // ★ 最初にフィードバックをクリア
+        const feedbackElem = document.getElementById("feedback");
+        feedbackElem.textContent = "";
+        feedbackElem.className = "";
+
         // タスク終了アンケートの内容を、今のタスクのログに統合する
         const animationEaseRating = taskEndOverlay.querySelector('input[name="animation-ease-rating"]:checked')?.value || null;
         const taskDifficultyRating = taskEndOverlay.querySelector('input[name="task-difficulty-rating"]:checked')?.value || null;
@@ -722,7 +808,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (btnText === "結果へ進む") {
           if (!confirm("結果に進みますか？")) return;
           taskEndOverlay.classList.add("hidden");
-          showResultsPage();
+          showRewardScreen();
         } else if (btnText === "次へ進む" || btnText === "次のタスクへ") {
           if (!confirm("次のタスクに進みますか？")) return;
           taskEndOverlay.classList.add("hidden");
