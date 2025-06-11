@@ -1,8 +1,8 @@
 /***********************
 定数＆グローバル変数
 ***********************/
-const MAX_TASKS = 25; // タスク回数：5つのタスク×5つのイージング関数
-const TIME_LIMIT_MS = 15000; // タスク制限時間(ms)
+const MAX_TASKS = 2; // タスク回数：5つのタスク×5つのイージング関数
+const TIME_LIMIT_MS = 1500; // タスク制限時間(ms)
 const EASING_FUNCS = ["linear", "easeInOutQuad", "easeInOutQuint", "easeInOutExpo", "easeInOutBack"];
 
 // 固定タスクセットを追加
@@ -390,7 +390,6 @@ function handleTimeout(targetItemName) {
   const continueTaskBtn = taskEndOverlay.querySelector("#continueTaskBtn");
   if (currentTaskIndex === MAX_TASKS) {
     continueTaskBtn.textContent = "結果へ進む";
-    // ★ showRewardScreen()は削除！アンケート後に呼ばれる
   } else {
     continueTaskBtn.textContent = "次のタスクへ";
   }
@@ -452,6 +451,8 @@ function showResultsPage() {
 }
 
 function showRewardScreen() {
+  clearTimeout(timeoutId);
+  timeoutId = null;
   // 既存のオーバーレイを確実に非表示にする
   const taskEndOverlay = document.getElementById("taskEndOverlay");
   if (taskEndOverlay) taskEndOverlay.classList.add("hidden");
@@ -463,13 +464,14 @@ function showRewardScreen() {
 
   // 基本統計の計算（既存処理）
   const totalTasks = allLogs.length;
-  const correctTasks = allLogs.filter(log => !log.timedOut).length;
+  const correctTasks = allLogs.filter(log => !log.timedOut && log.errorCount === 0).length;
   const accuracy = totalTasks ? ((correctTasks / totalTasks) * 100).toFixed(1) + '%' : '0%';
   const totalTime = allLogs.reduce((sum, log) => sum + parseFloat(log.totalTime), 0);
   const averageTime = totalTasks ? (totalTime / totalTasks).toFixed(2) + 's' : '0.00s';
 
   document.getElementById("accuracyValue").textContent = accuracy;
   document.getElementById("averageTime").textContent = averageTime;
+
 
   // イージング関数統計（既存処理）
   const easingStats = {};
@@ -490,6 +492,12 @@ function showRewardScreen() {
   // リワード画面をアクティブ化
   document.getElementById("rewardScreen").classList.add("active");
 }
+
+document.getElementById("continueButton").addEventListener("click", () => {
+  // 例：アンケートページに遷移
+  window.location.href = "thank-you.html";
+  // もしくはアンケート用オーバーレイを表示する処理など
+});
 
 
 /***********************
