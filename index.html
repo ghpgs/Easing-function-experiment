@@ -75,7 +75,7 @@
 
       <!-- ★★★ ここがreward画面！★★★ -->
       <section id="rewardScreen">
-        <h2>タスク完了しました！</h2>
+        <h2>タスクが完了しました！</h2>
 
         <!-- 2️⃣ MVPイージング関数 -->
         <div style="margin:1em 0;">
@@ -202,10 +202,13 @@
       </template>
 
 
-    <!-- Netlifyフォーム -->
-    <form id="netlifyForm" name="results" method="POST" data-netlify="true" action="thank-you.html" style="display: none">
+    <!-- 既存のNetlifyフォームを以下に置き換え -->
+    <form id="netlifyForm" name="results" method="POST" data-netlify="true" 
+          action="thank-you.html" style="display: none">
       <input type="hidden" name="form-name" value="results" />
       <input type="hidden" id="netlifyFormData" name="jsonData" value="" />
+      <!-- 🌟 participantID用のhiddenフィールドを事前に用意 -->
+      <input type="hidden" id="participantIdField" name="participant" value="" />
     </form>
 
     <!-- スクリプト読み込み -->

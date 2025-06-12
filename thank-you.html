@@ -47,7 +47,7 @@
   <script>
     const pid = new URLSearchParams(window.location.search).get('participant');
     document.getElementById('participant-display').textContent = pid || '不明';
-    const surveyUrl = `https://psychexp.com/register/MzMzNS03YzlmMTE/?participant=${encodeURIComponent(pid)}`;
+    const surveyUrl = `https://psychexp.com/preview/MzM5Mi1lYjE4Y2M/?participant=${encodeURIComponent(pid)}`;
 
     function copyToClipboard(text) {
       return new Promise((resolve, reject) => {

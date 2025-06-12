@@ -1,8 +1,8 @@
 /***********************
 定数＆グローバル変数
 ***********************/
-const MAX_TASKS = 2; // タスク回数：5つのタスク×5つのイージング関数
-const TIME_LIMIT_MS = 1500; // タスク制限時間(ms)
+const MAX_TASKS = 1; // タスク回数：5つのタスク×5つのイージング関数
+const TIME_LIMIT_MS = 15; // タスク制限時間(ms)
 const EASING_FUNCS = ["linear", "easeInOutQuad", "easeInOutQuint", "easeInOutExpo", "easeInOutBack"];
 
 // 固定タスクセットを追加
@@ -489,14 +489,59 @@ function showRewardScreen() {
   let tableHtml = '<table style="margin:0 auto; border-collapse:collapse; min-width:300px;">';
   // ...（既存のテーブル生成処理）...
 
+  // 🌟 「アンケートへ進む」ボタンのイベントリスナーを追加
+  const continueButton = document.getElementById("continueButton");
+  if (continueButton) {
+    continueButton.addEventListener("click", () => {
+      submitToNetlify();
+    });
+  }
   // リワード画面をアクティブ化
   document.getElementById("rewardScreen").classList.add("active");
 }
 
+  // DOMContentLoaded内の最後に追加
 document.getElementById("continueButton").addEventListener("click", () => {
+  // 全データをまとめる
+  const finalData = {
+    participantId: participantId,
+    timestamp: new Date().toISOString(),
+    allLogs: allLogs,
+    // その他必要なデータ
+  };
   // 例：アンケートページに遷移
-  window.location.href = "thank-you.html";
-  // もしくはアンケート用オーバーレイを表示する処理など
+  window.location.href = `thank-you.html?participant=${encodeURIComponent(participantId)}`;
+  //   // もしくはアンケート用オーバーレイを表示する処理など
+  
+  // 🌟 Netlifyフォーム送信処理を追加
+  function submitToNetlify() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const pid = urlParams.get("participant") || participantId || "不明";
+    
+    // participantIDのhiddenフィールドを確実に設定
+    const participantField = document.getElementById("participantIdField");
+    if (participantField) {
+      participantField.value = pid;
+    }
+    
+    // フォームデータを準備
+    const formData = {
+      participantId: pid,
+      taskResults: allLogs,
+      timestamp: new Date().toISOString()
+    };
+    
+    // hiddenフィールドにデータを設定
+    document.getElementById("netlifyFormData").value = JSON.stringify(formData);
+    
+    const form = document.getElementById("netlifyForm");
+    // action属性にparticipantパラメータを確実に含める
+    form.action = `thank-you.html?participant=${encodeURIComponent(pid)}`;
+    
+    // フォーム送信
+    form.submit();
+  }
+  
 });
 
 

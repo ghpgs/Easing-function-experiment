@@ -7,8 +7,9 @@
 
 label[for="easingSelect"],
 #easingSelect {
-  display: block !important;
+  display: none !important;
 }
+
 
 /* ================================
    カスタム変数
