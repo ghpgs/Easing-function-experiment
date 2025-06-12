@@ -1,8 +1,8 @@
 /***********************
 定数＆グローバル変数
 ***********************/
-const MAX_TASKS = 1; // タスク回数：5つのタスク×5つのイージング関数
-const TIME_LIMIT_MS = 15; // タスク制限時間(ms)
+const MAX_TASKS = 25; // タスク回数：5つのタスク×5つのイージング関数
+const TIME_LIMIT_MS = 15000; // タスク制限時間(ms)
 const EASING_FUNCS = ["linear", "easeInOutQuad", "easeInOutQuint", "easeInOutExpo", "easeInOutBack"];
 
 // 固定タスクセットを追加
@@ -746,7 +746,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ▼ タスク開始ボタン（既存のまま）
   startTaskBtn.addEventListener("click", () => {
-    if (!confirm("タスクを開始しますか？")) return;
+    if (!confirm("タスクを開始しますか？ 制限時間は1タスク当たり15秒です")) return;
     startTask();
     startTaskBtn.disabled = true;
     startTutorialBtn.disabled = true;
