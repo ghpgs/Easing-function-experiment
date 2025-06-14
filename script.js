@@ -1,7 +1,7 @@
 /***********************
 定数＆グローバル変数
 ***********************/
-const MAX_TASKS = 3; // タスク回数：5つのタスク×5つのイージング関数
+const MAX_TASKS = 25; // タスク回数：5つのタスク×5つのイージング関数
 const TIME_LIMIT_MS = 15000; // タスク制限時間(ms)
 const EASING_FUNCS = ["linear", "easeInOutQuad", "easeInOutQuint", "easeInOutExpo", "easeInOutBack"];
 
@@ -140,7 +140,7 @@ function submitToNetlify() {
       performance: {
         errorCount: task.errorCount,
         menuTravelDistance: task.menuTravelDistance,
-        pathEfficiency: calculatePathEfficiency(task.clicks, currentCorrectPath),
+        pathEfficiency: calculatePathEfficiency(task.clicks, task.correctPath),
         timedOut: task.timedOut
       },
       userFeedback: {
@@ -255,11 +255,13 @@ function createMenuRecursive(categoryArray, parentUL) {
 }
 
 /***********************
-クリック記録関数（改善版）
+クリック記録関数（修正版）
 ***********************/
 function recordClick(categoryName) {
-  const currentClickTime = Date.now();
+  const currentClickTime = performance.now(); // performance.nowを使用
   const currentDepth = getCategoryDepthByName(categoriesData, categoryName);
+  
+  // 初回クリック時間の修正（タスク開始からの経過秒数）
   if (firstClickTime === null) {
     firstClickTime = (currentClickTime - startTime) / 1000;
   }
@@ -269,20 +271,16 @@ function recordClick(categoryName) {
     stayTime = (currentClickTime - lastClickTime) / 1000;
   }
 
-  // パスを再構成（クリック履歴＋今回のクリックで階層パスを作る）
-  let pathArray = clicksThisTask.map(c => c.action);
-  pathArray.push(categoryName);
-  const pathText = pathArray.join(' > ');
-
+  // シンプル化されたクリックデータ構造
   clicksThisTask.push({
     step: clicksThisTask.length + 1,
     action: categoryName,
-    path: pathText, // ← ここが「書籍・雑誌・漫画・絵本 > 書籍 > 小説」みたいになる
     depth: currentDepth,
     duringAnimation: isAnimating,
     stayTime: parseFloat(stayTime.toFixed(2)),
-    timestamp: new Date(currentClickTime).toISOString(), // ← ISO形式で統一
+    timestamp: new Date().toISOString(), // ISO形式で統一
   });
+
   menuTravelDistance += Math.abs(currentDepth - lastClickDepth);
   lastClickTime = currentClickTime;
   lastClickDepth = currentDepth;
@@ -604,10 +602,10 @@ function showRewardScreen() {
   // メニュー移動距離
   const totalMenuTravel = allLogs.reduce((sum, log) => sum + (log.menuTravelDistance || 0), 0);
 
-  // 初回クリック平均
+  // 初回クリック平均（修正版）
   const validFirstClicks = allLogs
-  .map(log => log.firstClickTime)
-  .filter(val => typeof val === 'number' && !isNaN(val));
+    .map(log => log.firstClickTime)
+    .filter(val => typeof val === 'number' && !isNaN(val) && val < 100); // 異常値フィルタリング追加
   const avgFirstClick = validFirstClicks.length
     ? (validFirstClicks.reduce((sum, val) => sum + val, 0) / validFirstClicks.length).toFixed(2) + 's'
     : '-';
