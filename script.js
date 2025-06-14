@@ -270,30 +270,21 @@ function recordClick(categoryName) {
     stayTime = (currentClickTime - lastClickTime) / 1000;
   }
 
-  // 改善されたクリックデータ構造
-  const clickData = {
-    step: clicksThisTask.length + 1,
-    path: buildCurrentPath(categoryName), // 階層パスを文字列で保存
-    action: categoryName, // 後方互換性のため保持
-    depth: currentDepth,
-    stayTimeSec: parseFloat(stayTime.toFixed(2)), // 単位を明示
-    animationState: { // アニメーション関連をグループ化
-      duringAnimation: isAnimating,
-      easingFunction: currentTaskEasing
-    },
-    interaction: {
-      timestamp: parseFloat(((performance.now() - startTime) / 1000).toFixed(2)),
-      coordinates: { 
-        x: event.clientX || 0, 
-        y: event.clientY || 0 
-      },
-      domPath: event.composedPath ? 
-        event.composedPath().map(el => el.tagName).filter(tag => tag).join(' > ') : 
-        'unknown'
-    }
-  };
+  // パスを再構成（クリック履歴＋今回のクリックで階層パスを作る）
+  let pathArray = clicksThisTask.map(c => c.action);
+  pathArray.push(categoryName);
+  const pathText = pathArray.join(' > ');
 
-  clicksThisTask.push(clickData);
+  clicksThisTask.push({
+    step: clicksThisTask.length + 1,
+    action: categoryName,
+    path: pathText, // ← ここが「書籍・雑誌・漫画・絵本 > 書籍 > 小説」みたいになる
+    depth: currentDepth,
+    timestamp: (performance.now() - startTime).toFixed(2),
+    duringAnimation: isAnimating,
+    stayTime: parseFloat(stayTime.toFixed(2)),
+    position: { x: event.clientX, y: event.clientY }
+  });
   menuTravelDistance += Math.abs(currentDepth - lastClickDepth);
   lastClickTime = currentClickTime;
   lastClickDepth = currentDepth;
@@ -302,7 +293,6 @@ function recordClick(categoryName) {
 /***********************
 チュートリアル開始／回答チェック
 ***********************/
-
 function startTutorial() {
   isTutorialActive = true;
   resetTaskVars();
