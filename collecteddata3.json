@@ -1,67 +1,58 @@
 {
   "metadata": {
-    "participantId": "943",
-    "experimentDate": "2025-06-14T08:32:41.644Z",
-    "totalTasks": 4
+    "participantId": "96",
+    "experimentDate": "2025-06-14T08:42:50.047Z",
+    "totalTasks": 3
   },
   "taskResults": [
     {
       "taskOverview": {
         "taskIndex": 1,
-        "targetItem": "小説",
-        "targetPath": "書籍・雑誌・漫画・絵本 > 書籍 > 小説",
-        "easingFunction": "easeInOutExpo",
-        "totalTimeSec": 9.63,
-        "firstClickDelaySec": 5.8,
+        "targetItem": "ドッグフード",
+        "targetPath": "ペット日用品 > ペットフード > ドッグフード",
+        "easingFunction": "easeInOutQuad",
+        "totalTimeSec": 3.84,
+        "firstClickDelaySec": 1.92,
         "success": true
       },
       "navigationPath": [
         {
           "step": 1,
-          "path": "書籍・雑誌・漫画・絵本",
-          "action": "書籍・雑誌・漫画・絵本",
+          "action": "ペット日用品",
+          "path": "ペット日用品",
           "depth": 0,
-          "stayTimeSec": 0,
-          "animationState": {
-            "duringAnimation": false,
-            "easingFunction": "easeInOutExpo"
-          },
-          "interaction": {
-            "timestamp": 5.8,
-            "coordinates": { "x": 521, "y": 550 },
-            "domPath": "BUTTON > LI > UL > DIV > DIV > DIV > MAIN > BODY > HTML"
+          "timestamp": "1922.00",
+          "duringAnimation": false,
+          "stayTime": 0,
+          "position": {
+            "x": 1048,
+            "y": 386
           }
         },
         {
           "step": 2,
-          "path": "書籍",
-          "action": "書籍",
+          "action": "ペットフード",
+          "path": "ペット日用品 > ペットフード",
           "depth": 1,
-          "stayTimeSec": 2.33,
-          "animationState": {
-            "duringAnimation": false,
-            "easingFunction": "easeInOutExpo"
-          },
-          "interaction": {
-            "timestamp": 8.12,
-            "coordinates": { "x": 714, "y": 561 },
-            "domPath": "BUTTON > LI > UL > LI > UL > DIV > DIV > DIV > MAIN > BODY > HTML"
+          "timestamp": "2657.00",
+          "duringAnimation": false,
+          "stayTime": 0.73,
+          "position": {
+            "x": 1176,
+            "y": 373
           }
         },
         {
           "step": 3,
-          "path": "小説",
-          "action": "小説",
+          "action": "ドッグフード",
+          "path": "ペット日用品 > ペットフード > ドッグフード",
           "depth": 2,
-          "stayTimeSec": 1.51,
-          "animationState": {
-            "duringAnimation": false,
-            "easingFunction": "easeInOutExpo"
-          },
-          "interaction": {
-            "timestamp": 9.63,
-            "coordinates": { "x": 842, "y": 553 },
-            "domPath": "BUTTON > LI > UL > LI > UL > LI > UL > DIV > DIV > DIV > MAIN > BODY > HTML"
+          "timestamp": "3842.00",
+          "duringAnimation": false,
+          "stayTime": 1.19,
+          "position": {
+            "x": 1395,
+            "y": 431
           }
         }
       ],
@@ -79,65 +70,56 @@
       },
       "rawData": {
         "taskIndex": 1,
-        "correctItem": "小説",
+        "correctItem": "ドッグフード",
         "correctPath": [
-          "書籍・雑誌・漫画・絵本",
-          "書籍",
-          "小説"
+          "ペット日用品",
+          "ペットフード",
+          "ドッグフード"
         ],
-        "totalTime": "9.63",
+        "totalTime": "3.84",
         "errorCount": 0,
         "timedOut": false,
-        "usedEasing": "easeInOutExpo",
-        "firstClickTime": 5.8,
+        "usedEasing": "easeInOutQuad",
+        "firstClickTime": 1.92,
         "menuTravelDistance": 2,
         "clicks": [
           {
             "step": 1,
-            "path": "書籍・雑誌・漫画・絵本",
-            "action": "書籍・雑誌・漫画・絵本",
+            "action": "ペット日用品",
+            "path": "ペット日用品",
             "depth": 0,
-            "stayTimeSec": 0,
-            "animationState": {
-              "duringAnimation": false,
-              "easingFunction": "easeInOutExpo"
-            },
-            "interaction": {
-              "timestamp": 5.8,
-              "coordinates": { "x": 521, "y": 550 },
-              "domPath": "BUTTON > LI > UL > DIV > DIV > DIV > MAIN > BODY > HTML"
+            "timestamp": "1922.00",
+            "duringAnimation": false,
+            "stayTime": 0,
+            "position": {
+              "x": 1048,
+              "y": 386
             }
           },
           {
             "step": 2,
-            "path": "書籍",
-            "action": "書籍",
+            "action": "ペットフード",
+            "path": "ペット日用品 > ペットフード",
             "depth": 1,
-            "stayTimeSec": 2.33,
-            "animationState": {
-              "duringAnimation": false,
-              "easingFunction": "easeInOutExpo"
-            },
-            "interaction": {
-              "timestamp": 8.12,
-              "coordinates": { "x": 714, "y": 561 },
-              "domPath": "BUTTON > LI > UL > LI > UL > DIV > DIV > DIV > MAIN > BODY > HTML"
+            "timestamp": "2657.00",
+            "duringAnimation": false,
+            "stayTime": 0.73,
+            "position": {
+              "x": 1176,
+              "y": 373
             }
           },
           {
             "step": 3,
-            "path": "小説",
-            "action": "小説",
+            "action": "ドッグフード",
+            "path": "ペット日用品 > ペットフード > ドッグフード",
             "depth": 2,
-            "stayTimeSec": 1.51,
-            "animationState": {
-              "duringAnimation": false,
-              "easingFunction": "easeInOutExpo"
-            },
-            "interaction": {
-              "timestamp": 9.63,
-              "coordinates": { "x": 842, "y": 553 },
-              "domPath": "BUTTON > LI > UL > LI > UL > LI > UL > DIV > DIV > DIV > MAIN > BODY > HTML"
+            "timestamp": "3842.00",
+            "duringAnimation": false,
+            "stayTime": 1.19,
+            "position": {
+              "x": 1395,
+              "y": 431
             }
           }
         ],
@@ -145,7 +127,257 @@
         "taskDifficultyRating": "3",
         "animationDifferenceRating": "3",
         "comments": "",
-        "timestamp": "2025-06-14T08:31:48.989Z"
+        "timestamp": "2025-06-14T08:42:29.318Z"
+      }
+    },
+    {
+      "taskOverview": {
+        "taskIndex": 2,
+        "targetItem": "植木鉢",
+        "targetPath": "園芸・ガーデン > 園芸用品 > 植木鉢",
+        "easingFunction": "easeInOutQuint",
+        "totalTimeSec": 3.25,
+        "firstClickDelaySec": 1.3,
+        "success": true
+      },
+      "navigationPath": [
+        {
+          "step": 1,
+          "action": "園芸・ガーデン",
+          "path": "園芸・ガーデン",
+          "depth": 0,
+          "timestamp": "1303.00",
+          "duringAnimation": false,
+          "stayTime": 0,
+          "position": {
+            "x": 1012,
+            "y": 580
+          }
+        },
+        {
+          "step": 2,
+          "action": "園芸用品",
+          "path": "園芸・ガーデン > 園芸用品",
+          "depth": 1,
+          "timestamp": "2337.00",
+          "duringAnimation": false,
+          "stayTime": 1.03,
+          "position": {
+            "x": 1143,
+            "y": 573
+          }
+        },
+        {
+          "step": 3,
+          "action": "植木鉢",
+          "path": "園芸・ガーデン > 園芸用品 > 植木鉢",
+          "depth": 2,
+          "timestamp": "3247.00",
+          "duringAnimation": false,
+          "stayTime": 0.91,
+          "position": {
+            "x": 1368,
+            "y": 750
+          }
+        }
+      ],
+      "performance": {
+        "errorCount": 0,
+        "menuTravelDistance": 2,
+        "pathEfficiency": 1,
+        "timedOut": false
+      },
+      "userFeedback": {
+        "animationEaseRating": "3",
+        "taskDifficultyRating": "3",
+        "animationDifferenceRating": "3",
+        "comments": ""
+      },
+      "rawData": {
+        "taskIndex": 2,
+        "correctItem": "植木鉢",
+        "correctPath": [
+          "園芸・ガーデン",
+          "園芸用品",
+          "植木鉢"
+        ],
+        "totalTime": "3.25",
+        "errorCount": 0,
+        "timedOut": false,
+        "usedEasing": "easeInOutQuint",
+        "firstClickTime": 1.3,
+        "menuTravelDistance": 2,
+        "clicks": [
+          {
+            "step": 1,
+            "action": "園芸・ガーデン",
+            "path": "園芸・ガーデン",
+            "depth": 0,
+            "timestamp": "1303.00",
+            "duringAnimation": false,
+            "stayTime": 0,
+            "position": {
+              "x": 1012,
+              "y": 580
+            }
+          },
+          {
+            "step": 2,
+            "action": "園芸用品",
+            "path": "園芸・ガーデン > 園芸用品",
+            "depth": 1,
+            "timestamp": "2337.00",
+            "duringAnimation": false,
+            "stayTime": 1.03,
+            "position": {
+              "x": 1143,
+              "y": 573
+            }
+          },
+          {
+            "step": 3,
+            "action": "植木鉢",
+            "path": "園芸・ガーデン > 園芸用品 > 植木鉢",
+            "depth": 2,
+            "timestamp": "3247.00",
+            "duringAnimation": false,
+            "stayTime": 0.91,
+            "position": {
+              "x": 1368,
+              "y": 750
+            }
+          }
+        ],
+        "animationEaseRating": "3",
+        "taskDifficultyRating": "3",
+        "animationDifferenceRating": "3",
+        "comments": "",
+        "timestamp": "2025-06-14T08:42:36.744Z"
+      }
+    },
+    {
+      "taskOverview": {
+        "taskIndex": 3,
+        "targetItem": "小説",
+        "targetPath": "書籍・雑誌・漫画・絵本 > 書籍 > 小説",
+        "easingFunction": "easeInOutExpo",
+        "totalTimeSec": 5.22,
+        "firstClickDelaySec": 3.34,
+        "success": true
+      },
+      "navigationPath": [
+        {
+          "step": 1,
+          "action": "書籍・雑誌・漫画・絵本",
+          "path": "書籍・雑誌・漫画・絵本",
+          "depth": 0,
+          "timestamp": "3340.00",
+          "duringAnimation": false,
+          "stayTime": 0,
+          "position": {
+            "x": 1043,
+            "y": 533
+          }
+        },
+        {
+          "step": 2,
+          "action": "書籍",
+          "path": "書籍・雑誌・漫画・絵本 > 書籍",
+          "depth": 1,
+          "timestamp": "4116.00",
+          "duringAnimation": false,
+          "stayTime": 0.78,
+          "position": {
+            "x": 1177,
+            "y": 529
+          }
+        },
+        {
+          "step": 3,
+          "action": "小説",
+          "path": "書籍・雑誌・漫画・絵本 > 書籍 > 小説",
+          "depth": 2,
+          "timestamp": "5220.00",
+          "duringAnimation": false,
+          "stayTime": 1.1,
+          "position": {
+            "x": 1375,
+            "y": 540
+          }
+        }
+      ],
+      "performance": {
+        "errorCount": 0,
+        "menuTravelDistance": 2,
+        "pathEfficiency": 1,
+        "timedOut": false
+      },
+      "userFeedback": {
+        "animationEaseRating": "3",
+        "taskDifficultyRating": "3",
+        "animationDifferenceRating": "3",
+        "comments": ""
+      },
+      "rawData": {
+        "taskIndex": 3,
+        "correctItem": "小説",
+        "correctPath": [
+          "書籍・雑誌・漫画・絵本",
+          "書籍",
+          "小説"
+        ],
+        "totalTime": "5.22",
+        "errorCount": 0,
+        "timedOut": false,
+        "usedEasing": "easeInOutExpo",
+        "firstClickTime": 3.34,
+        "menuTravelDistance": 2,
+        "clicks": [
+          {
+            "step": 1,
+            "action": "書籍・雑誌・漫画・絵本",
+            "path": "書籍・雑誌・漫画・絵本",
+            "depth": 0,
+            "timestamp": "3340.00",
+            "duringAnimation": false,
+            "stayTime": 0,
+            "position": {
+              "x": 1043,
+              "y": 533
+            }
+          },
+          {
+            "step": 2,
+            "action": "書籍",
+            "path": "書籍・雑誌・漫画・絵本 > 書籍",
+            "depth": 1,
+            "timestamp": "4116.00",
+            "duringAnimation": false,
+            "stayTime": 0.78,
+            "position": {
+              "x": 1177,
+              "y": 529
+            }
+          },
+          {
+            "step": 3,
+            "action": "小説",
+            "path": "書籍・雑誌・漫画・絵本 > 書籍 > 小説",
+            "depth": 2,
+            "timestamp": "5220.00",
+            "duringAnimation": false,
+            "stayTime": 1.1,
+            "position": {
+              "x": 1375,
+              "y": 540
+            }
+          }
+        ],
+        "animationEaseRating": "3",
+        "taskDifficultyRating": "3",
+        "animationDifferenceRating": "3",
+        "comments": "",
+        "timestamp": "2025-06-14T08:42:44.902Z"
       }
     }
   ]

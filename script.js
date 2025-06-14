@@ -1,7 +1,7 @@
 /***********************
 定数＆グローバル変数
 ***********************/
-const MAX_TASKS = 3; // タスク回数：5つのタスク×5つのイージング関数
+const MAX_TASKS = 6; // タスク回数：5つのタスク×5つのイージング関数
 const TIME_LIMIT_MS = 15000; // タスク制限時間(ms)
 const EASING_FUNCS = ["linear", "easeInOutQuad", "easeInOutQuint", "easeInOutExpo", "easeInOutBack"];
 
@@ -149,7 +149,6 @@ function submitToNetlify() {
         animationDifferenceRating: task.animationDifferenceRating,
         comments: task.comments || ""
       },
-      rawData: task // 後方互換性のため既存データも保持
     }))
   };
 
@@ -283,7 +282,6 @@ function recordClick(categoryName) {
     timestamp: (performance.now() - startTime).toFixed(2),
     duringAnimation: isAnimating,
     stayTime: parseFloat(stayTime.toFixed(2)),
-    position: { x: event.clientX, y: event.clientY }
   });
   menuTravelDistance += Math.abs(currentDepth - lastClickDepth);
   lastClickTime = currentClickTime;
