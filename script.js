@@ -1,7 +1,7 @@
 /***********************
 定数＆グローバル変数
 ***********************/
-const MAX_TASKS = 6; // タスク回数：5つのタスク×5つのイージング関数
+const MAX_TASKS = 3; // タスク回数：5つのタスク×5つのイージング関数
 const TIME_LIMIT_MS = 15000; // タスク制限時間(ms)
 const EASING_FUNCS = ["linear", "easeInOutQuad", "easeInOutQuint", "easeInOutExpo", "easeInOutBack"];
 
@@ -258,10 +258,10 @@ function createMenuRecursive(categoryArray, parentUL) {
 クリック記録関数（改善版）
 ***********************/
 function recordClick(categoryName) {
-  const currentClickTime = performance.now();
+  const currentClickTime = Date.now();
   const currentDepth = getCategoryDepthByName(categoriesData, categoryName);
   if (firstClickTime === null) {
-    firstClickTime = (currentClickTime - startTime) / 1000;
+    firstClickTime = currentClickTime; // ← ここも絶対時刻でOK
   }
 
   let stayTime = 0;
@@ -279,8 +279,7 @@ function recordClick(categoryName) {
     action: categoryName,
     path: pathText, // ← ここが「書籍・雑誌・漫画・絵本 > 書籍 > 小説」みたいになる
     depth: currentDepth,
-    timestamp: (performance.now() - startTime).toFixed(2),
-    duringAnimation: isAnimating,
+    timestamp: new Date(currentClickTime).toISOString(), // ← ここが絶対時刻！    duringAnimation: isAnimating,
     stayTime: parseFloat(stayTime.toFixed(2)),
   });
   menuTravelDistance += Math.abs(currentDepth - lastClickDepth);
