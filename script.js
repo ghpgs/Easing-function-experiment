@@ -88,19 +88,75 @@ const participantId = setNewParticipantId();
 console.log("参加者ID:", participantId);
 
 /***********************
-Netlifyフォーム送信関数
+パス構築ヘルパー関数
+***********************/
+function buildCurrentPath(currentCategory) {
+  // 現在開いているメニューから階層パスを構築
+  const pathElements = [];
+  let currentElement = event.target;
+  
+  // クリックされた要素から上位階層を辿る
+  while (currentElement && currentElement !== document.body) {
+    if (currentElement.classList && currentElement.classList.contains('menu-item')) {
+      pathElements.unshift(currentElement.textContent.trim());
+    }
+    currentElement = currentElement.parentElement;
+  }
+  
+  return pathElements.join(' > ');
+}
+
+function calculatePathEfficiency(clicks, targetPath) {
+  if (!clicks || clicks.length === 0) return 0;
+  const optimalSteps = targetPath ? targetPath.length : 3; // デフォルト3階層
+  return Math.min(1.0, optimalSteps / clicks.length);
+}
+
+/***********************
+Netlifyフォーム送信関数（改善版）
 ***********************/
 function submitToNetlify() {
   const urlParams = new URLSearchParams(window.location.search);
   const pid = urlParams.get("participant") || participantId || "不明";
 
+  // 改善されたデータ構造でフォーマット
+  const formattedData = {
+    metadata: {
+      participantId: pid,
+      experimentDate: new Date().toISOString(),
+      totalTasks: allLogs.length,
+      version: "2.0"
+    },
+    taskResults: allLogs.map(task => ({
+      taskOverview: {
+        taskIndex: task.taskIndex,
+        targetItem: task.correctItem,
+        targetPath: currentCorrectPath.join(' > '),
+        easingFunction: task.usedEasing,
+        totalTimeSec: parseFloat(task.totalTime),
+        firstClickDelaySec: task.firstClickTime,
+        success: !task.timedOut && task.errorCount === 0
+      },
+      navigationPath: task.clicks || [],
+      performance: {
+        errorCount: task.errorCount,
+        menuTravelDistance: task.menuTravelDistance,
+        pathEfficiency: calculatePathEfficiency(task.clicks, currentCorrectPath),
+        timedOut: task.timedOut
+      },
+      userFeedback: {
+        animationEaseRating: task.animationEaseRating,
+        taskDifficultyRating: task.taskDifficultyRating,
+        animationDifferenceRating: task.animationDifferenceRating,
+        comments: task.comments || ""
+      },
+      rawData: task // 後方互換性のため既存データも保持
+    }))
+  };
+
   // hiddenフィールドに値セット
   document.getElementById("participantIdField").value = pid;
-  document.getElementById("netlifyFormData").value = JSON.stringify({
-    participantId: pid,
-    taskResults: allLogs,
-    timestamp: new Date().toISOString()
-  });
+  document.getElementById("netlifyFormData").value = JSON.stringify(formattedData, null, 2);
 
   // action属性もセット
   const form = document.getElementById("netlifyForm");
@@ -201,8 +257,9 @@ function createMenuRecursive(categoryArray, parentUL) {
 }
 
 /***********************
-クリック記録関数
+クリック記録関数（改善版）
 ***********************/
+
 function recordClick(categoryName) {
   const currentClickTime = performance.now();
   const currentDepth = getCategoryDepthByName(categoriesData, categoryName);
@@ -215,17 +272,31 @@ function recordClick(categoryName) {
     stayTime = (currentClickTime - lastClickTime) / 1000;
   }
 
-  clicksThisTask.push({
+  // 改善されたクリックデータ構造
+  const clickData = {
     step: clicksThisTask.length + 1,
-    action: categoryName,
+    path: buildCurrentPath(categoryName), // 階層パスを文字列で保存
+    action: categoryName, // 後方互換性のため保持
     depth: currentDepth,
-    timestamp: (performance.now() - startTime).toFixed(2),
-    duringAnimation: isAnimating,
-    stayTime: parseFloat(stayTime.toFixed(2)),
-    pointerType: event.pointerType, // [6]
-    position: { x: event.clientX, y: event.clientY },
-    domPath: event.composedPath().map(el => el.tagName).join(' > ') // [6]
-  });
+    stayTimeSec: parseFloat(stayTime.toFixed(2)), // 単位を明示
+    animationState: { // アニメーション関連をグループ化
+      duringAnimation: isAnimating,
+      easingFunction: currentTaskEasing
+    },
+    interaction: {
+      timestamp: parseFloat(((performance.now() - startTime) / 1000).toFixed(2)),
+      pointerType: event.pointerType || 'unknown',
+      coordinates: { 
+        x: event.clientX || 0, 
+        y: event.clientY || 0 
+      },
+      domPath: event.composedPath ? 
+        event.composedPath().map(el => el.tagName).filter(tag => tag).join(' > ') : 
+        'unknown'
+    }
+  };
+
+  clicksThisTask.push(clickData);
   menuTravelDistance += Math.abs(currentDepth - lastClickDepth);
   lastClickTime = currentClickTime;
   lastClickDepth = currentDepth;
@@ -555,11 +626,11 @@ function showRewardScreen() {
     : '-';
   document.getElementById("avgFirstClick").textContent = avgFirstClick;
 
-
   // === HTMLに反映 ===
   document.getElementById("fastestTask").textContent = fastestTaskTime;
   document.getElementById("totalClicks").textContent = totalClicks;
   document.getElementById("totalDistance").textContent = totalMenuTravel;
+  
   // 「アンケートへ進む」ボタン
   const continueButton = document.getElementById("continueButton");
   if (continueButton) {
@@ -570,7 +641,6 @@ function showRewardScreen() {
   document.getElementById("rewardScreen").classList.add("active");
   console.log('allLogs:', allLogs);
 }
-
 
 /***********************
 イージング関数＆サブメニューのアニメーション
