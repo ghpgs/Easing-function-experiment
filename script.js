@@ -125,7 +125,6 @@ function submitToNetlify() {
       participantId: pid,
       experimentDate: new Date().toISOString(),
       totalTasks: allLogs.length,
-      version: "2.0"
     },
     taskResults: allLogs.map(task => ({
       taskOverview: {
@@ -259,7 +258,6 @@ function createMenuRecursive(categoryArray, parentUL) {
 /***********************
 クリック記録関数（改善版）
 ***********************/
-
 function recordClick(categoryName) {
   const currentClickTime = performance.now();
   const currentDepth = getCategoryDepthByName(categoriesData, categoryName);
@@ -285,7 +283,6 @@ function recordClick(categoryName) {
     },
     interaction: {
       timestamp: parseFloat(((performance.now() - startTime) / 1000).toFixed(2)),
-      pointerType: event.pointerType || 'unknown',
       coordinates: { 
         x: event.clientX || 0, 
         y: event.clientY || 0 
