@@ -88,6 +88,29 @@ const participantId = setNewParticipantId();
 console.log("参加者ID:", participantId);
 
 /***********************
+Netlifyフォーム送信関数
+***********************/
+function submitToNetlify() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const pid = urlParams.get("participant") || participantId || "不明";
+
+  // hiddenフィールドに値セット
+  document.getElementById("participantIdField").value = pid;
+  document.getElementById("netlifyFormData").value = JSON.stringify({
+    participantId: pid,
+    taskResults: allLogs,
+    timestamp: new Date().toISOString()
+  });
+
+  // action属性もセット
+  const form = document.getElementById("netlifyForm");
+  form.action = `thank-you.html?participant=${encodeURIComponent(pid)}`;
+
+  // フォーム送信！
+  form.submit();
+}
+
+/***********************
 HTMLテンプレート取得（チュートリアルオーバーレイ）
 ***********************/
 
@@ -262,7 +285,6 @@ function startTask() {
   startNextTask();
 }
 
-// 🌟 修正版：タスクもラテン方格で制御
 function startNextTask() {
   // 終了判定を最初に行う
   if (currentTaskIndex >= MAX_TASKS) {
@@ -356,15 +378,7 @@ function checkAnswer(clickedText) {
   });
 
   // タスク終了オーバーレイを表示
-  const taskEndOverlay = document.getElementById("taskEndOverlay");
-  const continueTaskBtn = taskEndOverlay.querySelector("#continueTaskBtn");
-  if (currentTaskIndex === MAX_TASKS) {
-    continueTaskBtn.textContent = "結果へ進む";
-  } else {
-    continueTaskBtn.textContent = "次のタスクへ";
-  }
-  taskEndOverlay.classList.remove("hidden");
-  
+  showTaskEndOverlay();
 }
 
 function handleTimeout(targetItemName) {
@@ -386,6 +400,10 @@ function handleTimeout(targetItemName) {
   });
 
   // タスク終了オーバーレイを表示
+  showTaskEndOverlay();
+}
+
+function showTaskEndOverlay() {
   const taskEndOverlay = document.getElementById("taskEndOverlay");
   const continueTaskBtn = taskEndOverlay.querySelector("#continueTaskBtn");
   if (currentTaskIndex === MAX_TASKS) {
@@ -462,7 +480,7 @@ function showRewardScreen() {
   document.querySelector('.content-wrapper').style.display = "none";
   document.getElementById("resultsPage").style.display = "none";
 
-  // 基本統計の計算（既存処理）
+  // 基本統計の計算
   const totalTasks = allLogs.length;
   const correctTasks = allLogs.filter(log => !log.timedOut && log.errorCount === 0).length;
   const accuracy = totalTasks ? ((correctTasks / totalTasks) * 100).toFixed(1) + '%' : '0%';
@@ -472,8 +490,7 @@ function showRewardScreen() {
   document.getElementById("accuracyValue").textContent = accuracy;
   document.getElementById("averageTime").textContent = averageTime;
 
-
-  // イージング関数統計（既存処理）
+  // イージング関数統計
   const easingStats = {};
   allLogs.forEach(log => {
     const easing = log.usedEasing;
@@ -483,67 +500,43 @@ function showRewardScreen() {
     easingStats[easing].totalTime += parseFloat(log.totalTime);
   });
 
-  // テーブル生成（既存処理）
+  // テーブル生成
   let bestEasing = null;
   let bestScore = -1;
   let tableHtml = '<table style="margin:0 auto; border-collapse:collapse; min-width:300px;">';
-  // ...（既存のテーブル生成処理）...
+  tableHtml += '<tr style="background:#f0f0f0;"><th style="padding:8px; border:1px solid #ccc;">イージング</th><th style="padding:8px; border:1px solid #ccc;">正解率</th><th style="padding:8px; border:1px solid #ccc;">平均時間</th></tr>';
+  
+  Object.keys(easingStats).forEach(easing => {
+    const stat = easingStats[easing];
+    const accuracy = stat.total > 0 ? (stat.correct / stat.total * 100).toFixed(1) : '0.0';
+    const avgTime = stat.total > 0 ? (stat.totalTime / stat.total).toFixed(2) : '0.00';
+    const score = parseFloat(accuracy);
+    
+    if (score > bestScore) {
+      bestScore = score;
+      bestEasing = easing;
+    }
+    
+    tableHtml += `<tr><td style="padding:8px; border:1px solid #ccc;">${easing}</td><td style="padding:8px; border:1px solid #ccc;">${accuracy}%</td><td style="padding:8px; border:1px solid #ccc;">${avgTime}s</td></tr>`;
+  });
+  
+  tableHtml += '</table>';
+  
+  document.getElementById("easingStatsTable").innerHTML = tableHtml;
+  
+  if (bestEasing) {
+    document.getElementById("bestEasing").textContent = bestEasing;
+  }
 
-  // 🌟 「アンケートへ進む」ボタンのイベントリスナーを追加
+  // 「アンケートへ進む」ボタンのイベントリスナーを追加
   const continueButton = document.getElementById("continueButton");
   if (continueButton) {
-    continueButton.addEventListener("click", () => {
-      submitToNetlify();
-    });
+    continueButton.addEventListener("click", submitToNetlify);
   }
+  
   // リワード画面をアクティブ化
   document.getElementById("rewardScreen").classList.add("active");
 }
-
-  // DOMContentLoaded内の最後に追加
-document.getElementById("continueButton").addEventListener("click", () => {
-  // 全データをまとめる
-  const finalData = {
-    participantId: participantId,
-    timestamp: new Date().toISOString(),
-    allLogs: allLogs,
-    // その他必要なデータ
-  };
-  // 例：アンケートページに遷移
-  window.location.href = `thank-you.html?participant=${encodeURIComponent(participantId)}`;
-  //   // もしくはアンケート用オーバーレイを表示する処理など
-  
-  // 🌟 Netlifyフォーム送信処理を追加
-  function submitToNetlify() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const pid = urlParams.get("participant") || participantId || "不明";
-    
-    // participantIDのhiddenフィールドを確実に設定
-    const participantField = document.getElementById("participantIdField");
-    if (participantField) {
-      participantField.value = pid;
-    }
-    
-    // フォームデータを準備
-    const formData = {
-      participantId: pid,
-      taskResults: allLogs,
-      timestamp: new Date().toISOString()
-    };
-    
-    // hiddenフィールドにデータを設定
-    document.getElementById("netlifyFormData").value = JSON.stringify(formData);
-    
-    const form = document.getElementById("netlifyForm");
-    // action属性にparticipantパラメータを確実に含める
-    form.action = `thank-you.html?participant=${encodeURIComponent(pid)}`;
-    
-    // フォーム送信
-    form.submit();
-  }
-  
-});
-
 
 /***********************
 イージング関数＆サブメニューのアニメーション
@@ -569,7 +562,6 @@ function animateSubmenu(targetSubmenu) {
   currentlyOpenMenus[level] = targetSubmenu;
   updateEasingFunction();
 }
-
 
 function openSubmenu(submenu, level) {
   closeSubmenuAtLevel(level);
@@ -684,6 +676,23 @@ function downloadResultsAsJson(data) {
   URL.revokeObjectURL(url);
 }
 
+function getLeafNamesWithDepthAndSiblingCount(categories, targetDepth, siblingCount) {
+  let result = [];
+  function helper(cats, depth, parentSubCount) {
+    cats.forEach((cat) => {
+      if (cat.subcategories && cat.subcategories.length > 0) {
+        helper(cat.subcategories, depth + 1, cat.subcategories.length);
+      } else {
+        if (depth === targetDepth && parentSubCount === siblingCount) {
+          result.push(cat.name);
+        }
+      }
+    });
+  }
+  helper(categories, 0, 0);
+  return result;
+}
+
 /***********************
 DOMContentLoaded
 ***********************/
@@ -729,29 +738,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ▼ オーバーレイをbodyに追加
   tutorialIntroOverlay = createTutorialIntroOverlay();
-  document.body.appendChild(tutorialIntroOverlay);
+  if (tutorialIntroOverlay) {
+    document.body.appendChild(tutorialIntroOverlay);
+  }
 
   // ▼ チュートリアル/タスク開始ボタン取得
   startTutorialBtn = document.getElementById("startTutorialBtn");
   startTaskBtn = document.getElementById("taskStartBtn");
 
   // ▼ チュートリアルボタンの挙動を上書き
-  startTutorialBtn.addEventListener("click", () => {
-    // まず説明オーバーレイを表示
-    tutorialIntroOverlay.classList.remove("hidden");
-    // ボタンを一時的に無効化
-    startTutorialBtn.disabled = true;
-    startTaskBtn.disabled = true;
-  });
+  if (startTutorialBtn) {
+    startTutorialBtn.addEventListener("click", () => {
+      // まず説明オーバーレイを表示
+      if (tutorialIntroOverlay) {
+        tutorialIntroOverlay.classList.remove("hidden");
+      }
+      // ボタンを一時的に無効化
+      startTutorialBtn.disabled = true;
+      if (startTaskBtn) startTaskBtn.disabled = true;
+    });
+  }
 
   // ▼ タスク開始ボタン（既存のまま）
-  startTaskBtn.addEventListener("click", () => {
-    if (!confirm("タスクを開始しますか？ 制限時間は1タスク当たり15秒です")) return;
-    startTask();
-    startTaskBtn.disabled = true;
-    startTutorialBtn.disabled = true;
-    document.getElementById("menu-placeholder").style.display = "block";
-  });
+  if (startTaskBtn) {
+    startTaskBtn.addEventListener("click", () => {
+      if (!confirm("タスクを開始しますか？ 制限時間は1タスク当たり15秒です")) return;
+      startTask();
+      startTaskBtn.disabled = true;
+      if (startTutorialBtn) startTutorialBtn.disabled = true;
+      document.getElementById("menu-placeholder").style.display = "block";
+    });
+  }
 
   // ▼ タスク終了オーバーレイの設定（テンプレートから生成）
   const taskEndOverlay = document.getElementById("taskEndOverlay");
@@ -826,8 +843,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ▼ チュートリアル/タスク開始ボタン
-  startTutorialBtn = document.getElementById("startTutorialBtn");
-  startTaskBtn = document.getElementById("taskStartBtn");
   const menuPlaceholder = document.getElementById("menu-placeholder");
   const easingSelect = document.getElementById("easingSelect");
 
@@ -853,11 +868,15 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch((err) => console.error("JSON読み込み失敗:", err));
 
   // ▼ イージング関数変更
-  easingSelect.addEventListener("change", updateEasingFunction);
+  if (easingSelect) {
+    easingSelect.addEventListener("change", updateEasingFunction);
+  }
 
   // ▼ チュートリアルオーバーレイ作成＆追加
   tutorialOverlay = createTutorialOverlay();
-  document.body.appendChild(tutorialOverlay);
+  if (tutorialOverlay) {
+    document.body.appendChild(tutorialOverlay);
+  }
 
   // ▼ Netlifyフォーム用：URLパラメータのparticipant確認してフォームactionをカスタマイズ
   const urlParams = new URLSearchParams(window.location.search);
@@ -865,24 +884,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (pid) {
     // フォームの action 属性を "thank-you.html?participant=XXX" に更新
     const form = document.getElementById("netlifyForm");
-    form.action = "thank-you.html?participant=" + encodeURIComponent(pid);
+    if (form) {
+      form.action = "thank-you.html?participant=" + encodeURIComponent(pid);
+    }
   }
 });
-
-function getLeafNamesWithDepthAndSiblingCount(categories, targetDepth, siblingCount) {
-  let result = [];
-  function helper(cats, depth, parentSubCount) {
-    cats.forEach((cat) => {
-      if (cat.subcategories && cat.subcategories.length > 0) {
-        helper(cat.subcategories, depth + 1, cat.subcategories.length);
-      } else {
-        if (depth === targetDepth && parentSubCount === siblingCount) {
-          result.push(cat.name);
-        }
-      }
-    });
-  }
-  helper(categories, 0, 0);
-  return result;
-}
-
