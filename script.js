@@ -362,7 +362,7 @@ function checkAnswer(clickedText) {
   // 正解時
   feedbackElem.textContent = "正解です！";
   feedbackElem.className = "correct";
-  const firstClickTimeSec = firstClickTime !== null ? parseFloat(firstClickTime.toFixed(2)) : "N/A";
+  const firstClickTimeSec = (typeof firstClickTime === "number") ? parseFloat(firstClickTime.toFixed(2)) : null;
 
   // タスクログを保存（アンケート回答以外をここでまとめる）
   allLogs.push({
@@ -385,7 +385,7 @@ function handleTimeout(targetItemName) {
   clearTimeout(timeoutId);
   const feedbackElem = document.getElementById("feedback");
   feedbackElem.classList.add("timeout");
-  const firstClickTimeSec = firstClickTime !== null ? parseFloat(firstClickTime.toFixed(2)) : "N/A";
+  const firstClickTimeSec = (typeof firstClickTime === "number") ? parseFloat(firstClickTime.toFixed(2)) : null;
 
   allLogs.push({
     taskIndex: currentTaskIndex,
@@ -543,10 +543,14 @@ function showRewardScreen() {
   const totalMenuTravel = allLogs.reduce((sum, log) => sum + (log.menuTravelDistance || 0), 0);
 
   // 初回クリック平均
-  const validFirstClicks = allLogs.filter(log => typeof log.firstClickTime === 'number');
+  const validFirstClicks = allLogs
+  .map(log => log.firstClickTime)
+  .filter(val => typeof val === 'number' && !isNaN(val));
   const avgFirstClick = validFirstClicks.length
-    ? (validFirstClicks.reduce((sum, log) => sum + log.firstClickTime, 0) / validFirstClicks.length).toFixed(2) + 's'
+    ? (validFirstClicks.reduce((sum, val) => sum + val, 0) / validFirstClicks.length).toFixed(2) + 's'
     : '-';
+  document.getElementById("avgFirstClick").textContent = avgFirstClick;
+
 
   // === HTMLに反映 ===
   document.getElementById("fastestTask").textContent = fastestTaskTime;
@@ -560,6 +564,7 @@ function showRewardScreen() {
 
   // リワード画面表示
   document.getElementById("rewardScreen").classList.add("active");
+  console.log('allLogs:', allLogs);
 }
 
 
