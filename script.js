@@ -551,9 +551,7 @@ function showRewardScreen() {
   // === HTMLに反映 ===
   document.getElementById("fastestTask").textContent = fastestTaskTime;
   document.getElementById("totalClicks").textContent = totalClicks;
-  document.getElementById("menuTravelDistance").textContent = totalMenuTravel;
-  document.getElementById("avgFirstClick").textContent = avgFirstClick;
-
+  document.getElementById("totalDistance").textContent = totalMenuTravel;
   // 「アンケートへ進む」ボタン
   const continueButton = document.getElementById("continueButton");
   if (continueButton) {
