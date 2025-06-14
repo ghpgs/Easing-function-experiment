@@ -203,7 +203,6 @@ function createMenuRecursive(categoryArray, parentUL) {
 /***********************
 クリック記録関数
 ***********************/
-
 function recordClick(categoryName) {
   const currentClickTime = performance.now();
   const currentDepth = getCategoryDepthByName(categoriesData, categoryName);
@@ -217,10 +216,15 @@ function recordClick(categoryName) {
   }
 
   clicksThisTask.push({
-    name: categoryName,
+    step: clicksThisTask.length + 1,
+    action: categoryName,
     depth: currentDepth,
+    timestamp: (performance.now() - startTime).toFixed(2),
     duringAnimation: isAnimating,
     stayTime: parseFloat(stayTime.toFixed(2)),
+    pointerType: event.pointerType, // [6]
+    position: { x: event.clientX, y: event.clientY },
+    domPath: event.composedPath().map(el => el.tagName).join(' > ') // [6]
   });
   menuTravelDistance += Math.abs(currentDepth - lastClickDepth);
   lastClickTime = currentClickTime;
