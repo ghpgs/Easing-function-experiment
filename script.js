@@ -261,7 +261,7 @@ function recordClick(categoryName) {
   const currentClickTime = Date.now();
   const currentDepth = getCategoryDepthByName(categoriesData, categoryName);
   if (firstClickTime === null) {
-    firstClickTime = currentClickTime; // ← ここも絶対時刻でOK
+    firstClickTime = (currentClickTime - startTime) / 1000;
   }
 
   let stayTime = 0;
@@ -279,8 +279,9 @@ function recordClick(categoryName) {
     action: categoryName,
     path: pathText, // ← ここが「書籍・雑誌・漫画・絵本 > 書籍 > 小説」みたいになる
     depth: currentDepth,
-    timestamp: new Date(currentClickTime).toISOString(), // ← ここが絶対時刻！    duringAnimation: isAnimating,
+    duringAnimation: isAnimating,
     stayTime: parseFloat(stayTime.toFixed(2)),
+    timestamp: new Date(currentClickTime).toISOString(), // ← ISO形式で統一
   });
   menuTravelDistance += Math.abs(currentDepth - lastClickDepth);
   lastClickTime = currentClickTime;

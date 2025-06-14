@@ -1,0 +1,172 @@
+{
+  "metadata": {
+    "participantId": "344",
+    "experimentDate": "2025-06-14T09:05:21.626Z",
+    "totalTasks": 3
+  },
+  "taskResults": [
+    {
+      "taskOverview": {
+        "taskIndex": 1,
+        "targetItem": "ゴルフボール",
+        "targetPath": "スポーツ・アウトドア > ゴルフ > ゴルフボール",
+        "easingFunction": "easeInOutBack",
+        "totalTimeSec": 3.02,
+        "firstClickDelaySec": 1749891880008,
+        "success": true
+      },
+      "navigationPath": [
+        {
+          "step": 1,
+          "action": "スポーツ・アウトドア",
+          "path": "スポーツ・アウトドア",
+          "depth": 0,
+          "timestamp": "2025-06-14T09:04:40.008Z",
+          "stayTime": 0
+        },
+        {
+          "step": 2,
+          "action": "ゴルフ",
+          "path": "スポーツ・アウトドア > ゴルフ",
+          "depth": 1,
+          "timestamp": "2025-06-14T09:04:41.184Z",
+          "stayTime": 1.18
+        },
+        {
+          "step": 3,
+          "action": "ゴルフボール",
+          "path": "スポーツ・アウトドア > ゴルフ > ゴルフボール",
+          "depth": 2,
+          "timestamp": "2025-06-14T09:04:42.044Z",
+          "stayTime": 0.86
+        }
+      ],
+      "performance": {
+        "errorCount": 0,
+        "menuTravelDistance": 2,
+        "pathEfficiency": 1,
+        "timedOut": false
+      },
+      "userFeedback": {
+        "animationEaseRating": "3",
+        "taskDifficultyRating": "3",
+        "animationDifferenceRating": "3",
+        "comments": ""
+      }
+    },
+    {
+      "taskOverview": {
+        "taskIndex": 2,
+        "targetItem": "りんご",
+        "targetPath": "日常食料品 > フルーツ > りんご",
+        "easingFunction": "linear",
+        "totalTimeSec": 3.62,
+        "firstClickDelaySec": 1749891886817,
+        "success": true
+      },
+      "navigationPath": [
+        {
+          "step": 1,
+          "action": "日常食料品",
+          "path": "日常食料品",
+          "depth": 0,
+          "timestamp": "2025-06-14T09:04:46.817Z",
+          "stayTime": 0
+        },
+        {
+          "step": 2,
+          "action": "フルーツ",
+          "path": "日常食料品 > フルーツ",
+          "depth": 1,
+          "timestamp": "2025-06-14T09:04:47.316Z",
+          "stayTime": 0.5
+        },
+        {
+          "step": 3,
+          "action": "りんご",
+          "path": "日常食料品 > フルーツ > りんご",
+          "depth": 2,
+          "timestamp": "2025-06-14T09:04:48.913Z",
+          "stayTime": 1.6
+        }
+      ],
+      "performance": {
+        "errorCount": 0,
+        "menuTravelDistance": 2,
+        "pathEfficiency": 1,
+        "timedOut": false
+      },
+      "userFeedback": {
+        "animationEaseRating": "3",
+        "taskDifficultyRating": "3",
+        "animationDifferenceRating": "3",
+        "comments": ""
+      }
+    },
+    {
+      "taskOverview": {
+        "taskIndex": 3,
+        "targetItem": "ドッグフード",
+        "targetPath": "ペット日用品 > ペットフード > ドッグフード",
+        "easingFunction": "easeInOutQuad",
+        "totalTimeSec": 8.12,
+        "firstClickDelaySec": 1749891893819,
+        "success": true
+      },
+      "navigationPath": [
+        {
+          "step": 1,
+          "action": "ペット日用品",
+          "path": "ペット日用品",
+          "depth": 0,
+          "timestamp": "2025-06-14T09:04:53.819Z",
+          "stayTime": 0
+        },
+        {
+          "step": 2,
+          "action": "雑貨・文具・裁縫・ギフト",
+          "path": "ペット日用品 > 雑貨・文具・裁縫・ギフト",
+          "depth": 0,
+          "timestamp": "2025-06-14T09:04:57.697Z",
+          "stayTime": 3.88
+        },
+        {
+          "step": 3,
+          "action": "ペット日用品",
+          "path": "ペット日用品 > 雑貨・文具・裁縫・ギフト > ペット日用品",
+          "depth": 0,
+          "timestamp": "2025-06-14T09:04:58.534Z",
+          "stayTime": 0.84
+        },
+        {
+          "step": 4,
+          "action": "ペットフード",
+          "path": "ペット日用品 > 雑貨・文具・裁縫・ギフト > ペット日用品 > ペットフード",
+          "depth": 1,
+          "timestamp": "2025-06-14T09:04:59.401Z",
+          "stayTime": 0.87
+        },
+        {
+          "step": 5,
+          "action": "ドッグフード",
+          "path": "ペット日用品 > 雑貨・文具・裁縫・ギフト > ペット日用品 > ペットフード > ドッグフード",
+          "depth": 2,
+          "timestamp": "2025-06-14T09:05:00.528Z",
+          "stayTime": 1.13
+        }
+      ],
+      "performance": {
+        "errorCount": 0,
+        "menuTravelDistance": 2,
+        "pathEfficiency": 0.6,
+        "timedOut": false
+      },
+      "userFeedback": {
+        "animationEaseRating": "3",
+        "taskDifficultyRating": "3",
+        "animationDifferenceRating": "3",
+        "comments": ""
+      }
+    }
+  ]
+}
