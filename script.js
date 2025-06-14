@@ -1,7 +1,7 @@
 /***********************
 定数＆グローバル変数
 ***********************/
-const MAX_TASKS = 6; // タスク回数：5つのタスク×5つのイージング関数
+const MAX_TASKS = 2; // タスク回数：5つのタスク×5つのイージング関数
 const TIME_LIMIT_MS = 15000; // タスク制限時間(ms)
 const EASING_FUNCS = ["linear", "easeInOutQuad", "easeInOutQuint", "easeInOutExpo", "easeInOutBack"];
 
@@ -471,16 +471,15 @@ function showResultsPage() {
 function showRewardScreen() {
   clearTimeout(timeoutId);
   timeoutId = null;
-  // 既存のオーバーレイを確実に非表示にする
+
+  // オーバーレイ＆UI非表示
   const taskEndOverlay = document.getElementById("taskEndOverlay");
   if (taskEndOverlay) taskEndOverlay.classList.add("hidden");
-  
-  // 他のUI要素を非表示
   document.querySelector('.config-area').style.display = "none";
   document.querySelector('.content-wrapper').style.display = "none";
   document.getElementById("resultsPage").style.display = "none";
 
-  // 基本統計の計算
+  // === 基本統計 ===
   const totalTasks = allLogs.length;
   const correctTasks = allLogs.filter(log => !log.timedOut && log.errorCount === 0).length;
   const accuracy = totalTasks ? ((correctTasks / totalTasks) * 100).toFixed(1) + '%' : '0%';
@@ -490,53 +489,81 @@ function showRewardScreen() {
   document.getElementById("accuracyValue").textContent = accuracy;
   document.getElementById("averageTime").textContent = averageTime;
 
-  // イージング関数統計
+  // === イージングごとの統計 ===
   const easingStats = {};
   allLogs.forEach(log => {
     const easing = log.usedEasing;
     if (!easingStats[easing]) easingStats[easing] = { total: 0, correct: 0, totalTime: 0 };
     easingStats[easing].total++;
-    if (!log.timedOut) easingStats[easing].correct++;
+    // 🌟「一度でも間違えたら不正解」
+    if (!log.timedOut && log.errorCount === 0) easingStats[easing].correct++;
     easingStats[easing].totalTime += parseFloat(log.totalTime);
   });
 
-  // テーブル生成
+  // MVPイージング判定＆テーブル生成
   let bestEasing = null;
   let bestScore = -1;
   let tableHtml = '<table style="margin:0 auto; border-collapse:collapse; min-width:300px;">';
   tableHtml += '<tr style="background:#f0f0f0;"><th style="padding:8px; border:1px solid #ccc;">イージング</th><th style="padding:8px; border:1px solid #ccc;">正解率</th><th style="padding:8px; border:1px solid #ccc;">平均時間</th></tr>';
-  
   Object.keys(easingStats).forEach(easing => {
     const stat = easingStats[easing];
     const accuracy = stat.total > 0 ? (stat.correct / stat.total * 100).toFixed(1) : '0.0';
     const avgTime = stat.total > 0 ? (stat.totalTime / stat.total).toFixed(2) : '0.00';
     const score = parseFloat(accuracy);
-    
     if (score > bestScore) {
       bestScore = score;
       bestEasing = easing;
     }
-    
     tableHtml += `<tr><td style="padding:8px; border:1px solid #ccc;">${easing}</td><td style="padding:8px; border:1px solid #ccc;">${accuracy}%</td><td style="padding:8px; border:1px solid #ccc;">${avgTime}s</td></tr>`;
   });
-  
   tableHtml += '</table>';
-  
   document.getElementById("easingStatsTable").innerHTML = tableHtml;
-  
-  if (bestEasing) {
-    document.getElementById("bestEasing").textContent = bestEasing;
-  }
+  document.getElementById("bestEasing").textContent = bestEasing || "-";
 
-  // 「アンケートへ進む」ボタンのイベントリスナーを追加
+  // === 追加集計 ===
+  // 有効なタスク（タイムアウトやエラーなしのみ）
+  const validLogs = allLogs.filter(log => !log.timedOut && log.errorCount === 0);
+
+  // 最速タスク
+  let fastestTask = null;
+  let fastestTime = Infinity;
+  validLogs.forEach(log => {
+    const time = parseFloat(log.totalTime);
+    if (time < fastestTime) {
+      fastestTime = time;
+      fastestTask = log;
+    }
+  });
+  const fastestTaskTime = fastestTask ? fastestTask.totalTime + 's' : '-';
+
+  // 総クリック数
+  const totalClicks = allLogs.reduce((sum, log) => sum + (log.clicks ? log.clicks.length : 0), 0);
+
+  // メニュー移動距離
+  const totalMenuTravel = allLogs.reduce((sum, log) => sum + (log.menuTravelDistance || 0), 0);
+
+  // 初回クリック平均
+  const validFirstClicks = allLogs.filter(log => typeof log.firstClickTime === 'number');
+  const avgFirstClick = validFirstClicks.length
+    ? (validFirstClicks.reduce((sum, log) => sum + log.firstClickTime, 0) / validFirstClicks.length).toFixed(2) + 's'
+    : '-';
+
+  // === HTMLに反映 ===
+  document.getElementById("fastestTask").textContent = fastestTaskTime;
+  document.getElementById("totalClicks").textContent = totalClicks;
+  document.getElementById("menuTravelDistance").textContent = totalMenuTravel;
+  document.getElementById("avgFirstClick").textContent = avgFirstClick;
+
+  // 「アンケートへ進む」ボタン
   const continueButton = document.getElementById("continueButton");
   if (continueButton) {
-    continueButton.addEventListener("click", submitToNetlify);
+    continueButton.onclick = submitToNetlify;
   }
-  
-  // リワード画面をアクティブ化
+
+  // リワード画面表示
   document.getElementById("rewardScreen").classList.add("active");
 }
+
 
 /***********************
 イージング関数＆サブメニューのアニメーション
