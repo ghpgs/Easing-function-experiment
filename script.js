@@ -1,7 +1,7 @@
 /***********************
 定数＆グローバル変数
 ***********************/
-const MAX_TASKS = 2; // タスク回数：5つのタスク×5つのイージング関数
+const MAX_TASKS = 25; // タスク回数：5つのタスク×5つのイージング関数
 const TIME_LIMIT_MS = 15000; // タスク制限時間(ms)
 const EASING_FUNCS = ["linear", "easeInOutQuad", "easeInOutQuint", "easeInOutExpo", "easeInOutBack"];
 
@@ -130,7 +130,7 @@ function submitToNetlify() {
       taskOverview: {
         taskIndex: task.taskIndex,
         targetItem: task.correctItem,
-        targetPath: currentCorrectPath.join(' > '),
+        targetPath: task.correctPath ? task.correctPath.join(' > ') : '',
         easingFunction: task.usedEasing,
         totalTimeSec: parseFloat(task.totalTime),
         firstClickDelaySec: task.firstClickTime,
@@ -440,6 +440,7 @@ function checkAnswer(clickedText) {
   allLogs.push({
     taskIndex: currentTaskIndex,
     correctItem: targetItemName,
+    correctPath: [...currentCorrectPath],
     totalTime: totalTimeSec,
     errorCount: errorCount,
     timedOut: false,
@@ -462,6 +463,7 @@ function handleTimeout(targetItemName) {
   allLogs.push({
     taskIndex: currentTaskIndex,
     correctItem: targetItemName,
+    correctPath: [...currentCorrectPath],
     totalTime: (TIME_LIMIT_MS / 1000).toFixed(2),
     errorCount: errorCount,
     timedOut: true,
