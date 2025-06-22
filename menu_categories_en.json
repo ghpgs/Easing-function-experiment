@@ -1,0 +1,291 @@
+{
+  "categories": [
+    {
+      "name": "Sports & Outdoors",
+      "subcategories": [
+        {
+          "name": "Outdoor",
+          "subcategories": [
+            { "name": "Tents" },
+            { "name": "BBQ Supplies" },
+            { "name": "Outdoor Lighting" },
+            { "name": "Outdoor Bedding" }
+          ]
+        },
+        {
+          "name": "Golf",
+          "subcategories": [
+            { "name": "Golf Clubs" },
+            { "name": "Golf Balls" },
+            { "name": "Golf Shoes" },
+            { "name": "Golf Wear" }
+          ]
+        },
+        {
+          "name": "Baseball",
+          "subcategories": [
+            { "name": "Gloves" },
+            { "name": "Bats" },
+            { "name": "Baseballs" },
+            { "name": "Baseball Uniforms" }
+          ]
+        },
+        {
+          "name": "Soccer",
+          "subcategories": [
+            { "name": "Soccer Accessories" },
+            { "name": "Soccer Uniforms" },
+            { "name": "Soccer Shoes" },
+            { "name": "Soccer Balls" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Diet & Health",
+      "subcategories": [
+        {
+          "name": "Relaxation & Self-Care",
+          "subcategories": [
+            { "name": "Aromatherapy" },
+            { "name": "Stress-Relief Goods" },
+            { "name": "Cold-proof Goods" },
+            { "name": "Relax Sofas" }
+          ]
+        },
+        {
+          "name": "Diet Foods",
+          "subcategories": [
+            { "name": "Low-Carb Foods" },
+            { "name": "Meal-Replacement Foods" },
+            { "name": "Diet Soups" },
+            { "name": "Diet Snacks" }
+          ]
+        },
+        {
+          "name": "Health Supplements",
+          "subcategories": [
+            { "name": "Multivitamin Supplements" },
+            { "name": "Collagen Supplements" },
+            { "name": "DHA / EPA Supplements" },
+            { "name": "Probiotic Supplements" }
+          ]
+        },
+        {
+          "name": "Health Goods",
+          "subcategories": [
+            { "name": "Massagers" },
+            { "name": "Thermometers" },
+            { "name": "Sleep Goods" },
+            { "name": "Posture-Support Goods" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pet Supplies",
+      "subcategories": [
+        {
+          "name": "Pet Food",
+          "subcategories": [
+            { "name": "Cat Food" },
+            { "name": "Dog Food" },
+            { "name": "Bird Food" },
+            { "name": "Rabbit Food" }
+          ]
+        },
+        {
+          "name": "Pet Care Supplies",
+          "subcategories": [
+            { "name": "Pet Shampoo" },
+            { "name": "Pet Brushing Supplies" },
+            { "name": "Pet Dental Care" },
+            { "name": "Pet Face Care" }
+          ]
+        },
+        {
+          "name": "Pet Goods",
+          "subcategories": [
+            { "name": "Pet Beds" },
+            { "name": "Pet Toilet Goods" },
+            { "name": "Pet Toys" },
+            { "name": "Pet Walking Goods" }
+          ]
+        },
+        {
+          "name": "Pet Travel Supplies",
+          "subcategories": [
+            { "name": "Pet Carriers" },
+            { "name": "Pet Strollers" },
+            { "name": "Pet Car Accessories" },
+            { "name": "Pet Outdoor Clothes" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "General Goods · Stationery · Sewing · Gifts",
+      "subcategories": [
+        {
+          "name": "Daily Goods",
+          "subcategories": [
+            { "name": "Toilet Paper" },
+            { "name": "Tissues" },
+            { "name": "Garbage Bags" },
+            { "name": "Trash Cans" }
+          ]
+        },
+        {
+          "name": "Stationery",
+          "subcategories": [
+            { "name": "Ballpoint Pens" },
+            { "name": "Notebooks" },
+            { "name": "Sticky Notes" },
+            { "name": "Mechanical Pencils" }
+          ]
+        },
+        {
+          "name": "Sewing Supplies",
+          "subcategories": [
+            { "name": "Sewing Needles" },
+            { "name": "Sewing Threads" },
+            { "name": "Sewing Scissors" },
+            { "name": "Leather for Sewing" }
+          ]
+        },
+        {
+          "name": "Gift Supplies",
+          "subcategories": [
+            { "name": "Gift Wrapping Paper" },
+            { "name": "Gift Ribbons" },
+            { "name": "Gift Cards" },
+            { "name": "Gift Bags" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Groceries",
+      "subcategories": [
+        {
+          "name": "Fruits",
+          "subcategories": [
+            { "name": "Apple" },
+            { "name": "Mandarin Orange" },
+            { "name": "Banana" },
+            { "name": "Grape" }
+          ]
+        },
+        {
+          "name": "Vegetables",
+          "subcategories": [
+            { "name": "Tomato" },
+            { "name": "Cucumber" },
+            { "name": "Cabbage" },
+            { "name": "Potato" }
+          ]
+        },
+        {
+          "name": "Meat",
+          "subcategories": [
+            { "name": "Beef" },
+            { "name": "Pork" },
+            { "name": "Chicken" },
+            { "name": "Lamb" }
+          ]
+        },
+        {
+          "name": "Seafood",
+          "subcategories": [
+            { "name": "Salmon" },
+            { "name": "Tuna" },
+            { "name": "Squid" },
+            { "name": "Crab" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Books · Magazines · Comics · Picture Books",
+      "subcategories": [
+        {
+          "name": "Books",
+          "subcategories": [
+            { "name": "Novels" },
+            { "name": "Non-fiction Books" },
+            { "name": "Self-help Books" },
+            { "name": "Hobby / Practical Books" }
+          ]
+        },
+        {
+          "name": "Magazines",
+          "subcategories": [
+            { "name": "Fashion Magazines" },
+            { "name": "Lifestyle Magazines" },
+            { "name": "Business Magazines" },
+            { "name": "Weekly Magazines" }
+          ]
+        },
+        {
+          "name": "Comics",
+          "subcategories": [
+            { "name": "Shonen Manga" },
+            { "name": "Shojo Manga" },
+            { "name": "Seinen Manga" },
+            { "name": "Josei Manga" }
+          ]
+        },
+        {
+          "name": "Children's Books & Picture Books",
+          "subcategories": [
+            { "name": "Picture Books" },
+            { "name": "Readers (Kindergarten)" },
+            { "name": "Readers (Elementary)" },
+            { "name": "Children's Educational Books" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gardening & DIY",
+      "subcategories": [
+        {
+          "name": "Gardening Supplies",
+          "subcategories": [
+            { "name": "Plants & Seeds" },
+            { "name": "Fertilizers & Materials" },
+            { "name": "Gardening Tools" },
+            { "name": "Planters" }
+          ]
+        },
+        {
+          "name": "Garden Furniture",
+          "subcategories": [
+            { "name": "Garden Tables" },
+            { "name": "Garden Chairs" },
+            { "name": "Garden Sofas" },
+            { "name": "Garden Benches" }
+          ]
+        },
+        {
+          "name": "Garden Decor",
+          "subcategories": [
+            { "name": "Garden Lights" },
+            { "name": "Garden Decorations" },
+            { "name": "Garden Fountains" },
+            { "name": "Garden Planters" }
+          ]
+        },
+        {
+          "name": "DIY Tools",
+          "subcategories": [
+            { "name": "Power Tools for DIY" },
+            { "name": "Hand Tools for DIY" },
+            { "name": "Painting Tools for DIY" },
+            { "name": "Protective Gear for DIY" }
+          ]
+        }
+      ]
+    }
+  ]
+}

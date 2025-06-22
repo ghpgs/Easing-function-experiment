@@ -91,23 +91,36 @@
       <button id="disagreeBtn" data-i18n="disagree"></button>
     </div>
   </div>
+  
 
   <!-- ====== チュートリアル完了オーバーレイ ====== -->
   <template id="tutorial-overlay-template">
     <div class="overlay-content">
-      <h2 data-i18n="tutorialCompleted"></h2>
-      <p data-i18n="tutorialCompletedText"></p>   <!-- ← 中身は空で OK -->
-      <button id="closeTutorialBtn" data-i18n="closeTutorial"></button>
+      <h2 data-i18n="tutorialCompleted">チュートリアル完了</h2>
+      <p data-i18n="tutorialCompletedText">
+        チュートリアルは以上です。<br>
+        タスク開始ボタンを押す前にメニューの内容を確認しておいてください。
+      </p>
+      <button id="closeTutorialBtn" data-i18n="closeTutorial">閉じる</button>
     </div>
   </template>
 
   <!-- ====== チュートリアル説明オーバーレイ ====== -->
-  <template id="tutorial-intro-overlay-template">
-    <div class="overlay-content">
-      <img src="tutorial.png" alt="" style="max-width:100%; height:auto; border-radius:8px;" />
-      <p data-i18n="tutorialIntroText">メニューを開くたびにマウスでクリックして選択してください。下のボタンで開始してください。制限時間は1タスク当たり15秒です。</p>      <button id="tutorialIntroCloseBtn" data-i18n="tutorialIntroClose">閉じる</button>
-    </div>
-  </template>
+<!-- チュートリアル開始前の説明オーバーレイ -->
+<template id="tutorial-intro-overlay-template">
+  <div class="overlay-content">
+    <img src="tutorial.png"
+         alt="Tutorial Image"
+         style="max-width:100%;height:auto;border-radius:8px;" />
+
+    <!-- ☆ ここはテキストを入れず i18n だけ -->
+    <p data-i18n="tutorialIntroText"></p>
+
+    <button id="tutorialIntroCloseBtn"
+            data-i18n="tutorialIntroClose"></button>
+  </div>
+</template>
+
 
   <!-- ====== タスク終了オーバーレイ（実体） ====== -->
   <div id="taskEndOverlay" class="overlay hidden">
