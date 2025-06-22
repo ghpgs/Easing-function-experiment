@@ -4,7 +4,7 @@ import { translateDom } from "./translate.js";   // 追加
 /***********************
 定数＆グローバル変数
 ***********************/
-const MAX_TASKS = 25; // タスク回数：5つのタスク×5つのイージング関数
+const MAX_TASKS = 6; // タスク回数：5つのタスク×5つのイージング関数
 const TIME_LIMIT_MS = 15000; // タスク制限時間(ms)
 const EASING_FUNCS = ["linear", "easeInOutQuad", "easeInOutQuint", "easeInOutExpo", "easeInOutBack"];
 const tutorialTargetItem = LANG === 'en' ? 'Toilet Paper' : 'トイレットペーパー';
