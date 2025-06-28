@@ -16,7 +16,7 @@
 ================================ */
 :root {
   --submenu-easing: var(--easeInOut);
-  --submenu-animation-duration: 0.3s;
+  --submenu-animation-duration: 0.8s;
 }
 
 body {
