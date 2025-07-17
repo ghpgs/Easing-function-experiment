@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>イージング関数比較デモ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .demo-area {
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .easing-row {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            height: 40px;
+        }
+        
+        .label {
+            width: 150px;
+            font-weight: bold;
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .track {
+            flex: 1;
+            height: 30px;
+            background: #e0e0e0;
+            border-radius: 15px;
+            position: relative;
+            margin: 0 10px;
+        }
+        
+        .bar {
+            width: 30px;
+            height: 28px;
+            border-radius: 14px;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            transition: none;
+        }
+        
+        .linear { background: #ff6b6b; }
+        .ease-in-out-quad { background: #4ecdc4; }
+        .ease-in-out-back { background: #45b7d1; }
+        .ease-in-out-expo { background: #f9ca24; }
+        .ease-in-out-quint { background: #f0932b; }
+        
+        .controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #6c5ce7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+        
+        button:hover {
+            background: #5a4fcf;
+        }
+        
+        .description {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f4f8;
+            border-left: 4px solid #4ecdc4;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .speed-control {
+            margin-top: 15px;
+            text-align: center;
+        }
+        
+        .speed-control label {
+            margin-right: 10px;
+        }
+        
+        .speed-control input {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 イージング関数比較デモ</h1>
+        
+        <div class="demo-area">
+            <div class="easing-row">
+                <div class="label">Linear</div>
+                <div class="track">
+                    <div class="bar linear" id="linear"></div>
+                </div>
+                <div style="width: 100px; font-size: 12px; color: #666;">一定速度</div>
+            </div>
+            
+            <div class="easing-row">
+                <div class="label">EaseInOutQuad</div>
+                <div class="track">
+                    <div class="bar ease-in-out-quad" id="easeInOutQuad"></div>
+                </div>
+                <div style="width: 100px; font-size: 12px; color: #666;">緩急なし</div>
+            </div>
+            
+            <div class="easing-row">
+                <div class="label">EaseInOutBack</div>
+                <div class="track">
+                    <div class="bar ease-in-out-back" id="easeInOutBack"></div>
+                </div>
+                <div style="width: 100px; font-size: 12px; color: #666;">一瞬戻る動き</div>
+            </div>
+            
+            <div class="easing-row">
+                <div class="label">EaseInOutExpo</div>
+                <div class="track">
+                    <div class="bar ease-in-out-expo" id="easeInOutExpo"></div>
+                </div>
+                <div style="width: 100px; font-size: 12px; color: #666;">急加速</div>
+            </div>
+            
+            <div class="easing-row">
+                <div class="label">EaseInOutQuint</div>
+                <div class="track">
+                    <div class="bar ease-in-out-quint" id="easeInOutQuint"></div>
+                </div>
+                <div style="width: 100px; font-size: 12px; color: #666;">加速</div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button onclick="startAnimation()">▶️ アニメーション開始</button>
+            <button onclick="resetAnimation()">🔄 リセット</button>
+        </div>
+        
+        <div class="speed-control">
+            <label for="speed">速度調整：</label>
+            <input type="range" id="speed" min="0.5" max="3" value="1.5" step="0.1">
+            <span id="speedValue">1.5</span>秒
+        </div>
+        
+        <div class="description">
+            <strong>使い方：</strong><br>
+            • 「アニメーション開始」ボタンで各イージング関数の動きを同時比較<br>
+            • 速度調整スライダーでアニメーション速度を変更<br>
+            • それぞれのバーの動きの違いに注目してください！
+        </div>
+    </div>
+
+    <script>
+        let animationDuration = 1.5; // デフォルト速度
+        
+        // 速度調整
+        const speedSlider = document.getElementById('speed');
+        const speedValue = document.getElementById('speedValue');
+        
+        speedSlider.addEventListener('input', function() {
+            animationDuration = parseFloat(this.value);
+            speedValue.textContent = animationDuration;
+        });
+        
+        // カスタムイージング関数
+        const easingFunctions = {
+            linear: 'linear',
+            easeInOutQuad: 'cubic-bezier(0.455, 0.030, 0.515, 0.955)',
+            easeInOutBack: 'cubic-bezier(0.680, -0.550, 0.265, 1.550)',
+            easeInOutExpo: 'cubic-bezier(1.000, 0.000, 0.000, 1.000)',
+            easeInOutQuint: 'cubic-bezier(0.860, 0.000, 0.070, 1.000)'
+        };
+        
+        function startAnimation() {
+            // 全てのバーをリセット
+            resetAnimation();
+            
+            // 少し遅延させてからアニメーション開始
+            setTimeout(() => {
+                Object.keys(easingFunctions).forEach(id => {
+                    const element = document.getElementById(id);
+                    const trackWidth = element.parentElement.offsetWidth;
+                    const barWidth = element.offsetWidth;
+                    const maxPosition = trackWidth - barWidth;
+                    
+                    element.style.transition = `transform ${animationDuration}s ${easingFunctions[id]}`;
+                    element.style.transform = `translateX(${maxPosition}px)`;
+                });
+            }, 100);
+        }
+        
+        function resetAnimation() {
+            Object.keys(easingFunctions).forEach(id => {
+                const element = document.getElementById(id);
+                element.style.transition = 'none';
+                element.style.transform = 'translateX(0px)';
+            });
+        }
+        
+        // ページ読み込み時に自動実行
+        window.addEventListener('load', () => {
+            setTimeout(startAnimation, 500);
+        });
+    </script>
+</body>
+</html>
